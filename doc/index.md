@@ -1,17 +1,15 @@
 ---
-title: Polyrhythm Documentation
+title: Documentation
 author: 
 keywords: documentation
 permalink: /doc/index.html
 vim: ts=3
-template: default
+layout: subpage
 summary: 
 ---
 
 {% include_relative styles-local.html %}
 {% include_relative scripts-local.html %}
-
-# Documentation #
 
 
 ## Metadata ##

@@ -4,14 +4,13 @@ author:
 keywords: people
 permalink: /people/index.html
 vim: ts=3
-template: default
+layout: subpage
 summary: 
 ---
 
 {% include_relative styles-local.html %}
 {% include_relative scripts-local.html %}
 
-# People #
 
 ## Current Members ##
 
@@ -36,7 +35,7 @@ summary:
   <tr>
     <td valign="top"><img width="300" src="/people/CraigSapp.jpg"></td>
     <td class="topalign">
-Craig is a researcher at the Center For Computer-Assisted Research in the Humanities of the Packard Humanities Institute at Stanford University, as well as an adjunct professor at Stanford University. He is the technical director of the <a target="_blank" href="https://josquin.stanford.edu">Josquin Research Project</a> as well as the <a target="_blank" href="https://www.tassomusic.org">Tasso in MusicProject</a>.  He also collaborates with the Chopin Institute on open-source digitization projects including 
+Craig is a researcher at the Center For Computer-Assisted Research in the Humanities of the Packard Humanities Institute at Stanford University as well as an adjunct professor at Stanford University. He is the technical director of the <a target="_blank" href="https://josquin.stanford.edu">Josquin Research Project</a> as well as the <a target="_blank" href="https://www.tassomusic.org">Tasso in MusicProject</a>.  He also collaborates with the Chopin Institute on open-source digitization projects including 
 <a target="_blank" href="https://chopinscores.org">Chopin First Editions</a>
 and
 <a target="_blank" href="https://polishscores.org">Polish Music from 1600&ndash;1900</a>.

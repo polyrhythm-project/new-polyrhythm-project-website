@@ -22,7 +22,8 @@ function displayComposerList() {
 
 	var output = "";
 
-	output += "<table id='composer-list'>";
+	output += '<div class="container mt-5">';
+	output += "<table class='table' id='composer-list'>";
 	
 	output += "<thead>";
 	output += "<tr>";
@@ -41,6 +42,7 @@ function displayComposerList() {
 	}
 	output += "</tbody>";
 	output += "</table>";
+	output += "</div>";
 
 	element.innerHTML = output;
 }

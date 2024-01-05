@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Search, Browse and Analyze Polyrhythm (1877 – 1969)</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@300;400;700;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/styles.css?ver=1.08" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-xl navbar-dark sticky-top">
+            <div class="container-fluid px-sm-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">POLYRHYTHM<span>PROJECT</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownAbout" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAbout">
+                                <li><a class="dropdown-item" href="#">Overview</a></li>
+                                <li><a class="dropdown-item" href="#">People</a></li>
+                                <li><a class="dropdown-item" href="#">Documentation</a></li>
+                                <li><a class="dropdown-item" href="#">Corpus</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Browse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Composers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Maps</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownResearch" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Research</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownResearch">
+                                <li><a class="dropdown-item" href="#">Publications</a></li>
+                                <li><a class="dropdown-item" href="#">Presentations</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownSources" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sources</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownSources">
+                                <li><a class="dropdown-item" href="#">Scores</a></li>
+                                <li><a class="dropdown-item" href="#">Recordings</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Participate</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="header mb-5">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-12">
+                        <div class="my-5 text-center text-xl-start">
+                            <h1 class="display-5 fw-bold">Browse</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Page Content-->
+        <section>
+            <div class="container">
+                <form>
+                <!-- Search -->
+                <div class="row">
+                    <div class="col-9 col-sm-10 mb-3">
+                        <div class="form-outline">
+                            <input type="search" id="form1" class="form-control" placeholder="Search" aria-label="Search..." />
+                        </div>
+                    </div>
+                    <div class="col-3 col-sm-2 mb-3 d-grid gap-2">                       
+                        <input class="btn btn-secondary btn-primary-light" type="reset" value="Clear">                     
+                    </div>
+                </div>
+                <!-- Dropdowns -->
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="btn-group mb-3">
+                            <select class="form-select form-select--secondary" aria-label="Example List">
+                                <option selected>Example List</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="btn-group mb-3">
+                            <select class="form-select form-select--secondary" aria-label="Example List">
+                                <option selected>Example List</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Dropdowns -->
+                    <div class="col-12 col-lg-8">
+                        <div class="btn-group mb-3 float-lg-end">
+                            <select class="form-select form-select--secondary" aria-label="All Tempo Beat Types">
+                                <option selected>All Tempo Beat Types</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="btn-group mb-3 me-1 float-lg-end">
+                            <select class="form-select form-select--secondary" aria-label="All Time Signature Types">
+                                <option selected>All Time Signature Types</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="btn-group mb-3 me-1 float-lg-end">
+                            <select class="form-select form-select--secondary" aria-label="All Genres">
+                                <option selected>All Genres</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="btn-group mb-3 me-1 float-lg-end">
+                            <select class="form-select form-select--secondary" aria-label="All Composers">
+                                <option selected>All Composers</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tempo / Duration -->
+                <div class="row">
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="input-group ">
+                            <input type="text" class="form-control" placeholder="Tempo Min">
+                            <input type="text" class="form-control" placeholder="Tempo Max">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-3">
+                        <div class="input-group ">
+                            <input type="text" class="form-control" placeholder="Duration Min">
+                            <input type="text" class="form-control" placeholder="Duration Max">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <small>*Bold IDs indicate examples with interactive musical scores.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-4 text-center">
+                        <p><strong>725 entries found</strong></p>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </section>
+        <!-- Page Content-->
+        <section>
+            <div class="container mb-5">
+                <!-- Results -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-clickable">
+                                <thead class="sticky-top top-0">
+                                    <tr>
+                                        <th scope="col" class="fw-bold">ID</th>
+                                        <th scope="col" class="fw-bold">Composer</th>
+                                        <th scope="col" class="fw-bold">Title</th>
+                                        <th scope="col" class="fw-bold">Genre</th>
+                                        <th scope="col" class="fw-bold">Composed</th>
+                                        <th scope="col" class="fw-bold">Premiered</th>
+                                        <th scope="col" class="fw-bold">Published</th>
+                                        <th scope="col" class="fw-bold">Tempo</th>
+                                        <th scope="col" class="fw-bold">Start Time Sugnature</th>
+                                        <th scope="col" class="fw-bold">Example Duration (sec)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="d-none">
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T031</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo for Violin Clarinet and Piano</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1934</td>
+                                        <td>1951</td>
+                                        <td>1953</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 27)</td>
+                                        <td>4/4</td>
+                                        <td>27</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T054</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo Risoluto No. 1 for Piano and String Quartet</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1909</td>
+                                        <td>1958</td>
+                                        <td>1961</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 45)</td>
+                                        <td>3/4</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T122</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Po zarostlém chodníčku, Book I</td>
+                                        <td>Instrumental / Keyboard</td>
+                                        <td>1911</td>
+                                        <td>1905</td>
+                                        <td>1911</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 72)</td>
+                                        <td>2/4</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T123</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Lašské tance for Orchestra</td>
+                                        <td>Orchestral / Symphonic</td>
+                                        <td>1981</td>
+                                        <td>1926</td>
+                                        <td>1928</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 144)</td>
+                                        <td>4/4</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row"><strong>T024</strong></th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Moravská lidová poesie v písních for Voice and Piano</td>
+                                        <td>Vocal / Solo</td>
+                                        <td>1901</td>
+                                        <td>Uknown</td>
+                                        <td>1908</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 73)</td>
+                                        <td>2/4</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T025</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Amarus, Cantata for Soli, Choir and Orchestra</td>
+                                        <td>Vocal / Choral</td>
+                                        <td>1897 (Rev. 1906)</td>
+                                        <td>1912</td>
+                                        <td>1938</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" />. = 88)</td>
+                                        <td>12/8</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T031</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo for Violin Clarinet and Piano</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1934</td>
+                                        <td>1951</td>
+                                        <td>1953</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 27)</td>
+                                        <td>4/4</td>
+                                        <td>27</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T054</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo Risoluto No. 1 for Piano and String Quartet</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1909</td>
+                                        <td>1958</td>
+                                        <td>1961</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 45)</td>
+                                        <td>3/4</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T122</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Po zarostlém chodníčku, Book I</td>
+                                        <td>Instrumental / Keyboard</td>
+                                        <td>1911</td>
+                                        <td>1905</td>
+                                        <td>1911</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 72)</td>
+                                        <td>2/4</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T123</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Lašské tance for Orchestra</td>
+                                        <td>Orchestral / Symphonic</td>
+                                        <td>1981</td>
+                                        <td>1926</td>
+                                        <td>1928</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 144)</td>
+                                        <td>4/4</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row"><strong>T024</strong></th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Moravská lidová poesie v písních for Voice and Piano</td>
+                                        <td>Vocal / Solo</td>
+                                        <td>1901</td>
+                                        <td>Uknown</td>
+                                        <td>1908</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 73)</td>
+                                        <td>2/4</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T025</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Amarus, Cantata for Soli, Choir and Orchestra</td>
+                                        <td>Vocal / Choral</td>
+                                        <td>1897 (Rev. 1906)</td>
+                                        <td>1912</td>
+                                        <td>1938</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" />. = 88)</td>
+                                        <td>12/8</td>
+                                        <td>11</td>
+                                    </tr>
+
+                                    <tr data-href="#">
+                                        <th scope="row">T031</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo for Violin Clarinet and Piano</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1934</td>
+                                        <td>1951</td>
+                                        <td>1953</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 27)</td>
+                                        <td>4/4</td>
+                                        <td>27</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T054</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo Risoluto No. 1 for Piano and String Quartet</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1909</td>
+                                        <td>1958</td>
+                                        <td>1961</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 45)</td>
+                                        <td>3/4</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T122</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Po zarostlém chodníčku, Book I</td>
+                                        <td>Instrumental / Keyboard</td>
+                                        <td>1911</td>
+                                        <td>1905</td>
+                                        <td>1911</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 72)</td>
+                                        <td>2/4</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T123</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Lašské tance for Orchestra</td>
+                                        <td>Orchestral / Symphonic</td>
+                                        <td>1981</td>
+                                        <td>1926</td>
+                                        <td>1928</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 144)</td>
+                                        <td>4/4</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row"><strong>T024</strong></th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Moravská lidová poesie v písních for Voice and Piano</td>
+                                        <td>Vocal / Solo</td>
+                                        <td>1901</td>
+                                        <td>Uknown</td>
+                                        <td>1908</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 73)</td>
+                                        <td>2/4</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T025</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Amarus, Cantata for Soli, Choir and Orchestra</td>
+                                        <td>Vocal / Choral</td>
+                                        <td>1897 (Rev. 1906)</td>
+                                        <td>1912</td>
+                                        <td>1938</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" />. = 88)</td>
+                                        <td>12/8</td>
+                                        <td>11</td>
+                                    </tr>
+
+                                    <tr data-href="#">
+                                        <th scope="row">T031</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo for Violin Clarinet and Piano</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1934</td>
+                                        <td>1951</td>
+                                        <td>1953</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 27)</td>
+                                        <td>4/4</td>
+                                        <td>27</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T054</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo Risoluto No. 1 for Piano and String Quartet</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1909</td>
+                                        <td>1958</td>
+                                        <td>1961</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 45)</td>
+                                        <td>3/4</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T122</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Po zarostlém chodníčku, Book I</td>
+                                        <td>Instrumental / Keyboard</td>
+                                        <td>1911</td>
+                                        <td>1905</td>
+                                        <td>1911</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 72)</td>
+                                        <td>2/4</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T123</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Lašské tance for Orchestra</td>
+                                        <td>Orchestral / Symphonic</td>
+                                        <td>1981</td>
+                                        <td>1926</td>
+                                        <td>1928</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 144)</td>
+                                        <td>4/4</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row"><strong>T024</strong></th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Moravská lidová poesie v písních for Voice and Piano</td>
+                                        <td>Vocal / Solo</td>
+                                        <td>1901</td>
+                                        <td>Uknown</td>
+                                        <td>1908</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 73)</td>
+                                        <td>2/4</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T025</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Amarus, Cantata for Soli, Choir and Orchestra</td>
+                                        <td>Vocal / Choral</td>
+                                        <td>1897 (Rev. 1906)</td>
+                                        <td>1912</td>
+                                        <td>1938</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" />. = 88)</td>
+                                        <td>12/8</td>
+                                        <td>11</td>
+                                    </tr>
+
+                                    <tr data-href="#">
+                                        <th scope="row">T031</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo for Violin Clarinet and Piano</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1934</td>
+                                        <td>1951</td>
+                                        <td>1953</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 27)</td>
+                                        <td>4/4</td>
+                                        <td>27</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T054</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo Risoluto No. 1 for Piano and String Quartet</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1909</td>
+                                        <td>1958</td>
+                                        <td>1961</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 45)</td>
+                                        <td>3/4</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T122</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Po zarostlém chodníčku, Book I</td>
+                                        <td>Instrumental / Keyboard</td>
+                                        <td>1911</td>
+                                        <td>1905</td>
+                                        <td>1911</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 72)</td>
+                                        <td>2/4</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T123</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Lašské tance for Orchestra</td>
+                                        <td>Orchestral / Symphonic</td>
+                                        <td>1981</td>
+                                        <td>1926</td>
+                                        <td>1928</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 144)</td>
+                                        <td>4/4</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row"><strong>T024</strong></th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Moravská lidová poesie v písních for Voice and Piano</td>
+                                        <td>Vocal / Solo</td>
+                                        <td>1901</td>
+                                        <td>Uknown</td>
+                                        <td>1908</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 73)</td>
+                                        <td>2/4</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T025</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Amarus, Cantata for Soli, Choir and Orchestra</td>
+                                        <td>Vocal / Choral</td>
+                                        <td>1897 (Rev. 1906)</td>
+                                        <td>1912</td>
+                                        <td>1938</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" />. = 88)</td>
+                                        <td>12/8</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T031</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo for Violin Clarinet and Piano</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1934</td>
+                                        <td>1951</td>
+                                        <td>1953</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 27)</td>
+                                        <td>4/4</td>
+                                        <td>27</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T054</th>
+                                        <td>Ives, Charles</td>
+                                        <td>Largo Risoluto No. 1 for Piano and String Quartet</td>
+                                        <td>Instrumental / Chamber</td>
+                                        <td>1909</td>
+                                        <td>1958</td>
+                                        <td>1961</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 45)</td>
+                                        <td>3/4</td>
+                                        <td>25</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T122</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Po zarostlém chodníčku, Book I</td>
+                                        <td>Instrumental / Keyboard</td>
+                                        <td>1911</td>
+                                        <td>1905</td>
+                                        <td>1911</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 72)</td>
+                                        <td>2/4</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T123</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Lašské tance for Orchestra</td>
+                                        <td>Orchestral / Symphonic</td>
+                                        <td>1981</td>
+                                        <td>1926</td>
+                                        <td>1928</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 144)</td>
+                                        <td>4/4</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row"><strong>T024</strong></th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Moravská lidová poesie v písních for Voice and Piano</td>
+                                        <td>Vocal / Solo</td>
+                                        <td>1901</td>
+                                        <td>Uknown</td>
+                                        <td>1908</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" /> = 73)</td>
+                                        <td>2/4</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr data-href="#">
+                                        <th scope="row">T025</th>
+                                        <td>Janáček, Leoš</td>
+                                        <td>Amarus, Cantata for Soli, Choir and Orchestra</td>
+                                        <td>Vocal / Choral</td>
+                                        <td>1897 (Rev. 1906)</td>
+                                        <td>1912</td>
+                                        <td>1938</td>
+                                        <td>(<img src="https://polyrhythm.humdrum.org/img/tempo/quarter.svg" alt="" />. = 88)</td>
+                                        <td>12/8</td>
+                                        <td>11</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer class="py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-12 col-lg-5 mb-3 mb-lg-0">
+                    <img class="img-fluid" src="assets/img/footer-ubc-logo.png" alt="ubc logo" />
+                </div>
+                <div class="col-12 col-lg-7 text-center text-lg-right">
+                    <img class="img-fluid" src="assets/img/footer-canada-logo.png" alt="canada logo" />
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Feedback -->
+    <div class="feedback">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+            <span><i class="bi bi-chat-dots" role="none"></i>Feedback</span>
+        </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="feedbackModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Feedback</h2>
+                    <input type="button" class="btn-close" value="·" data-bs-dismiss="modal">
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <p>Please provide your feedback in the form below.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label" for="feedback_name">Your Name</label>
+                                <input type="text" required name="name" class="form-control" id="feedback_name" aria-label="Your Name">
+                            </div>
+                            <div class="col mb-4">
+                                <label class="form-label" for="feedback_email">Email</label>
+                                <input type="email" name="email" required class="form-control" id="feedback_email" aria-label="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback_comments">Add your comment about our website</label>
+                            <textarea class="form-control" id="feedback_comments" rows="5"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        const tableRows = document.querySelectorAll(".table-clickable tbody tr");
+        for (const tableRow of tableRows) {
+            tableRow.addEventListener("click", function () {
+                window.open(this.dataset.href, "_blank");
+            });
+        }
+    </script>
+</body>
+</html>

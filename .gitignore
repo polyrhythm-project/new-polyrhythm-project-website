@@ -1,3 +1,4 @@
+*.zip
 *.wav
 *.mp4
 *.m4a
@@ -12,4 +13,4 @@ _site
 no_archive
 resources
 err
-Makefile
+z

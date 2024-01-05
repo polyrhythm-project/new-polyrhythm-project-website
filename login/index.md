@@ -4,7 +4,7 @@ author:
 keywords: 
 permalink: /login/index.html
 vim: ts=3
-template: default
+layout: subpage
 summary: 
 ---
 

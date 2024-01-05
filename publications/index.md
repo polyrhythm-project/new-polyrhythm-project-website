@@ -1,17 +1,16 @@
 ---
-title: Polyrhythm Publications
+title: Publications
 author: 
 keywords: List of research
 permalink: /publications/index.html
 vim: ts=3
-template: default
+layout: subpage
 summary: 
 ---
 
 {% include_relative styles-local.html %}
 {% include_relative scripts-local.html %}
 
-# Publications #
 
 ## Journal Articles ##
 

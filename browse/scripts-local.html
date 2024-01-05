@@ -1,0 +1,1144 @@
+
+
+{% include scripts/scripts-common.html %}
+
+{% include_relative listeners.html %}
+
+<script>
+// vim: ts=3
+
+
+//////////////////////////////
+//
+// displayList --
+//
+
+function displayList(entries, query) {
+	SORTORDER = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+	BROWSELIST = [];
+	for (let i=0; i<entries.length; i++) {
+		BROWSELIST.push(entries[i][INDEX_Suter_Example_Number]);
+	}
+	sessionStorage.BROWSELIST = JSON.stringify(BROWSELIST);
+
+	// let cache = [];
+	// sessionStorage.BROWSELIST = JSON.stringify(BROWSELIST, (key, value) => {
+	// 	if (typeof value === 'object' && value !== null) {
+	// 		if (cache.includes(value)) return;
+	// 		cache.push(value);
+	// 	}
+	// 	return value;
+	// });
+	// cache = null;
+
+	let dtype = "example";
+	let selement = document.querySelector("#table-scope");
+	if (selement && selement.value === "work") {
+		dtype = "work";
+	}
+
+	reportMatches(entries);
+
+	let output = "";
+
+	output += "<table id='metadata-list'>";
+
+	if (dtype === "example") {
+		output += "<thead>";
+		output += "<tr>";
+		output += "<th title='Sort by ID' onclick='SortByWorkId(0, \"#metadata-list\")'>ID</th>";
+		// missing example count
+		output += "<th title='Sort by composer' onclick='SortByText(1, \"#metadata-list\")'>Composer</th>";
+		output += "<th title='Sort by title' onclick='SortByText(2, \"#metadata-list\")'>Title</th>";
+		output += "<th title='Sort by genre' onclick='SortByText(3, \"#metadata-list\")'>Genre</th>";
+		output += "<th title='Sort by composition date' onclick='SortByText(4, \"#metadata-list\")'>Composed</th>";
+		output += "<th style='padding-right:10px;' title='Sort by primier date' onclick='SortByText(5, \"#metadata-list\")'>Premiered</th>";
+		output += "<th title='Sort by publication date' onclick='SortByText(6, \"#metadata-list\")'>Published</th>";
+		output += "<th style='text-align:center' title='Sort by tempo' onclick='SortByTempo(7, \"#metadata-list\")'>Tempo&nbsp;&nbsp;&nbsp;&nbsp;</th>";
+		output += "<th title='Sort by time signature' onclick='SortByTimeSignature(8, \"#metadata-list\")'>Start time&nbsp;signature</th>";
+		output += "<th title='Sort by recording duration' onclick='SortBySeconds(9, \"#metadata-list\")'>Example duration (sec)</th>";
+		output += "</tr>";
+		output += "</thead>";
+	} else {
+		output += "<thead>";
+		output += "<tr>";
+		output += "<th title='Sort by composer' onclick='SortByWorkId(0, \"#metadata-list\")'>ID</th>";
+		output += "<th title='Sort by composer' onclick='SortByNumber(1, \"#metadata-list\", true)'>Examples&nbsp;&nbsp;</th>";
+		output += "<th title='Sort by composer' onclick='SortByText(2, \"#metadata-list\")'>Composer</th>";
+		output += "<th title='Sort by title' onclick='SortByText(3, \"#metadata-list\")'>Title</th>";
+		output += "<th title='Sort by genre' onclick='SortByText(4, \"#metadata-list\")'>Genre</th>";
+		output += "<th title='Sort by composition date' onclick='SortByText(5, \"#metadata-list\")'>Composed</th>";
+		output += "<th style='padding-right:10px;' title='Sort by premier date' onclick='SortByText(6, \"#metadata-list\")'>Premiered</th>";
+		output += "<th title='Sort by publication date' onclick='SortByText(7, \"#metadata-list\")'>Published</th>";
+		output += "</tr>";
+		output += "</thead>";
+	}
+
+	output += "<tbody>";
+	output += makeMetaTableRows(entries, dtype);
+	output += "</tbody>";
+	output += "</table>";
+
+	let element = document.querySelector("div#list");
+	if (query) {
+		element.style.display = "none";
+		let inp = document.querySelector("input#search");
+		if (inp) {
+			inp.value = query;
+			doSearch(query);
+		}
+	} else if (entries.length == 0) {
+		element.innerHTML = "";
+	} else {
+		element.innerHTML = output;
+	}
+	if (dtype === "example") {
+		SortByNumber(SORTCOLUMN, "#metadata-list");
+	} else {
+		SortByWorkId(SORTCOLUMN, "#metadata-list");
+	}
+
+	if (query) {
+		element.style.display = "block";
+	}
+}
+
+
+
+//////////////////////////////
+//
+// prepareNavigationOrder --
+//
+
+function prepareNavigationOrder(selector) {
+	let data = document.querySelectorAll(selector + " > tbody > tr");
+	if (data.length == 0) {
+		return;
+	}
+	let datalist = [];
+	let dtype = "";
+	let idIndex = 0;
+	for (let i=0; i<data.length; i++) {
+		let text = data[i].cells[idIndex].textContent;
+		let matches;
+		matches = text.match(/^[TR](\d+)/);
+		if (matches) {
+			dtype = "example";
+			datalist.push(matches[1]);
+		} else {
+			dtype = "work";
+			datalist.push(text);
+		}
+	}
+
+	if (dtype == "work") {
+		sessionStorage["NAVIGATION_WORK"] = JSON.stringify(datalist);
+	} else{
+		sessionStorage["NAVIGATION_EXAMPLE"] = JSON.stringify(datalist);
+	}
+
+}
+
+
+
+//////////////////////////////
+//
+// makeMetaTableRows
+//
+
+function makeMetaTableRows(list, dtype) {
+	let output = "";
+
+	for (let i=0; i<list.length; i++) {
+		if (!list[i][INDEX_Work_Title]) {
+			continue;
+		}
+		output += "<tr class='data'>";
+
+		output += "<td style='white-space:pre;'>";
+		if (dtype === "example") {
+
+			if (list[i][INDEX_Suter_Example_Number]) {
+				let number = list[i][INDEX_Suter_Example_Number];
+				if (list[i][INDEX_Example_Dataset] === "R") {
+					output += "<b>R";
+		 			output += number;
+					output += "</b>";
+				} else {
+		 			output += "T" + number;
+				}
+			}
+
+		} else {
+			let hasReserve = 0;
+			let elist = list[i]["@examples"];
+			for (let j=0; j<elist.length; j++) {
+				if (elist[j][INDEX_Work_Dataset] === "R") {
+					hasReserve = 1;
+					break;
+				}
+			}
+			if (hasReserve && (dtype == "example")) {
+				output += "<b>";
+			}
+			if (list[i][INDEX_Suter_Work_ID]) {
+		 		output += list[i][INDEX_Suter_Work_ID];
+			}
+			if (hasReserve && (dtype == "example")) {
+				output += "</b>";
+			}
+
+		}
+		output += "</td>";
+
+		if (dtype === "work") {
+			output += "<td style='text-align:center;'>";
+			output += list[i]["@examples"].length;
+			output += "</td>";
+		}
+
+		output += "<td style='min-width:150px;'>";
+		if (list[i][INDEX_Composer_Name]) {
+		 	output += PreparePerson(list[i][INDEX_Composer_Name]);
+		}
+		output += "</td>";
+
+		output += "<td style='max-width:450px;'>";
+		if (list[i][INDEX_Work_Title]) {
+		 	output += PrepareTitle(list[i][INDEX_Work_Title]);
+		}
+		output += "</td>";
+
+		output += "<td>";
+		if (list[i][INDEX_Genre]) {
+		 	output += list[i][INDEX_Genre];
+			if (list[i][INDEX_Sub_Genre]) {
+		 		output += "/" + list[i][INDEX_Sub_Genre];
+			}
+		}
+		output += "</td>";
+
+		output += "<td style='text-align:center; white-space:pre;'>";
+		if (list[i][INDEX_Composition_Year]) {
+		 	output += list[i][INDEX_Composition_Year];
+		}
+		output += "</td>";
+
+		output += "<td style='text-align:center;'>";
+		if (list[i][INDEX_First_Public_Performance_Year]) {
+		 	output += list[i][INDEX_First_Public_Performance_Year];
+		}
+		output += "</td>";
+
+		output += "<td style='text-align:center;'>";
+		if (list[i][INDEX_First_Publication_Year]) {
+		 	output += list[i][INDEX_First_Publication_Year];
+		}
+		output += "</td>";
+
+		if (dtype === "example") {
+
+			output += "<td style='text-align:center;'>";
+			if (list[i][INDEX_Example_Start_Notated_Beat]) {
+		 		output += createTempoMarking(list[i][INDEX_Example_Start_Notated_Beat], list[i][INDEX_Example_Start_Notated_Beat_Rate]);
+			}
+			output += "</td>";
+
+			output += "<td style='text-align:center;'>";
+			if (list[i][INDEX_Example_Start_Tsig]) {
+				let value = cleanTimeSignature(list[i][INDEX_Example_Start_Tsig]);
+				if (value.match("\{")) {
+		 			output += "unmetered";
+				} else {
+		 			output += value;
+				}
+			}
+			output += "</td>";
+
+			output += "<td style='text-align:center;'>";
+			if (list[i][INDEX_Example_Timestamp_Duration]) {
+				let value = list[i][INDEX_Example_Timestamp_Duration];
+				output += value;
+			}
+			output += "</td>";
+
+		}
+
+		output += "</tr>";
+	}
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// cleanTimeSignature --
+//
+
+function cleanTimeSignature(input) {
+	let output = input.replace(/;\s*/, "; ");
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// createTempoMarking --
+//
+
+function createTempoMarking(beat, value) {
+	if (!beat) {
+		return "NOBEAT";
+	}
+	let beatpieces = beat.split(/\s*;\s*/);
+	if (!value) {
+		return "NOTEMPO";
+	}
+	let valuepieces = value.split(/\s*;\s*/);
+	if (beatpieces.length != valuepieces.length) {
+		return "ERROR";
+	}
+	let output = "";
+	for (let i=0; i<beatpieces.length; i++) {
+		output += createSingleTempoMarking(beatpieces[i], valuepieces[i]);
+		if (i < beatpieces.length - 1) {
+			output += "; ";
+		}
+	}
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// createSingleTempoMarking --
+//
+
+function createSingleTempoMarking(beat, value) {
+	if (beat.match(/unavailable/)) {
+		return "unavailable";
+	}
+	let bracket = false;
+	let curley  = false;
+	if (beat.match(/^[[]/)) {
+		bracket = true;
+		beat = beat.replace(/\[/, "", "g");
+		beat = beat.replace(/\]/, "", "g");
+		value = value.replace(/\[/, "", "g");
+		value = value.replace(/\]/, "", "g");
+	} else if (beat.match(/[{}]/)) {
+		curley = true;
+		beat = beat.replace(/\{/, "", "g");
+		beat = beat.replace(/\}/, "", "g");
+		value = value.replace(/\{/, "", "g");
+		value = value.replace(/\}/, "", "g");
+	}
+	let style = "height:5%; display:inline-block; margin-top:-5px;"
+	if (beat === "quarter") {
+		// beat = "&#x2669;";
+		beat = `<img style="${style}" src="/img/tempo/quarter.svg">`;
+	} else if (beat === "eighth") {
+		// beat = "&#x266A;";
+		beat = `<img style="${style}" src="/img/tempo/eighth.svg">`;
+	} else if (beat === "dotted-eighth") {
+		// beat = "&#x266A;.";
+		beat = `<img style="${style}" src="/img/tempo/dotted-eighth.svg">`;
+	} else if (beat === "eighth-dotted") {
+		// beat = "&#x266A;.";
+		beat = `<img style="${style}" src="/img/tempo/dotted-eighth.svg">`;
+	} else if (beat === "dotted-quarter") {
+		// beat = "&#x2669;.";
+		beat = `<img style="${style}" src="/img/tempo/dotted-quarter.svg">`;
+	} else if (beat === "quarter-dotted") {
+		// beat = "&#x2669;.";
+		beat = `<img style="${style}" src="/img/tempo/dotted-quarter.svg">`;
+	} else if (beat === "half") {
+		// beat = "&#x1D15E;";
+		beat = `<img style="${style}" src="/img/tempo/half.svg">`;
+	} else if (beat === "half-dotted") {
+		// beat = "&#x1D15E;.";
+		beat = `<img style="${style}" src="/img/tempo/dotted-half.svg">`;
+	} else if (beat === "dotted-half") {
+		// beat = "&#x1D15E;.";
+		beat = `<img style="${style}" src="/img/tempo/dotted-half.svg">`;
+	} else if (beat === "sixteenth") {
+		// beat = "&#x1D161;";
+		beat = `<img style="${style}" src="/img/tempo/sixteenth.svg">`;
+	} else if (beat === "dotted-sixteenth") {
+		beat = "&#x1D161;.";
+	} else if (beat === "sixteenth-dotted") {
+		beat = "&#x1D161;.";
+	} else if (beat === "half=dotted-half") {
+		beat = `<img style="${style}" src="/img/tempo/half.svg">&nbsp;=&nbsp;<img style="${style}" src="/img/tempo/dotted-half.svg">`;
+	} else if (beat === "dotted-half=half") {
+		beat = `<img style="${style}" src="/img/tempo/dotted-half.svg">&nbsp;=&nbsp;<img style="${style}" src="/img/tempo/half.svg">`;
+	} else if (beat.match(/dotted-half\s*=\s*half/)) {
+		beat = `<img style="${style}" src="/img/tempo/dotted-half.svg">&nbsp;=&nbsp;<img style="${style}" src="/img/tempo/half.svg">`;
+	} else if (beat === "half-dotted=half") {
+		beat = `<img style="${style}" src="/img/tempo/dotted-half.svg">&nbsp;=&nbsp;<img style="${style}" src="/img/tempo/half.svg">`;
+	} else if (beat === "triplet-quarter") {
+		beat = `<img style="${style}" src="/img/tempo/triplet-quarter.svg">`;
+	} else if (beat === "half+eighth") {
+		beat = `<img style="${style}" src="/img/tempo/half-eighth.svg">`;
+	} else if (beat === "dotted-quarter+dotted-eighth") {
+		beat = `<img style="${style}" src="/img/tempo/dotted-quarter-dotted-eighth.svg">`;
+	}
+
+	value = value.replace(/-/, "&ndash;", "g");
+
+	let output = `${beat}&nbsp;=&nbsp;${value}`;
+	if (bracket) {
+		// output = `[${output}]`;
+		output = `${output}`;
+	} else if (curley) {
+		output = `(${output})`;
+	}
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// doSearch --
+//
+
+function doSearch(text) {
+
+	if (!text) {
+		let element = document.querySelector("input#search");
+		text = element.value;
+	}
+
+	let entries = EXAMPLELIST;
+
+	let workQ = 0;
+	let selement = document.querySelector("#table-scope");
+	if (selement && selement.value === "work") {
+		// only show works, not examples
+		entries = WORKLIST;
+		workQ = 1;
+	}
+
+	let oldentries;
+	let datasetelement = document.querySelector("#dataset");
+	if (datasetelement) {
+		let dataset = datasetelement.value;
+		if (dataset != "") {
+			oldentries = entries;
+			entries = [];
+			let matches = dataset.match(/^(.)/);
+			let query = matches[1];
+			for (let i=0; i<oldentries.length; i++) {
+				if (workQ) {
+					testcompW = oldentries[i][INDEX_Work_Dataset];
+					testcompE = oldentries[i][INDEX_Example_Dataset];
+					if (testcompE === query) {
+						entries.push(oldentries[i]);
+						continue;
+					} else if ((query === "B") && (testcompW === "B")) {
+						entries.push(oldentries[i]);
+						continue;
+					}
+				} else {
+					let testcomp = oldentries[i][INDEX_Example_Dataset];
+					if ((testcomp === query) || (testcomp === "B")) {
+						entries.push(oldentries[i]);
+						continue;
+					}
+				}
+			}
+		}
+	}
+
+	let celement = document.querySelector("#composer");
+	let composer = "";
+	if (celement) {
+		composer = celement.value;
+	}
+	composer = composer.replace(/\s*,.*/, "");
+
+	let gelement = document.querySelector("#genre");
+	let genre = "";
+	let subgenre = ""
+	if (gelement) {
+		let m = gelement.value.match(/(.*)\/(.*)/);
+		if (m) {
+			genre = m[1];
+			subgenre = m[2];
+		} else {
+			genre = gelement.value;
+		}
+	}
+
+	genre = genre.replace(/\s+$/, "").replace(/^\s+/, "");
+	subgenre = subgenre.replace(/\s+$/, "").replace(/^\s+/, "");
+
+	text = text.trim();
+	text = escape(text);
+	text = text.replace(/%u0([A-F0-9][A-F0-9][A-F0-9])/g, "&#x$1;");
+	text = text.replace(/%u([A-F0-9][A-F0-9][A-F0-9][A-F0-9])/g, "&#x$1;");
+	text = text.replace(/%([A-F0-9][A-F0-9])/g, "&#x$1;");
+	text = text.replace(/\&#x([0-7][0-9A-F]);/g, "%$1");
+	text = unescape(text);
+	let fields = text.split(/\s+/);
+
+	// filter by composer if needed
+	if (composer) {
+		oldentries = entries;
+		entries = [];
+		let testcomp;
+		for (let i=0; i<oldentries.length; i++) {
+			testcomp = PreparePerson(oldentries[i][INDEX_Composer_Name]);
+			if (!testcomp) {
+				continue;
+			}
+			testcomp = testcomp.replace(/\s*,.*/, "");
+			if (testcomp === composer) {
+				entries.push(oldentries[i]);
+				continue;
+			}
+		}
+	}
+
+	// filter by genre/subgenre if needed
+	if (genre) {
+		oldentries = entries;
+		entries = [];
+		let greg = new RegExp(genre, "i");
+		let sgreg = new RegExp(subgenre, "i");
+		for (let i=0; i<oldentries.length; i++) {
+			if (oldentries[i][INDEX_Genre] && oldentries[i][INDEX_Genre].match(greg) &&
+			    oldentries[i][INDEX_Sub_Genre] && oldentries[i][INDEX_Sub_Genre].match(sgreg)) {
+				entries.push(oldentries[i]);
+			}
+		}
+	}
+
+	// Filter by "Start time signature" if needed
+	let tsigtype = document.querySelector("#tsigtype").value;
+	if (tsigtype) {
+		oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			if (tsigtype === "simple") {
+				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/simple/i)) {
+					entries.push(oldentries[i]);
+				}
+			} else if (tsigtype === "compound") {
+				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/compound/i)) {
+					entries.push(oldentries[i]);
+				}
+			} else if (tsigtype === "unequal") {
+				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/unequal/i)) {
+					entries.push(oldentries[i]);
+				}
+			} else if (oldentries[i][INDEX_Example_Start_Tsig_Type] === tsigtype) {
+				entries.push(oldentries[i]);
+			}
+		}
+	}
+
+	for (let i=0; i<fields.length; i++) {
+		if (fields[i].match(/^\s*$/)) {
+			continue;
+		}
+		oldentries = entries;
+		entries = [];
+		let regexp = new RegExp(fields[i], "i");
+		for (let j=0; j<oldentries.length; j++) {
+			if (CGI.f) {
+				if (oldentries[j][CGI.f] && oldentries[j][CGI.f].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
+			} else {
+				if (oldentries[j][INDEX_Work_Title] && oldentries[j][INDEX_Work_Title].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
+				if (oldentries[j][INDEX_Filename] && oldentries[j][INDEX_Filename].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
+
+			}
+		}
+
+	}
+
+	entries = searchByTempoBeat(entries);
+
+	entries = searchByTempoRange(entries);
+
+	entries = searchBySecondsRange(entries);
+
+	displayList(entries, null);
+}
+
+
+//////////////////////////////
+//
+// searchByTempoBeat --
+//
+
+function searchByTempoBeat(entries) {
+	let beat = document.querySelector("#tempobeat");
+	if (!beat) {
+		return entries;
+	}
+	let target = beat.value;
+	if (!target) {
+		return entries;
+	}
+
+	let newentries = [];
+	for (let i=0; i<entries.length; i++) {
+		let value = entries[i][INDEX_Example_Start_Notated_Beat];
+		if (!value) {
+			continue;
+		}
+		if (target === "other") {
+			if (value.match(/\+/)) {
+				newentries.push(entries[i]);
+			} else if (value.match(/trip/)) {
+				newentries.push(entries[i]);
+			}
+		} else {
+			let re = new RegExp("(?<!dotted-)" + target);
+			if (value.match(re)) {
+				if ((!value.match(/\+/)) && (!value.match(/trip/))) {
+					newentries.push(entries[i]);
+				}
+			}
+		}
+	}
+	entries = newentries;
+	return entries;	
+}
+
+
+
+//////////////////////////////
+//
+// searchByTempoRange --
+//
+
+function searchByTempoRange(entries) {
+	let mine = document.querySelector("#tempomin");
+	if (!mine) {
+		return entries;
+	}
+	let maxe = document.querySelector("#tempomax");
+	if (!mine) {
+		return entries;
+	}
+
+	let minvalue = mine.value;
+	let maxvalue = maxe.value;
+
+	let matches;
+	matches = minvalue.match(/(\d+)/);
+	if (matches) {
+		minvalue = parseInt(matches[1]);
+	}
+	matches = maxvalue.match(/(\d+)/);
+	if (matches) {
+		maxvalue = parseInt(matches[1]);
+	}
+	if (!minvalue) {
+		minvalue = maxvalue;
+	}
+	if (!maxvalue) {
+		maxvalue = minvalue;
+	}
+	if (minvalue > maxvalue) {
+		let tval = minvalue;
+		minvalue = maxvalue;
+		maxvalue = tval;
+	}
+	if ((!minvalue) && (!maxvalue)) {
+		return entries;
+	}
+	// console.log("SEARCHING FOR TEMPO RANGE", minvalue, maxvalue);
+
+	let output = [];
+	for (let i=0; i<entries.length; i++) {
+		let field = entries[i][INDEX_Example_Start_Notated_Beat_Rate];
+		if (!field) {
+			continue;
+		}
+
+		let matches = field.match(/(\d+)/g);
+		let inrange = 0;
+		if (matches) {
+			for (let j=0; j<matches.length; j++) {
+				let value = parseInt(matches[j]);
+				if ((value >= minvalue) && (value <= maxvalue)) {
+					inrange = 1;
+					break;
+				}
+			}
+		}
+
+		if (!inrange) {
+			// Check inside of tempo ranges:
+			matches = field.match(/(\d+-\d+)/g);
+			if (matches) {
+				for (let j=0; j<matches.length; j++) {
+					let matches2 = matches[j].match(/(\d+)-(\d+)/);
+					if (matches2) {
+						let value1 = parseInt(matches2[1]);
+						let value2 = parseInt(matches2[2]);
+						if ((minvalue >= value1) && (minvalue <= value2)) {
+							inrange = 1;
+							break;
+						}
+						if ((maxvalue >= value1) && (maxvalue <= value2)) {
+							inrange = 1;
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		if (inrange) {
+			output.push(entries[i]);
+		}
+	}
+
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// searchBySecondsRange --
+//
+
+function searchBySecondsRange(entries) {
+	let mine = document.querySelector("#secondsmin");
+	if (!mine) {
+		return entries;
+	}
+	let maxe = document.querySelector("#secondsmax");
+	if (!mine) {
+		return entries;
+	}
+
+	let minvalue = mine.value;
+	let maxvalue = maxe.value;
+
+	if ((minvalue === "") && (maxvalue === "")) {
+		return entries;
+	}
+
+	if (minvalue === "") {
+		minvalue = "1";
+	}
+	if (maxvalue === "") {
+		maxvalue = "9999999";
+	}
+	if (minvalue < 1) {
+		minvalue = "1";
+	}
+	if (maxvalue < 1) {
+		maxvalue = "9999999";
+	}
+
+
+	let matches;
+	matches = minvalue.match(/(\d+)/);
+	if (matches) {
+		minvalue = parseInt(matches[1]);
+	}
+	matches = maxvalue.match(/(\d+)/);
+	if (matches) {
+		maxvalue = parseInt(matches[1]);
+	}
+	if (!minvalue) {
+		minvalue = maxvalue;
+	}
+	if (!maxvalue) {
+		maxvalue = minvalue;
+	}
+	if (minvalue > maxvalue) {
+		let tval = minvalue;
+		minvalue = maxvalue;
+		maxvalue = tval;
+	}
+	if ((!minvalue) && (!maxvalue)) {
+		return entries;
+	}
+	console.log("SEARCHING FOR SECONDS RANGE", minvalue, maxvalue);
+
+	let output = [];
+	for (let i=0; i<entries.length; i++) {
+		let field = entries[i][INDEX_Example_Timestamp_Duration];
+		if (!field) {
+			continue;
+		}
+
+		let matches = field.match(/(\d+)/g);
+		let inrange = 0;
+		if (matches) {
+			for (let j=0; j<matches.length; j++) {
+				let value = parseInt(matches[j]);
+				if ((value >= minvalue) && (value <= maxvalue)) {
+					inrange = 1;
+					break;
+				}
+			}
+		}
+
+		if (!inrange) {
+			// Check inside of seconds ranges:
+			matches = field.match(/(\d+-\d+)/g);
+			if (matches) {
+				for (let j=0; j<matches.length; j++) {
+					let matches2 = matches[j].match(/(\d+)-(\d+)/);
+					if (matches2) {
+						let value1 = parseInt(matches2[1]);
+						let value2 = parseInt(matches2[2]);
+						if ((minvalue >= value1) && (minvalue <= value2)) {
+							inrange = 1;
+							break;
+						}
+						if ((maxvalue >= value1) && (maxvalue <= value2)) {
+							inrange = 1;
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		if (inrange) {
+			output.push(entries[i]);
+		}
+	}
+
+	return output;
+}
+
+
+
+//////////////////////////////
+//
+// reportMatches --
+//
+
+function reportMatches(list) {
+	let element = document.querySelector("#search-count");
+	if (!element) {
+		return;
+	}
+/*
+	if (list.length == METADATA.length) {
+		element.innerHTML = "";
+		return;
+	}
+*/
+	let output = "" + list.length;
+	if (list.length == 1) {
+		output += " entry";
+	} else {
+		output += " entries";
+	}
+	element.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// buildComposerSelect --
+//
+
+function buildComposerSelect(list, selector) {
+	let composers = {};
+	let composer;
+	for (let i=0; i<list.length; i++) {
+		composer = PreparePerson(list[i][INDEX_Composer_Name]);
+		composers[composer] = 1;
+	}
+	let clist = Object.keys(composers).sort();
+	let element = document.querySelector(selector);
+	if (!element) {
+		return;
+	}
+	let output = "";
+	output += "<option value=''>all composers</a>\n";
+	for (let i=0; i<clist.length; i++) {
+		if (!clist) {
+			continue;
+		}
+		output += "<option value='" + clist[i] + "'>" + clist[i] + "</option>\n";
+	}
+	element.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// buildGenreSelect --
+//
+
+function buildGenreSelect(list, selector) {
+	let genres = {};
+	let genre;
+	let subgenre;
+	for (let i=0; i<list.length; i++) {
+		genre = list[i][INDEX_Genre];
+		if (!genre) {
+			continue;
+		}
+		genre = genre.replace(/\s+$/, "").replace(/^\s+/, "");
+		if (list[i][INDEX_Sub_Genre]) {
+			subgenre = list[i][INDEX_Sub_Genre];
+			subgenre = subgenre.replace(/\s+$/, "").replace(/^\s+/, "");
+	 		genre += "/" + subgenre;
+		}
+		genres[genre] = 1;
+	}
+	let clist = Object.keys(genres).sort();
+	let element = document.querySelector(selector);
+	if (!element) {
+		return;
+	}
+	let output = "";
+	output += "<option value=''>all genres</a>\n";
+	let lastgenre = "";
+	for (let i=0; i<clist.length; i++) {
+		if (!clist[i]) {
+			continue;
+		}
+		let matches = clist[i].match(/([^\/]+)\/([^\/]+)/);
+		let subgenre = "";
+		if (matches) {
+			let g = matches[1];
+			subgenre = matches[2];
+			if (g != lastgenre) {
+				output += "<option value='" + g + "'>" + g + "</option>\n";
+				lastgenre = g;
+			}
+		}
+		output += "<option value='" + clist[i] + "'>" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + subgenre + "</option>\n";
+	}
+	element.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// buildTimeSignatureTypeSelect --
+//
+
+function buildTimeSignatureTypeSelect(list, selector) {
+	let types = {};
+	let tsigtype;
+	for (let i=0; i<list.length; i++) {
+		tsigtype = list[i][INDEX_Example_Start_Tsig_Type];
+		if (!tsigtype) {
+			continue;
+		}
+		tsigtype = tsigtype.replace(/\s+$/, "").replace(/^\s+/, "");
+		types[tsigtype] = 1;
+	}
+	let clist = Object.keys(types).sort();
+	let element = document.querySelector(selector);
+	if (!element) {
+		return;
+	}
+	let output = "";
+	output += "<option value=''>all time signature types</a>\n";
+
+	// do a fixed list of known categories
+	let fixed = [];
+	fixed.push("simple");
+	fixed.push("simple duple");
+	fixed.push("simple triple");
+	fixed.push("simple quadruple");
+	fixed.push("simple other");
+	fixed.push("compound");
+	fixed.push("compound duple");
+	fixed.push("compound triple");
+	fixed.push("compound quadruple");
+	fixed.push("compound other");
+	fixed.push("unequal");
+	fixed.push("unequal duple");
+	fixed.push("unequal triple");
+	fixed.push("changing");
+	fixed.push("polydurational");
+	fixed.push("polymetric");
+	fixed.push("unmetered");
+	fixed.push("unavailable");
+
+	let rfixed = {};
+	let prefix = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
+	for (let i=0; i<fixed.length; i++) {
+		if (fixed[i].match(/^\s*$/)) {
+			continue;
+		}
+		rfixed[fixed[i]] = 1;
+
+		let shortname = fixed[i];
+
+		let matches;
+		if (matches = shortname.match(/^\s*simple\s+(.+)\s*$/)) {
+			shortname = `${prefix}${matches[1]}`;
+		} else if (matches = shortname.match(/^\s*compound\s+(.+)\s*$/)) {
+			shortname = `${prefix}${matches[1]}`;
+		} else if (matches = shortname.match(/^\s*unequal\s+(.+)\s*$/)) {
+			shortname = `${prefix}${matches[1]}`;
+		}
+		output += "<option value='" + fixed[i] + "'>" + shortname + "</option>\n";
+	}
+
+	// Append all new time signature types (add to fixed order if not wanted at end of list):
+	for (let i=0; i<clist.length; i++) {
+		if (clist[i].match(/^\s*$/)) {
+			continue;
+		}
+		if (rfixed[clist[i]]) {
+			continue;
+		}
+		let shortname = clist[i];
+
+		let matches;
+		if (matches = shortname.match(/^\s*simple\s+(.+)\s*$/)) {
+			shortname = `${prefix}${matches[1]}`;
+		} else if (matches = shortname.match(/^\s*compound\s+(.+)\s*$/)) {
+			shortname = `${prefix}${matches[1]}`;
+		} else if (matches = shortname.match(/^\s*unequal\s+(.+)\s*$/)) {
+			shortname = `${prefix}${matches[1]}`;
+		}
+		output += "<option value='" + clist[i] + "'>" + shortname + "</option>\n";
+	}
+
+	element.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// buildTempoBeatSelect --
+//
+
+function buildTempoBeatSelect(list, selector) {
+	let types = {};
+	let tempobeat;
+	for (let i=0; i<list.length; i++) {
+		tempobeat = list[i][INDEX_Example_Start_Notated_Beat];
+		if (!tempobeat) {
+			continue;
+		}
+		tempobeat = tempobeat.replace(/\s+$/, "").replace(/^\s+/, "");
+		types[tempobeat] = 1;
+	}
+	let clist = Object.keys(types).sort();
+	let element = document.querySelector(selector);
+	if (!element) {
+		return;
+	}
+	let output = "";
+	output += "<option value=''>all tempo beat types</a>\n";
+
+	// do a fixed list of known categories
+	let fixed = [];
+	fixed.push("quarter");
+	fixed.push("dotted-quarter");
+	fixed.push("half");
+	fixed.push("dotted-half");
+	fixed.push("eighth");
+	fixed.push("dotted-eighth");
+	fixed.push("sixteenth");
+	fixed.push("other");
+	fixed.push("unavailable");
+
+	let rfixed = {};
+	let prefix = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
+	for (let i=0; i<fixed.length; i++) {
+		if (fixed[i].match(/^\s*$/)) {
+			continue;
+		}
+		rfixed[fixed[i]] = 1;
+
+		let shortname = fixed[i];
+		output += "<option value='" + fixed[i] + "'>" + shortname + "</option>\n";
+	}
+
+	// Append all new time signature types (add to fixed order if not wanted at end of list):
+	for (let i=0; i<clist.length; i++) {
+		let item = clist[i].replace(/[{}]/g, "");
+		let items = item.split(/\s*;\s*/);
+		for (let j=0; j<items.length; j++) {
+			let item = items[j].replace(/[[]/g, "");
+			item = item.replace(/[\]]/g, "");
+			item = item.replace(/[{}]/g, "");
+			item = item.replace(/[\(\)]/g, "");
+			if (item.match(/\+/)) {
+				item = "other";
+			}
+			if (item.match(/trip/)) {
+				item = "other";
+			}
+			if (item.match(/=/)) {
+				continue;
+			}
+			if (item.match(/^\s*$/)) {
+				continue;
+			}
+			if (rfixed[item]) {
+				continue;
+			}
+			let shortname = item;
+			output += "<option value='" + item + "'>" + shortname + "</option>\n";
+		}
+	}
+
+	element.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// clearSearchFields --
+//
+
+function clearSearchFields() {
+	console.log("CLEARING");
+
+	let list = document.querySelectorAll("td select");
+	for (let i=0; i<list.length; i++) {
+		console.log("SETTING VALUE FOR LIST", list[i]);
+		list[i].selectedIndex = 0;
+	}
+
+	let inputs = document.querySelectorAll("td input");
+	for (let i=0; i<inputs.length; i++) {
+		console.log("SETTING VALUE FOR INPUT", inputs[i]);
+		inputs[i].value = "";
+	}
+
+	doSearch();
+}
+
+
+</script>
+
+
+
+

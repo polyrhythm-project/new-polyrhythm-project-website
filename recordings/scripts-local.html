@@ -323,6 +323,9 @@ function generateWorkEntry(entry) {
 		let id = "";
 		if (typeof INDEX_Suter_Example_Number != "undefined") {
 			id = entry[i][INDEX_Suter_Example_Number];
+		} 
+		if (!id) {
+			continue;
 		}
 		id = id.replace(/^[A-Z][a-z][a-z]-\d+\//, "");
 		let filename = entry[i]["Filename"];

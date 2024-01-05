@@ -1,18 +1,15 @@
 ---
-title: Polyrhythm Composers
+title: Maps
 author: Craig Stuart Sapp
 keywords: List of composers
 permalink: /maps/index.html
 vim: ts=3
-template: default
-summary: 
+layout: subpage
+summary: List of maps for displaying Polyrhythm Project examples by composer, premier, and composition date.
 ---
 
 {% include_relative styles-local.html %}
 {% include_relative scripts-local.html %}
-
-
-# Maps #
 
 
 The Suter (1980) Corpus is represented by three interactive maps:
@@ -26,8 +23,6 @@ The Suter (1980) Corpus is represented by three interactive maps:
 
 ## How to use the maps ##
 
-NOTE: These maps are preliminary versions of the final maps, which are still under development.
-
 There are many ways to interact with the maps. You can zoom in and
 out to regions of interest or use the search box on the lower
 left-hand side to instantly zoom to a location. You can then click
@@ -35,14 +30,18 @@ on points the map to reveal more information. For example, clicking
 on a point on the "Composers" map will show you the composer,
 country, city, and date of birth or death associated with the
 location. Clicking on a point on the "Corpus" or "Timeline" will
-bring up information about the work, from year of
-composition, to who was the conductor at the premiere, and even the
-venue where it was premiered! You can then look for the score and
-recording (if available) of the examples using the search boxes on the "Home" page.
+bring up information about the work, from year of composition, to
+who was the conductor at the premiere, and even the venue where it
+was premiered! You can then look for the score and recording (if
+available) of the examples using the search boxes on the "Home"
+page.
 
 On the right-hand side of each map, you will find filters to control
-what is displayed on the map. For example, on the "Composers" map, you can choose to show
-only certain composer(s). The slider on the "Timeline" map allows you to select a specific time range for premiered works. The diagram above the slider gives an overview of premiered works by decade,
+what is displayed on the map. For example, on the "Composers" map,
+you can choose to show only certain composer(s). The slider on the
+"Timeline" map allows you to select a specific time range for
+premiered works. The diagram above the slider gives an overview of
+premiered works by decade,
 
 
 <div style="height:100px"></div>
