@@ -17,8 +17,8 @@ summary:
 <table>
 <tbody>
   <tr>
-  <td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (submitted). The cognitive, affective, and motoric correlates of rhythmic complexity. <em>Journal of New Music Research</em>, 25 May, 2023. </p></td>
-    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1DyjhgFFp4PJ5JkLdqeoCQZPv1iUl3Fg2/view?usp=drive_link" target="_blank">PDF</a></td>
+  <td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (in review). The cognitive, affective, and motoric correlates of rhythmic complexity. <em>Journal of New Music Research</em>, February 2023. </p></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1nrY5AZKp3PjDek3Z7Ik62JFv4k9QFyV-/view?usp=drive_link" target="_blank">PDF</a></td>
     </tr>
 </tbody>
 </table>
