@@ -37,7 +37,7 @@ href="https://drive.google.com/file/d/19Km_KestTUtINxsNwtioNA9IWRjvw74q/view?usp
 <table>
 <tbody>
 <tr>
-    <td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (2018). Modeling rhythmic complexity in a corpus of polyrhythm examples from Europe and America, 1900-1950. In <em>Proceedings of the 15th International Conference on Music Perception and Cognition and the 10th Conference of the European Society for the Cognitive Sciences of Music Conference</em> (Eds. R. Parncutt & S. Sattmann), Montreal (QC), Canada, 23-28 July 2018, pp. 355-360.</p></td>
+    <td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (2018). Modeling rhythmic complexity in a corpus of polyrhythm examples from Europe and America, 1900-1950. In R. Parncutt & S. Sattmann (EDs.), <em>Proceedings of the 15th International Conference on Music Perception and Cognition and the 10th Conference of the European Society for the Cognitive Sciences of Music Conference, Montreal, Canada, 23-28 July 2018.</em> </p></td>
     <td class="topalign"><a class="buttonlink" href="https://static.unigraz.at/fileadmin/veranstaltungen/music-psychology-conference2018/documents/ICMPC15_ESCOM10%20Proceedings.pdf" target="_blank">PDF</a></td>
   </tr>
 <tr>
