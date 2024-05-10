@@ -24,7 +24,8 @@ summary:
 
 <tr>
   <td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (in review). Listeners’ perceived emotions using synthetic and pitch-randomized music excerpts. <em>Empirical Musicology Review</em, May 3, 2024. </p></td>
-    <td class="topalign"><a class="https://drive.google.com/file/d/19Km_KestTUtINxsNwtioNA9IWRjvw74q/view?usp=drive_link" target="_blank">PDF</a></td>
+    <td class="topalign"><a class="buttonlink" 
+href="https://drive.google.com/file/d/19Km_KestTUtINxsNwtioNA9IWRjvw74q/view?usp=drive_link" target="_blank">PDF</a></td>
     </tr>
     
      <tr>
@@ -83,18 +84,19 @@ summary:
 	
 <table>
 <tbody>
-  <tr>
-    <td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, Y. H., &amp; Sapp, C. S.  The influence of dissonance and register on listeners’ perceived emotions in rhythmically complex music.</p></td>
+
+ <tr>
+    <td class="topalign"><p>Poudrier, È. Perceived musical qualities of rhythmically complex musical excerpts.</p></td>
   </tr>
-  <tr>
-    <td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, Y. H., &amp; Sapp, C. S. Listeners’ perceived emotions in ordered vs. randomized musical excerpts.</p></td>
-  </tr>
+  
   <tr>
     <td class="topalign"><p>Poudrier, È. Polyrhythm classification using the <em>composite</em> tool.</p></td>
   </tr>
+  
   <tr>
     <td class="topalign"><p>Poudrier, È. &amp; Sapp, C. S. Polyrhythm in the works of twenty composers from Western Europe to North America, 1900-1950: <em>The Suter (1980) Corpus.</em></p></td>
   </tr>
+  
 </tbody>
 </table>
 
