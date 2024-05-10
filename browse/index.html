@@ -13,8 +13,33 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/styles.css?ver=1.08" rel="stylesheet">
+    <!-- Add bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body class="d-flex flex-column h-100">
+
+
+<style>
+/* Help button styling */
+
+.question-button i {
+    font-size: 24px;
+    color: black;
+}
+.question-button {
+    background-color: #cfdfda; /* Adjust color to match the 'Clear' button, this is default for btn-secondary */
+    border-color: #cfdfda; /* Ensure the border color matches if it is visible */
+}
+.question-button:hover {
+	background-color: #efefef !important;
+	border-color: #efefef !important;
+}
+</style>
+
+
+
+
     <main class="flex-shrink-0">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-xl navbar-dark sticky-top">
@@ -78,9 +103,22 @@
                             <input type="search" id="form1" class="form-control" placeholder="Search" aria-label="Search..." />
                         </div>
                     </div>
+
+			<div class="col-3 col-sm-2 mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+  			      <!-- Adjusted Clear Button -->
+ 			       <input class="btn btn-secondary btn-primary-light" type="reset" value="Clear" style="flex-grow: 1;">
+    			    	<!-- New Question Button -->
+				<button type="button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse';">
+    					<i class="bi bi-question-lg"></i>
+				</button>
+			    </div>
+
+<!--
                     <div class="col-3 col-sm-2 mb-3 d-grid gap-2">                       
                         <input class="btn btn-secondary btn-primary-light" type="reset" value="Clear">                     
                     </div>
+-->
+
                 </div>
                 <!-- Dropdowns -->
                 <div class="row">
@@ -705,5 +743,6 @@
             });
         }
     </script>
+
 </body>
 </html>
