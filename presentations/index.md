@@ -18,8 +18,7 @@ summary:
 <tbody>
   <tr>
     <td class="topalign">
-	<p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czech Republic.</p>
-    </td>
+	<p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czechia.</p></td>
     <td class="topalign"> <a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td>
     <td class="topalign"></td>
   </tr>
@@ -31,13 +30,13 @@ summary:
   </tr>
   <tr>
     <td class="topalign">
-	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, July 29). The cognitive and affective correlates of rhythmic complexity. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> 16th International Conference on Music Perception and Cognition and 11th Triennial Conference of the European Society for the Cognitive Sciences of Music</a>, United Kingdom Hub.</p></td>
+	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, July 29). The cognitive and affective correlates of rhythmic complexity. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">16<sup>th</sup> International Conference on Music Perception and Cognition and 11th Triennial Conference of the European Society for the Cognitive Sciences of Music</a>, United Kingdom Hub.</p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1VjE2k70_8pjUPDY7vlREcX54J6QNdqF5/view?usp=sharing" target="_blank">Slides</a></td>
     <td class="topalign"><a class="buttonlink" href="https://www.youtube.com/watch?v=A8lk36AlfPYforth" target="_blank">Video</a></td>
   </tr>
   <tr>
     <td class="topalign">
-	  <p>Konik, M., Poudrier, È., Ricciardi, E., Rodin, J., Sapp, C. S., &amp; Shanahan, D. (2020, October 29–31). Collaborative building of digital tools for music scholarship. <a href="https://dhconference.sites.olt.ubc.ca/" target="_blank">Collaboration: A Digital Humanities Conference</a>, University of British Columbia, Vancouver, Canada, 29-31 October 2020.</p></td>
+	  <p>Konik, M., Poudrier, È., Ricciardi, E., Rodin, J., Sapp, C. S., &amp; Shanahan, D. (2020, October 29–31). Collaborative building of digital tools for music scholarship. <a href="https://dhconference.sites.olt.ubc.ca/" target="_blank">Collaboration: A Digital Humanities Conference</a>, University of British Columbia, Vancouver, Canada.</p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1ZAHgiFMKfO8MBrqthm0JXpys1I02m4Dt/view?usp=sharing" target="_blank">Slides</a></td>
     <td class="topalign"></td>
   </tr>
@@ -64,7 +63,7 @@ summary:
 <tbody>
   <tr>
     <td class="topalign">
-	  <p>Poudrier, È. (2021, JUune 2). Polyrhythm perception and action: A tool for community building. “Wellness Wednesdays,” Brain Wellness Program, Djavad Mowafaghian Centre for Brain Health, University of British Columbia, Vancouver, Canada.</p></td>
+	  <p>Poudrier, È. (2021, June 2). Polyrhythm perception and action: A tool for community building. “Wellness Wednesdays,” Brain Wellness Program, Djavad Mowafaghian Centre for Brain Health, University of British Columbia, Vancouver, Canada.</p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/19-mLwjCVCP0HeCA4A-9R3SHFgpKstlrV/view?usp=sharing" target="_blank">Slides</a></td>
     <td class="topalign"></td>
   </tr>
@@ -76,7 +75,7 @@ summary:
   </tr>
   <tr>
     <td class="topalign">
-	  <p>Poudrier, È. (2021, March 18). Rhythm Computation &amp; Cognition Lab: Polyrhythmic experience.” “<a href="https://www.ubcmusicinitiative.com/pastevents" target="_blank">UBC Music Initiative Workshop Series</a>,” University of British Columbia, Vancouver, Canada.</p></td>
+	  <p>Poudrier, È. (2021, March 18). Rhythm Computation &amp; Cognition Lab: Polyrhythmic experience.<a href="https://www.ubcmusicinitiative.com/pastevents" target="_blank">UBC Music Initiative Workshop Series</a>,” University of British Columbia, Vancouver, Canada.</p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1ZXXPwhUyN3XTEqqRLfAmBLWyAJa6eFte/view?usp=sharing" target="_blank">Slides</a></td>
     <td class="topalign"></td>
   </tr>
@@ -88,8 +87,8 @@ summary:
   </tr>
   <tr>
     <td class="topalign">
-	  <p>Sapp, C. S. (2018, August 15). UBC Rhythm Research Cluster Workshop: Music as text: Search and analysis of digital 
-musical scores. Irving K. Barber Learning Centre, University of British Columbia, Vancouver, 
+	  <p>Sapp, C. S. (2018, August 15). Music as text: Search and analysis of digital 
+musical scores. UBC Rhythm Research Cluster Workshop, Irving K. Barber Learning Centre, University of British Columbia, Vancouver, 
 Canada.</p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/110XHF65iLDLn1yqO6CUlQEk1BosQURX8/view?usp=sharing" target="_blank">Slides</a></td>
     <td class="topalign"></td>
