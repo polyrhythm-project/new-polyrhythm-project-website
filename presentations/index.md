@@ -18,11 +18,8 @@ summary:
 <tbody>
   <tr>
     <td class="topalign">
-	<p>Poudrier, È. &amp; Sapp, C. <a href="https://dl.acm.org/doi/10.1145/3543882.3543890" target="_blank">“Polyrhythm analysis using the <em>composite</em> tool.”</a> <a href="https://dlfm.web.ox.ac.uk/" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czech Republic, 28 July 2022.</p>
-	<blockquote>
-		<p>ABSTRACT: We introduce a computational tool that allows comparison and classification of polyrhythms in notated music. By reducing different musical textures into unpitched rhythmic strands, the composite tool enables visualization of the rhythmic reductions and computation of features related to polyrhythmic design, such as event density, nestedness, and polarity. The visualizations and extracted data can then be used to compare polyrhythms within a specific repertoire or between music in contrasting styles. The composite tool is available for online or offline use and is incorporated into the Polyrhythm Project website for exploration of polyrhythmic examples from the Suter (1980) Corpus.</p>
-	</blockquote></td>
-    <td class="topalign"></td>
+	<p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. </a> <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czech Republic.</p>
+    <td class="topalign"></td> <a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td>
     <td class="topalign"></td>
   </tr>
   <tr>
