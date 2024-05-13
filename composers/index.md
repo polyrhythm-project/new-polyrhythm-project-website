@@ -8,7 +8,7 @@ layout: subpage
 summary: 
 ---
 
-Here is a list of composers represented in the Polyrhythm dataset.  Click on a table heading to 
+Here is a list of composers represented in the Suter (1980) corpus.  Click on a table heading to 
 sort the list by that column.
 
 <div style="margin-bottom:50px; margin-top:20px;" id="list"></div>
