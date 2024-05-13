@@ -18,7 +18,7 @@ summary:
 <tbody>
   <tr>
     <td class="topalign">
-	<p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. </a> <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czech Republic.</p>
+	<p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czech Republic.</p>
     <td class="topalign"></td> <a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td>
     <td class="topalign"></td>
   </tr>
