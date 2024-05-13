@@ -24,7 +24,7 @@ summary:
   </tr>
   <tr>
     <td class="topalign">
-	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://musicdynamicslab.uconn.edu/home/nest/" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>, University of Connecticut, Storrs, United States.</p></td>
+	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>, University of Connecticut, Storrs, United States.</p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/17_VwWnLdMX-2sJrk1UwxWz2FJo7fQ5bT/view?usp=sharing" target="_blank">Slides</a></td>
     <td class="topalign"></td>
   </tr>
