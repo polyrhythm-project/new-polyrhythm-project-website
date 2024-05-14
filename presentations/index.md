@@ -4,12 +4,9 @@ author:
 keywords: List of Presentations 
 permalink: /presentations/index.html
 vim: ts=3
-layout: subpage
+layout: default
 summary: 
 ---
-
-{% include_relative styles-local.html %}
-{% include_relative scripts-local.html %}
 
 
 ## Conference Presentations ##

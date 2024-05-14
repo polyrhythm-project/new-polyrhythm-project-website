@@ -1,15 +1,12 @@
 ---
 title: People
-author: 
+author: Jason Lee
 keywords: people
 permalink: /people/index.html
 vim: ts=3
-layout: subpage
+layout: default
 summary: 
 ---
-
-{% include_relative styles-local.html %}
-{% include_relative scripts-local.html %}
 
 
 ## Current Members ##
@@ -134,5 +131,6 @@ Shanahan’s research interests include music and emotion, the diffusion of musi
 **Jasper Yoo**, BS (life science, statistics, earth, and environmental sciences), research assistant (metadata), 2017–2019
 
 **Isaac Zee**, MA (composition), transcriber (music data), 2019–2020
+
 
 

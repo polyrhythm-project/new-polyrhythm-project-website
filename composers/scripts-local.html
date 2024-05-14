@@ -18,7 +18,7 @@ function displayComposerList() {
 	}
 
 	var composerinfo = CreateComposerList(WORKLIST);
-	console.log("COMPOSER LIST", composerinfo);
+	// console.log("COMPOSER LIST", composerinfo);
 
 	var output = "";
 
@@ -105,6 +105,9 @@ function makeComposerRow(centry) {
 
 	// Nationality:
 	var nationality = getNationality(centry);
+	if (nationality) {
+		nationality = nationality.replace(/,\s*/, ", ", "g");
+	}
 	output += "<td>";
 	if (nationality) {
 		output += nationality;

@@ -4,7 +4,7 @@ author:
 keywords: corpus
 permalink: /corpus/index.html
 vim: ts=3
-layout: subpage
+layout: default
 summary: 
 ---
 

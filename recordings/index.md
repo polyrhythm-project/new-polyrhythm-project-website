@@ -4,7 +4,7 @@ author: Craig Stuart Sapp
 keywords: List of recordings
 permalink: /recordings/index.html
 vim: ts=3
-layout: subpage
+layout: default
 summary: 
 ---
 

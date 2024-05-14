@@ -50,3 +50,20 @@ kramdown:
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
 
 
+# Disable metadata
+exclude:
+  - "jekyll-github-metadata"
+
+github:
+  repository: polyrhythm-project/rds-scores
+
+# Spreadsheet macro ID for polyrhythm metadata:
+metadata_sid: 17rjKQ3lXJHEHAcDfOXTDNX5a0A_jVqwokcaqhd3Ddng
+
+# Group ID for polyrhythm metadata (worksheet ID):
+metadata_gid: 900860769
+
+
+
+
+

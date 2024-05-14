@@ -1,11 +1,23 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon May 13 15:33:16 PDT 2024
+// Last Modified: Mon May 13 15:33:19 PDT 2024
+// Filename:      composers/listeners.html
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   Setup javascript code for composers webpage.  Contains
+//                global variable and listeners for the page.
+//
+{% endcomment %}
+
 
 <script>
-// vim: ts=3
 
-var CGI = {};      // CGI parameters from URL
+var CGI        = {};      // CGI parameters from URL
+var WORKLIST   = [];
 var SORTCOLUMN = 0;
-// var EXAMPLELIST = [];
-var WORKLIST = [];
+var SORTORDER  = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 
 //////////////////////////////
@@ -16,16 +28,9 @@ var WORKLIST = [];
 document.addEventListener("DOMContentLoaded", function () {
 	CGI = GetCgiParameters();
 
-	var element = document.querySelector("input#search");
-	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
-	}
-
 	// Create URL for metadata index to download:
-	var sid = "17rjKQ3lXJHEHAcDfOXTDNX5a0A_jVqwokcaqhd3Ddng";
-	var gid = "900860769";
+	var sid = {{site.metadata_sid}}
+	var gid = {{site.metadata_gid}}
 	var url = "https://docs.google.com/spreadsheets/d/";
 	url += sid + "/export?gid=" + gid + "&format=tsv";
 

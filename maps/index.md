@@ -4,13 +4,9 @@ author: Craig Stuart Sapp
 keywords: List of composers
 permalink: /maps/index.html
 vim: ts=3
-layout: subpage
-summary: List of maps for displaying Polyrhythm Project examples by composer, premier, and composition date.
+layout: default
+summary: List of maps for displaying Polyrhythm Project examples by composer, premiere, and composition date.
 ---
-
-{% include_relative styles-local.html %}
-{% include_relative scripts-local.html %}
-
 
 The Suter (1980) Corpus is represented by three interactive maps:
 

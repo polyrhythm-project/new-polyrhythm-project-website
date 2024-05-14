@@ -4,7 +4,7 @@ author:
 keywords: List of research
 permalink: /publications/index.html
 vim: ts=3
-layout: subpage
+layout: default
 summary: 
 ---
 

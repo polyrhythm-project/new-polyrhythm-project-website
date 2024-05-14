@@ -4,7 +4,7 @@ author:
 keywords: documentation
 permalink: /doc/index.html
 vim: ts=3
-layout: subpage
+layout: default
 summary: 
 ---
 

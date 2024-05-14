@@ -4,7 +4,7 @@ author: Ève Poudrier
 keywords: Updates for the Polyrhythm Project
 permalink: /updates/index.html
 vim: ts=3
-layout: subpage
+layout: default
 summary: Updates for the Polyrhythm Project
 ---
 
