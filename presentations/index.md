@@ -38,7 +38,7 @@ summary:
   
   <tr>
     <td class="topalign">
-	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, July 29). The cognitive and affective correlates of rhythmic complexity. <a href=" https://icmpc2021.sites.sheffield.ac.uk/" target="_blank">16<sup>th</sup> International Conference on Music Perception and Cognition and 11th Triennial Conference of the European Society for the Cognitive Sciences of Music</a>, United Kingdom Hub.</p></td>
+	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, July 29). The cognitive and affective correlates of rhythmic complexity. <a href="https://icmpc2021.sites.sheffield.ac.uk/" target="_blank">16<sup>th</sup> International Conference on Music Perception and Cognition and 11th Triennial Conference of the European Society for the Cognitive Sciences of Music</a>, United Kingdom Hub.</p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1VjE2k70_8pjUPDY7vlREcX54J6QNdqF5/view?usp=sharing" target="_blank">Slides</a></td>
     <td class="topalign"><a class="buttonlink" href="https://www.youtube.com/watch?v=A8lk36AlfPYforth" target="_blank">Video</a></td>
   </tr>
