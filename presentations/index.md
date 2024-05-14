@@ -16,10 +16,17 @@ summary:
 	
 <table>
 <tbody>
+	
+<tr>
+    <td class="topalign">
+	  <p>Poudrier, È. (2023, October 12). Polyrhythm classification using the <em>composite</em> tool.<a href="https://www.uc.pt/ceis20/musica-analitica-2023/" target="_blank">2<sup>nd</sup> International Conference Música Analítica: Interdisciplinary Approachesto Musical Time. University of Coimbra, Coimbra, Portugal.</p></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td><a class="buttonlink" href="https://drive.google.com/file/d/1l4--rtXTRjKaT7Ifrx15R5QeI4OiHJGA/view?usp=drive_link" target="_blank">Slides</a></td>
+    <td class="topalign"> </td>
+  </tr>
   <tr>
     <td class="topalign">
 	<p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czechia.</p></td>
-    <td class="topalign"> <a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td><td class="topalign"></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a</td>
   </tr>
 	
   <tr>
