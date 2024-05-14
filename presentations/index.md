@@ -16,7 +16,14 @@ summary:
 	
 <table>
 <tbody>
-	
+
+<tr>
+    <td class="topalign">
+	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>. University of Connecticut, Storrs, United States.</p></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td><a class="buttonlink" href="https://drive.google.com/file/d/17_VwWnLdMX-2sJrk1UwxWz2FJo7fQ5bT/view?usp=sharing" target="_blank">Slides</a></td> 
+    <td> class="topalign"></td>
+  </tr>
+  
 <tr>
     <td class="topalign">
 	  <p>Poudrier, È. (2023, October 12). Polyrhythm classification using the <em>composite</em> tool. <a href="https://www.uc.pt/ceis20/musica-analitica-2023/" target="_blank">2<sup>nd</sup> International Conference Música Analítica: Interdisciplinary Approachesto Musical Time</a>. University of Coimbra, Coimbra, Portugal.</p></td>
@@ -26,16 +33,16 @@ summary:
   
   <tr>
     <td class="topalign">
-	<p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czechia.</p></td>
+	<p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>. Municipal Library, Prague, Czechia.</p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td>
-	<td class="topalign"> </td>
+	  <td class="topalign"></td>
 </tr>
 	
 <tr>
     <td class="topalign">
-	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>, University of Connecticut, Storrs, United States.</p></td>
-    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td><a class="buttonlink" href="https://drive.google.com/file/d/17_VwWnLdMX-2sJrk1UwxWz2FJo7fQ5bT/view?usp=sharing" target="_blank">Slides</a></td>
-    <td class="topalign"> </td>
+	  <p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>. University of Connecticut, Storrs, United States.</p></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td><a class="buttonlink" href="https://drive.google.com/file/d/17_VwWnLdMX-2sJrk1UwxWz2FJo7fQ5bT/view?usp=sharing" target="_blank">Slides</a></td> 
+    <td> class="topalign"></td>
   </tr>
   
   <tr>
@@ -48,7 +55,7 @@ summary:
   <tr>
     <td class="topalign">
 	  <p>Konik, M., Poudrier, È., Ricciardi, E., Rodin, J., Sapp, C. S., &amp; Shanahan, D. (2020, October 29–31). Collaborative building of digital tools for music scholarship. <a href="https://dhconference.sites.olt.ubc.ca/conference-info/program/" target="_blank">Collaboration: A Digital Humanities Conference</a>, University of British Columbia, Vancouver, Canada.</p></td>
-    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1ZAHgiFMKfO8MBrqthm0JXpys1I02m4Dt/view?usp=sharing" target="_blank">Slides</a></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1ZAHgiFMKfO8MBrqthm0JXpys1I02m4Dt/view?usp=drive_link" target="_blank">Slides</a></td>
     <td class="topalign"><a class="buttonlink" href="https://youtu.be/zXxe7F5G3qM?si=ybqM4HaEa8LhoD-s" target="_blank">Video</a></td>
   </tr>
   
