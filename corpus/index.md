@@ -8,9 +8,6 @@ layout: default
 summary: 
 ---
 
-{% include_relative styles-local.html %}
-{% include_relative scripts-local.html %}
-
 
 <table>
 <tbody>

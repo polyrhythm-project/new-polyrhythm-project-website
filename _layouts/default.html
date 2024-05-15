@@ -1,0 +1,35 @@
+{%- comment -%}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon May 13 13:43:27 PDT 2024
+// Last Modified: Mon May 13 13:43:30 PDT 2024
+// Filename:      _layouts/default.html
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   This is the default layout for most website pages
+//                other than the homepage (which uses homepage.html).
+//
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include layout/head/default.html %}
+	</head>
+	<body class="d-flex flex-column h-100">
+		<main class="flex-shrink-0">
+			{% include layout/navigation/main.html %}
+			{% include layout/header/main.html %}
+			<section>
+				<div class="container">
+					{{ content }}
+				</div>
+			</section>
+		</main>
+		{% include layout/footer/main.html %}
+		{% include layout/feedback/main.html %}
+		{% include layout/bottom/main.html %}
+		</body>
+</html>
+
+
+

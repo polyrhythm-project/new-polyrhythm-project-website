@@ -1,0 +1,64 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon May 13 15:19:40 PDT 2024
+// Last Modified: Mon May 13 15:19:43 PDT 2024
+// Filename:      _includes/feedback/main.html
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   This piece of HTML code is used to create the
+//                feedback tab on the right sides of webpages.
+//
+{% endcomment %}
+
+
+<!-- Feedback -->
+<div class="feedback">
+	<button type="button" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+		<span><i class="bi bi-chat-dots" role="none"></i>Feedback</span>
+	</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="feedbackModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h2 class="modal-title">Feedback</h2>
+				<input type="button" class="btn-close" value="·" data-bs-dismiss="modal">
+			</div>
+			<!-- Modal body -->
+			<div class="modal-body">
+				<form>
+					<div class="row">
+						<div class="col">
+							<p>Please provide your feedback in the form below.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<label class="form-label" for="feedback_name">Your Name</label>
+							<input type="text" required name="name" class="form-control" id="feedback_name" aria-label="Your Name">
+						</div>
+						<div class="col mb-4">
+							<label class="form-label" for="feedback_email">Email</label>
+							<input type="email" name="email" required class="form-control" id="feedback_email" aria-label="Email">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="feedback_comments">Add your comment about our website</label>
+						<textarea class="form-control" id="feedback_comments" rows="5"></textarea>
+					</div>
+				</form>
+			</div>
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

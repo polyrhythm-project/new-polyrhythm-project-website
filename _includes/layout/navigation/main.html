@@ -1,0 +1,55 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon May 13 13:47:43 PDT 2024
+// Last Modified: Mon May 13 13:47:46 PDT 2024
+// Filename:      _includes/navigation/main.html
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   This piece of HTML code is used to create the
+//                to navigation header on default layout pages.
+//
+{% endcomment %}
+
+
+<nav class="navbar navbar-expand-xl navbar-dark sticky-top">
+	<div class="container-fluid px-sm-4 px-lg-5">
+		<a class="navbar-brand" href="/index.html">POLYRHYTHM<span>PROJECT</span></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdownAbout" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAbout">
+						<li><a class="dropdown-item" href="/overview">Overview</a></li>
+						<li><a class="dropdown-item" href="/people">People</a></li>
+						<li><a class="dropdown-item" href="/doc">Documentation</a></li>
+						<li><a class="dropdown-item" href="/corpus">Corpus</a></li>
+					</ul>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/browse">Browse</a></li>
+				<li class="nav-item"><a class="nav-link" href="/composers">Composers</a></li>
+				<li class="nav-item"><a class="nav-link" href="/maps">Maps</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdownResearch" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Research</a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownResearch">
+						<li><a class="dropdown-item" href="/publications">Publications</a></li>
+						<li><a class="dropdown-item" href="/presentations">Presentations</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdownSources" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sources</a>
+					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownSources">
+						<li><a class="dropdown-item" href="/scores">Scores</a></li>
+						<li><a class="dropdown-item" href="/recordings">Recordings</a></li>
+					</ul>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Participate</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+

@@ -1,10 +1,13 @@
 ---
+title: How to use
+layout: default
+permalink: /howtouse/index.html
 ---
-
-# How to use
 
 ## Browse
 
-Goes here.
+Browse documentaion goes here.
+
+<div style="height:300px"></div>
 
 

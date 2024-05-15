@@ -1,0 +1,31 @@
+{%- comment -%}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon May 13 21:41:47 PDT 2024
+// Last Modified: Mon May 13 21:41:51 PDT 2024
+// Filename:      _layouts/homepage.html
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   This is the default layout for the homepage.
+//
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{%include layout/head/homepage.html %}
+	</head>
+	<body class="d-flex flex-column h-100">
+		<a href="#main" class="skip-to-main-content-link">Skip to main content</a>
+		{% include layout/navigation/homepage.html %}
+		<main class="flex-shrink-0" id="main">
+			{% include layout/header/homepage.html %}
+			{{content}}
+		</main>
+		{% include layout/footer/main.html %}
+		{% include layout/feedback/main.html %}
+		{% include layout/bottom/main.html %}
+	</body>
+</html>
+
+
+

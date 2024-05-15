@@ -1,0 +1,32 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon May 13 15:18:42 PDT 2024
+// Last Modified: Mon May 13 15:18:44 PDT 2024
+// Filename:      _includes/bottom/main.html
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   This piece of HTML code for the header (title) on
+//                default layout pages.
+//
+//                Liquid variables used in this content:
+//                   page.title == The title for the page from the
+//                                 liquid header of the page.
+//
+{% endcomment %}
+
+
+<header class="header mb-3">
+	<div class="container">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-12">
+				<div class="my-5 text-center text-xl-start">
+					<h1 class="display-5 fw-bold">{{ page.title }}</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
