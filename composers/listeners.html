@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	CGI = GetCgiParameters();
 
 	// Create URL for metadata index to download:
-	var sid = {{site.metadata_sid}}
-	var gid = {{site.metadata_gid}}
+	var sid = "{{site.metadata_sid}}";
+	var gid = "{{site.metadata_gid}}";
 	var url = "https://docs.google.com/spreadsheets/d/";
 	url += sid + "/export?gid=" + gid + "&format=tsv";
 
