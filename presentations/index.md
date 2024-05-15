@@ -24,7 +24,7 @@ summary:
 </tr> 
 
  <tr>
-	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023, Novembre 16). Listeners’ perceived emotions in synthetic vs. human performance of rhythmically complex musical excerpts. >16<sup>th</sup> International Symposium on Computer Music Interdisciplinary Research (CMMR)</a>, Tokyo, Japan.</p></td>
+	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023, Novembre 16). Listeners’ perceived emotions in synthetic vs. human performance of rhythmically complex musical excerpts. <a href="https://cmmr2023.gttm.jp/" target="_blank">16<sup>th</sup> International Symposium on Computer Music Interdisciplinary Research (CMMR)</a>, Tokyo, Japan.</p></td>
  	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1tg6b-Wn29KXjRUMIakm8BP07DnuNYfTV/view?usp=drive_link" target="_blank">Poster</a></td>
 </tr>
 <tr>
