@@ -56,7 +56,7 @@ summary:
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1M4ic5Uj1pz7ThW855VM-wDMXFx2OPAWu/view?usp=sharing" target="_blank">Slides</a></td>
   </tr>
   <tr>
-	<td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (2018, July 23–28). Modeling rhythmic complexity in a corpus of polyrhythm examples from Europe and America, 1900-1950. >15<sup>th</sup> International Conference on Music Perception and Cognition and 10<sup>th</sup> Conference of the European Society for the Cognitive Sciences of Music</a>, Montreal Hub, Canada.</p></td>
+	<td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (2018, July 23–28). Modeling rhythmic complexity in a corpus of polyrhythm examples from Europe and America, 1900-1950. <a href= "https://music-psychology-conference2018.uni-graz.at/en/" target="_blank">15<sup>th</sup> International Conference on Music Perception and Cognition and 10<sup>th</sup> Conference of the European Society for the Cognitive Sciences of Music</a>, Montreal Hub, Canada.</p></td>
  	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1tQvN77iFEwHX7wm2ghyoi_wwBaF6roH0/view?usp=sharing" target="_blank">Poster</a></td>
 </tr>
 	
