@@ -18,22 +18,26 @@ summary:
 <tbody>
 
 <tr>
-    	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023, Novembre 16). The Influence of Dissonance on Listeners’ Perceived Emotions in Complex Musical Excerpts. <a href="https://apcsociety.org/apcam-previous.html" target="_blank">22<sup>nd</sup> Auditory Perception, Cognition, &amp; Action Meeting (APCAM)</a>. San Francisco, United States of America.</p></td>
+    	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023, Novembre 16). The Influence of Dissonance and Register on Listeners’ Perceived Emotions in Complex Musical Excerpts. <a href="https://apcsociety.org/apcam-previous.html" target="_blank">22<sup>nd</sup> Auditory Perception, Cognition, &amp; Action Meeting (APCAM)</a>, San Francisco, United States of America.</p></td>
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1mBU0FFIsOMMqygYejp62sxcX2D3zp4RD/view?usp=drive_link" target="_blank">Abstract</a></td> 
 	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1oc3Job_HtV1QGqj8hYeIE0AdtOTbdq_k/view?usp=drive_link" target="_blank">Slides</a></td>
-</tr>    
+</tr> 
+
+ <tr>
+	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023, Novembre 16). Listeners’ perceived emotions in synthetic vs. human performance of rhythmically complex musical excerpts. >16<sup>th</sup> International Symposium on Computer Music Interdisciplinary Research (CMMR)</a>, Tokyo, Japan.</p></td>
+ 	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1tg6b-Wn29KXjRUMIakm8BP07DnuNYfTV/view?usp=drive_link" target="_blank">Poster</a></td>
+</tr>
 <tr>
-    	<td class="topalign"><p>Poudrier, È. (2023, October 12). Polyrhythm classification using the <em>composite</em> tool. <a href="https://www.uc.pt/ceis20/musica-analitica-2023/" target="_blank">2<sup>nd</sup> International Conference Música Analítica: Interdisciplinary Approaches to Musical Time</a>. University of Coimbra, Coimbra, Portugal.</p></td>
+    	<td class="topalign"><p>Poudrier, È. (2023, October 12). Polyrhythm classification using the <em>composite</em> tool. <a href="https://www.uc.pt/ceis20/musica-analitica-2023/" target="_blank">2<sup>nd</sup> International Conference Música Analítica: Interdisciplinary Approaches to Musical Time</a>, University of Coimbra, Coimbra, Portugal.</p></td>
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1T4Etc_KOqu9t-zL0rjnj18GijiF5f_8x/view?usp=drive_link" target="_blank">Abstract</a></td> 
 	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1l4--rtXTRjKaT7Ifrx15R5QeI4OiHJGA/view?usp=drive_link" target="_blank">Slides</a></td>
 </tr>
 <tr>
-	<td class="topalign"><p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>. Municipal Library, Prague, Czechia.</p></td>
-    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/10Cxjbx97hT0ZrXh5YIaQTldWxeSzHKy_/view?usp=drive_link" target="_blank">Abstract</a></td>
+	<td class="topalign"><p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>, Municipal Library, Prague, Czechia.</p></td>
 	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td>
 </tr>
 <tr>
-    	<td class="topalign"><p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>. University of Connecticut, Storrs, United States.</p></td>
+    	<td class="topalign"><p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>, University of Connecticut, Storrs, United States.</p></td>
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td> 
 	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/17_VwWnLdMX-2sJrk1UwxWz2FJo7fQ5bT/view?usp=sharing" target="_blank">Slides</a></td>
 </tr>
@@ -52,7 +56,7 @@ summary:
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1M4ic5Uj1pz7ThW855VM-wDMXFx2OPAWu/view?usp=sharing" target="_blank">Slides</a></td>
   </tr>
   <tr>
-	<td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (2018, July 23–28). Modeling rhythmic complexity in a corpus of polyrhythm examples from Europe and America, 1900-1950. >15<sup>th</sup> International Conference on Music Perception and Cognition and 10<sup>th</sup> Conference of the European Society for the Cognitive Sciences of Music</a>, Montreal, Canada.</p></td>
+	<td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (2018, July 23–28). Modeling rhythmic complexity in a corpus of polyrhythm examples from Europe and America, 1900-1950. >15<sup>th</sup> International Conference on Music Perception and Cognition and 10<sup>th</sup> Conference of the European Society for the Cognitive Sciences of Music</a>, Montreal Hub, Canada.</p></td>
  	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1tQvN77iFEwHX7wm2ghyoi_wwBaF6roH0/view?usp=sharing" target="_blank">Poster</a></td>
 </tr>
 	
