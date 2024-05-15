@@ -131,7 +131,7 @@ permalink: /index.html
 			<!-- 4 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-4.jpg" alt="maps">
+					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/7/71/WorldMap-Blank-Noborders.svg" alt="maps">
 					<div class="card-body p-0">
 						<div class="category mb-2">MAPS</div>
 						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">The Suter (1980) Corpus is represented by three interactive maps.  Maps feature composers' lifetime and places where the corpus works were first performed.</h3></a>
