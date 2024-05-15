@@ -1,6 +1,6 @@
 ---
 title: "Search, Browse and Analyze Polyrhythm (1877 – 1969)"
-vim: "set ts=3 nowrap ft=html:"
+vim: ts=3:nowrap:ft=html
 layout: homepage
 permalink: /index.html
 ---
