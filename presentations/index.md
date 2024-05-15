@@ -24,7 +24,7 @@ summary:
 </tr>    
 <tr>
     	<td class="topalign"><p>Poudrier, È. (2023, October 12). Polyrhythm classification using the <em>composite</em> tool. <a href="https://www.uc.pt/ceis20/musica-analitica-2023/" target="_blank">2<sup>nd</sup> International Conference Música Analítica: Interdisciplinary Approaches to Musical Time</a>. University of Coimbra, Coimbra, Portugal.</p></td>
-    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td> 
+    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1T4Etc_KOqu9t-zL0rjnj18GijiF5f_8x/view?usp=drive_link" target="_blank">Abstract</a></td> 
 	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1l4--rtXTRjKaT7Ifrx15R5QeI4OiHJGA/view?usp=drive_link" target="_blank">Slides</a></td>
 </tr>
 <tr>
