@@ -112,7 +112,7 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-2.jpg" alt="about">
 					<div class="card-body p-0">
 						<div class="category mb-2">ABOUT</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">This project seeks to deepen our understanding of the human experience of complex musical rhythms by examining “polyrhythm,” the superposition of contrasting rhythms that cannot be easily mapped on a single metric framework.</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">This platform presents an online edition of 750 examples of polyphonic music with information about composers and their works.  You can explore our sources, listen to the music excerpts, use the analysis tools, and participate in an experiment.</h3></a>
 					</div>
 				</div>
 			</div>
@@ -132,7 +132,7 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-4.jpg" alt="maps">
 					<div class="card-body p-0">
 						<div class="category mb-2">MAPS</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Sed fringilla mauris sit amet nibhFringilla Vestibulum Ante Ipsum</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">The Suter (1980) Corpus is represented by three interactive maps.  Maps feature composers' lifetime and places where the corpus works were first performed.</h3></a>
 					</div>
 				</div>
 			</div>
@@ -141,8 +141,8 @@ permalink: /index.html
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-5.jpg" alt="premieres">
 					<div class="card-body p-0">
-						<div class="category mb-2">PREMIERES</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Maecenas Nec Odio Et Ante Tincidunt Tempus Donec Vitae Sapien Ut Libero Venenatis Faucibus</h3></a>
+						<div class="category mb-2">TOOLS</div>
+						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Visit the analysis page for interactive graphs of the corpus data.  Each example page also features interactive representations of the rhythmic structure.</h3></a>
 					</div>
 				</div>
 			</div>
@@ -152,7 +152,7 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-6.jpg" alt="sources">
 					<div class="card-body p-0">
 						<div class="category mb-2">SOURCES</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Phasellus Ullamcorper Ipsum Rutrum Nunc Nonummy Metus Vestibulum</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Learn more about the publications and recordings used in the creation of this digital edition.</h3></a>
 					</div>
 				</div>
 			</div>
