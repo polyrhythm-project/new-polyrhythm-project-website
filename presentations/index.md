@@ -22,10 +22,13 @@ summary:
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1mBU0FFIsOMMqygYejp62sxcX2D3zp4RD/view?usp=drive_link" target="_blank">Abstract</a></td> 
 	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1oc3Job_HtV1QGqj8hYeIE0AdtOTbdq_k/view?usp=drive_link" target="_blank">Slides</a></td>
 </tr> 
-
  <tr>
 	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023, Novembre 16). Listeners’ perceived emotions in synthetic vs. human performance of rhythmically complex musical excerpts. <a href="https://cmmr2023.gttm.jp/" target="_blank">16<sup>th</sup> International Symposium on Computer Music Interdisciplinary Research (CMMR)</a>, Tokyo, Japan.</p></td>
  	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1tg6b-Wn29KXjRUMIakm8BP07DnuNYfTV/view?usp=drive_link" target="_blank">Poster</a></td>
+</tr>
+ <tr>
+	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023, October 27). Listeners’ perceived emotions in ordered vs. randomized musical excerpts. <a href="https://internetofsounds.net/is2_2023/" target="_blank">4<sup>th</sup> International Symposium on the Internet of Sounds</a>, International Workshop on Multilayer Music Representation and Processing, Pisa, Italy.</p></td>
+ 	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1kpyaU9JT4fK2iH5uwvhljXw8ulSLH6Ff/view?usp=drive_link" target="_blank">Poster</a></td>
 </tr>
 <tr>
     	<td class="topalign"><p>Poudrier, È. (2023, October 12). Polyrhythm classification using the <em>composite</em> tool. <a href="https://www.uc.pt/ceis20/musica-analitica-2023/" target="_blank">2<sup>nd</sup> International Conference Música Analítica: Interdisciplinary Approaches to Musical Time</a>, University of Coimbra, Coimbra, Portugal.</p></td>
