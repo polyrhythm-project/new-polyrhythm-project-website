@@ -40,11 +40,11 @@ href="https://drive.google.com/file/d/19Km_KestTUtINxsNwtioNA9IWRjvw74q/view?usp
 <tbody>
 
 <tr>
-	<td class="topalign"><p>Poudrier, È., Bell, B. J., &amp; Sapp, C. S. (2023a). Listeners' perceived emotions in human vs. synthetic performance of rhythmically complex musical excerpts. In <i>Proceedings of the 16th International Symposium on Computer Music Multidisciplinary Research, 13–17 November 2023, Tokyo, Japan</i>, pp. 599–610. CMMR 2023 &amp Laboratory PRISM, Marseille, France. Published online: 23 November 2023.</p></td>
+	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023a). Listeners' perceived emotions in human vs. synthetic performance of rhythmically complex musical excerpts. In <i>Proceedings of the 16th International Symposium on Computer Music Multidisciplinary Research, 13–17 November 2023, Tokyo, Japan</i>, pp. 599–610. CMMR 2023 &amp Laboratory PRISM, Marseille, France. Published online: 23 November 2023.</p></td>
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1T3Fsg3ZBLyKIKD2IPJNuJ1fKcPQoajDZ/view?usp=drive_link" target="_blank">PDF</a>	</td>
 </tr>
 <tr>
-	<td class="topalign"><p>Poudrier, È., Bell, B. J., &amp; Sapp, C. S. (2023b). Listeners' perceived emotions in musical excerpts with ordered vs. randomized pitch and register. In <i>4th International Symposium on the Internet of Sounds, Pisa, Italy, 2023</i>, pp. 1–9. IEEE. Published online: 4 December 2023. </p></td>
+	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023b). Listeners' perceived emotions in musical excerpts with ordered vs. randomized pitch and register. In <i>4th International Symposium on the Internet of Sounds, Pisa, Italy, 2023</i>, pp. 1–9. IEEE. Published online: 4 December 2023. </p></td>
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/112gZ8psxOEIXeB0sL_nsHcs8PD2pymep/view?usp=drive_link" target="_blank">PDF</a>	</td>
 </tr>
 <tr>
@@ -80,7 +80,7 @@ href="https://drive.google.com/file/d/19Km_KestTUtINxsNwtioNA9IWRjvw74q/view?usp
 <tbody>
 	
  <tr>
-	<td class="topalign"><p>Poudrier, È. Perceived musical qualities of rhythmically complex musical excerpts.</p></td>
+	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H. Perceived musical qualities of rhythmically complex musical excerpts.</p></td>
 </tr>
 <tr>
 	<td class="topalign"><p>Poudrier, È. Polyrhythm classification using the <em>composite</em> tool.</p></td>
