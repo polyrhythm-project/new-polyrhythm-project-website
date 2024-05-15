@@ -29,7 +29,8 @@ summary:
 </tr>
 <tr>
 	<td class="topalign"><p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>. Municipal Library, Prague, Czechia.</p></td>
-    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td>
+    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/10Cxjbx97hT0ZrXh5YIaQTldWxeSzHKy_/view?usp=drive_link" target="_blank">Abstract</a></td>
+	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td>
 </tr>
 <tr>
     	<td class="topalign"><p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>. University of Connecticut, Storrs, United States.</p></td>
