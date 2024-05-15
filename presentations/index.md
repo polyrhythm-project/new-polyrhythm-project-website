@@ -16,12 +16,12 @@ summary:
 	
 <table>
 <tbody>
-    
+
 <tr>
-    	<td class="topalign"><p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>. University of Connecticut, Storrs, United States.</p></td>
-    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td> 
-	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/17_VwWnLdMX-2sJrk1UwxWz2FJo7fQ5bT/view?usp=sharing" target="_blank">Slides</a></td>
-</tr>
+    	<td class="topalign"><p>Poudrier, È., Bell, B. J., Lee, J. Y. H., &amp; Sapp, C. S. (2023, Novembre 16). The Influence of Dissonance on Listeners’ Perceived Emotions in Complex Musical Excerpts. <a href="https://apcsociety.org/apcam-previous.html" target="_blank">22<sup>nd</sup> Auditory Perception, Cognition, &amp; Action Meeting (APCAM)</a>. San Francisco, United States of America.</p></td>
+    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1mBU0FFIsOMMqygYejp62sxcX2D3zp4RD/view?usp=drive_link" target="_blank">Abstract</a></td> 
+	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1oc3Job_HtV1QGqj8hYeIE0AdtOTbdq_k/view?usp=drive_link" target="_blank">Slides</a></td>
+</tr>    
 <tr>
     	<td class="topalign"><p>Poudrier, È. (2023, October 12). Polyrhythm classification using the <em>composite</em> tool. <a href="https://www.uc.pt/ceis20/musica-analitica-2023/" target="_blank">2<sup>nd</sup> International Conference Música Analítica: Interdisciplinary Approaches to Musical Time</a>. University of Coimbra, Coimbra, Portugal.</p></td>
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td> 
@@ -30,10 +30,11 @@ summary:
 <tr>
 	<td class="topalign"><p>Poudrier, È. &amp; Sapp, C. S. (2022, July 28). Polyrhythm analysis using the <em>composite</em> tool. <a href="https://dlfm.web.ox.ac.uk/9th-international-conference-on-digital-libraries-for-musicology" target="_blank">9<sup>th</sup> International Conference on Digital Libraries for Musicology</a>. Municipal Library, Prague, Czechia.</p></td>
     	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1U9MEUWjJUeIicMP_RS6mXI5GTIDFCPny/view?usp=drive_link" target="_blank">Slides</a></td>
-</tr>	
+</tr>
 <tr>
     	<td class="topalign"><p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, April 17). The cognitive and affective correlates of rhythmic complexity. <a href="https://drive.google.com/file/d/1MRCQkWy3VWGPLYFpl0uvIaM6gptNxrJo/view" target="_blank">New England Sequencing and Timing (NEST) Meeting</a>. University of Connecticut, Storrs, United States.</p></td>
-    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td><a class="buttonlink" href="https://drive.google.com/file/d/17_VwWnLdMX-2sJrk1UwxWz2FJo7fQ5bT/view?usp=sharing" target="_blank">Slides</a></td> 
+    	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1zpQeZquW1BLp5tFDyFuMVD3f7XjVIHIA/view?usp=drive_link" target="_blank">Abstract</a></td> 
+	<td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/17_VwWnLdMX-2sJrk1UwxWz2FJo7fQ5bT/view?usp=sharing" target="_blank">Slides</a></td>
 </tr>
 <tr>
     	<td class="topalign"><p>Poudrier, È., Sapp, C. S., &amp; Shanahan, D. (2021, July 29). The cognitive and affective correlates of rhythmic complexity. <a href="https://icmpc2021.sites.sheffield.ac.uk/" target="_blank">16<sup>th</sup> International Conference on Music Perception and Cognition and 11th Triennial Conference of the European Society for the Cognitive Sciences of Music</a>, United Kingdom Hub.</p></td>
