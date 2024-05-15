@@ -36,26 +36,28 @@ href="https://drive.google.com/file/d/19Km_KestTUtINxsNwtioNA9IWRjvw74q/view?usp
 
 <table>
 <tbody>
-<tr>
-    <td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (2018). Modeling rhythmic complexity in a corpus of polyrhythm examples from Europe and America, 1900-1950. In R. Parncutt & S. Sattmann (Eds.), <em>Proceedings of the 15th International Conference on Music Perception and Cognition and the 10th Conference of the European Society for the Cognitive Sciences of Music Conference, Montreal, Canada, 23-28 July 2018.</em> </p></td>
-    <td class="topalign"><a class="buttonlink" href="https://static.unigraz.at/fileadmin/veranstaltungen/music-psychology-conference2018/documents/ICMPC15_ESCOM10%20Proceedings.pdf" target="_blank">PDF</a></td>
+
   </tr>
+ <tr>
+<td class="topalign"><p>Poudrier, È., Bell, B. J., &amp; Sapp, C. S. (2023a). Listeners' perceived emotions in human vs. synthetic performance of rhythmically complex musical excerpts. In <i>Proceedings of the 16th International Symposium on Computer Music Multidisciplinary Research, 13–17 November 2023, Tokyo, Japan</i>, pp. 599–610. CMMR 2023 &amp Laboratory PRISM, Marseille, France. Published online: 23 November 2023.</p></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1T3Fsg3ZBLyKIKD2IPJNuJ1fKcPQoajDZ/view?usp=drive_link" target="_blank">PDF</a></td>
+    </tr>
+  <tr>
+<td class="topalign"><p>Poudrier, È., Bell, B. J., &amp; Sapp, C. S. (2023b). Listeners' perceived emotions in musical excerpts with ordered vs. randomized pitch and register. In <i>4th International Symposium on the Internet of Sounds, Pisa, Italy, 2023</i>, pp. 1–9. IEEE. Published online: 4 December 2023. </p></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/112gZ8psxOEIXeB0sL_nsHcs8PD2pymep/view?usp=drive_link" target="_blank">PDF</a></td>
+<tr>
+	  <td class="topalign"><p>Poudrier, È. &amp; Sapp, C. (2022). Polyrhythm analysis using the <em>composite</em> tool. In <em>International Conference on Digital Libraries for Musicology,July 28, 2022, Prague, Czech Republic.</em> ACM, New York, NY, USA.</p></td>
+    <td class="topalign"><a class="buttonlink" href="https://drive.gogle.com/file/d/13ywmzOBdvYK2F5KS5qEvwfmZ9Cf1xyg9/view?usp=sharing" target="_blank">PDF</a></td>
 <tr>
     <td class="topalign"><p>Poudrier, È., Sapp, C., &amp; Shanahan, D. (2021). The cognitive and affective correlates of rhythmic complexity. In <em>ICMPC ESCOM 2021: Connectivity and diversity in music cognition, 28-31 July 2021.</em> </p></td>
     <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1hCtYDdTHfb3Txo2ryT1ZS2JzL8tT5I6U/view" target="_blank">PDF</a></td>
   </tr>
-  <tr>
-	  <td class="topalign"><p>Poudrier, È. &amp; Sapp, C. (2022). Polyrhythm analysis using the <em>composite</em> tool. In <em>International Conference on Digital Libraries for Musicology,July 28, 2022, Prague, Czech Republic.</em> ACM, New York, NY, USA.</p></td>
-    <td class="topalign"><a class="buttonlink" href="https://drive.gogle.com/file/d/13ywmzOBdvYK2F5KS5qEvwfmZ9Cf1xyg9/view?usp=sharing" target="_blank">PDF</a></td>
+<tr>
+    <td class="topalign"><p>Poudrier, È. &amp; Shanahan, D. (2018). Modeling rhythmic complexity in a corpus of polyrhythm examples from Europe and America, 1900-1950. In R. Parncutt & S. Sattmann (Eds.), <em>Proceedings of the 15th International Conference on Music Perception and Cognition and the 10th Conference of the European Society for the Cognitive Sciences of Music Conference, Montreal, Canada, 23-28 July 2018.</em> </p></td>
+    <td class="topalign"><a class="buttonlink" href="https://static.unigraz.at/fileadmin/veranstaltungen/music-psychology-conference2018/documents/ICMPC15_ESCOM10%20Proceedings.pdf" target="_blank">PDF</a></td>
   </tr>
- <tr>
-<td class="topalign"><p>Poudrier, È., Bell, B. J., &amp; Sapp, C. S. (2023). Listeners' perceived emotions in human vs. synthetic performance of rhythmically complex musical excerpts. In <i>Proceedings of the 16th International Symposium on Computer Music Multidisciplinary Research, 13–17 November 2023, Tokyo, Japan</i>, pp. 599–610. CMMR 2023 &amp Laboratory PRISM, Marseille, France. Published online: 23 November 2023.</p></td>
-    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/1T3Fsg3ZBLyKIKD2IPJNuJ1fKcPQoajDZ/view?usp=drive_link" target="_blank">PDF</a></td>
     </tr>
-  <tr>
-<td class="topalign"><p>Poudrier, È., Bell, B. J., &amp; Sapp, C. S. (2023). Listeners' perceived emotions in musical excerpts with ordered vs. randomized pitch and register. In <i>4th International Symposium on the Internet of Sounds, Pisa, Italy, 2023</i>, pp. 1–9. IEEE. Published online: 4 December 2023. </p></td>
-    <td class="topalign"><a class="buttonlink" href="https://drive.google.com/file/d/112gZ8psxOEIXeB0sL_nsHcs8PD2pymep/view?usp=drive_link" target="_blank">PDF</a></td>
-    </tr>
+    
 </tbody>
 </table>
 	
