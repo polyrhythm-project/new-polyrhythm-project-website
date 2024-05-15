@@ -12,7 +12,7 @@ summary:
 {% include_relative scripts-local.html %}
 
 
-## Peer-reviewed Conference Presentations ##
+## Conference Presentations ##
 	
 <table>
 <tbody>
