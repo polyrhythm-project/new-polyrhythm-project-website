@@ -1,0 +1,83 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed May 15 15:06:43 PDT 2024
+// Last Modified: Wed May 15 15:06:50 PDT 2024
+// Filename:      scripts-local.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Functions for dynamic aspects for the
+//                homepage.
+//
+{% endcomment %}
+
+{% include_relative listeners.html     %}
+{% include scripts/scripts-common.html %}
+
+
+<script>
+
+//////////////////////////////
+//
+// buildComposerBrowseList --
+//
+
+function buildComposerBrowseList() {
+	console.warn("WORKLIST", WORKLIST);
+	let composerIndex = "Composer Name";
+	let composerSelect = document.querySelector("#composerSelect");
+	if (!composerSelect) {
+		console.error("Error: Cannot find #composerSelect");
+		return;
+	}
+	let composerList = {};
+	for (let i=0; i<WORKLIST.length; i++) {
+		let composer = WORKLIST[i][composerIndex];
+		if (!composer) {
+			continue;
+		}
+		composerList[composer] = composer;
+	}
+	let keys = Object.keys(composerList).sort();
+	let output = "";
+	output += `<option selected value="">Composer</option>`;
+	for (let i=0; i<keys.length; i++) {
+		output += `<option value="${keys[i]}">${keys[i]}</option>`;
+	}
+	composerSelect.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// buildGenreBrowseList --
+//
+
+function buildGenreBrowseList() {
+	console.warn("WORKLIST", WORKLIST);
+	let genreIndex = "Genre";
+	let genreSelect = document.querySelector("#genreSelect");
+	if (!genreSelect) {
+		console.error("Error: Cannot find #genreSelect");
+		return;
+	}
+	let genreList = {};
+	for (let i=0; i<WORKLIST.length; i++) {
+		let genre = WORKLIST[i][genreIndex];
+		if (!genre) {
+			continue;
+		}
+		genreList[genre] = genre;
+	}
+	let keys = Object.keys(genreList).sort();
+	let output = "";
+	output += `<option selected value="">Genre</option>`;
+	for (let i=0; i<keys.length; i++) {
+		output += `<option value="${keys[i]}">${keys[i]}</option>`;
+	}
+	genreSelect.innerHTML = output;
+}
+
+
+</script>

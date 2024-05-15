@@ -5,6 +5,8 @@ layout: homepage
 permalink: /index.html
 ---
 
+{% include_relative scripts-local.html %}
+{% include_relative styles-local.html %}
 
 <!-- Sample Work -->
 <section>
@@ -21,8 +23,8 @@ permalink: /index.html
 			<div class="col-12 col-lg-6">
 				<p role="heading"><small>Browse by</small></p>
 				<!-- Composer -->
-				<div class="btn-group mb-3 mb-lg-0">
-					<select class="form-select form-select--primary" aria-label="Composer">
+				<div class="browse-list btn-group mb-3 mb-lg-0">
+					<select id="composerSelect" class="form-select form-select--primary" aria-label="Composer">
 						<option selected>Composer</option>
 						<option value="1">One</option>
 						<option value="2">Two</option>
@@ -30,8 +32,8 @@ permalink: /index.html
 					</select>
 				</div>
 				<!-- Genre -->
-				<div class="btn-group mb-3 mb-lg-0">
-					<select class="form-select form-select--primary" aria-label="Genre">
+				<div class="browse-list btn-group mb-3 mb-lg-0">
+					<select id="genreSelect" class="form-select form-select--primary" aria-label="Genre">
 						<option selected>Genre</option>
 						<option value="1">One</option>
 						<option value="2">Two</option>
@@ -39,8 +41,8 @@ permalink: /index.html
 					</select>
 				</div>
 				<!-- Premiered -->
-				<div class="btn-group mb-3 mb-lg-0">
-					<select class="form-select form-select--primary" aria-label="Premiered">
+				<div class="browse-list btn-group mb-3 mb-lg-0">
+					<select id="premieredSelect" class="form-select form-select--primary" aria-label="Premiered">
 						<option selected>Premiered</option>
 						<option value="1">One</option>
 						<option value="2">Two</option>
