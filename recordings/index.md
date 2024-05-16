@@ -11,8 +11,7 @@ summary:
 {% include_relative styles-local.html %}
 {% include_relative scripts-local.html %}
 
-The following list recordings give the source of audio examples used in Polyrhythm project
-experiments.
+This page lists the source recordings for audio examples used in the Polyrhythm project, with links to the corresponding album on the Naxos Music Library (institutional subscription required).
 
 <p>
 Sort recordings by: 
