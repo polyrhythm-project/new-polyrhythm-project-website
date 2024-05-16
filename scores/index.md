@@ -12,10 +12,9 @@ summary:
 {% include_relative scripts-local.html %}
 
 
-Below is a list of musical scores from which polyrhythm examples are extracted.  Two
-sources are given for each work/example: the first is for the citation given by Suter,
-and the second is the exact source edition used for the Polythm Project, which is usually
-the first edition and/or the Suter source.
+This page lists the musical scores from which polyrhythm examples were extracted.  Two
+sources are given for each work/example: the first is the citation given by Suter (1980), 
+and the second is the source edition used for encoding the examples. In some cases, more than one published scores was needed. Suter's (1980) source examples are identified as "E0"; published editions are numbered E1, E2, etc.
 
 <p>
 Sort scores by: 
