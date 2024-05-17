@@ -121,7 +121,7 @@ permalink: /index.html
 			<!-- 3 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-3.jpg" alt="research">
+					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Headphones_%281292150%29_-_The_Noun_Project.svg" alt="research">
 					<div class="card-body p-0">
 						<div class="category mb-2">RESEARCH</div>
 						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">We explore polyphonic music through close study, computational analysis, and listening experiments. To learn more, consult our publications, presentations, and website resources. </h3></a>
