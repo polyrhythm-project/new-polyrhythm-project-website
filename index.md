@@ -101,7 +101,7 @@ permalink: /index.html
 			<!-- 1 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-1.jpg" alt="updates">
+					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Kinnear_Centre_at_Banff_Centre.jpg" alt="updates">
 					<div class="card-body p-0">
 						<div class="category mb-2">UPDATES</div>
 						<a class="text-decoration-none link-dark stretched-link" href="updates" role="button"><h3 class="card-title mb-3">Upcoming conference presentations at ESCOM 2024, July 3–6, and SMPC, July 25-28.</h3></a>
