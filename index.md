@@ -151,7 +151,7 @@ permalink: /index.html
 			<!-- 6 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-6.jpg" alt="sources">
+					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-2.jpg" alt="sources">
 					<div class="card-body p-0">
 						<div class="category mb-2">SOURCES</div>
 						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Learn more about the publications and recordings used in the creation of this digital edition.</h3></a>
