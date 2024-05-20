@@ -141,7 +141,7 @@ permalink: /index.html
 			<!-- 5 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" src="https://drive.google.com/file/d/1CNks4Xs7bGmZ_RBztjv-DfPupBExY0Qy/view?usp=drive_link" alt="tools">
+					<img class="card-img-top card-img-bottom mb-3" src="https://drive.google.com/file/d/1z0OIvmOR-6zgtAnPWRgVmmuB8OHFm7Sq/view?usp=drive_link" alt="tools">
 					<div class="card-body p-0">
 						<div class="category mb-2">TOOLS</div>
 						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Visit the analysis page for interactive graphs of the corpus data.  Each example page also features interactive representations of the rhythmic structure.</h3></a>
