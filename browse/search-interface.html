@@ -1,17 +1,17 @@
-
+<!-- vim: set ts=3 nowrap: -->
 
 <form>
 <!-- Search -->
 <div class="row">
 	<div class="col-9 col-sm-10 mb-3">
 		<div class="form-outline">
-			<input type="search" id="form1" class="form-control" placeholder="Search" aria-label="Search..." />
+			<input type="search" id="search" class="form-control" placeholder="Title" aria-label="Title..." />
 		</div>
 	</div>
 
 			<div class="col-3 col-sm-2 mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
   				  <!-- Adjusted Clear Button -->
- 				   <input class="btn btn-secondary btn-primary-light" type="reset" value="Clear" style="flex-grow: 1;">
+ 				   <input onclick="clearSearchFields()" class="btn btn-secondary btn-primary-light" type="reset" value="Clear" style="flex-grow: 1;">
 		<!-- New Question Button -->
 <button type="button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse';">
 		<i class="bi bi-question-lg"></i>
@@ -30,73 +30,220 @@
 <div class="row">
 	<div class="col-12 col-lg-4">
 		<div class="btn-group mb-3">
-			<select class="form-select form-select--secondary" aria-label="Example List">
-				<option selected>Example List</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+			<select id="table-scope" onchange="doSearch()" class="form-select form-select--secondary" aria-label="Example list">
+				<option value="example" selected>Examples</option>
+				<option value="work" disabled>Works</option>
 			</select>
 		</div>
 		<div class="btn-group mb-3">
-			<select class="form-select form-select--secondary" aria-label="Example List">
-				<option selected>Example List</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+			<select id="dataset" onchange="doSearch()" class="form-select form-select--secondary" aria-label="Example list">
+				<option value="" selected>All datasets</option>
+				<option value="Reserve">Reserve</option>
+				<option value="Testing">Testing</option>
 			</select>
 		</div>
 	</div>
 	<!-- Dropdowns -->
 	<div class="col-12 col-lg-8">
+
 		<div class="btn-group mb-3 float-lg-end">
-			<select class="form-select form-select--secondary" aria-label="All Tempo Beat Types">
+			<select id="tempobeat" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All tempo beat types">
 				<option selected>All Tempo Beat Types</option>
 				<option value="1">One</option>
 				<option value="2">Two</option>
 				<option value="3">Three</option>
 			</select>
 		</div>
+
 		<div class="btn-group mb-3 me-1 float-lg-end">
-			<select class="form-select form-select--secondary" aria-label="All Time Signature Types">
-				<option selected>All Time Signature Types</option>
+			<select id="tsigtype" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All time signature types">
+				<option selected>All time signature types</option>
 				<option value="1">One</option>
 				<option value="2">Two</option>
 				<option value="3">Three</option>
 			</select>
 		</div>
+
 		<div class="btn-group mb-3 me-1 float-lg-end">
-			<select class="form-select form-select--secondary" aria-label="All Genres">
-				<option selected>All Genres</option>
+			<select id="genre" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All genres">
+				<option selected>All genres</option>
 				<option value="1">One</option>
 				<option value="2">Two</option>
 				<option value="3">Three</option>
 			</select>
 		</div>
+
 		<div class="btn-group mb-3 me-1 float-lg-end">
-			<select class="form-select form-select--secondary" aria-label="All Composers">
-				<option selected>All Composers</option>
+			<select id="composer" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All composers">
+				<option selected>All composers</option>
 				<option value="1">One</option>
 				<option value="2">Two</option>
 				<option value="3">Three</option>
 			</select>
 		</div>
+
+		<div class="btn-group mb-3 me-1 float-lg-end">
+			<select id="iclasses" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All composers">
+				<option value="" selected>Class</option>
+				<option value="bras">Brass</option>
+				<option value="gen">Generic</option>
+				<option value="klav">Keyboard</option>
+				<option value="idio">Percussion</option>
+				<option value="str">Strings</option>
+				<option value="vox">Voices</option>
+				<option value="ww">Woodwinds</option>
+			</select>
+			<input style="margin-left:5px;" type="checkbox" id="iclass-only" name="iclassOnly" onchange="doSearch()">
+			<label style="padding-left:5px; display:inline-block; margin-top:5px;" for="iclass-only">only</label>
+		</div>
+
+		<div class="btn-group mb-3 me-1 float-lg-end">
+			<select id="instruments" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All composers">
+				<option value="" selected>Instrument</option>
+				<option value="accor">accor</option>
+				<option value="alto">alto</option>
+				<option value="anvil">anvil</option>
+				<option value="arpa">arpa</option>
+				<option value="banjo">banjo</option>
+				<option value="barit">barit</option>
+				<option value="bass">bass</option>
+				<option value="bdrum">bdrum</option>
+				<option value="bongo">bongo</option>
+				<option value="brush">brush</option>
+				<option value="bscan">bscan</option>
+				<option value="bugle">bugle</option>
+				<option value="calto">calto</option>
+				<option value="campn">campn</option>
+				<option value="cangl">cangl</option>
+				<option value="casts">casts</option>
+				<option value="cbass">cbass</option>
+				<option value="cello">cello</option>
+				<option value="cemba">cemba</option>
+				<option value="chain">chain</option>
+				<option value="chcym">chcym</option>
+				<option value="chime">chime</option>
+				<option value="clap">clap</option>
+				<option value="clarb">clarb</option>
+				<option value="clarp">clarp</option>
+				<option value="clars">clars</option>
+				<option value="clave">clave</option>
+				<option value="clavi">clavi</option>
+				<option value="clest">clest</option>
+				<option value="conga">conga</option>
+				<option value="cor">cor</option>
+				<option value="cornt">cornt</option>
+				<option value="coro">coro</option>
+				<option value="crshc">crshc</option>
+				<option value="cymba">cymba</option>
+				<option value="drmsp">drmsp</option>
+				<option value="drum">drum</option>
+				<option value="drumP">drumP</option>
+				<option value="fag_c">fag_c</option>
+				<option value="fagot">fagot</option>
+				<option value="fdrum">fdrum</option>
+				<option value="feme">feme</option>
+				<option value="fingc">fingc</option>
+				<option value="flex">flex</option>
+				<option value="flt">flt</option>
+				<option value="flt_a">flt_a</option>
+				<option value="fltda">fltda</option>
+				<option value="fltdb">fltdb</option>
+				<option value="fltds">fltds</option>
+				<option value="genB">genB</option>
+				<option value="genT">genT</option>
+				<option value="glock">glock</option>
+				<option value="gong">gong</option>
+				<option value="guitr">guitr</option>
+				<option value="hbell">hbell</option>
+				<option value="heck">heck</option>
+				<option value="heltn">heltn</option>
+				<option value="idio">idio</option>
+				<option value="lion">lion</option>
+				<option value="lyrtn">lyrtn</option>
+				<option value="male">male</option>
+				<option value="mando">mando</option>
+				<option value="marac">marac</option>
+				<option value="marim">marim</option>
+				<option value="mbari">mbari</option>
+				<option value="mezzo">mezzo</option>
+				<option value="nfant">nfant</option>
+				<option value="oboe">oboe</option>
+				<option value="ondes">ondes</option>
+				<option value="organ">organ</option>
+				<option value="paila">paila</option>
+				<option value="pbell">pbell</option>
+				<option value="perc">perc</option>
+				<option value="piano">piano</option>
+				<option value="piatt">piatt</option>
+				<option value="picco">picco</option>
+				<option value="ratch">ratch</option>
+				<option value="ratl">ratl</option>
+				<option value="sarus">sarus</option>
+				<option value="saxA">saxA</option>
+				<option value="saxR">saxR</option>
+				<option value="saxS">saxS</option>
+				<option value="saxT">saxT</option>
+				<option value="sbell">sbell</option>
+				<option value="sdrum">sdrum</option>
+				<option value="siren">siren</option>
+				<option value="slap">slap</option>
+				<option value="soprn">soprn</option>
+				<option value="spshc">spshc</option>
+				<option value="stim">stim</option>
+				<option value="str">str</option>
+				<option value="strdr">strdr</option>
+				<option value="tambn">tambn</option>
+				<option value="tbell">tbell</option>
+				<option value="tblok">tblok</option>
+				<option value="tdrum">tdrum</option>
+				<option value="tenor">tenor</option>
+				<option value="timpa">timpa</option>
+				<option value="tom">tom</option>
+				<option value="trngl">trngl</option>
+				<option value="tromb">tromb</option>
+				<option value="tromp">tromp</option>
+				<option value="tromt">tromt</option>
+				<option value="tuba">tuba</option>
+				<option value="tubaB">tubaB</option>
+				<option value="tubac">tubac</option>
+				<option value="tubat">tubat</option>
+				<option value="vibra">vibra</option>
+				<option value="viola">viola</option>
+				<option value="violn">violn</option>
+				<option value="vox">vox</option>
+				<option value="wblok">wblok</option>
+				<option value="xylo">xylo</option>
+			</select>
+			<input style="margin-left:5px;" type="checkbox" id="instrument-only" name="instrumentOnly" onchange="doSearch()">
+			<label style="padding-left:5px; display:inline-block; margin-top:5px" for="instrument-only">only</label>
+		</div>
+
 	</div>
 </div>
-<!-- Tempo / Duration -->
+
+<!-- Tempo / Duration / Staff -->
 <div class="row">
-	<div class="col-12 col-lg-6 mb-3">
+	<div class="col-4 col-lg-4 mb-3">
 		<div class="input-group ">
-			<input type="text" class="form-control" placeholder="Tempo Min">
-			<input type="text" class="form-control" placeholder="Tempo Max">
+			<input id="tempomin" type="text" class="form-control" placeholder="Tempo min">
+			<input id="tempomax" type="text" class="form-control" placeholder="Tempo max">
 		</div>
 	</div>
-	<div class="col-12 col-lg-6 mb-3">
+	<div class="col-4 col-lg-4 mb-3">
 		<div class="input-group ">
-			<input type="text" class="form-control" placeholder="Duration Min">
-			<input type="text" class="form-control" placeholder="Duration Max">
+			<input id="secondsmin" type="text" class="form-control" placeholder="Duration min (sec.)">
+			<input id="secondsmax" type="text" class="form-control" placeholder="Duration max (sec.)">
+		</div>
+	</div>
+	<div class="col-4 col-lg-4 mb-3">
+		<div class="input-group ">
+			<input id="partsmin" type="text" class="form-control" placeholder="Staves min">
+			<input id="partsmax" type="text" class="form-control" placeholder="Staves max">
 		</div>
 	</div>
 </div>
+
+<!-- Note -->
 <div class="row">
 	<div class="col-12 mb-3">
 		<small>*Bold IDs indicate examples with interactive musical scores.</small>
@@ -104,7 +251,10 @@
 </div>
 <div class="row">
 	<div class="col-12 mb-4 text-center">
-		<p><strong>725 entries found</strong></p>
+		<p><strong id="search-count"></strong></p>
 	</div>
 </div>
 </form>
+
+
+

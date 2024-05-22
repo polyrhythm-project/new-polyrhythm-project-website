@@ -3,10 +3,11 @@
 
 var CGI = {};      // CGI parameters from URL
 var SORTCOLUMN = 0;
-var EXAMPLELIST = [];
 var WORKLIST = [];
 var BROWSELIST = [];
 var SORTORDER = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+var INSTRUMENTS = {% include instruments/instrument-names.json %};
 
 
 //////////////////////////////
@@ -15,15 +16,48 @@ var SORTORDER = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 //
 
 document.addEventListener("DOMContentLoaded", function () {
+	fillInsturmentOptions();
+	document.body.style.cursor = "wait";
 	CGI = GetCgiParameters();
-	DownloadSpreadsheetData(doAction);
 
-	// Setup callback action for search field:
-	let element = document.querySelector("input#search");
+	// Create URL for metadata index to download:
+	var mid = "AKfycbzcGajdIOFmC0ZpVXNgSfNdPFubSAYeo-_ltUmNV3_R0d4Siy1Dofc8e7XWbfd8Ax9MNg";
+	var url = `https://script.google.com/macros/s/${mid}/exec`;
+
+	if (sessionStorage.EXAMPLELIST) {
+		EXAMPLELIST = JSON.parse(sessionStorage.EXAMPLELIST);
+		doAction(EXAMPLELIST);
+	} else {
+		fetch(url, { redirect: 'follow' })
+		.then(response => {
+			if (response.redirected) {
+				console.warn('Request was redirected to:', response.url);
+			}
+			if (!response.ok) {
+				throw new Error('Network response was not ok: ' + response.statusText);
+			}
+			return response.text();
+		})
+		.then(data => {
+			EXAMPLELIST = ParseJsonSpreadsheet(data);
+			sessionStorage.EXAMPLELIST = JSON.stringify(EXAMPLELIST);
+			doAction(EXAMPLELIST);
+		})
+		.catch(error => console.error('Error:', error));
+	}
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+	// Setup callback action for search fields:
+
+	var element = document.querySelector("input#search");
 	if (element) {
 		element.addEventListener("input", function() {
 			doSearch();
 		});
+	} else {
+		console.warn("No input#search found");
 	}
 
 	element = document.querySelector("input#tempomin");
@@ -31,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		element.addEventListener("input", function() {
 			doSearch();
 		});
+	} else {
+		console.warn("No input#tempomin found");
 	}
 
 	element = document.querySelector("input#tempomax");
@@ -38,6 +74,26 @@ document.addEventListener("DOMContentLoaded", function () {
 		element.addEventListener("input", function() {
 			doSearch();
 		});
+	} else {
+		console.warn("No input#partsmax found");
+	}
+
+	element = document.querySelector("input#partsmin");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.warn("No input#partsmin found");
+	}
+
+	element = document.querySelector("input#partsmax");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.warn("No input#partsmax found");
 	}
 
 	element = document.querySelector("input#secondsmin");
@@ -45,6 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		element.addEventListener("input", function() {
 			doSearch();
 		});
+	} else {
+		console.warn("No input#secondsmin found");
 	}
 
 	element = document.querySelector("input#secondsmax");
@@ -52,7 +110,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		element.addEventListener("input", function() {
 			doSearch();
 		});
+	} else {
+		console.warn("No input#secondsmax found");
 	}
+
 
 });
 
@@ -67,6 +128,7 @@ function doAction(examplelist) {
 	if (!examplelist) {
 		examplelist = EXAMPLELIST;
 	}
+
 	WORKLIST = GenerateWorklist(examplelist);
 	console.log("examplelist", examplelist);
 
@@ -75,11 +137,13 @@ function doAction(examplelist) {
 	buildTimeSignatureTypeSelect(WORKLIST, "#tsigtype");
 	buildTempoBeatSelect(WORKLIST, "#tempobeat");
 
-	let selement = document.querySelector("#table-scope");
+	var selement = document.querySelector("#table-scope");
 	if (selement && selement.value === "work") {
 		displayList(WORKLIST);
-	} else {
+	} else if (selement) {
 		displayList(examplelist);
+	} else {
+		console.warn("Cannot find #table-scope");
 	}
 }
 
@@ -94,8 +158,8 @@ function GetPath(event) {
 	if (event.hasOwnProperty("path")) {
 		return event.path;
 	}
-	let output = [];
-	let target = event.target;
+	var output = [];
+	var target = event.target;
 	while (target) {
 		output.push(target);
 		target = target.parentNode;
@@ -111,9 +175,10 @@ function GetPath(event) {
 //
 
 document.addEventListener("click", function (event) {
-	let path = GetPath(event);
-	let tr = null;
-	for (let i=0; i<path.length; i++) {
+	var path = GetPath(event);
+	var tr = null;
+	var i;
+	for (i=0; i<path.length; i++) {
 		if (path[i].nodeName !== "TR") {
 			continue;
 		}
@@ -126,12 +191,12 @@ document.addEventListener("click", function (event) {
 		// nothing interesting to do
 		return;
 	}
-	let td = tr.querySelector("td");
+	var td = tr.querySelector("td");
 	if (!td) {
 		// nothing interesting to do
 		return;
 	}
-	let id = td.textContent;
+	var id = td.textContent;
 	if (!id) {
 		// nothing interesting to do
 		return;

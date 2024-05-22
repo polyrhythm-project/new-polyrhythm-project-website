@@ -32,9 +32,8 @@ console.warn("URL", url);
 			if (callback) {
 				callback();
 			}
-		}
+		});
 	}
-	});
 	request.open("GET", url);
 	request.send();
 }

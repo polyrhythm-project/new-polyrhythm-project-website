@@ -5,7 +5,7 @@
 {% include_relative listeners.html %}
 
 <script>
-// vim: ts=3
+// vim: ts=3:nowrap
 
 
 //////////////////////////////
@@ -415,6 +415,7 @@ function doSearch(text) {
 	}
 
 	let entries = EXAMPLELIST;
+console.log("ENTRIES", entries);
 
 	let workQ = 0;
 	let selement = document.querySelector("#table-scope");
@@ -542,6 +543,94 @@ function doSearch(text) {
 			}
 		}
 	}
+
+	// Filter by part counts
+	let partsmin = document.querySelector("#partsmin").value;
+	let partsmax = document.querySelector("#partsmax").value;
+	let active = false;
+	if (partsmin.match(/^\d+/)) {
+		active = true;
+		partsmin = parseInt(partsmin);
+	} else {
+		partsmin = "";
+	}
+	if (partsmax.match(/^\d+/)) {
+		active = true;
+		partsmax = parseInt(partsmax);
+	} else {
+		partsmax = "";
+	}
+	if (active) {
+		oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			let number = oldentries[i][INDEX_Staff_Count];
+			if (number.match(/^\d+/)) {
+				number = parseInt(number);
+			} else {
+				continue;
+			}
+			if (partsmin !== "") {
+				if (number < partsmin) {
+					continue;
+				}
+			}
+			if (partsmax !== "") {
+				if (number > partsmax) {
+					continue;
+				}
+			}
+			entries.push(oldentries[i]);
+		}
+	}
+
+	// Filter by Instrument
+	let instrument = document.querySelector("#instruments").value;
+	if (instrument != "") {
+		let onlyQ = document.querySelector("#instrument-only").checked;
+		oldentries = entries;
+		entries = [];
+		let regex;
+		if (onlyQ) {
+			regex = new RegExp(`^${instrument}$`);
+		} else {
+			regex = new RegExp(`\\b${instrument}\\b`);
+		}
+		for (let i=0; i<oldentries.length; i++) {
+			let ilist = oldentries[i][INDEX_Instruments];
+			if (typeof ilist === "undefined") {
+				continue;
+			}
+			if (ilist.match(regex)) {
+				entries.push(oldentries[i]);
+			}
+		}
+	}
+
+
+	// Filter by Instrument Class
+	let iclass = document.querySelector("#iclasses").value;
+	if (iclass != "") {
+		let onlyQ = document.querySelector("#iclass-only").checked;
+		oldentries = entries;
+		entries = [];
+		let regex;
+		if (onlyQ) {
+			regex = new RegExp(`^${iclass}$`);
+		} else {
+			regex = new RegExp(`\\b${iclass}\\b`);
+		}
+		for (let i=0; i<oldentries.length; i++) {
+			let ilist = oldentries[i][INDEX_Instrument_Class];
+			if (typeof ilist === "undefined") {
+				continue;
+			}
+			if (ilist.match(regex)) {
+				entries.push(oldentries[i]);
+			}
+		}
+	}
+
 
 	for (let i=0; i<fields.length; i++) {
 		if (fields[i].match(/^\s*$/)) {
@@ -874,7 +963,7 @@ function buildComposerSelect(list, selector) {
 		return;
 	}
 	let output = "";
-	output += "<option value=''>all composers</a>\n";
+	output += "<option value=''>All composers</a>\n";
 	for (let i=0; i<clist.length; i++) {
 		if (!clist) {
 			continue;
@@ -914,7 +1003,7 @@ function buildGenreSelect(list, selector) {
 		return;
 	}
 	let output = "";
-	output += "<option value=''>all genres</a>\n";
+	output += "<option value=''>All genres</a>\n";
 	let lastgenre = "";
 	for (let i=0; i<clist.length; i++) {
 		if (!clist[i]) {
@@ -959,7 +1048,7 @@ function buildTimeSignatureTypeSelect(list, selector) {
 		return;
 	}
 	let output = "";
-	output += "<option value=''>all time signature types</a>\n";
+	output += "<option value=''>All time signature types</a>\n";
 
 	// do a fixed list of known categories
 	let fixed = [];
@@ -1052,7 +1141,7 @@ function buildTempoBeatSelect(list, selector) {
 		return;
 	}
 	let output = "";
-	output += "<option value=''>all tempo beat types</a>\n";
+	output += "<option value=''>All tempo beat types</a>\n";
 
 	// do a fixed list of known categories
 	let fixed = [];
@@ -1137,19 +1226,35 @@ function clearSearchFields() {
 }
 
 
-</script>
+//////////////////////////////
+//
+// fillInstrumentOptions --
+//
 
-
-<!-- scripts from original template -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script>
-	const tableRows = document.querySelectorAll(".table-clickable tbody tr");
-	for (const tableRow of tableRows) {
-		tableRow.addEventListener("click", function () {
-			window.open(this.dataset.href, "_blank");
-		});
+function fillInsturmentOptions() {
+	let select = document.querySelector("select#instruments");
+	if (!select) {
+		console.error("Cannot find instrument select");
+		return;
 	}
+	let options = select.querySelectorAll("option");
+	for (let i=0; i<options.length; i++) {
+		let value = options[i].value;
+		if (!value) {
+			continue;
+		}
+		let newvalue = INSTRUMENTS[value];
+		if (newvalue) {
+			options[i].innerHTML = newvalue;
+		} else {
+			let old = options[i].innerHTML;
+			options[i].innerHTML = old + " XXX";
+		}
+	}
+}
+
 </script>
+
 
 
 

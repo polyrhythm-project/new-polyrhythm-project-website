@@ -30,18 +30,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	CGI = GetCgiParameters();
 
 	// Create URL for metadata index to download:
-	var sid = "{{site.metadata_sid}}";
-	var gid = "{{site.metadata_gid}}";
-	var url = "https://docs.google.com/spreadsheets/d/";
-	url += sid + "/export?gid=" + gid + "&format=tsv";
+	var mid = "AKfycbx0xaN18M80zNffypQ0F6yD-Wp1fh3bSIlgbyPWb6XkaGNNGhKeyJ__7YYgxCoBHOHWHw";
+	var url = `https://script.google.com/macros/s/${mid}/exec`;
+console.log("GOT HERE MMM");
 
 	if (sessionStorage.EXAMPLELIST) {
+console.log("GOT HERE RRR");
 		EXAMPLELIST = JSON.parse(sessionStorage.EXAMPLELIST);
 		doAction(EXAMPLELIST);
 	} else {
 		var request = new XMLHttpRequest();
 		request.addEventListener("load", function () {
-			EXAMPLELIST = ParseSpreadsheet(this.responseText);
+console.log("GOT HERE QQQ");
+			EXAMPLELIST = ParseJsonSpreadsheet(this.responseText);
 			sessionStorage.EXAMPLELIST = JSON.stringify(EXAMPLELIST);
 			doAction(EXAMPLELIST);
 		});
