@@ -2,8 +2,8 @@
 
 //////////////////////////////
 //
-// GetCgiParameters -- Returns an associative array containing the
-//     page's URL's CGI parameters
+// GetCgiParameters -- Returns an associative array containing
+//     the page's URL's CGI parameters.
 //
 
 function GetCgiParameters() {
@@ -23,6 +23,7 @@ function GetCgiParameters() {
          output[pair[0]].push(pair[1]);
       }
    }
+	CGI = output;
    return output;
 }
 

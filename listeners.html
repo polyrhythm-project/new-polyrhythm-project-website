@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon May 13 15:33:16 PDT 2024
-// Last Modified: Mon May 13 15:33:19 PDT 2024
+// Last Modified: Wed May 15 19:09:41 PDT 2024
 // Filename:      composers/listeners.html
 // vim:           ts=3:nowrap:ft=javascript
 //
@@ -14,10 +14,6 @@
 
 <script>
 
-var CGI        = {};      // CGI parameters from URL
-var WORKLIST   = [];
-
-
 //////////////////////////////
 //
 // DOMContentLoaded event listener --
@@ -25,27 +21,8 @@ var WORKLIST   = [];
 
 document.addEventListener("DOMContentLoaded", function () {
 	document.body.style.cursor = "wait";
-	CGI = GetCgiParameters();
-
-	// Create URL for metadata index to download:
-	var sid = "{{site.metadata_sid}}";
-	var gid = "{{site.metadata_gid}}";
-	var url = "https://docs.google.com/spreadsheets/d/";
-	url += sid + "/export?gid=" + gid + "&format=tsv";
-
-	if (sessionStorage.EXAMPLELIST) {
-		EXAMPLELIST = JSON.parse(sessionStorage.EXAMPLELIST);
-		doAction(EXAMPLELIST);
-	} else {
-		var request = new XMLHttpRequest();
-		request.addEventListener("load", function () {
-			EXAMPLELIST = ParseSpreadsheet(this.responseText);
-			sessionStorage.EXAMPLELIST = JSON.stringify(EXAMPLELIST);
-			doAction(EXAMPLELIST);
-		});
-		request.open("GET", url);
-		request.send();
-	}
+	GetCgiParameters();
+	DownloadMetadata(doAction);
 });
 
 
@@ -55,13 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // doAction --
 //
 
-function doAction(examplelist) {
-	WORKLIST = GenerateWorklist(examplelist);
+function doAction() {
 	buildComposerBrowseList();
 	buildGenreBrowseList();
 	document.body.style.cursor = "";
 }
 
 
-
 </script>
+
+
+

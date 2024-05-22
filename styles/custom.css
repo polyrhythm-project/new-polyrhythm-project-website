@@ -174,5 +174,12 @@ a.searchworks:hover, a.purl:hover {
 
 }
 
+footer#footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+}
+
 
 

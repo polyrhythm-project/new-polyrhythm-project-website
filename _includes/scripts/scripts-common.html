@@ -2,13 +2,16 @@
 <script>
 // vim: ts=3
 
-let EXAMPLELIST = [];  // Data downloaded from Google spreadsheets.
-let FILEINDEX = {};     // List of let resource files.
+// Global variables:
+var EXAMPLELIST = []; // Metadata downloaded Google spreadsheets
+var WORKLIST    = []; // Grouping of examples by work
+var CGI         = {}; // CGI parameters form URL
+var FILEINDEX   = {}; // List of resource files
 
 {% include scripts/spreadsheet_index_mappings.js %}
 
-{% include scripts/ParseSpreadsheet.js %}
-{% include scripts/DownloadSpreadheetData.js %}
+{% include scripts/ParseJsonSpreadsheet.js %}
+{% include scripts/DownloadMetadata.js %}
 {% include scripts/HighlightLinkInHeader.js %}
 {% include scripts/GetCgiParameters.js %}
 {% include scripts/PreparePerson.js %}

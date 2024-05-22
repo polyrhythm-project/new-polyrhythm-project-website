@@ -3,6 +3,7 @@
 
 var CGI = {};      // CGI parameters from URL
 var SORTCOLUMN = 0;
+var EXAMPLELIST = [];
 var WORKLIST = [];
 var BROWSELIST = [];
 var SORTORDER = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	DownloadSpreadsheetData(doAction);
 
 	// Setup callback action for search field:
-	var element = document.querySelector("input#search");
+	let element = document.querySelector("input#search");
 	if (element) {
 		element.addEventListener("input", function() {
 			doSearch();
@@ -74,7 +75,7 @@ function doAction(examplelist) {
 	buildTimeSignatureTypeSelect(WORKLIST, "#tsigtype");
 	buildTempoBeatSelect(WORKLIST, "#tempobeat");
 
-	var selement = document.querySelector("#table-scope");
+	let selement = document.querySelector("#table-scope");
 	if (selement && selement.value === "work") {
 		displayList(WORKLIST);
 	} else {
@@ -93,8 +94,8 @@ function GetPath(event) {
 	if (event.hasOwnProperty("path")) {
 		return event.path;
 	}
-	var output = [];
-	var target = event.target;
+	let output = [];
+	let target = event.target;
 	while (target) {
 		output.push(target);
 		target = target.parentNode;
@@ -110,10 +111,9 @@ function GetPath(event) {
 //
 
 document.addEventListener("click", function (event) {
-	var path = GetPath(event);
-	var tr = null;
-	var i;
-	for (i=0; i<path.length; i++) {
+	let path = GetPath(event);
+	let tr = null;
+	for (let i=0; i<path.length; i++) {
 		if (path[i].nodeName !== "TR") {
 			continue;
 		}
@@ -126,12 +126,12 @@ document.addEventListener("click", function (event) {
 		// nothing interesting to do
 		return;
 	}
-	var td = tr.querySelector("td");
+	let td = tr.querySelector("td");
 	if (!td) {
 		// nothing interesting to do
 		return;
 	}
-	var id = td.textContent;
+	let id = td.textContent;
 	if (!id) {
 		// nothing interesting to do
 		return;
