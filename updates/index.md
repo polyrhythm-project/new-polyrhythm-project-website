@@ -8,11 +8,11 @@ layout: default
 summary: Updates for the Polyrhythm Project
 ---
 
-##ESCOM 2024, July 3–6, York Hub, UK##
+## ESCOM 2024, July 3–6, York Hub, UK
 
 Dr. Ève Poudrier will be presenting a summary of three experiments that investigated perceived emotions (mood, energy, movement, dissonance, and tension) in a talk titled "The influence of sonority dissonance and rhythmic complexity on listeners' perceived emotions." This research was performed in collabiration with Bryan Jacob Bell (University of British Columbia), Jason Yin Hei (McGill University), and Craig Stuart Sapp (Stanford University/CCARH/PHI). This talk will be presented remotely and available for viewing online (details TBA).
 
-###Abstract###
+### Abstract
 
 Research on perceived emotion faces a methodological problem of whether to use “real music”
 or “laboratory music” as stimuli for investigation (Jones, 2010). In this study, we offer an
@@ -23,11 +23,11 @@ In Experiment 1, synthetic audio and piano excerpts were perceived as more posit
 
 CITED WORK: Jones, M. R. (2010). <em>Music Perception: current research and future directions</em>. In Springer handbook of auditory research (pp. 1–12). https://doi.org/10.1007/978-1-4419-6114-3_1.
 
-##SMPC 2024, July 25–28, Banff, Canada##
+## SMPC 2024, July 25–28, Banff, Canada
 
 In addition to the above talk, Dr. Ève Poudrier will also be presenting preliminary research on the analysis of a sample of excerpts from the <em>Suter (1980) Corpus</em> using composite and coincidence rhythms in a poster titled: "Polyrhythm classification using the <em>composite</em> tool." The composite tool is the fruit of a collaboration with Craig Stuart Sapp and can be used on this website as well as on Verovio Humdrum Viewer (https://verovio.humdrum.org/). Full documentation for the composite filter is available at: https://doc.verovio.humdrum.org/filter/composite/.
 
-###Abstract###
+### Abstract
 
 Polyrhythm can theoretically be defined as concurrent contrasting rhythms, beats or speeds, that are not readily reducible to a single metric framework built from perceptually relevant pulse streams. However, in current music-analytical practice, the simultaneous rhythms must relate to one another in a very specific manner, which is most often described as involving a ratio other than N:1, the simplest being 3:2. This practice results in a wealth of rhythmic designs that can at best be described as complex, irregular, or metrically dissonant. This study proposes classification of polyophonic excerpts based on their “composite” (sequential presentation of event onsets, where an “event” includes all the notes that have the same onset time), and “coincidence” (coinciding event onsets across parts) rhythms. Classification is performed using a stratified sample from the <em>Suter 1980 Corpus</em>, a collection of 725 short notated polyrhythmic excerpts extracted from 450 works by twenty composers from Europe and North America, 1877–1969. Excerpts were encoded in kern format and rhythmic parsing was completed using the <em>composite</em> tool on Verovio Humdrum Viewer. 
 
