@@ -15,7 +15,7 @@
 	<head>
 		{% include layout/head/default.html %}
 	</head>
-	<body class="d-flex flex-column h-100">
+	<body style="height:100%" class="d-flex flex-column h-100">
 		<main class="flex-shrink-0">
 			{% include layout/navigation/main.html %}
 			{% include layout/header/main.html %}
@@ -25,9 +25,9 @@
 				</div>
 			</section>
 		</main>
-		{% include layout/footer/main.html %}
 		{% include layout/feedback/main.html %}
 		{% include layout/bottom/main.html %}
+		{% include layout/footer/main.html %}
 		</body>
 </html>
 

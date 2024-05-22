@@ -53,7 +53,7 @@ permalink: /index.html
 			<!-- Listen -->
 			<div class="col-12 col-lg-6 float-lg-end mt-4 mt-lg-0">
 				<p class="float-lg-end" role="heading"><small>Listen</small></p>
-				<a href="#"><img class="float-lg-end play-icon" src="assets/img/play.svg" alt="play button"></a>
+				<a href="listen"><img class="float-lg-end play-icon" src="assets/img/play.svg" alt="play button"></a>
 			</div>
 		</div>
 		<!-- Image -->
@@ -114,17 +114,17 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3" src=" assets/img/project-resources-6.jpg" alt="about">
 					<div class="card-body p-0">
 						<div class="category mb-2">ABOUT</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">This platform presents an online edition of 750 examples of polyphonic music with information about composers and their works.  You can explore our sources, listen to the music excerpts, use the analysis tools, and participate in an experiment.</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="overview" role="button"><h3 class="card-title mb-3">This platform presents an online edition of 750 examples of polyphonic music with information about composers and their works.  You can explore our sources, listen to the music excerpts, use the analysis tools, and participate in an experiment.</h3></a>
 					</div>
 				</div>
 			</div>
 			<!-- 3 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Headphones_%281292150%29_-_The_Noun_Project.svg" alt="research">
+					<img class="card-img-top card-img-bottom mb-3" style="height:300px;" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Headphones_%281292150%29_-_The_Noun_Project.svg" alt="research">
 					<div class="card-body p-0">
 						<div class="category mb-2">RESEARCH</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">We explore polyphonic music through close study, computational analysis, and listening experiments. To learn more, consult our publications, presentations, and website resources. </h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="research" role="button"><h3 class="card-title mb-3">We explore polyphonic music through close study, computational analysis, and listening experiments. To learn more, consult our publications, presentations, and website resources. </h3></a>
 					</div>
 				</div>
 			</div>
@@ -134,17 +134,17 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/7/71/WorldMap-Blank-Noborders.svg" alt="maps">
 					<div class="card-body p-0">
 						<div class="category mb-2">MAPS</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">The Suter (1980) Corpus is represented by three interactive maps.  Maps feature composers' lifetime and places where the corpus works were first performed.</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="maps" role="button"><h3 class="card-title mb-3">The Suter (1980) Corpus is represented by three interactive maps.  Maps feature composers' lifetime and places where the corpus works were first performed.</h3></a>
 					</div>
 				</div>
 			</div>
 			<!-- 5 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" src="https://drive.google.com/file/d/1z0OIvmOR-6zgtAnPWRgVmmuB8OHFm7Sq/view?usp=drive_link" alt="tools">
+					<img class="card-img-top card-img-bottom mb-3" src="/img/homepage/vhv-view-of-r588-with-colours-small.jpg" alt="tools">
 					<div class="card-body p-0">
 						<div class="category mb-2">TOOLS</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Visit the analysis page for interactive graphs of the corpus data.  Each example page also features interactive representations of the rhythmic structure.</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="tools" role="button"><h3 class="card-title mb-3">Visit the analysis page for interactive graphs of the corpus data.  Each example page also features interactive representations of the rhythmic structure.</h3></a>
 					</div>
 				</div>
 			</div>
@@ -154,7 +154,7 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-2.jpg" alt="sources">
 					<div class="card-body p-0">
 						<div class="category mb-2">SOURCES</div>
-						<a class="text-decoration-none link-dark stretched-link" href="#" role="button"><h3 class="card-title mb-3">Learn more about the publications and recordings used in the creation of this digital edition.</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="sources" role="button"><h3 class="card-title mb-3">Learn more about the publications and recordings used in the creation of this digital edition.</h3></a>
 					</div>
 				</div>
 			</div>
