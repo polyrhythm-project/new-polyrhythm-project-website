@@ -76,7 +76,9 @@ h2 span {
 }
 
 h3, .h3 {
-    font-size: 1rem;
+    font-size: 1.25rem;
+    color: var(--secondary-dark);
+    font-weight: 500;
 }
 
 .display-6 {
