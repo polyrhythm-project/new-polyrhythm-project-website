@@ -42,43 +42,43 @@ function displayList(entries, query) {
 
 	let output = "";
 
-	output += "<table id='metadata-list'>";
+	output += `<table id='metadata-list' class="table table-clickable">`;
 
 	if (dtype === "example") {
-		output += "<thead>";
-		output += "<tr>";
-		output += "<th title='Sort by ID' onclick='SortByWorkId(0, \"#metadata-list\")'>ID</th>";
+		output += `<thead class="sticky-top top-78">`;
+		output += `<tr>`;
+		output += `<th scope="col" title='Sort by ID' onclick='SortByWorkId(0, \"#metadata-list\")'>ID</th>`;
 		// missing example count
-		output += "<th title='Sort by composer' onclick='SortByText(1, \"#metadata-list\")'>Composer</th>";
-		output += "<th title='Sort by title' onclick='SortByText(2, \"#metadata-list\")'>Title</th>";
-		output += "<th title='Sort by genre' onclick='SortByText(3, \"#metadata-list\")'>Genre</th>";
-		output += "<th title='Sort by composition date' onclick='SortByText(4, \"#metadata-list\")'>Composed</th>";
-		output += "<th style='padding-right:10px;' title='Sort by primier date' onclick='SortByText(5, \"#metadata-list\")'>Premiered</th>";
-		output += "<th title='Sort by publication date' onclick='SortByText(6, \"#metadata-list\")'>Published</th>";
-		output += "<th style='text-align:center' title='Sort by tempo' onclick='SortByTempo(7, \"#metadata-list\")'>Tempo&nbsp;&nbsp;&nbsp;&nbsp;</th>";
-		output += "<th title='Sort by time signature' onclick='SortByTimeSignature(8, \"#metadata-list\")'>Start time&nbsp;signature</th>";
-		output += "<th title='Sort by recording duration' onclick='SortBySeconds(9, \"#metadata-list\")'>Example duration (sec)</th>";
-		output += "</tr>";
-		output += "</thead>";
+		output += `<th scope="col" class="fw-bold" title='Sort by composer' onclick='SortByText(1, \"#metadata-list\")'>Composer</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by title' onclick='SortByText(2, \"#metadata-list\")'>Title</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by genre' onclick='SortByText(3, \"#metadata-list\")'>Genre</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by composition date' onclick='SortByText(4, \"#metadata-list\")'>Composed</th>`;
+		output += `<th scope="col" class="fw-bold" style='padding-right:10px;' title='Sort by primier date' onclick='SortByText(5, \"#metadata-list\")'>Premiered</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by publication date' onclick='SortByText(6, \"#metadata-list\")'>Published</th>`;
+		output += `<th scope="col" class="fw-bold" style='text-align:center' title='Sort by tempo' onclick='SortByTempo(7, \"#metadata-list\")'>Tempo&nbsp;&nbsp;&nbsp;&nbsp;</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by time signature' onclick='SortByTimeSignature(8, \"#metadata-list\")'>Start time&nbsp;signature</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by recording duration' onclick='SortBySeconds(9, \"#metadata-list\")'>Example duration (sec)</th>`;
+		output += `</tr>`;
+		output += `</thead>`;
 	} else {
-		output += "<thead>";
-		output += "<tr>";
-		output += "<th title='Sort by composer' onclick='SortByWorkId(0, \"#metadata-list\")'>ID</th>";
-		output += "<th title='Sort by composer' onclick='SortByNumber(1, \"#metadata-list\", true)'>Examples&nbsp;&nbsp;</th>";
-		output += "<th title='Sort by composer' onclick='SortByText(2, \"#metadata-list\")'>Composer</th>";
-		output += "<th title='Sort by title' onclick='SortByText(3, \"#metadata-list\")'>Title</th>";
-		output += "<th title='Sort by genre' onclick='SortByText(4, \"#metadata-list\")'>Genre</th>";
-		output += "<th title='Sort by composition date' onclick='SortByText(5, \"#metadata-list\")'>Composed</th>";
-		output += "<th style='padding-right:10px;' title='Sort by premier date' onclick='SortByText(6, \"#metadata-list\")'>Premiered</th>";
-		output += "<th title='Sort by publication date' onclick='SortByText(7, \"#metadata-list\")'>Published</th>";
-		output += "</tr>";
-		output += "</thead>";
+		output += `<thead>`;
+		output += `<tr>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by composer' onclick='SortByWorkId(0, \"#metadata-list\")'>ID</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by composer' onclick='SortByNumber(1, \"#metadata-list\", true)'>Examples&nbsp;&nbsp;</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by composer' onclick='SortByText(2, \"#metadata-list\")'>Composer</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by title' onclick='SortByText(3, \"#metadata-list\")'>Title</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by genre' onclick='SortByText(4, \"#metadata-list\")'>Genre</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by composition date' onclick='SortByText(5, \"#metadata-list\")'>Composed</th>`;
+		output += `<th scope="col" class="fw-bold" style='padding-right:10px;' title='Sort by premier date' onclick='SortByText(6, \"#metadata-list\")'>Premiered</th>`;
+		output += `<th scope="col" class="fw-bold" title='Sort by publication date' onclick='SortByText(7, \"#metadata-list\")'>Published</th>`;
+		output += `</tr>`;
+		output += `</thead>`;
 	}
 
-	output += "<tbody>";
+	output += `<tbody>`;
 	output += makeMetaTableRows(entries, dtype);
-	output += "</tbody>";
-	output += "</table>";
+	output += `</tbody>`;
+	output += `</table>`;
 
 	let element = document.querySelector("div#list");
 	if (query) {

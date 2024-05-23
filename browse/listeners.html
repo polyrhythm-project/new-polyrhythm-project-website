@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		fetch(url, { redirect: 'follow' })
 		.then(response => {
 			if (response.redirected) {
-				console.warn('Request was redirected to:', response.url);
+				// console.warn('Request was redirected to:', response.url);
 			}
 			if (!response.ok) {
 				throw new Error('Network response was not ok: ' + response.statusText);
@@ -130,7 +130,6 @@ function doAction(examplelist) {
 	}
 
 	WORKLIST = GenerateWorklist(examplelist);
-	console.log("examplelist", examplelist);
 
 	buildComposerSelect(WORKLIST, "#composer");
 	buildGenreSelect(WORKLIST, "#genre");

@@ -13,6 +13,7 @@ vim:	set ts=3 nowrap ft=liquid
 
 
 {% include_relative scripts-local.html %}
+{% include_relative styles-local.html %}
 
 
 
