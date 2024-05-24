@@ -1,5 +1,5 @@
 ---
-title: Composers
+title: Participate
 author: Craig Stuart Sapp
 keywords: List of composers
 permalink: /participate/index.html
