@@ -14,7 +14,7 @@ There are no experiements currently running.
 
 ## Past Experiments
 
-There are 5 experiments for which data collection has closed. You can still access the experiments, but you data will not be collected
+There are 5 experiments for which data collection has closed. You can still access the experiments, but your data will not be collected
 
 ### Perceived Musical Qualities I (2019)
 
