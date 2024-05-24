@@ -8,7 +8,7 @@ layout: default
 summary: 
 ---
 
-# Participate
+## Participate
 
 Participation info goes here.
 
