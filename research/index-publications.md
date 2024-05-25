@@ -8,37 +8,37 @@ layout: default
 summary: 
 ---
 
-{% include research/styles-local.html %}
+{% include_relative styles-local.html %}
 
 <a name="papers"></a>
 
 ## Journal Articles ##
 
-{% include research/journal-articles.html %}
+{% include_relative journal-articles.html %}
 
 
 
 ## Conference Proceedings ##
 
-{% include research/conference-proceedings.html %}
+{% include_relative conference-proceedings.html %}
 
 
 
 ## Other Presentations ##
 
-{% include research/other-presentations.html %}
+{% include_relative other-presentations.html %}
 
 
 
 ## Web Resources ##
 
-{% include research/web-resources.html %}
+{% include_relative web-resources.html %}
 
 
 
 ## In Progress ##
 
-{% include research/in-progress.html %}
+{% include_relative in-progress.html %}
 
 
 <div style="height:300px"></div>

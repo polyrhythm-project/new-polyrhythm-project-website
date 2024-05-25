@@ -1,12 +1,15 @@
 
+
 body.wait, body.wait * {
 	cursor: wait !important;
 }
+
 
 html, body {
 	height: 100%;
 	margin: 0;
 }
+
 
 body {
 	min-height: 100vh;
@@ -16,9 +19,11 @@ body {
 #content {
 }
 
+
 a.person {
 	color: #8c1515;
 }
+
 
 .play {
 	display: inline-block;
@@ -44,7 +49,6 @@ a.person {
 }
 
 
-
 .play-big {
 	display: inline-block;
 	text-indent: -19999px;
@@ -68,6 +72,7 @@ a.person {
 	top: 3px;
 }
 
+
 div#stats {
 	float: right;
 	color: #aa8888;
@@ -79,11 +84,13 @@ div#stats {
 	line-height: 145%;
 }
 
+
 h1 {
 	font-size: 40px;
 	font-weight: 500;
 	/* color: #8c1515; */
 }
+
 
 h2 {
 	margin-top: 20px;
@@ -91,18 +98,22 @@ h2 {
 
 }
 
+
 td {
 	vertical-align: baseline;
 	padding-right: 10px;
 }
 
+
 tbody tr:hover {
 	background: #f3f3f3;
 }
 
+
 .vhv-button > a, a {
 	text-decoration: none;
 }
+
 
 a.searchworks:hover, a.purl:hover {
 	text-decoration: underline;
@@ -122,6 +133,7 @@ a.searchworks:hover, a.purl:hover {
 	cursor: pointer;
 }
 
+
 .vhv-button.group2 {
 	background: limegreen;
 	border-radius: 2rem;
@@ -134,6 +146,7 @@ a.searchworks:hover, a.purl:hover {
 	margin-right: 1px;
 	cursor: pointer;
 }
+
 
 .vhv-button.group3 {
 	background: dodgerblue;
@@ -148,29 +161,46 @@ a.searchworks:hover, a.purl:hover {
 	cursor: pointer;
 }
 
+
 .vhv-button.group1:hover {
 	background: #d2980c;
 	color: black !important;
 	text-decoration: none !important;
 }
 
+
 .vhv-button.group2:hover {
 	background: green;
 	text-decoration: none !important;
 }
+
 
 .vhv-button.group3:hover {
 	background: indigo;
 	text-decoration: none !important;
 }
 
+
 .vhv-button.highlight-button.group2 {
 	background: crimson !important;
 }
 
+
 .vhv-button.highlight-button.group1,
 .vhv-button.highlight-button.group3 {
+}
 
+
+.card-img-top {
+	height: 200px; /* Set the desired fixed height */
+	width: auto; /* Maintain aspect ratio */
+	object-fit: cover; /* Ensures the image covers the set height without stretching */
+	background-color: white; /* Fills the extra space with white background */
+}
+
+
+.card-title {
+	color: black;
 }
 
 

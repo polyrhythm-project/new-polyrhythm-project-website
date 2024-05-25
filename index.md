@@ -101,7 +101,7 @@ permalink: /index.html
 			<!-- 1 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Kinnear_Centre_at_Banff_Centre.jpg" alt="updates">
+					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/banff-small.jpg" alt="updates">
 					<div class="card-body p-0">
 						<div class="category mb-2">UPDATES</div>
 						<a class="text-decoration-none link-dark stretched-link" href="updates" role="button"><h3 class="card-title mb-3">Upcoming conference presentations at ESCOM 2024, July 3–6, and SMPC, July 25-28.</h3></a>
@@ -111,7 +111,7 @@ permalink: /index.html
 			<!-- 2 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" style="width:413px" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Polyphony.JPG" title="Paul Klee, Polyphony (1932)" alt="about">
+					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/polyphony-small.jpg" title="Paul Klee, Polyphony (1932)" alt="about">
 					<div class="card-body p-0">
 						<div class="category mb-2">ABOUT</div>
 						<a class="text-decoration-none link-dark stretched-link" href="overview" role="button"><h3 class="card-title mb-3">This platform presents an online edition of 750 examples of polyphonic music with information about composers and their works.  You can explore our sources, listen to the music excerpts, use the analysis tools, and participate in an experiment.</h3></a>
@@ -121,7 +121,7 @@ permalink: /index.html
 			<!-- 3 -->
 			<div class="col-md-6 col-lg-4 mb-4">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3" style="height:300px;" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Headphones_%281292150%29_-_The_Noun_Project.svg" alt="research">
+					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/headphones-small.png" alt="research">
 					<div class="card-body p-0">
 						<div class="category mb-2">RESEARCH</div>
 						<a class="text-decoration-none link-dark stretched-link" href="research" role="button"><h3 class="card-title mb-3">We explore polyphonic music through close study, computational analysis, and listening experiments. To learn more, consult our publications, presentations, and website resources. </h3></a>

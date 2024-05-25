@@ -8,24 +8,24 @@ layout: default
 summary: 
 ---
 
-{% include research/styles-local.html %}
+{% include_relative styles-local.html %}
 
 
 ## Conference Presentations ##
 
-{% include research/conference-presentations.html %}
+{% include_relative conference-presentations.html %}
 
 
 
 ## Invited Talks ##
 
-{% include research/invited-talks.html %}
+{% include_relative invited-talks.html %}
 
 
 
 ## Other Presentations ##
 
-{% include research/other-presentations.html %}
+{% include_relative other-presentations.html %}
 
 
 

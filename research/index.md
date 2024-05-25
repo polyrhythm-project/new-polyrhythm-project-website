@@ -8,19 +8,19 @@ layout: default
 summary: 
 ---
 
-{% include research/styles-local.html %}
+{% include_relative styles-local.html %}
 
 <a name="papers"></a>
 
 ## Journal Articles ##
 
-{% include research/journal-articles.html %}
+{% include_relative journal-articles.html %}
 
 
 
 ## Conference Proceedings ##
 
-{% include research/conference-proceedings.html %}
+{% include_relative conference-proceedings.html %}
 
 
 
@@ -28,31 +28,31 @@ summary:
 
 ## Conference Presentations ##
 
-{% include research/conference-presentations.html %}
+{% include_relative conference-presentations.html %}
 
 
 
 ## Invited Talks ##
 
-{% include research/invited-talks.html %}
+{% include_relative invited-talks.html %}
 
 
 
 ## Other Presentations ##
 
-{% include research/other-presentations.html %}
+{% include_relative other-presentations.html %}
 
 
 
 ## Web Resources ##
 
-{% include research/web-resources.html %}
+{% include_relative web-resources.html %}
 
 
 
 ## In Progress ##
 
-{% include research/in-progress.html %}
+{% include_relative in-progress.html %}
 
 
 
