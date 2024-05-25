@@ -1,6 +1,19 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 12:42:01 PDT 2024
+// Last Modified: Sat May 25 12:42:04 PDT 2024
+// Filename:      _includes/scripts/spreadsheet_index_mappings.js
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   Index mappings between the Google Sheets headers.
+//                If the headings change for some reason, the mappings
+//                can be updated here to avoid changing any code elsewhere.
+//
+{% endcomment %}
 
 
-// let INDEX_Suter                              = "Suter";  See Suter_Work_Number
+// let INDEX_Suter                           = "Suter";  See Suter_Work_Number
 let INDEX_Batch                              = "Batch";
 let INDEX_Birth_Date                         = "Birth Date";
 let INDEX_Birth_Place                        = "Birth Place";
@@ -53,5 +66,6 @@ let INDEX_Instrument_Class                   = "Instrument Class";
 
 // Recordings headings:
 let INDEX_Recording_Release_Year             = "Recording Release Year";
+
 
 

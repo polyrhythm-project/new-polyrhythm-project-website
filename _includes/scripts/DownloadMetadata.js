@@ -1,17 +1,23 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// DownloadMetadata --  Download the master index and store
-//    in a global let called EXAMPLELIST.  Then create WORKLIST
-//    by grouping examples by works.
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Fri May 24 12:14:04 PDT 2024
+// Last Modified: Fri May 24 12:14:06 PDT 2024
+// Filename:      _includes/scripts/scripts-common.html
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   Downlad the master example index from Google Sheets
+//                and store in the global variable EXAMPLELIST.  Then
+//                create WORKLIST from the EXAMPLELIST, and finally
+//                run the given callback function.  This function should
+//                be called from within a DOMContentLoaded event function.
+//
+{% endcomment %}
+
 
 function DownloadMetadata(callback) {
-	var mid = "{{site.metadata_mid}}";
-	let url = `https://script.google.com/macros/s/${mid}/exec`;
-
-console.warn("URL", url);
+	document.body.classList.add("wait");
+	CGI = GetCgiParameters();
 
 	if (sessionStorage.EXAMPLELIST) {
 		EXAMPLELIST = JSON.parse(sessionStorage.EXAMPLELIST);
@@ -20,6 +26,10 @@ console.warn("URL", url);
 			callback();
 		}
 	} else {
+		var mid = "{{site.metadata_mid}}";
+		let url = `https://script.google.com/macros/s/${mid}/exec`;
+		console.warn("DOWNLOADING METADATA FROM URL", url);
+
 		let request = new XMLHttpRequest();
 		request.addEventListener("load", function () {
 			try {
@@ -33,9 +43,9 @@ console.warn("URL", url);
 				callback();
 			}
 		});
+		request.open("GET", url);
+		request.send();
 	}
-	request.open("GET", url);
-	request.send();
 }
 
 

@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon May 13 15:33:16 PDT 2024
-// Last Modified: Mon May 13 15:33:19 PDT 2024
+// Last Modified: Sat May 25 12:38:15 PDT 2024
 // Filename:      composers/listeners.html
 // vim:           set ts=3 nowrap ft=liquid:
 //
@@ -11,59 +11,42 @@
 //
 {% endcomment %}
 
+{% include scripts/scripts-common.html %}
 
 <script>
 
-var CGI        = {};      // CGI parameters from URL
-var WORKLIST   = [];
-var SORTCOLUMN = 0;
-var SORTORDER  = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+// Variables for keeping track of sorting order in the composer table:
+var SORTINFO = {};
+SORTINFO.order = [1];
 
 
 //////////////////////////////
 //
-// DOMContentLoaded event listener --
+// DownloadMetadata -- Download metadata from metadata
+//     spreadsheet and then run doAction to build the
+//     composer list.
 //
 
 document.addEventListener("DOMContentLoaded", function () {
-	document.body.style.cursor = "wait";
-	CGI = GetCgiParameters();
-
-	// Create URL for metadata index to download:
-	var mid = "AKfycbx0xaN18M80zNffypQ0F6yD-Wp1fh3bSIlgbyPWb6XkaGNNGhKeyJ__7YYgxCoBHOHWHw";
-	var url = `https://script.google.com/macros/s/${mid}/exec`;
-console.log("GOT HERE MMM");
-
-	if (sessionStorage.EXAMPLELIST) {
-console.log("GOT HERE RRR");
-		EXAMPLELIST = JSON.parse(sessionStorage.EXAMPLELIST);
-		doAction(EXAMPLELIST);
-	} else {
-		var request = new XMLHttpRequest();
-		request.addEventListener("load", function () {
-console.log("GOT HERE QQQ");
-			EXAMPLELIST = ParseJsonSpreadsheet(this.responseText);
-			sessionStorage.EXAMPLELIST = JSON.stringify(EXAMPLELIST);
-			doAction(EXAMPLELIST);
-		});
-		request.open("GET", url);
-		request.send();
-	}
+    DownloadMetadata(doAction);
 });
 
 
 
 //////////////////////////////
 //
-// doAction --
+// doAction -- Display the list of composers and then
+//    turn off the waiting cursor.
 //
 
+
 function doAction(examplelist) {
-	WORKLIST = GenerateWorklist(examplelist);
 	displayComposerList();
-	document.body.style.cursor = "";
+	document.body.classList.remove("wait");
 }
 
 
-
 </script>
+
+
+

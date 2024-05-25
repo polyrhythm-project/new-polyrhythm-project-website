@@ -1,35 +1,76 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Fri May 24 19:09:49 PDT 2024
+// Last Modified: Fri May 24 19:09:52 PDT 2024
+// Filename:      composers/styles-local.html
+// vim:           set ts=3 nowrap ft=css:
+//
+// Description:   Styles for the composer page.
+//
+{% endcomment %}
 
 
 <style>
+
+#list {
+	min-height:400px; 
+	margin-bottom:50px; 
+	margin-top:20px;
+}
+
 
 #main-content {
 	font-size: 2rem;
 }
 
+
 table#composer-list th {
 	font-weight: bold;
+	cursor: pointer;
+	user-select: none;         /* For standard browsers */
+	-webkit-user-select: none; /* For WebKit browsers (Safari, Chrome) */
+	-moz-user-select: none;    /* For Firefox */
+	-ms-user-select: none;     /* For Internet Explorer/Edge */
 }
+
+
+table#composer-list th:hover {
+	background: {{site.color_darkblue}}
+	text: {{site.color_white}}
+}
+
 
 table#composer-list td, table#composer-list th {
 	padding-right: 50px;
 }
 
+
 table#composer-list td:nth-child(2) {
 	text-align: center;
 }
+
 
 table#composer-list td:nth-child(3) {
 	text-align: center;
 }
 
+
 table#composer-list {
-	/* P size/font */
 	font-family: 'Lato', sans-serif;
 	font-size: 1.3rem;
 }
+
 
 table#composer-list td:first-child {
 	white-space: nowrap;
 }
 
+button#copy {
+	z-index: 10;
+}
+
 </style>
+
+
+

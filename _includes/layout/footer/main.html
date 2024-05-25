@@ -3,26 +3,16 @@
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon May 13 15:56:27 PDT 2024
 // Last Modified: Mon May 13 15:56:30 PDT 2024
-// Filename:      _includes/footer/main.html
+// Filename:      _includes/layout/footer/main.html
 // vim:           set ts=3 nowrap ft=liquid:
 //
-// Description:   This piece of HTML code is for displaying the page footer.
+// Description:   The footer to include in page layouts.
 //
 {% endcomment %}
 
 
-<footer id="#footer" class="py-4 mt-auto">
-	<div class="container">
-		<div class="row align-items-center justify-content-between flex-column flex-sm-row">
-			<div class="col-12 col-lg-5 mb-3 mb-lg-0">
-				<img class="img-fluid" src="/assets/img/footer-ubc-logo.png" alt="ubc logo">
-			</div>
-			<div class="col-12 col-lg-7 text-center text-lg-right">
-				<img class="img-fluid" src="/assets/img/footer-canada-logo.png" alt="canada logo">
-			</div>
-		</div>
-	</div>
-</footer>
+{%include layout/footer/style-local.html %}
+{% include layout/footer/footer.html %}
 
 
 

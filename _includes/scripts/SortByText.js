@@ -5,7 +5,7 @@
 // SortByText --
 //
 
-function SortByText(index, selector) {
+function SortByText(index, selector, sortinfo) {
 	let data = document.querySelectorAll(selector + " > tbody > tr");
 	let datalist = [];
 	for (let i=0; i<data.length; i++) {
@@ -24,9 +24,13 @@ function SortByText(index, selector) {
 		return result;
 	});
 
-	SORTORDER[index]++;
-	if (SORTORDER[index] % 2 == 0) {
-		datalist.reverse();
+	if (sortinfo.order[index]) {
+		sortinfo.order[index]++;
+		if (sortinfo.order[index] % 2 == 0) {
+			datalist.reverse();
+		}
+	} else {
+		sortinfo.order[index] = 1;
 	}
 
 	let body = document.querySelector(selector + " tbody");

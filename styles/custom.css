@@ -1,4 +1,8 @@
 
+body.wait, body.wait * {
+	cursor: wait !important;
+}
+
 html, body {
 	height: 100%;
 	margin: 0;
@@ -78,7 +82,7 @@ div#stats {
 h1 {
 	font-size: 40px;
 	font-weight: 500;
-	color: #8c1515;
+	/* color: #8c1515; */
 }
 
 h2 {
@@ -92,12 +96,7 @@ td {
 	padding-right: 10px;
 }
 
-th {
-	color: #820000;
-	cursor: pointer;
-}
-
-tr:hover {
+tbody tr:hover {
 	background: #f3f3f3;
 }
 
@@ -171,13 +170,6 @@ a.searchworks:hover, a.purl:hover {
 
 .vhv-button.highlight-button.group1,
 .vhv-button.highlight-button.group3 {
-
-}
-
-footer#footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 
 }
 

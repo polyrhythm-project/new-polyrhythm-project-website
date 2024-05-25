@@ -1,10 +1,19 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Fri May 24 19:11:04 PDT 2024
+// Last Modified: Fri May 24 19:11:07 PDT 2024
+// Filename:      composers/scripts-local.html
+// vim:           set ts=3 nowrap ft=javascript:
+//
+// Description:   Javascript for composer page.
+//
+{% endcomment %}
+
 
 {% include_relative listeners.html %}
-{% include scripts/scripts-common.html %}
 
 <script>
-// vim: ts=3
-
 
 //////////////////////////////
 //
@@ -12,37 +21,47 @@
 //
 
 function displayComposerList() {
-	var element = document.querySelector("div#list");
+	let element = document.querySelector("#composer-list-container");
 	if (!element) {
+		console.error("Cannot find #composer-list-container");
 		return;
 	}
 
-	var composerinfo = CreateComposerList(WORKLIST);
-	// console.log("COMPOSER LIST", composerinfo);
+	let composerinfo = CreateComposerList(WORKLIST);
 
-	var output = "";
+	let output = "";
+	output += `<div class="container mt-5">`;
+	output += `<table class="table" id="composer-list">`;
 
-	output += '<div class="container mt-5">';
-	output += "<table class='table' id='composer-list'>";
-	
-	output += "<thead>";
-	output += "<tr>";
-	output += "<th title='Sort by composer' onclick='SortByText(0, \"#composer-list\")'>Composer</th>";
-	output += "<th title='Sort by work count' onclick='SortByNumber(1, \"#composer-list\", true)'>Works</th>";
-	output += "<th title='Sort by example count' onclick='SortByNumber(2, \"#composer-list\", true)'>Examples</th>";
-	output += "<th title='Sort by example count' onclick='SortByNumber(3, \"#composer-list\", false)'>Born</th>";
-	output += "<th title='Sort by example count' onclick='SortByNumber(4, \"#composer-list\", false)'>Died</th>";
-	output += "<th title='Sort by nationality' onclick='SortByText(5, \"#composer-list\")'>Nationality</th>";
-	output += "</tr>";
-	output += "</thead>";
+	output += `<thead>`;
+	output += `<tr>`;
+	output += `<th title="Sort by composer" onclick="SortByText(0, '#composer-list', SORTINFO)">Composer</th>`;
+	output += `<th title="Sort by work count" onclick="SortByNumber(1, '#composer-list', SORTINFO)">Works</th>`;
+	output += `<th title="Sort by example count" onclick="SortByNumber(2, '#composer-list', SORTINFO)">Examples</th>`;
+	output += `<th title="Sort by example count" onclick="SortByNumber(3, '#composer-list', SORTINFO)">Born</th>`;
+	output += `<th title="Sort by example count" onclick="SortByNumber(4, '#composer-list', SORTINFO)">Died</th>`;
+	output += `<th title="Sort by nationality" onclick="SortByText(5, '#composer-list', SORTINFO)">`;
+	output += `<div class="d-flex justify-content-between">`;
+	output += `   <div>`;
+	output += `      Nationality`;
+	output += `   </div>`;
+	output += `   <div>`;
+	output += `      <button onclick="copyComposerTable(event)" title="copy composer table" id="copy" class="btn btn-primary">`;
+	output += `         <i class="fas fa-copy"></i>`;
+	output += `      </button>`;
+	output += `   </div>`;
+	output += `</div>`;
+	output += `</th>`;
+	output += `</tr>`;
+	output += `</thead>`;
 
-	output += "<tbody>";
-	for (var i=0; i<composerinfo.length; i++) {
+	output += `<tbody>`;
+	for (let i=0; i<composerinfo.length; i++) {
 		output += makeComposerRow(composerinfo[i]);
 	}
-	output += "</tbody>";
-	output += "</table>";
-	output += "</div>";
+	output += `</tbody>`;
+	output += `</table>`;
+	output += `</div>`;
 
 	element.innerHTML = output;
 }
@@ -52,7 +71,7 @@ function displayComposerList() {
 //////////////////////////////
 //
 // makeComposerRow --
-// 
+//
 // Rows:
 //  1: composer's name
 //  2: number of works by composer
@@ -62,7 +81,7 @@ function displayComposerList() {
 //
 
 function makeComposerRow(centry) {
-	var output = "";
+	let output = "";
 	output += "<tr>";
 
 	output += "<td>";
@@ -72,7 +91,7 @@ function makeComposerRow(centry) {
 	output += "</td>";
 
 	// Work count:
-	var workcount = getWorkCount(centry);
+	let workcount = getWorkCount(centry);
 	output += "<td>";
 	if (workcount > 0) {
 		output += workcount;
@@ -80,7 +99,7 @@ function makeComposerRow(centry) {
 	output += "</td>";
 
 	// Example count:
-	var examplecount = getExampleCount(centry);
+	let examplecount = getExampleCount(centry);
 	output += "<td>";
 	if (examplecount > 0) {
 		output += examplecount;
@@ -88,7 +107,7 @@ function makeComposerRow(centry) {
 	output += "</td>";
 
 	// Birth year:
-	var born = getBirthYear(centry);
+	let born = getBirthYear(centry);
 	output += "<td>";
 	if (born > 0) {
 		output += born;
@@ -96,7 +115,7 @@ function makeComposerRow(centry) {
 	output += "</td>";
 
 	// Death year:
-	var died = getDeathYear(centry);
+	let died = getDeathYear(centry);
 	output += "<td>";
 	if (died > 0) {
 		output += died;
@@ -104,7 +123,7 @@ function makeComposerRow(centry) {
 	output += "</td>";
 
 	// Nationality:
-	var nationality = getNationality(centry);
+	let nationality = getNationality(centry);
 	if (nationality) {
 		nationality = nationality.replace(/,\s*/, ", ", "g");
 	}
@@ -113,7 +132,6 @@ function makeComposerRow(centry) {
 		output += nationality;
 	}
 	output += "</td>";
-
 
 	output += "</tr>";
 	return output;
@@ -142,13 +160,13 @@ function getWorkCount(centry) {
 //
 
 function getExampleCount(centry) {
-	var works = centry["@works"];
+	let works = centry["@works"];
 	if (!works) {
 		return 0;
 	}
-	var sum = 0;
-	for (var i=0; i<works.length; i++) {
-		var examples = works[i]["@examples"];
+	let sum = 0;
+	for (let i=0; i<works.length; i++) {
+		let examples = works[i]["@examples"];
 		if (examples) {
 			sum += examples.length;
 		}
@@ -158,17 +176,17 @@ function getExampleCount(centry) {
 
 
 
-////////////////////
+//////////////////////////////
 //
 // getBirthYear --
 //
 
 function getBirthYear(centry) {
-	var year = centry["Birth Date"];
+	let year = centry["Birth Date"];
 	if (!year) {
 		return "";
 	}
-	var matches = year.match(/(\d{4})/);
+	let matches = year.match(/(\d{4})/);
 	if (matches) {
 		return matches[1];
 	} else {
@@ -178,17 +196,17 @@ function getBirthYear(centry) {
 
 
 
-////////////////////
+//////////////////////////////
 //
 // getDeathYear --
 //
 
 function getDeathYear(centry) {
-	var year = centry["Death Date"];
+	let year = centry["Death Date"];
 	if (!year) {
 		return "";
 	}
-	var matches = year.match(/(\d{4})/);
+	let matches = year.match(/(\d{4})/);
 	if (matches) {
 		return matches[1];
 	} else {
@@ -198,13 +216,13 @@ function getDeathYear(centry) {
 
 
 
-////////////////////
+//////////////////////////////
 //
 // getNationality --
 //
 
 function getNationality(centry) {
-	var nationality = centry["Nationality"];
+	let nationality = centry["Nationality"];
 	if (!nationality) {
 		return "";
 	} else {
@@ -213,8 +231,37 @@ function getNationality(centry) {
 }
 
 
-</script>
+//////////////////////////////
+//
+// copyComposerTable --
+//
 
+function copyComposerTable(event) {
+	event.stopPropagation();
+	let element = document.querySelector("table#composer-list");
+	if (!element) {
+		console.error("ERROR: cannot find table#composer-list");
+		return;
+	}
+	let text = "";
+	let rows = element.querySelectorAll("tr");
+	for (let i=0; i<rows.length; i++) {
+		let cols = rows[i].querySelectorAll("th, td");
+		for (let j=0; j<cols.length; j++) {
+			let value = cols[j].textContent;
+			text += value;
+			if (j < cols.length - 1) {
+				text += "\t";
+			}
+		}
+		text += "\n";
+	}
+	CopyToClipboard(text);
+	alert("Composer list copyied to clipboard.");
+}
+
+
+</script>
 
 
 
