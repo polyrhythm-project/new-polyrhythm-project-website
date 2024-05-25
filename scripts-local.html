@@ -42,9 +42,34 @@ function buildComposerBrowseList() {
 	let output = "";
 	output += `<option selected value="">Composer</option>`;
 	for (let i=0; i<keys.length; i++) {
-		output += `<option value="${keys[i]}">${keys[i]}</option>`;
+		let composerLastName = getComposerLastName(keys[i]);
+		// let composerBriefName = getComposerBriefName(keys[i]);
+		
+		output += `<option value="${composerLastName}">${composerLastName}</option>`;
 	}
 	composerSelect.innerHTML = output;
+}
+
+
+
+//////////////////////////////
+//
+// getComposerLastName --
+//
+
+function getComposerLastName(input) {
+	return input.replace(/\s*,.*/, "").replace(/\(.*?\)/, "", "g").replace(/\[.*?\]/, "", "g");
+}
+
+
+
+//////////////////////////////
+//
+// getComposerBriefName --
+//
+
+function getComposerBriefName(input) {
+	return input.replace(/\[.*?\]/, "", "g").replace(/\(.*?\)/, "", "g");
 }
 
 
@@ -80,4 +105,24 @@ function buildGenreBrowseList() {
 }
 
 
+
+//////////////////////////////
+//
+// browseComposer --
+//
+
+function browseComposer() {
+	let element = document.querySelector("#composerSelect");
+	if (!element) {
+		console.error("ERROR: Cannot find #composerSelect");
+		retur;
+	}
+	let value = encodeURIComponent(element.value);
+	window.location.href = `/browse/?c=$value`;
+}
+
+
 </script>
+
+
+

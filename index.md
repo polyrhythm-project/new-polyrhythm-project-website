@@ -24,20 +24,14 @@ permalink: /index.html
 				<p role="heading"><small>Browse by</small></p>
 				<!-- Composer -->
 				<div class="browse-list btn-group mb-3 mb-lg-0">
-					<select id="composerSelect" class="form-select form-select--primary" aria-label="Composer">
+					<select onchange="browseComposer()" id="composerSelect" class="form-select form-select--primary" aria-label="Composer">
 						<option selected>Composer</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
 					</select>
 				</div>
 				<!-- Genre -->
 				<div class="browse-list btn-group mb-3 mb-lg-0">
 					<select id="genreSelect" class="form-select form-select--primary" aria-label="Genre">
 						<option selected>Genre</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
 					</select>
 				</div>
 				<!-- Premiered -->
