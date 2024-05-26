@@ -1,9 +1,22 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 21:04:11 PDT 2024
+// Last Modified: Sat May 25 21:04:14 PDT 2024
+// Filename:      browse/styles-local.html
+// vim:           set ts=3 nowrap ft=css:
+//
+// Description:   Local styles for the browse page.
+//
+{% endcomment %}
+
 
 <style>
 
 div#su-content {
 	min-height: 700px;
 }
+
 
 input#search {
 	margin-left: 5px;
@@ -15,6 +28,7 @@ tr.data {
 	cursor: pointer;
 }
 
+
 .clear-button {
 	border: 1px solid rgb(105, 105, 105);
 	padding-top: 3px;
@@ -24,11 +38,13 @@ tr.data {
 	border-radius: 3px;
 }
 
+
 .clear-button:hover {
 	background: #8c1515;
 	color: white;
 	cursor: pointer;
 }
+
 
 input#tempomin, input#tempomax {
 	width: 80px;
@@ -39,6 +55,7 @@ input#tempomin, input#tempomax {
 	padding-right: 3px;
 	border-radius: 3px;
 }
+
 
 input#secondsmin, input#secondsmax {
 	width: 90px;
@@ -58,4 +75,27 @@ thead, thead tr, thead tr th {
 }
 
 
+table#metadata-list td:nth-child(3) {
+	min-width: 250px;
+}
+
+
+table#metadata-list th:nth-child(5),
+table#metadata-list th:nth-child(6),
+table#metadata-list th:nth-child(7),
+table#metadata-list th:nth-child(8),
+table#metadata-list th:nth-child(9),
+table#metadata-list th:nth-child(10) {
+	text-align: center;
+}
+
+
+table#metadata-list th {
+	vertical-align: middle;
+}
+
+
 </style>
+
+
+
