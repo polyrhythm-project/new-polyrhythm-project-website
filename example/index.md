@@ -5,7 +5,7 @@ keywords: polyrhythm example
 permalink: /example/index.html
 vim: ts=3
 verovio: true
-template: default
+layout: default
 summary:
 ---
 
