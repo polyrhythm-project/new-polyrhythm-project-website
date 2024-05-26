@@ -6,7 +6,7 @@
 // Filename:      _includes/scripts/DownloadMetadata.html
 // vim:           set ts=3 nowrap ft=javascript:
 //
-// Description:   Downlad the master example index from Google Sheets
+// Description:   Download the master example index from Google Sheets
 //                and store in the global variable EXAMPLELIST.  Then
 //                create WORKLIST from the EXAMPLELIST, and finally
 //                run the given callback function.  This function should

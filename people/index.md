@@ -8,6 +8,26 @@ layout: default
 summary: 
 ---
 
+<style>
+
+td {
+	font-size: 1.3rem;
+	vertical-align: top;
+}
+
+
+td.nameline {
+	padding-top: 50px;
+}
+
+
+td:hover {
+	background: white;
+}
+
+
+</style>
+
 
 ## Current Members ##
 
@@ -24,7 +44,7 @@ summary:
     <td class="topalign">I am an Assistant Professor in music theory at the School of Music of the University of British Columbia, where I teach courses on compositional practice in Europe in the 18th and 19th centuries, techniques of graphic linear analysis, and music psychology. My research has been presented at interdisciplinary conferences in North America, Europe, and the Middle East, and published in Music Perception and Empirical Musicology Review. My current projects focus on empirical aesthetics, specifically the experience of listening to rhythmic polyphony and the aesthetics of complexity, combining methods of close study, computer-aided musicology, and behavioural experimentation.</td>
   </tr>
   <tr>
-     <td class="nameline" valign="top" colspan="2"><b>Craig Sapp</b></td>
+     <td class="nameline" valign="top" colspan="2"><b>Craig Stuart Sapp</b></td>
   </tr>
   <tr>
     <td valign="top" colspan="2"><i>Consultant and Technical Director (PHI/CCARH/Stanford University)</i></td>
@@ -42,7 +62,7 @@ and
      <td class="nameline" valign="top" colspan="2"><b>Daniel Shanahan</b></td>
   </tr>
   <tr>
-    <td valign="top" colspan="2"><i>Co-investigator (Ohio State University)</i></td>
+    <td valign="top" colspan="2"><i>Co-investigator (Northwestern University)</i></td>
   </tr>
   <tr>
     <td valign="top"><img width="300" src="/people/DanShanahan.jpg"></td>

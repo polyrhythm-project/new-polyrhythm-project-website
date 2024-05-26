@@ -16,14 +16,17 @@
 <script>
 
 // Global variables:
-var EXAMPLELIST = []; // Metadata downloaded Google spreadsheets
-var WORKLIST    = []; // Grouping of examples by work
-var FILEINDEX   = {}; // List of resource files
+var EXAMPLELIST   = []; // Metadata downloaded Google spreadsheets
+var WORKLIST      = []; // Grouping of examples by work
+var SCORELIST     = []; // List of musical scores for works
+var RECORDINGLIST = []; // List of recordings for works
+var FILEINDEX     = {}; // List of resource files
 
 {% include scripts/spreadsheet_index_mappings.js %}
 
 {% include scripts/ParseJsonSpreadsheet.js       %}
 {% include scripts/DownloadMetadata.js           %}
+{% include scripts/DownloadScoreData.js          %}
 {% include scripts/HighlightLinkInHeader.js      %}
 {% include scripts/GetCgiParameters.js           %}
 {% include scripts/GetComposerLastName.js        %}

@@ -21,14 +21,19 @@
 // displayComposerList --
 //
 
-function displayComposerList() {
+function displayComposerList(worklist) {
 	let element = document.querySelector("#composer-list-container");
 	if (!element) {
 		console.error("Cannot find #composer-list-container");
 		return;
 	}
 
+	if (!worklist) {
+		worklist = WORKLIST;
+	}
+
 	let composerinfo = CreateComposerList(WORKLIST);
+console.log("COMPOSER INFO", composerinfo);
 
 	let output = "";
 	output += `<div class="container mt-5">`;
@@ -77,8 +82,8 @@ function displayComposerList() {
 //  1: composer's name
 //  2: number of works by composer
 //  3: number of examples by composer
-//  4: birth year
-//  5: death year
+//  4: birth year (title is birth place)
+//  5: death year (title is death place)
 //  6: nationality
 //
 
@@ -89,7 +94,7 @@ function makeComposerRow(centry) {
 	let output = "";
 	output += `<tr data-composer="${shortName}">`;
 
-	output += `<td data-type="name">`;
+	output += `<td data-type="name" title="${composerName}">`;
 	if (centry["Composer Name"]) {
 	 	output += PreparePerson(composerName);
 	}
@@ -113,7 +118,8 @@ function makeComposerRow(centry) {
 
 	// Birth year:
 	let born = getBirthYear(centry);
-	output += `<td data-type="birth-year">`;
+	let birthplace = getBirthPlace(centry);
+	output += `<td data-type="birth-year" title="${birthplace}">`;
 	if (born > 0) {
 		output += born;
 	}
@@ -121,7 +127,8 @@ function makeComposerRow(centry) {
 
 	// Death year:
 	let died = getDeathYear(centry);
-	output += `<td data-type="death-year">`;
+	let deathplace = getDeathPlace(centry);
+	output += `<td data-type="death-year" title="${deathplace}">`;
 	if (died > 0) {
 		output += died;
 	}
@@ -140,6 +147,36 @@ function makeComposerRow(centry) {
 
 	output += "</tr>";
 	return output;
+}
+
+
+
+//////////////////////////////
+//
+// getBirthPlace --
+//
+
+function getBirthPlace(centry) {
+	if (centry["Birth Place"]) {
+		return centry["Birth Place"].replace(/\s*,\s*/, ", ", "g");
+	} else {
+		return "";
+	}
+}
+
+
+
+//////////////////////////////
+//
+// getDeathPlace --
+//
+
+function getDeathPlace(centry) {
+	if (centry["Death Place"]) {
+		return centry["Death Place"].replace(/\s*,\s*/, ", ", "g");
+	} else {
+		return "";
+	}
 }
 
 

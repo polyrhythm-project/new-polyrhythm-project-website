@@ -15,8 +15,9 @@ summary:
 Twenty composers are represented in the Polyrhythm dataset.  Click
 on a table heading to sort the table by that column (click
 twice to reverse the sort order), or click on an entry to browse
-works/examples for that composer.  Also see the <a
-href="https://maps.polyrhythm.humdrum.org/composers/">Composers
+works/examples for that composer.  Mouse-over the birth and death dates
+to see birth and death places. Also see the <a
+href="https://maps.polyrhythm.humdrum.org/composers/">composers
 map</a>, which displays birth, death and intermediate locations.
 
 
