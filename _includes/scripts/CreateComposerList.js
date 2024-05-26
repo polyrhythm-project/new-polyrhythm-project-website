@@ -21,7 +21,10 @@
 {% endcomment %}
 
 
-function CreateComposerList(worklist) {
+function CreateComposerList(workindex) {
+	if (!workindex) {
+		workindex = WORKINDEX;
+	}
 	let cinfo = {};
 	let name;
 	let born;
@@ -29,16 +32,19 @@ function CreateComposerList(worklist) {
 	let bornloc;
 	let diedloc;
 	let nationality;
-	for (let i=0; i<worklist.length; i++) {
-		name = worklist[i][INDEX_Composer_Name];
+	let keys = Object.keys(workindex);
+	for (let i=0; i<keys.length; i++) {
+		let first = workindex[keys[i]][0];
+		name = first[INDEX_Composer_Name];
 		if (!name) {
+			console.warn("ERROR: No composer name for", first);
 			continue;
 		}
-		born = worklist[i][INDEX_Birth_Date];
-		died = worklist[i][INDEX_Death_Date];
-		bornloc = worklist[i][INDEX_Birth_Place];
-		diedloc = worklist[i][INDEX_Death_Place];
-		nationality = worklist[i][INDEX_Nationality];
+		born        = first[INDEX_Birth_Date];
+		died        = first[INDEX_Death_Date];
+		bornloc     = first[INDEX_Birth_Place];
+		diedloc     = first[INDEX_Death_Place];
+		nationality = first[INDEX_Nationality];
 		if (!cinfo[name]) {
 			// create a name
 			cinfo[name] = {};
@@ -48,11 +54,21 @@ function CreateComposerList(worklist) {
 			cinfo[name][INDEX_Birth_Place] = bornloc;
 			cinfo[name][INDEX_Death_Place] = diedloc;
 			cinfo[name][INDEX_Nationality] = nationality.replace(/,\s*/g, ", ");
-			cinfo[name]["@works"] = [];
-			cinfo[name]["@works"].push(worklist[i]);
+			if (cinfo[name]["@works"]) {
+				cinfo[name]["@works"].push(workindex[keys[i]]);
+			} else {
+				cinfo[name]["@works"] = [workindex[keys[i]]];
+			}
+			if (cinfo[name]["@examples"]) {
+				cinfo[name]["@examples"] = cinfo[name]["@examples"].concat(workindex[keys[i]]);
+			} else {
+				cinfo[name]["@examples"] = workindex[keys[i]];
+			}
+			cinfo[name]["@examples"] = cinfo[name]["@examples"].concat(workindex[keys[i]]);
 		} else {
 			// add a work to the composer's list
-			cinfo[name]["@works"].push(worklist[i]);
+			cinfo[name]["@works"].push(workindex[keys[i]]);
+			cinfo[name]["@examples"] = cinfo[name]["@examples"].concat(workindex[keys[i]]);
 		}
 	}
 	let composers = Object.keys(cinfo).sort();
@@ -60,7 +76,6 @@ function CreateComposerList(worklist) {
 	for (let i=0; i<composers.length; i++) {
 		output.push(cinfo[composers[i]]);
 	}
-
 	return output;
 }
 

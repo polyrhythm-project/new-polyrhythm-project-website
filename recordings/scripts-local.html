@@ -15,63 +15,25 @@
 
 <script>
 
-//////////////////////////////
-//
-// createRecordingList -- Convert the individual examples
-//     into an array of objects by work id.
-//
-
-function createRecordingList(exampleList) {
-	let works = {};
-	for (let i=0; i<exampleList.length; i++) {
-		let workid = "";
-		if (typeof INDEX_Suter_Work_ID != "undefined") {
-			workid = exampleList[i][INDEX_Suter_Work_ID];
-		}
-		if (!workid) {
-			console.warn("NO WORKID FOR", exampleList[i]);
-			continue;
-		}
-		if (!workid.match(/^[A-Z][a-z][a-z]-\d+x?$/)) {
-			console.error("WORKID", workid, "IS INVALID FOR", exampleList[i]);
-			continue;
-		}
-		if (typeof works[workid] === "undefined") {
-			works[workid] = [ exampleList[i] ];
-		} else {
-			works[workid].push(exampleList[i]);
-		}
-	}
-
-	return works;
-}
-
 
 //////////////////////////////
 //
 // displayRecordingList --
 //
 
-let RECLIST;
-
-function displayRecordingList(workList) {
-
-	if (!RECLIST) {
-		RECLIST = workList;
-	}
-	if (!workList) {
-		workList = RECLIST;
+function displayRecordingList(recordingindex) {
+	if (!recordingindex) {
+		recordingindex = RECORDINGINDEX;
 	}
 
 	let sortedList = [];
 
 	let sortElement = document.querySelector("#sort-method");
 	let sortType = sortElement.value;
-	console.warn("SORT TYPE", sortType);
 
 	if (sortType === "workid") {
 
-		let keys = Object.getOwnPropertyNames(workList);
+		let keys = Object.getOwnPropertyNames(recordingindex);
 		keys.sort(function (a, b) {
 			let matchesA = a.match(/^(.*)-(.*)(x?)/);
 			let matchesB = b.match(/^(.*)-(.*)(x?)/);
@@ -95,13 +57,13 @@ function displayRecordingList(workList) {
 			}
 		});
 		for (let i=0; i<keys.length; i++) {
-			sortedList[i] = workList[keys[i]];
+			sortedList[i] = recordingindex[keys[i]];
 		}
 
 	} else if (sortType === "exid") {
-		let keys = Object.getOwnPropertyNames(workList);
+		let keys = Object.getOwnPropertyNames(recordingindex);
 		for (let i=0; i<keys.length; i++) {
-			sortedList[i] = workList[keys[i]];
+			sortedList[i] = recordingindex[keys[i]];
 		}
 
 		sortedList.sort(function (a, b) {
@@ -114,12 +76,12 @@ function displayRecordingList(workList) {
 
 	} else if (sortType === "cyear") {
 
-		let keys = Object.getOwnPropertyNames(workList);
+		let keys = Object.getOwnPropertyNames(recordingindex);
 		keys.sort(function (a, b) {
 			let matchesA;
 			let matchesb;
-			let yearA = workList[a][0]["Composition Year"] || "";
-			let yearB = workList[b][0]["Composition Year"] || "";
+			let yearA = recordingindex[a][0]["Composition Year"] || "";
+			let yearB = recordingindex[b][0]["Composition Year"] || "";
 			if (!yearA && !yearB) {
 				return 0;
 			}
@@ -162,17 +124,17 @@ function displayRecordingList(workList) {
 			}
 		});
 		for (let i=0; i<keys.length; i++) {
-			sortedList[i] = workList[keys[i]];
+			sortedList[i] = recordingindex[keys[i]];
 		}
 
 	} else if (sortType === "ryear") {
 
-		let keys = Object.getOwnPropertyNames(workList);
+		let keys = Object.getOwnPropertyNames(recordingindex);
 		keys.sort(function (a, b) {
 			let matchesA;
 			let matchesb;
-			let yearA = workList[a][0]["Recording Release Year"] || "";
-			let yearB = workList[b][0]["Recording Release Year"] || "";
+			let yearA = recordingindex[a][0]["Recording Release Year"] || "";
+			let yearB = recordingindex[b][0]["Recording Release Year"] || "";
 			if (yearA.match(/^[^\d]*$/)) {
 				yearA = "";
 			}
@@ -234,7 +196,7 @@ function displayRecordingList(workList) {
 			}
 		});
 		for (let i=0; i<keys.length; i++) {
-			sortedList[i] = workList[keys[i]];
+			sortedList[i] = recordingindex[keys[i]];
 		}
 
 	}
@@ -255,15 +217,13 @@ function displayRecordingList(workList) {
 	output += "</table>";
 	container.innerHTML = output;
 
-console.warn("RECLIST", sortedList);
-
 }
 
 
 
 //////////////////////////////
 //
-// printScoreEntry -- print one entry in the score list.
+// printRecordingEntry -- print one entry in the score list.
 //
 // Example entry:
 // Recording URL: "https://open.spotify.com/track/67n0A39MXBnnAnhTYltXj4?si=AyW8buuMQ2CGZ0-XvU5mRQ"
@@ -330,9 +290,7 @@ function generateWorkEntry(entry) {
 	let e = [];
 	for (let i=0; i<entry.length; i++) {
 		let id = "";
-		if (typeof INDEX_Suter_Example_Number != "undefined") {
-			id = entry[i][INDEX_Suter_Example_Number];
-		}
+		id = entry[i]["Suter Example"];
 		if (!id) {
 			continue;
 		}

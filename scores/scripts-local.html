@@ -1,66 +1,38 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun May 26 10:43:27 PDT 2024
+// Last Modified: Sun May 26 10:43:31 PDT 2024
+// Filename:      scripts-local.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Functions for dynamic aspects of the scores page.
+//
+{% endcomment %}
 
-{% include_relative listeners.html %}
+
 {% include scripts/scripts-common.html %}
+{% include_relative listeners.html %}
+
 
 <script>
-// vim: ts=3
-
 
 //////////////////////////////
 //
-// createWorkList -- Convert the individual examples in to an array of
-//     objects by work id.
+// displayScoreIndex -- Display the list of scores.
 //
 
-function createWorkList(exampleList) {
-	// console.error("EXAMPLE LIST", exampleList);
-	let works = {};
-	for (let i=0; i<exampleList.length; i++) {
-		let workid = exampleList[i]["Work ID"];
-		if (!workid) {
-			console.warn("NO WORKID FOR", exampleList[i]);
-			continue;
-		}
-		if (!workid.match(/^[A-Z][a-z][a-z]-\d+x?$/)) {
-			console.error("WORKID", workid, "IS INVALID FOR", exampleList[i]);
-			continue;
-		}
-		if (typeof works[workid] === "undefined") {
-			works[workid] = [ exampleList[i] ];
-		} else {
-			works[workid].push(exampleList[i]);
-		}
+function displayScoreIndex(scoreindex) {
+	if (!scoreindex) {
+		scoreindex = SCOREINDEX;
 	}
-
-	return works;
-}
-
-
-//////////////////////////////
-//
-// displayScoreList --
-//
-
-function displayScoreList(workList) {
-	document.body.classList.remove("waiting");
-
-
-	if (!WORKLIST) {
-		WORKLIST = workList;
-	}
-	if (!workList) {
-		workList = WORKLIST;
-	}
-
-	let sortedList = [];
-
+	let sortedlist  = [];
 	let sortElement = document.querySelector("#sort-method");
-	let sortType = sortElement.value;
-	console.warn("SORT TYPE", sortType);
+	let sortType    = sortElement.value;
+	// console.warn("SORT TYPE", sortType);
 
 	if (sortType === "workid") {
-
-		let keys = Object.getOwnPropertyNames(workList);
+		let keys = Object.getOwnPropertyNames(scoreindex);
 		keys.sort(function (a, b) {
 			let matchesA = a.match(/^(.*)-(.*)(x?)/);
 			let matchesB = b.match(/^(.*)-(.*)(x?)/);
@@ -84,31 +56,29 @@ function displayScoreList(workList) {
 			}
 		});
 		for (let i=0; i<keys.length; i++) {
-			sortedList[i] = workList[keys[i]];
+			sortedlist[i] = scoreindex[keys[i]];
 		}
 
 	} else if (sortType === "exid") {
-		let keys = Object.getOwnPropertyNames(workList);
+		let keys = Object.getOwnPropertyNames(scoreindex);
 		for (let i=0; i<keys.length; i++) {
-			sortedList[i] = workList[keys[i]];
+			sortedlist[i] = scoreindex[keys[i]];
 		}
 
-		sortedList.sort(function (a, b) {
+		sortedlist.sort(function (a, b) {
 			let exidA = a[0].Filename.replace(/_.*/, "").replace(/^[TR]/, "");
 			let exidB = b[0].Filename.replace(/_.*/, "").replace(/^[TR]/, "");
 			return exidA.localeCompare(b);
 		});
 
-		// console.warn("NEW SORTED LIST", sortedList);
-
 	} else if (sortType === "cyear") {
 
-		let keys = Object.getOwnPropertyNames(workList);
+		let keys = Object.getOwnPropertyNames(scoreindex);
 		keys.sort(function (a, b) {
 			let matchesA;
 			let matchesb;
-			let yearA = workList[a][0]["Composition Year"] || "";
-			let yearB = workList[b][0]["Composition Year"] || "";
+			let yearA = scoreindex[a][0]["Composition Year"] || "";
+			let yearB = scoreindex[b][0]["Composition Year"] || "";
 			if (!yearA && !yearB) {
 				return 0;
 			}
@@ -151,17 +121,17 @@ function displayScoreList(workList) {
 			}
 		});
 		for (let i=0; i<keys.length; i++) {
-			sortedList[i] = workList[keys[i]];
+			sortedlist[i] = scoreindex[keys[i]];
 		}
 
 	} else if (sortType === "pyear") {
 
-		let keys = Object.getOwnPropertyNames(workList);
+		let keys = Object.getOwnPropertyNames(scoreindex);
 		keys.sort(function (a, b) {
 			let matchesA;
 			let matchesb;
-			let yearA = workList[a][0]["E1 Edition Year"] || "";
-			let yearB = workList[b][0]["E1 Edition Year"] || "";
+			let yearA = scoreindex[a][0]["E1 Edition Year"] || "";
+			let yearB = scoreindex[b][0]["E1 Edition Year"] || "";
 			if (!yearA && !yearB) {
 				return 0;
 			}
@@ -204,7 +174,7 @@ function displayScoreList(workList) {
 			}
 		});
 		for (let i=0; i<keys.length; i++) {
-			sortedList[i] = workList[keys[i]];
+			sortedlist[i] = scoreindex[keys[i]];
 		}
 
 	}
@@ -218,8 +188,8 @@ function displayScoreList(workList) {
 	let output = "";
 	output += "<table id='work-list'>";
 
-	for (let i=0; i<sortedList.length; i++) {
-		output += generateWorkEntry(sortedList[i]);
+	for (let i=0; i<sortedlist.length; i++) {
+		output += generateWorkEntry(sortedlist[i]);
 	}
 
 	output += "</table>";
@@ -260,6 +230,8 @@ function generateWorkEntry(entry) {
 		return;
 	}
 
+	let name     = first["Composer Name"] || "";
+	let lastname = GetComposerLastName(name);
 	let workid   = first["Work ID"] || "";
 	let composer = first["Composer Name"] || "";
 	let title    = first["Work Title"] || "";
@@ -352,7 +324,7 @@ function generateWorkEntry(entry) {
 	output += "</td>";
 
 	output += "<td class='workinfo'>";
-	output += `<span class="worktitle">${title}`;
+	output += `<span class="worktitle">${lastname}: ${title}`;
 	if (cyear.match(/\(/)) {
 		if (!cyear.match(/; /)) {
 			cyear = cyear.replace(/\(/g, "; ").replace(/\)/, " ");
@@ -395,7 +367,6 @@ function generateWorkEntry(entry) {
 
 
 </script>
-
 
 
 

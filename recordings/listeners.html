@@ -23,18 +23,20 @@
 document.body.classList.add("wait");
 
 document.addEventListener("DOMContentLoaded", async function () {
-
-	// Create URL for metadata index to download:
-	let mid = "{{site.recording_mid}}";
-	let url = `https://script.google.com/macros/s/${mid}/exec`;
-	fetch(url)
-		.then(response => response.json())
-		.then (json => {
-			displayRecordingList(createRecordingList(json));
-			document.body.classList.remove("wait");
-		})
-		.catch(error => console.error(error));
+	DownloadRecordingData(doAction);
 });
+
+
+
+//////////////////////////////
+//
+// doAction --
+//
+
+function doAction() {
+	displayRecordingList(RECORDINGINDEX);
+	document.body.classList.remove("wait");
+}
 
 
 </script>

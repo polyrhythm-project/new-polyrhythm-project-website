@@ -1,10 +1,10 @@
 {% comment %}
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
-// Creation Date: Sat May 25 19:47:33 PDT 2024
-// Last Modified: Sat May 25 19:54:51 PDT 2024
-// Filename:      recordings/styles-local.html
-// vim:           ts=3:nowrap:ft=css
+// Creation Date: Sun May 26 12:14:48 PDT 2024
+// Last Modified: Sun May 26 12:14:51 PDT 2024
+// Filename:      scores/styles-local.html
+// vim:           set ts=3 nowrap ft=css:
 //
 // Description:   Local styles for the recordings page.
 //
@@ -15,6 +15,11 @@
 
 #main-content {
 	min-height: 800px;
+}
+
+
+.waiting {
+	cursor: wait;
 }
 
 
@@ -29,7 +34,12 @@ table#work-list tr td {
 
 
 #main-content {
-	font-size: 1.5rem;
+	font-size: 2.25rem;
+}
+
+
+table#work-list a, table#work-list ul li a {
+	text-decoration: none;
 }
 
 
@@ -41,7 +51,7 @@ table#work-list tr td {
 }
 
 
-.example, .catnum, li a, li {
+.example, .catnum, .publication {
 	font-weight: 300;
 }
 
@@ -57,7 +67,7 @@ table#work-list tr td {
 
 
 table#work-list ul li {
-	line-height: 1;
+	line-height: 1.1;
 }
 
 

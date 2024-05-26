@@ -41,7 +41,7 @@ td:hover {
   </tr>
   <tr>
     <td valign="top"><img src="/people/EvePoudrier.jpg"></td>
-    <td class="topalign">I am an Assistant Professor in music theory at the School of Music of the University of British Columbia, where I teach courses on compositional practice in Europe in the 18th and 19th centuries, techniques of graphic linear analysis, and music psychology. My research has been presented at interdisciplinary conferences in North America, Europe, and the Middle East, and published in Music Perception and Empirical Musicology Review. My current projects focus on empirical aesthetics, specifically the experience of listening to rhythmic polyphony and the aesthetics of complexity, combining methods of close study, computer-aided musicology, and behavioural experimentation.</td>
+    <td class="topalign">Ève is an Assistant Professor in music theory at the School of Music of the University of British Columbia, teaching courses on compositional practice in Europe in the 18th and 19th centuries, techniques of graphic linear analysis, and music psychology. My research has been presented at interdisciplinary conferences in North America, Europe, and the Middle East, and published in Music Perception and Empirical Musicology Review. My current projects focus on empirical aesthetics, specifically the experience of listening to rhythmic polyphony and the aesthetics of complexity, combining methods of close study, computer-aided musicology, and behavioural experimentation.</td>
   </tr>
   <tr>
      <td class="nameline" valign="top" colspan="2"><b>Craig Stuart Sapp</b></td>
@@ -67,7 +67,7 @@ and
   <tr>
     <td valign="top"><img width="300" src="/people/DanShanahan.jpg"></td>
     <td class="topalign">
-Daniel Shanahan is currently an associate professor of music theory and cognition at Northwestern University. Previously, he served as director of the Cognitive and Systematic Musicology Lab at Ohio State University, and the Music Cognition and Computation Lab at Louisiana State University.
+Daniel is currently an associate professor of music theory and cognition at Northwestern University. Previously, he served as director of the Cognitive and Systematic Musicology Lab at Ohio State University, and the Music Cognition and Computation Lab at Louisiana State University.
 Shanahan’s research interests include music and emotion, the diffusion of musical style, corpus studies, and the computational analysis of jazz and folk music. He has published articles or reviews in journals such as <i>Music Perception, The Journal of Jazz Studies, Memory and Cognition, Music Analysis, Music Theory Spectrum, Music Theory Online</i>, and <i>Musicae Scientiae</i>, among others, and has contributed chapters to the <i>Routledge Companion to Music Cognition, The Routledge Companion to Music Theory Pedagogy</i>, and <i>Over and Over Again: Exploring Repetition in Popular Music</i>.
 </td>
   </tr>
@@ -79,7 +79,7 @@ Shanahan’s research interests include music and emotion, the diffusion of musi
   </tr>
   <tr>
     <td valign="top"><img src="/people/BryanBell.jpg"></td>
-    <td class="topalign">I am a PhD student in music theory at the University of British Columbia. My research interests are in the perception and cognition of rhythm and meter, as well as digital, mathematical, and empirical approaches to music research. My research is motivated by the conception of music as one domain through which we can understand a broader array of human experiences, including emotion, creativity, memory, and the mind. I am originally from the United States, where I obtained a bachelor’s degree in piano performance (with a minor in English) and a master’s degree in music theory. For my master’s thesis, I encoded the solo piano music of Alexander Scriabin and investigated his use of meter using a computational model. At UBC, I am both a research assistant in the Rhythm Computation and Cognition Lab and a teaching assistant.</td>
+    <td class="topalign">Bryan is a PhD student in music theory at the University of British Columbia. His research interests are in the perception and cognition of rhythm and meter, as well as digital, mathematical, and empirical approaches to music research. Bryan's research is motivated by the conception of music as one domain through which we can understand a broader array of human experiences, including emotion, creativity, memory, and the mind. He is originally from the United States, obtaining a bachelor’s degree in piano performance (with a minor in English) and a master’s degree in music theory. For my master’s thesis, he encoded the solo piano music of Alexander Scriabin and investigated his use of meter using a computational model. At UBC, Bryan is both a research assistant in the Rhythm Computation and Cognition Lab and a teaching assistant.</td>
   </tr>
   <tr>
     <td class="nameline" valign="top" colspan="2"><b>Jason Lee</b></td>
@@ -89,7 +89,7 @@ Shanahan’s research interests include music and emotion, the diffusion of musi
   </tr>
   <tr>
     <td valign="top"><img src="/people/JasonLee.jpg"></td>
-    <td class="topalign">Jason Lee is a master’s student in music theory at the University of British Columbia. His research interests include text-music relations, Schenkerian analysis, and Cantonese music. He has upcoming presentations at national conferences of the Society for Music Theory and the Royal Musical Association, among various regional and student conferences. In April 2022, he received the Best Student Paper Award at the College Music Society Northwest Regional Conference for his presentation titled “The Semantic Evolution of Chromatic Mediants: A Baroque Origin”. Before beginning his studies in Canada, Jason graduated from the Chinese University of Hong Kong under the supervision of Professor Su Yin Mak. When not working on his research or singing in a choir, Jason is most likely searching for the latest ice cream flavors around his neighborhood.</td>
+    <td class="topalign">Jason is a master’s student in music theory at the University of British Columbia. His research interests include text-music relations, Schenkerian analysis, and Cantonese music. He has upcoming presentations at national conferences of the Society for Music Theory and the Royal Musical Association, among various regional and student conferences. In April 2022, he received the Best Student Paper Award at the College Music Society Northwest Regional Conference for his presentation titled “The Semantic Evolution of Chromatic Mediants: A Baroque Origin”. Before beginning his studies in Canada, Jason graduated from the Chinese University of Hong Kong under the supervision of Professor Su Yin Mak. When not working on his research or singing in a choir, Jason is most likely searching for the latest ice cream flavors around his neighborhood.</td>
   </tr>
 </tbody>
 </table>

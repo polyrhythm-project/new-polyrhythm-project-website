@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat May 25 19:45:49 PDT 2024
-// Last Modified: Sat May 25 19:45:52 PDT 2024
+// Last Modified: Sun May 26 10:42:41 PDT 2024
 // Filename:      recording/listeners.html
 // vim:           ts=3:nowrap:ft=javascript
 //
@@ -20,29 +20,14 @@
 
 document.body.classList.add("wait");
 
-document.addEventListener("DOMContentLoaded", async function () {
-	if (sessionStorage["WORKLIST"]) {
-		WORKLIST = JSON.parse(sessionStorage["WORKLIST"]);
-	}
-
-	if (WORKLIST) {
-		displayScoreList(WORKLIST);
-		document.body.classList.remove("wait");
-	} else {
-		// Create URL for metadata index to download:
-		let mid = "AKfycbzrt-H71aH844BF60TrWoYSdWzcACcOzNKpSQRqAZJptIbgfUFQ69wtfHMmVE-begOzVg";
-		let url = `https://script.google.com/macros/s/${mid}/exec`;
-		fetch(url)
-			.then(response => response.json())
-			.then (json => {
-				let workList = createWorkList(json);
-				sessionStorage["WORKLIST"] = JSON.stringify(workList);
-				displayScoreList(workList);
-				document.body.classList.remove("wait");
-			})
-			.catch(error => console.error(error));
-	}
+document.addEventListener("DOMContentLoaded", function () {
+	DownloadScoreData(doAction);
 });
+
+function doAction() {
+	displayScoreIndex(SCOREINDEX);
+	document.body.classList.remove("wait");
+}
 
 
 </script>

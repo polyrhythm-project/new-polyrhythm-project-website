@@ -49,6 +49,11 @@ function SortByNumber(index, selector, sortinfo) {
 	} else {
 		sortinfo.order[index] = 1;
 	}
+	for (let i=0; i<sortinfo.order.length; i++) {
+		if (i != index) {
+			sortinfo.order[i] = 0;
+		}
+	}
 
 	let body = document.querySelector(selector + " tbody");
 	if (body) {

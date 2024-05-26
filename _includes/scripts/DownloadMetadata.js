@@ -2,13 +2,13 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri May 24 12:14:04 PDT 2024
-// Last Modified: Fri May 24 12:14:06 PDT 2024
+// Last Modified: Sun May 26 11:43:16 PDT 2024
 // Filename:      _includes/scripts/DownloadMetadata.html
 // vim:           set ts=3 nowrap ft=javascript:
 //
 // Description:   Download the master example index from Google Sheets
 //                and store in the global variable EXAMPLELIST.  Then
-//                create WORKLIST from the EXAMPLELIST, and finally
+//                create WORKINDEX from the EXAMPLELIST, and finally
 //                run the given callback function.  This function should
 //                be called from within a DOMContentLoaded event function.
 //
@@ -18,7 +18,7 @@
 function DownloadMetadata(callback) {
 	if (sessionStorage.EXAMPLELIST) {
 		EXAMPLELIST = JSON.parse(sessionStorage.EXAMPLELIST);
-		WORKLIST = GenerateWorklist(EXAMPLELIST);
+		WORKINDEX = CreateWorkIndex(EXAMPLELIST);
 		if (callback) {
 			callback();
 		}
@@ -34,7 +34,7 @@ function DownloadMetadata(callback) {
 			} catch (error) {
 				console.log("ERROR: ", error.message);
 			}
-			WORKLIST = GenerateWorklist(EXAMPLELIST);
+			WORKINDEX = CreateWorkIndex(EXAMPLELIST);
 			if (callback) {
 				callback();
 			}

@@ -22,8 +22,10 @@
 // buildComposerBrowseList --
 //
 
-function buildComposerBrowseList() {
-	console.warn("WORKLIST", WORKLIST);
+function buildComposerBrowseList(workindex) {
+	if (!workindex) {
+		workindex = WORKINDEX;
+	}
 	let composerIndex = "Composer Name";
 	let composerSelect = document.querySelector("#composerSelect");
 	if (!composerSelect) {
@@ -31,8 +33,12 @@ function buildComposerBrowseList() {
 		return;
 	}
 	let composerList = {};
-	for (let i=0; i<WORKLIST.length; i++) {
-		let composer = WORKLIST[i][composerIndex];
+	for (let i=0; i<worklist.length; i++) {
+		if (!worklist[i]) {
+			return;
+		}
+		let first = worklist[i][0];
+		let composer = first[composerIndex];
 		if (!composer) {
 			continue;
 		}
@@ -55,8 +61,10 @@ function buildComposerBrowseList() {
 // buildGenreBrowseList --
 //
 
-function buildGenreBrowseList() {
-	console.warn("WORKLIST", WORKLIST);
+function buildGenreBrowseList(workindex) {
+	if (!workindex) {
+		workindex = WORKINDEX;
+	}
 	let genreIndex = "Genre";
 	let genreSelect = document.querySelector("#genreSelect");
 	if (!genreSelect) {
@@ -64,8 +72,8 @@ function buildGenreBrowseList() {
 		return;
 	}
 	let genreList = {};
-	for (let i=0; i<WORKLIST.length; i++) {
-		let genre = WORKLIST[i][genreIndex];
+	for (let i=0; i<workindex.length; i++) {
+		let genre = workindex[i][genreIndex];
 		if (!genre) {
 			continue;
 		}

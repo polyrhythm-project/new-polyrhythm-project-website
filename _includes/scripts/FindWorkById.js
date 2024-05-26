@@ -12,17 +12,16 @@
 {% endcomment %}
 
 
-function FindWorkById(wid, worklist) {
+function FindWorkById(wid, workindex) {
 	if (!wid) {
 		return null;
 	}
 	if (!worklist) {
-		worklist = WORKLIST;
+		worklist = WORKINDEX;
 	}
-	for (let i=0; i<worklist.length; i++) {
-		if (worklist[i][INDEX_Suter_Work_ID] === wid) {
-			return worklist[i];
-		}
+	let entry = worklist[wid];
+	if (entry) {
+		return entry;
 	}
 	return null;
 }

@@ -21,19 +21,18 @@
 // displayComposerList --
 //
 
-function displayComposerList(worklist) {
+function displayComposerList(workindex) {
 	let element = document.querySelector("#composer-list-container");
 	if (!element) {
 		console.error("Cannot find #composer-list-container");
 		return;
 	}
 
-	if (!worklist) {
-		worklist = WORKLIST;
+	if (!workindex) {
+		workindex = WORKINDEX;
 	}
 
-	let composerinfo = CreateComposerList(WORKLIST);
-console.log("COMPOSER INFO", composerinfo);
+	let composerinfo = CreateComposerList(WORKINDEX);
 
 	let output = "";
 	output += `<div class="container mt-5">`;
@@ -202,18 +201,7 @@ function getWorkCount(centry) {
 //
 
 function getExampleCount(centry) {
-	let works = centry["@works"];
-	if (!works) {
-		return 0;
-	}
-	let sum = 0;
-	for (let i=0; i<works.length; i++) {
-		let examples = works[i]["@examples"];
-		if (examples) {
-			sum += examples.length;
-		}
-	}
-	return sum;
+	return centry["@examples"].length;
 }
 
 

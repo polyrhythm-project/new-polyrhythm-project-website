@@ -16,37 +16,42 @@
 <script>
 
 // Global variables:
-var EXAMPLELIST   = []; // Metadata downloaded Google spreadsheets
-var WORKLIST      = []; // Grouping of examples by work
-var SCORELIST     = []; // List of musical scores for works
-var RECORDINGLIST = []; // List of recordings for works
-var FILEINDEX     = {}; // List of resource files
+var EXAMPLELIST    = []; // Metadata downloaded Google spreadsheets
+var WORKLINDEX     = []; // Grouping of examples by Work ID
+var SCORELIST      = []; // List of musical scores for works
+var SCOREINDEX     = {}; // Score list indexed by Work ID
+var RECORDINGLIST  = []; // List of recordings for works
+var RECORDINGINDEX = {}; // Recording list indexed by Work ID
+var FILEINDEX      = {}; // List of resource files
 
 {% include scripts/spreadsheet_index_mappings.js %}
 
-{% include scripts/ParseJsonSpreadsheet.js       %}
+{% include scripts/CopyToClipboard.js            %}
+{% include scripts/CreateComposerList.js         %}
+{% include scripts/CreateRecordingIndex.js       %}
+{% include scripts/CreateScoreIndex.js           %}
+{% include scripts/CreateWorkIndex.js            %}
 {% include scripts/DownloadMetadata.js           %}
+{% include scripts/DownloadRecordingData.js      %}
 {% include scripts/DownloadScoreData.js          %}
-{% include scripts/HighlightLinkInHeader.js      %}
+{% include scripts/FindExampleById.js            %}
+{% include scripts/FindWorkById.js               %}
+{% include scripts/FlipName.js                   %}
 {% include scripts/GetCgiParameters.js           %}
 {% include scripts/GetComposerLastName.js        %}
 {% include scripts/GetPath.js                    %}
+{% include scripts/HighlightLinkInHeader.js      %}
+{% include scripts/ParseJsonSpreadsheet.js       %}
 {% include scripts/PreparePerson.js              %}
+{% include scripts/PrepareResourceFileIndex.js   %}
 {% include scripts/PrepareTitle.js               %}
-{% include scripts/FlipName.js                   %}
+{% include scripts/SortByDruid.js                %}
 {% include scripts/SortByNumber.js               %}
 {% include scripts/SortBySeconds.js              %}
 {% include scripts/SortByTempo.js                %}
-{% include scripts/SortByTimeSignature.js        %}
-{% include scripts/SortByDruid.js                %}
-{% include scripts/SortByWorkId.js               %}
 {% include scripts/SortByText.js                 %}
-{% include scripts/GenerateWorkList.js           %}
-{% include scripts/CreateComposerList.js         %}
-{% include scripts/FindExampleById.js            %}
-{% include scripts/FindWorkById.js               %}
-{% include scripts/CopyToClipboard.js            %}
-{% include scripts/PrepareResourceFileIndex.js   %}
+{% include scripts/SortByTimeSignature.js        %}
+{% include scripts/SortByWorkId.js               %}
 
 
 </script>

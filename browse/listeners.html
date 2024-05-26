@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat May 25 17:57:40 PDT 2024
-// Last Modified: Sat May 25 17:57:42 PDT 2024
+// Last Modified: Sun May 26 11:44:59 PDT 2024
 // Filename:      browse/listeners.html
 // vim:           set ts=3 nowrap ft=javascript:
 //
@@ -17,7 +17,6 @@
 // Mapping of instrument codes to instrument names:
 var INSTRUMENTS = {% include instruments/instrument-names.json %};
 
-var CGI = {};      // CGI parameters from URL
 var BROWSELIST = [];
 
 // Variables for keeping track of sorting order in the composer table:
@@ -133,14 +132,14 @@ function doAction(examplelist) {
 	}
 
 	// Fill in select menus for browse page:
-	buildComposerSelect(WORKLIST, "#composer");
-	buildGenreSelect(WORKLIST, "#genre");
-	buildTimeSignatureTypeSelect(WORKLIST, "#tsigtype");
-	buildTempoBeatSelect(WORKLIST, "#tempobeat");
+	buildComposerSelect(WORKINDEX, "#composer");
+	buildGenreSelect(WORKINDEX, "#genre");
+	buildTimeSignatureTypeSelect(WORKINDEX, "#tsigtype");
+	buildTempoBeatSelect(WORKINDEX, "#tempobeat");
 
 	let selement = document.querySelector("#table-scope");
 	if (selement && selement.value === "work") {
-		displayList(WORKLIST);
+		displayList(WORKINDEX);
 	} else if (selement) {
 		displayList(examplelist);
 	} else {

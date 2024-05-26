@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //
 
 
-function doAction(examplelist) {
-	displayComposerList();
+function doAction() {
+	displayComposerList(WORKINDEX);
 	document.body.classList.remove("wait");
 }
 
@@ -60,7 +60,6 @@ document.addEventListener("click", function (event) {
 	let tr;
 	for (let i=0; i<path.length; i++) {
 		if (path[i].nodeName === "TH") {
-			console.log("TH element found (nothing to do)");
 			return;
 		} else if (path[i].nodeName === "TD") {
 			td = path[i];
