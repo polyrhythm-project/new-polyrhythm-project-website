@@ -1,57 +1,61 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 17:57:40 PDT 2024
+// Last Modified: Sat May 25 17:57:42 PDT 2024
+// Filename:      browse/listeners.html
+// vim:           set ts=3 nowrap ft=javascript:
+//
+// Description:   Listeners for browse page.
+//
+{% endcomment %}
+
+{% include scripts/scripts-common.html %}
+
 <script>
-// vim: ts=3
+
+// Mapping of instrument codes to instrument names:
+var INSTRUMENTS = {% include instruments/instrument-names.json %};
 
 var CGI = {};      // CGI parameters from URL
-var SORTCOLUMN = 0;
-var WORKLIST = [];
 var BROWSELIST = [];
-var SORTORDER = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-var INSTRUMENTS = {% include instruments/instrument-names.json %};
+// Variables for keeping track of sorting order in the composer table:
+var SORTINFO = {};
+SORTINFO.order = [1];
 
 
 //////////////////////////////
 //
-// DOMContentLoaded event listener --
+// DownloadMetadata -- Download metadata from metadata
+//     spreadsheet and then run doAction to build the
+//     composer list.
 //
 
 document.addEventListener("DOMContentLoaded", function () {
-	fillInsturmentOptions();
-	document.body.style.cursor = "wait";
-	CGI = GetCgiParameters();
-
-	// Create URL for metadata index to download:
-	var mid = "AKfycbzcGajdIOFmC0ZpVXNgSfNdPFubSAYeo-_ltUmNV3_R0d4Siy1Dofc8e7XWbfd8Ax9MNg";
-	var url = `https://script.google.com/macros/s/${mid}/exec`;
-
-	if (sessionStorage.EXAMPLELIST) {
-		EXAMPLELIST = JSON.parse(sessionStorage.EXAMPLELIST);
-		doAction(EXAMPLELIST);
-	} else {
-		fetch(url, { redirect: 'follow' })
-		.then(response => {
-			if (response.redirected) {
-				// console.warn('Request was redirected to:', response.url);
-			}
-			if (!response.ok) {
-				throw new Error('Network response was not ok: ' + response.statusText);
-			}
-			return response.text();
-		})
-		.then(data => {
-			EXAMPLELIST = ParseJsonSpreadsheet(data);
-			sessionStorage.EXAMPLELIST = JSON.stringify(EXAMPLELIST);
-			doAction(EXAMPLELIST);
-		})
-		.catch(error => console.error('Error:', error));
-	}
+	document.body.classList.remove("wait");
+	DownloadMetadata(doAction);
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-	// Setup callback action for search fields:
+//////////////////////////////
+//
+// DOMContentLoaded event listener -- Fill in instrument names in insturment select.
+//
 
-	var element = document.querySelector("input#search");
+document.addEventListener("DOMContentLoaded", function () {
+	fillInstrumentOptions();
+}
+
+
+
+//////////////////////////////
+//
+// DOMContentLoaded event listener -- Setup callback actions for search fields.
+//
+//
+document.addEventListener("DOMContentLoaded", function () {
+	let element = document.querySelector("input#search");
 	if (element) {
 		element.addEventListener("input", function() {
 			doSearch();
@@ -114,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.warn("No input#secondsmax found");
 	}
 
-
 });
 
 
@@ -129,14 +132,13 @@ function doAction(examplelist) {
 		examplelist = EXAMPLELIST;
 	}
 
-	WORKLIST = GenerateWorklist(examplelist);
-
+	// Fill in select menus for browse page:
 	buildComposerSelect(WORKLIST, "#composer");
 	buildGenreSelect(WORKLIST, "#genre");
 	buildTimeSignatureTypeSelect(WORKLIST, "#tsigtype");
 	buildTempoBeatSelect(WORKLIST, "#tempobeat");
 
-	var selement = document.querySelector("#table-scope");
+	let selement = document.querySelector("#table-scope");
 	if (selement && selement.value === "work") {
 		displayList(WORKLIST);
 	} else if (selement) {
@@ -148,24 +150,6 @@ function doAction(examplelist) {
 
 
 
-//////////////////////////////
-//
-// GetPath -- Fix for Safari and Firefox.
-//
-
-function GetPath(event) {
-	if (event.hasOwnProperty("path")) {
-		return event.path;
-	}
-	var output = [];
-	var target = event.target;
-	while (target) {
-		output.push(target);
-		target = target.parentNode;
-	}
-	return output;
-}
-
 
 
 //////////////////////////////
@@ -174,10 +158,9 @@ function GetPath(event) {
 //
 
 document.addEventListener("click", function (event) {
-	var path = GetPath(event);
-	var tr = null;
-	var i;
-	for (i=0; i<path.length; i++) {
+	let path = GetPath(event);
+	let tr = null;
+	for (let i=0; i<path.length; i++) {
 		if (path[i].nodeName !== "TR") {
 			continue;
 		}
@@ -190,12 +173,12 @@ document.addEventListener("click", function (event) {
 		// nothing interesting to do
 		return;
 	}
-	var td = tr.querySelector("td");
+	let td = tr.querySelector("td");
 	if (!td) {
 		// nothing interesting to do
 		return;
 	}
-	var id = td.textContent;
+	let id = td.textContent;
 	if (!id) {
 		// nothing interesting to do
 		return;
@@ -212,7 +195,7 @@ document.addEventListener("click", function (event) {
 });
 
 
-
 </script>
+
 
 

@@ -1,3 +1,14 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 18:09:19 PDT 2024
+// Last Modified: Sat May 25 18:09:22 PDT 2024
+// Filename:      _includes/scripts/GetCgiParameters.js
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   Extract CGI parameters from URL.
+//
+{% endcomment %}
 
 
 //////////////////////////////
@@ -23,7 +34,6 @@ function GetCgiParameters() {
          output[pair[0]].push(pair[1]);
       }
    }
-	CGI = output;
    return output;
 }
 

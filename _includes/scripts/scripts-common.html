@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri May 24 12:14:04 PDT 2024
-// Last Modified: Fri May 24 12:14:06 PDT 2024
+// Last Modified: Sat May 25 18:06:45 PDT 2024
 // Filename:      _includes/scripts/scripts-common.html
 // vim:           set ts=3 nowrap ft=liquid:
 //
@@ -18,32 +18,34 @@
 // Global variables:
 var EXAMPLELIST = []; // Metadata downloaded Google spreadsheets
 var WORKLIST    = []; // Grouping of examples by work
-var CGI         = {}; // CGI parameters form URL
 var FILEINDEX   = {}; // List of resource files
 
 {% include scripts/spreadsheet_index_mappings.js %}
 
-{% include scripts/ParseJsonSpreadsheet.js %}
-{% include scripts/DownloadMetadata.js %}
-{% include scripts/HighlightLinkInHeader.js %}
-{% include scripts/GetCgiParameters.js %}
-{% include scripts/PreparePerson.js %}
-{% include scripts/PrepareTitle.js %}
-{% include scripts/FlipName.js %}
-{% include scripts/SortByNumber.js %}
-{% include scripts/SortBySeconds.js %}
-{% include scripts/SortByTempo.js %}
-{% include scripts/SortByTimeSignature.js %}
-{% include scripts/SortByDruid.js %}
-{% include scripts/SortByWorkId.js %}
-{% include scripts/SortByText.js %}
-{% include scripts/GenerateWorkList.js %}
-{% include scripts/CreateComposerList.js %}
-{% include scripts/FindExampleById.js %}
-{% include scripts/FindWorkById.js %}
-{% include scripts/CopyToClipboard.js %}
-{% include scripts/PrepareResourceFileIndex.js %}
+{% include scripts/ParseJsonSpreadsheet.js       %}
+{% include scripts/DownloadMetadata.js           %}
+{% include scripts/HighlightLinkInHeader.js      %}
+{% include scripts/GetCgiParameters.js           %}
+{% include scripts/GetPath.js                    %}
+{% include scripts/PreparePerson.js              %}
+{% include scripts/PrepareTitle.js               %}
+{% include scripts/FlipName.js                   %}
+{% include scripts/SortByNumber.js               %}
+{% include scripts/SortBySeconds.js              %}
+{% include scripts/SortByTempo.js                %}
+{% include scripts/SortByTimeSignature.js        %}
+{% include scripts/SortByDruid.js                %}
+{% include scripts/SortByWorkId.js               %}
+{% include scripts/SortByText.js                 %}
+{% include scripts/GenerateWorkList.js           %}
+{% include scripts/CreateComposerList.js         %}
+{% include scripts/FindExampleById.js            %}
+{% include scripts/FindWorkById.js               %}
+{% include scripts/CopyToClipboard.js            %}
+{% include scripts/PrepareResourceFileIndex.js   %}
 
 
 </script>
+
+
 

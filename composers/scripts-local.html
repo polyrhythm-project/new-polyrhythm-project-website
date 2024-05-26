@@ -13,6 +13,7 @@
 
 {% include_relative listeners.html %}
 
+
 <script>
 
 //////////////////////////////
@@ -78,21 +79,25 @@ function displayComposerList() {
 //  3: number of examples by composer
 //  4: birth year
 //  5: death year
+//  6: nationality
 //
 
 function makeComposerRow(centry) {
-	let output = "";
-	output += "<tr>";
+	let composerName = centry["Composer Name"];
+	let shortName    = getComposerLastName(composerName);
 
-	output += "<td>";
+	let output = "";
+	output += `<tr data-composer="${shortName}">`;
+
+	output += `<td data-type="name">`;
 	if (centry["Composer Name"]) {
-	 	output += PreparePerson(centry["Composer Name"]);
+	 	output += PreparePerson(composerName);
 	}
 	output += "</td>";
 
 	// Work count:
 	let workcount = getWorkCount(centry);
-	output += "<td>";
+	output += `<td data-type="work">`;
 	if (workcount > 0) {
 		output += workcount;
 	}
@@ -100,7 +105,7 @@ function makeComposerRow(centry) {
 
 	// Example count:
 	let examplecount = getExampleCount(centry);
-	output += "<td>";
+	output += `<td data-type="example">`;
 	if (examplecount > 0) {
 		output += examplecount;
 	}
@@ -108,7 +113,7 @@ function makeComposerRow(centry) {
 
 	// Birth year:
 	let born = getBirthYear(centry);
-	output += "<td>";
+	output += `<td data-type="birth-year">`;
 	if (born > 0) {
 		output += born;
 	}
@@ -116,7 +121,7 @@ function makeComposerRow(centry) {
 
 	// Death year:
 	let died = getDeathYear(centry);
-	output += "<td>";
+	output += `<td data-type="death-year">`;
 	if (died > 0) {
 		output += died;
 	}
@@ -127,7 +132,7 @@ function makeComposerRow(centry) {
 	if (nationality) {
 		nationality = nationality.replace(/,\s*/, ", ", "g");
 	}
-	output += "<td>";
+	output += `<td data-type="nationality">`;
 	if (nationality) {
 		output += nationality;
 	}
@@ -258,6 +263,17 @@ function copyComposerTable(event) {
 	}
 	CopyToClipboard(text);
 	alert("Composer list copied to clipboard.");
+}
+
+
+
+//////////////////////////////
+//
+// getComposerLastName --
+//
+
+function getComposerLastName(input) {
+	return input.replace(/\s*,.*/, "").replace(/\(.*?\)/, "", "g").replace(/\[.*?\]/, "", "g");
 }
 
 

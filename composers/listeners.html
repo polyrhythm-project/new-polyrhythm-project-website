@@ -46,6 +46,68 @@ function doAction(examplelist) {
 }
 
 
+
+//////////////////////////////
+//
+// DOMContentLoaded -- Event delegation for clicking on a row of the table.
+//
+
+document.addEventListener("click", function (event) {
+	let path = GetPath(event);
+	let td;
+	let tr;
+	for (let i=0; i<path.length; i++) {
+		if (path[i].nodeName === "TH") {
+			console.log("TH element found (nothing to do)");
+			return;
+		} else if (path[i].nodeName === "TD") {
+			td = path[i];
+		} else if (path[i].nodeName === "TR") {
+			tr = path[i];
+		} else if (path[i].nodeName === "TABLE") {
+			let id = path[i].id;
+			if (id !== "composer-list") {
+				console.warn("table#composer-list not found where expected.");
+				return;
+			} else {
+				break;
+			}
+		}
+	}
+
+	let columnType;
+	if (td) {
+		if (td.dataset["type"] === "example") {
+			columnType = "example";
+		} else {
+			columnType = "work";
+		}
+	}
+
+	let composer;
+	if (tr) {
+		if (tr.dataset.composer) {
+			composer = tr.dataset.composer;
+		} else {
+			console.warn("composer name not found at tr level");
+			return;
+		}
+	} else {
+		console.warn("tr no found in ancestor path");
+		return;
+	}
+
+	if (composer) {
+		let url = `/browse/?c=${composer}`;
+		if (columnType !== "example") {
+			url += "&t=work";
+		}
+		window.location.href = url;
+	}
+
+});
+
+
 </script>
 
 
