@@ -1,9 +1,17 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// SortByTempo --
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:47:33 PDT 2024
+// Last Modified: Sat May 25 20:47:36 PDT 2024
+// Filename:      _includes/scripts/SortByTempo.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   Sort a table by tempo by given column index.
+//
+// Needs updating
+//
+{% endcomment %}
+
 
 function SortByTempo(index, selector, reverse) {
 	SORTCOLUMN = index;
@@ -48,7 +56,6 @@ function SortByTempo(index, selector, reverse) {
 			}
 			return -1;
 		}
-
 
 		// Check for non matches here (when num/den values are 0).
 

@@ -1,15 +1,24 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 19:49:17 PDT 2024
+// Last Modified: Sat May 25 19:49:19 PDT 2024
+// Filename:      recording/scripts-local.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Javascript code for recordings page.
+//
+{% endcomment %}
 
 {% include_relative listeners.html %}
-{% include scripts/scripts-common.html %}
+
 
 <script>
-// vim: ts=3
-
 
 //////////////////////////////
 //
-// createRecordingList -- Convert the individual examples in to an array of
-//     objects by work id.
+// createRecordingList -- Convert the individual examples
+//     into an array of objects by work id.
 //
 
 function createRecordingList(exampleList) {
@@ -268,7 +277,7 @@ console.warn("RECLIST", sortedList);
 // Filename: "T243_Ive-w21p3-4m16-19"
 // Work ID: "Ive-21"
 // Work Title: "Largo Risoluto No. 1 for Piano and String Quartet"
-// 
+//
 function generateWorkEntry(entry) {
 	let first = entry[0];
 	if (!first) {
@@ -323,7 +332,7 @@ function generateWorkEntry(entry) {
 		let id = "";
 		if (typeof INDEX_Suter_Example_Number != "undefined") {
 			id = entry[i][INDEX_Suter_Example_Number];
-		} 
+		}
 		if (!id) {
 			continue;
 		}
@@ -432,7 +441,6 @@ function generateWorkEntry(entry) {
 
 
 </script>
-
 
 
 

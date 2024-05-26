@@ -1,11 +1,15 @@
-
-
-
-//////////////////////////////
+{% comment %}
 //
-// HighlightLinkInHeader --
-//   border-bottom: 2px solid #8c1515;
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:25:57 PDT 2024
+// Last Modified: Sat May 25 20:26:00 PDT 2024
+// Filename:      _includes/scripts/HighlightLinkInHeader.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   border-bottom: 2px solid #8c1515;
+//
+{% endcomment %}
+
 
 function HighlightLinkInHeader() {
 	let element = document.querySelector("ul.highlight");

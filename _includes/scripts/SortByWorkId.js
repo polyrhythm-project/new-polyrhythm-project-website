@@ -1,10 +1,18 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// SortByWorkId -- Sort by "R" or "T" prefix, then 3-letter composer code,
-//       then numerically by work number for composer.
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:50:21 PDT 2024
+// Last Modified: Sat May 25 20:50:24 PDT 2024
+// Filename:      _includes/scripts/SortByWorkId.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   Sort by "R" or "T" prefix, then 3-letter composer code,
+//                then numerically by work number for composer.
+//
+// Needs updating
+//
+{% endcomment %}
+
 
 function SortByWorkId(index, selector) {
 	let data = document.querySelectorAll(selector + " > tbody > tr");

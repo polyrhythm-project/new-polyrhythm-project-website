@@ -12,8 +12,8 @@
 //
 {% endcomment %}
 
+
 <script>
-// vim: ts=3
 
 // Global variables:
 var EXAMPLELIST = []; // Metadata downloaded Google spreadsheets
@@ -26,6 +26,7 @@ var FILEINDEX   = {}; // List of resource files
 {% include scripts/DownloadMetadata.js           %}
 {% include scripts/HighlightLinkInHeader.js      %}
 {% include scripts/GetCgiParameters.js           %}
+{% include scripts/GetComposerLastName.js        %}
 {% include scripts/GetPath.js                    %}
 {% include scripts/PreparePerson.js              %}
 {% include scripts/PrepareTitle.js               %}

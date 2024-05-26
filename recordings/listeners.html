@@ -1,25 +1,37 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 19:45:49 PDT 2024
+// Last Modified: Sat May 25 19:45:52 PDT 2024
+// Filename:      recording/listeners.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Listeners for the recordings page.
+//
+{% endcomment %}
+
+{% include scripts/scripts-common.html %}
+
 
 <script>
-// vim: ts=3
 
 //////////////////////////////
 //
 // DOMContentLoaded event listener --
 //
 
-document.body.classList.add("waiting");
+document.body.classList.add("wait");
 
 document.addEventListener("DOMContentLoaded", async function () {
 
 	// Create URL for metadata index to download:
-	let id = "AKfycbzumkvS65CsktdjD7s8JGPxc_e-ISZjkG8XADKJDpcTdRknrtphdODQjkfpy-Xm9fLgmA";
-	let url = `https://script.google.com/macros/s/${id}/exec`;
+	let mid = "{{site.recording_mid}}";
+	let url = `https://script.google.com/macros/s/${mid}/exec`;
 	fetch(url)
 		.then(response => response.json())
 		.then (json => {
-console.warn("JSON DATA FOR RECORDINGS PAGE", json);
 			displayRecordingList(createRecordingList(json));
-			document.body.classList.remove("waiting");
+			document.body.classList.remove("wait");
 		})
 		.catch(error => console.error(error));
 });

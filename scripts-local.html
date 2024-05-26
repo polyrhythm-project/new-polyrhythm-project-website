@@ -42,34 +42,10 @@ function buildComposerBrowseList() {
 	let output = "";
 	output += `<option selected value="">Composer</option>`;
 	for (let i=0; i<keys.length; i++) {
-		let composerLastName = getComposerLastName(keys[i]);
-		// let composerBriefName = getComposerBriefName(keys[i]);
-		
+		let composerLastName = GetComposerLastName(keys[i]);
 		output += `<option value="${composerLastName}">${composerLastName}</option>`;
 	}
 	composerSelect.innerHTML = output;
-}
-
-
-
-//////////////////////////////
-//
-// getComposerLastName --
-//
-
-function getComposerLastName(input) {
-	return input.replace(/\s*,.*/, "").replace(/\(.*?\)/, "", "g").replace(/\[.*?\]/, "", "g");
-}
-
-
-
-//////////////////////////////
-//
-// getComposerBriefName --
-//
-
-function getComposerBriefName(input) {
-	return input.replace(/\[.*?\]/, "", "g").replace(/\(.*?\)/, "", "g");
 }
 
 

@@ -1,9 +1,15 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// SortByText --
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:48:37 PDT 2024
+// Last Modified: Sat May 25 20:48:40 PDT 2024
+// Filename:      _includes/scripts/SortByText.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   Sort a table by text by given column index.
+//
+{% endcomment %}
+
 
 function SortByText(index, selector, sortinfo) {
 	let data = document.querySelectorAll(selector + " > tbody > tr");

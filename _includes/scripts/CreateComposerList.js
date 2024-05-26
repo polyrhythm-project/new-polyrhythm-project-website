@@ -1,19 +1,25 @@
-
-
-///////////////////////////////
+{% comment %}
 //
-// CreateComposerList -- make a list of the composers sorted alphabetically
-//     by last name, with arrays of the works by that composers that are included
-//     in the database.
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:27:40 PDT 2024
+// Last Modified: Sat May 25 20:27:43 PDT 2024
+// Filename:      _includes/scripts/CreateComposerList.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
-// Other information about composer:
+// Description:   Make a list of the composers sorted alphabetically
+//                by last name, with arrays of the works by that
+//                composers that are included in the database.
+//                Used primarily on the composers page.
+//
+// Other data fields about composer that are generated:
 //    "Birth Date"
 //    "Birth Place"
 //    "Death Date"
 //    "Death Place"
 //    "Nationality"
 //
-//
+{% endcomment %}
+
 
 function CreateComposerList(worklist) {
 	let cinfo = {};

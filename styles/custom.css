@@ -204,4 +204,12 @@ a.searchworks:hover, a.purl:hover {
 }
 
 
+main {
+	/* Allow main to grow and shrink, taking remaining space */
+	/* Ensuring that the footer is at the bottom of the page */
+	flex: 1 0 auto; 
+	padding-bottom: 50px;
+}
+
+
 

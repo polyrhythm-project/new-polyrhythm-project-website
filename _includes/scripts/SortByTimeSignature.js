@@ -1,9 +1,17 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// SortByTimeSignature --
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:49:26 PDT 2024
+// Last Modified: Sat May 25 20:49:29 PDT 2024
+// Filename:      _includes/scripts/SortByTimeSignature.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   Sort a table by time signature in given column index.
+//
+// Needs updating
+//
+{% endcomment %}
+
 
 function SortByTimeSignature(index, selector, reverse) {
 	SORTCOLUMN = index;

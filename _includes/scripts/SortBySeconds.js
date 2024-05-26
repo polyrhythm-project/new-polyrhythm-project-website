@@ -1,9 +1,17 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// SortBySeconds --
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:25:57 PDT 2024
+// Last Modified: Sat May 25 20:26:00 PDT 2024
+// Filename:      _includes/scripts/SortBySeconds.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   Sort a table by seconds by given column index.
+//
+// Needs to be udpated.
+//
+{% endcomment %}
+
 
 function SortBySeconds(index, selector, reverse) {
 	SORTCOLUMN = index;

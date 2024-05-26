@@ -1,9 +1,15 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// SortByNumber --
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:45:20 PDT 2024
+// Last Modified: Sat May 25 20:45:23 PDT 2024
+// Filename:      _includes/scripts/SortByNumber.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   Sort a table numerically by given column index.
+//
+{% endcomment %}
+
 
 function SortByNumber(index, selector, sortinfo) {
 	sortinfo.column = index;
@@ -32,7 +38,6 @@ function SortByNumber(index, selector, sortinfo) {
 		if (matches = B.match(/(\d+)/)) {
 			Bnum = parseInt(matches[1]);
 		}
-
 		return Anum - Bnum;
 	});
 

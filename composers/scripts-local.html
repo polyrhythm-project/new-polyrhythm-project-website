@@ -84,7 +84,7 @@ function displayComposerList() {
 
 function makeComposerRow(centry) {
 	let composerName = centry["Composer Name"];
-	let shortName    = getComposerLastName(composerName);
+	let shortName    = GetComposerLastName(composerName);
 
 	let output = "";
 	output += `<tr data-composer="${shortName}">`;
@@ -266,15 +266,6 @@ function copyComposerTable(event) {
 }
 
 
-
-//////////////////////////////
-//
-// getComposerLastName --
-//
-
-function getComposerLastName(input) {
-	return input.replace(/\s*,.*/, "").replace(/\(.*?\)/, "", "g").replace(/\[.*?\]/, "", "g");
-}
 
 
 </script>

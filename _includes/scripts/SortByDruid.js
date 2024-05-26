@@ -1,9 +1,17 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// SortByDruid --
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:43:43 PDT 2024
+// Last Modified: Sat May 25 20:43:50 PDT 2024
+// Filename:      _includes/scripts/SortByDruid.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:   ???
+//
+// Needs updating to load sortinfo in input parameters.
+//
+{% endcomment %}
+
 
 function SortByDruid(index, selector, reverse) {
 	SORTCOLUMN = index;
@@ -41,9 +49,6 @@ function SortByDruid(index, selector, reverse) {
 			Bnum = matches[1];
 		}
 
-		// if (reverse) {
-		//	return Bnum.localeCompare(Anum);
-		// } else {
 	 	return Anum.localeCompare(Bnum);
 		// }
 	});

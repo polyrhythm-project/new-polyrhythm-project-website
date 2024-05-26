@@ -1,12 +1,18 @@
-
-
-//////////////////////////////
+{% comment %}
 //
-// PrepareResourceFileIndex --
-//  e1, /resources/pdf/e1/index.txt == Supplementary edition for scores (first additional editon).
-//  e2, /resources/pdf/e2/index.txt == Supplementary edition for scores (second additional editon).
-//  recording, /resources/recordings/acoustic/index.txt == Audio recording of example
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sat May 25 20:42:01 PDT 2024
+// Last Modified: Sat May 25 20:42:04 PDT 2024
+// Filename:      _includes/scripts/PrepareResourceFileIndex.js
+// vim:           set ts=3 nowrap ft=javascript:
 //
+// Description:
+//   e1, /resources/pdf/e1/index.txt == Supplementary edition for scores (first additional editon).
+//   e2, /resources/pdf/e2/index.txt == Supplementary edition for scores (second additional editon).
+//   recording, /resources/recordings/acoustic/index.txt == Audio recording of example
+//
+{% endcomment %}
+
 
 function PrepareResourceFileIndex(tag, indexfile, callback) {
 	let storagename = tag + "_INDEX";
@@ -20,7 +26,7 @@ function PrepareResourceFileIndex(tag, indexfile, callback) {
 		// download and store
 		let request = new XMLHttpRequest();
 		request.addEventListener("load", function () {
-         if (this.responseText.match(/<\/html>/)) {
+		if (this.responseText.match(/<\/html>/)) {
 				console.log("WARNING: file", indexfile, "not found.");
 				console.log("CONTENTS:", this.responseText);
 				return;
