@@ -8,7 +8,7 @@ layout: default
 summary: 
 ---
 
-List of sources for Polyrhythm Projecdt.
+List of sources for Polyrhythm Project.
 
 <ul>
 	<li><a href="/scores">Scores</a></li>
