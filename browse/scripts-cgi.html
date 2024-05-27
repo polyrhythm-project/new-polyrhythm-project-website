@@ -1,0 +1,153 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun May 26 22:57:42 PDT 2024
+// Last Modified: Sun May 26 22:57:45 PDT 2024
+// Filename:      browse/scripts-build-select-menus.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Functions related to CGI parameters in URL.
+//
+{% endcomment %}
+
+
+<script>
+
+//////////////////////////////
+//
+// processCgiParameters -- Extract CGI parameters from URL and then
+//     set search fields from the CGI parameters.
+//
+
+function processCgiParameters() {
+	let cgi = GetCgiParameters();
+	let found = false;
+	if (cgi.c) {
+		setComposerSelect(cgi.c);
+		found = true;
+	}
+	if (found) {
+		doSearch();
+	}
+}
+
+
+
+//////////////////////////////
+//
+// setComposerSelect -- given an input composer name (from CGI parameters)
+//    set to the target composer and search.
+//
+
+function setComposerSelect(input) {
+	if (!input) {
+		return;
+	}
+	let celement = document.querySelector("select#composer");
+	if (!celement) {
+		console.error("Error: Cannot find select#composer");
+		return;
+	}
+	let options = celement.querySelectorAll("option");
+	let names = [];
+	for (let i=0; i<options.length; i++) {
+		let value = options[i].value;
+		if (!value) {
+			continue;
+		}
+		names.push(value);
+	}
+
+	// First check to see if there is an exact match:
+	let index = -1;
+	for (let i=0; i<names.length; i++) {
+		if (input.localeCompare(names[i], undefined, { sensitivity: 'base' }) === 0) {
+			index = i;
+			break;
+		}
+	}
+	if (index >= 0) {
+		celement.selectedIndex = index+1;
+		return;
+	}
+
+	// No exact match, so do partial match, such as last name
+	normInput = normalizeString(input);
+	for (let i=0; i<names.length; i++) {
+		let norm = normalizeString(names[i]);
+		if (norm.includes(normInput)) {
+			index = i;
+			break;
+		}
+		console.warn("NORMINPUT", normInput, "NORM", norm);
+	}
+	if (index >= 0) {
+		celement.selectedIndex = index+1;
+		return;
+	}
+
+	console.log("Warning: Cannot find composer", input, "in composer selection list");
+}
+
+
+
+//////////////////////////////
+//
+// normalizeString == Remove accents and case from string.
+//
+
+function normalizeString(input) {
+    return input.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+
+
+//////////////////////////////
+//
+// setCgiParameters -- Extract search field values and store in URL.
+//
+
+function setCgiParameters() {
+	let options = {};
+	let celement = document.querySelector("select#composer");
+	let composer = "";
+	if (celement) {
+		let text = celement.value;
+		if (text) {
+			composer = normalizeString(GetComposerLastName(text));
+		}
+	}
+	if (composer) {
+		options.c = composer;
+	}
+
+	let ostring = "";
+	let keys = Object.keys(options);
+	if (keys.length > 0) {
+		ostring += "?";
+	}
+	for (let i=0; i<keys.length; i++) {
+		if (i < keys.length - 1) {
+			ostring += "&";
+		}
+		ostring += `${keys[i]}=${encodeURIComponent(options[keys[i]])}`;
+	}
+	if (!ostring) {
+		if (window.location.search) {
+			let url = new URL(window.location);
+			url.search = "";
+			history.pushState({}, '', url);
+		}
+		return;
+	}
+
+   let url = new URL(window.location);
+	url.search = ostring;
+	history.pushState({}, '', url);
+}
+
+
+</script>
+
+
+

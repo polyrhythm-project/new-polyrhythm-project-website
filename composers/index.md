@@ -18,7 +18,8 @@ twice to reverse the sort order), or click on an entry to browse
 works/examples for that composer.  Mouse-over the birth and death dates
 to see birth and death places. Also see the <a
 href="https://maps.polyrhythm.humdrum.org/composers/">composers
-map</a>, which displays birth, death and intermediate locations.
+map</a>, which displays birth, death and intermediate locations
+in the life of the composer.
 
 
 <div id="composer-list-container"></div>

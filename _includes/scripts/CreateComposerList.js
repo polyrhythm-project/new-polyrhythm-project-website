@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Sat May 25 20:27:40 PDT 2024
-// Last Modified: Sat May 25 20:27:43 PDT 2024
+// Last Modified: Mon May 27 00:06:19 PDT 2024
 // Filename:      _includes/scripts/CreateComposerList.js
 // vim:           set ts=3 nowrap ft=javascript:
 //
@@ -17,6 +17,9 @@
 //    "Death Date"
 //    "Death Place"
 //    "Nationality"
+//    @examples = list of examples by the composer
+//    @works    = list of works by the composer, where each
+//                entry is an array of examples for a work.
 //
 {% endcomment %}
 
@@ -64,7 +67,6 @@ function CreateComposerList(workindex) {
 			} else {
 				cinfo[name]["@examples"] = workindex[keys[i]];
 			}
-			cinfo[name]["@examples"] = cinfo[name]["@examples"].concat(workindex[keys[i]]);
 		} else {
 			// add a work to the composer's list
 			cinfo[name]["@works"].push(workindex[keys[i]]);
@@ -74,6 +76,16 @@ function CreateComposerList(workindex) {
 	let composers = Object.keys(cinfo).sort();
 	let output = [];
 	for (let i=0; i<composers.length; i++) {
+		cinfo[composers[i]]["@examples"].sort(function (a, b) {
+			let anum = parseInt(a["Suter Example Number"]);
+			let bnum = parseInt(b["Suter Example Number"]);
+			if (a < b) {
+				return -1;
+			} else if (a > b) {
+				return +1;
+			}
+			return a["Suter Example Number"].localeCompare(b["Suter Example Number"]);
+		});
 		output.push(cinfo[composers[i]]);
 	}
 	return output;

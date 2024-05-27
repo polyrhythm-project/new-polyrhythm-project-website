@@ -10,13 +10,11 @@
 //
 {% endcomment %}
 
-{% include scripts/scripts-common.html %}
 
 <script>
 
 // Mapping of instrument codes to instrument names:
 var INSTRUMENTS = {% include instruments/instrument-names.json %};
-
 var BROWSELIST = [];
 
 // Variables for keeping track of sorting order in the composer table:
@@ -145,9 +143,9 @@ function doAction(examplelist) {
 	} else {
 		console.warn("Cannot find #table-scope");
 	}
+
+	processCgiParameters();
 }
-
-
 
 
 
