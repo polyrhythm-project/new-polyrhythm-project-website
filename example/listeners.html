@@ -1,8 +1,20 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun May 26 19:59:22 PDT 2024
+// Last Modified: Sun May 26 19:59:25 PDT 2024
+// Filename:      example/listeners.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Setup javascript code for example webpage.  Contains
+//                global variable and listeners for the page.
+//
+{% endcomment %}
 
 <script>
 // vim: ts=3
 
-
+// Variables for option buttons:
 let COLOR          = 0;
 let FULLCOLOR      = 0;
 let GROUP          = 0;
@@ -17,7 +29,6 @@ let CGI            = {};  // CGI parameters from URL
 let SORTCOLUMN     = 0;
 let BROWSELIST     = [];   // List of works on the browse table on the main search page.
 let EXAMPLE_NAVIGATION = {};
-let WORKLIST       = [];
 let CURRENTEXAMPLE = "";
 let ACCESS         = 0;
 let SUPERACCESS    = 0;
@@ -32,22 +43,23 @@ let SUPERACCESS    = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
 	CGI = GetCgiParameters();
+	DownloadMetadata(doAction);
 	let url = `https://data.polyrhythm.humdrum.org/${CGI.id}.validate?a=${localStorage.access}`;
-		fetch(url)
-		.then(response => response.text())
-		.then(function(text) {
-			if (text.match("SUPERVALID")) {
-				ACCESS = 1;
-				SUPERACCESS = 1;
-			} else if (text.match("INVALID")) {
-				ACCESS = 0;
-				SUPERACCESS = 0;
-			} else if (text.match("VALID")) {
-				ACCESS = 1;
-				SUPERACCESS = 0;
-			}
-			continueListener();
-		});
+	fetch(url)
+	.then(response => response.text())
+	.then(function(text) {
+		if (text.match("SUPERVALID")) {
+			ACCESS = 1;
+			SUPERACCESS = 1;
+		} else if (text.match("INVALID")) {
+			ACCESS = 0;
+			SUPERACCESS = 0;
+		} else if (text.match("VALID")) {
+			ACCESS = 1;
+			SUPERACCESS = 0;
+		}
+		continueListener();
+	});
 });
 
 
@@ -65,54 +77,6 @@ function continueListener() {
 		});
 	}
 
-	// Create URL for metadata index to download:
-	let sid = "17rjKQ3lXJHEHAcDfOXTDNX5a0A_jVqwokcaqhd3Ddng";
-	let gid = "900860769";
-	let url = "https://docs.google.com/spreadsheets/d/";
-	url += sid + "/export?gid=" + gid + "&format=tsv";
-
-	if (sessionStorage.EXAMPLELIST) {
-		EXAMPLELIST = JSON.parse(sessionStorage.EXAMPLELIST);
-		doAction(EXAMPLELIST);
-	} else {
-		let request = new XMLHttpRequest();
-		request.addEventListener("load", function () {
-			EXAMPLELIST = ParseSpreadsheet(this.responseText);
-			sessionStorage.EXAMPLELIST = JSON.stringify(EXAMPLELIST);
-			doAction(EXAMPLELIST);
-		});
-		request.open("GET", url);
-		request.send();
-	}
-}
-
-
-
-//////////////////////////////
-//
-// prepareNextPreviousExampleNavigationList --
-//
-
-function prepareNextPreviousExampleList(examplelist) {
-	if (sessionStorage.BROWSELIST) {
-		BROWSELIST = JSON.parse(sessionStorage.BROWSELIST);
-	}
-	EXAMPLE_NAVIGATION = {};
-	for (let i=0; i<BROWSELIST.length; i++) {
-		let entry = {};
-		entry.currExampleId = BROWSELIST[i];
-		if (i > 0) {
-			entry.prevExampleId = BROWSELIST[i-1];
-		} else {
-			entry.prevExampleId = BROWSELIST[BROWSELIST.length - 1];
-		}
-		if (i < BROWSELIST.length - 1) {
-			entry.nextExampleId = BROWSELIST[i+1];
-		} else {
-			entry.nextExampleId = BROWSELIST[0];
-		}
-		EXAMPLE_NAVIGATION[BROWSELIST[i]] = entry;
-	}
 }
 
 
@@ -124,8 +88,10 @@ function prepareNextPreviousExampleList(examplelist) {
 //
 
 function doAction(examplelist) {
-	WORKLIST = GenerateWorklist(examplelist, EXAMPLELIST);
-	displayExample(CGI.id, EXAMPLELIST);
+	if (!examplelist) {
+		examplelist = EXAMPLELIST;
+	}
+	displayExample(CGI.id, examplelist);
 
 	prepareNextPreviousExampleList();
 
@@ -148,6 +114,9 @@ function doAction(examplelist) {
 	}
 
 }
+
+
+
 
 
 </script>

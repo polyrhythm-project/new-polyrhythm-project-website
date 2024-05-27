@@ -111,6 +111,19 @@ function displayExample(exid, examples) {
 		output += "</tr>";
 	}
 
+	// movement title
+	let subtitle = entry[INDEX_Source_Work_Full_Unit];
+	if (subtitle && !subtitle.match(/single movement/)) {
+		output += "<tr>";
+		output += "<td>";
+		output += "Movement:";
+		output += "</td>";
+		output += "<td>";
+		output += subtitle;
+		output += "</td>";
+		output += "</tr>";
+	}
+
 	// starting measure
 	let startm = entry[INDEX_Example_Start_Measure];
 	if (startm) {
@@ -1176,6 +1189,35 @@ function addProblemIcons(id) {
 				s.classList.add("p");
 			}
 		}
+	}
+}
+
+
+
+//////////////////////////////
+//
+// prepareNextPreviousExampleNavigationList --
+//
+
+function prepareNextPreviousExampleList(examplelist) {
+	if (sessionStorage.BROWSELIST) {
+		BROWSELIST = JSON.parse(sessionStorage.BROWSELIST);
+	}
+	EXAMPLE_NAVIGATION = {};
+	for (let i=0; i<BROWSELIST.length; i++) {
+		let entry = {};
+		entry.currExampleId = BROWSELIST[i];
+		if (i > 0) {
+			entry.prevExampleId = BROWSELIST[i-1];
+		} else {
+			entry.prevExampleId = BROWSELIST[BROWSELIST.length - 1];
+		}
+		if (i < BROWSELIST.length - 1) {
+			entry.nextExampleId = BROWSELIST[i+1];
+		} else {
+			entry.nextExampleId = BROWSELIST[0];
+		}
+		EXAMPLE_NAVIGATION[BROWSELIST[i]] = entry;
 	}
 }
 
