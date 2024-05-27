@@ -999,18 +999,14 @@ function fillInstrumentOptions() {
 //
 
 function setActiveSelects() {
-
-	// Composer field
-	let celement = document.querySelector("select#composer");
-	if (celement) {
-		if (celement.selectedIndex != 0) {
-			celement.classList.add("active");
+	let elements = document.querySelectorAll("select");
+	for (let i=0; i<elements.length; i++) {
+		if (elements[i].selectedIndex != 0) {
+			elements[i].classList.add("active");
 		} else {
-			celement.classList.remove("active");
+			elements[i].classList.remove("active");
 		}
 	}
-
-
 }
 
 
