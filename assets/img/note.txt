@@ -5,6 +5,7 @@ map.svg has four image, three of which are not used:
 	one: current background as PNG
 	two: old background as JPG
 	three: same as current background but not used
+		has white borders so not exactly the same as main map.svg
 	four: possibly original image, unrelated to display and not used
 
 Also has a possibly older unrelated SVG image of map which is smaller which should
