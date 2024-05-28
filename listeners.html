@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Mon May 13 15:33:16 PDT 2024
-// Last Modified: Wed May 15 19:09:41 PDT 2024
+// Last Modified: Mon May 27 07:47:08 PDT 2024
 // Filename:      listeners.html
 // vim:           ts=3:nowrap:ft=javascript
 //
@@ -21,7 +21,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 	document.body.style.cursor = "wait";
-	GetCgiParameters();
 	DownloadMetadata(doAction);
 });
 
@@ -33,8 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
 //
 
 function doAction() {
-	buildComposerBrowseList();
-	buildGenreBrowseList();
+	BuildComposerSelect(WORKINDEX, "#composerSelect", {defaultText: "Composer"});
+	BuildGenreSelect(WORKINDEX, "#genreSelect", {defaultText: "Genre"});
+	BuildPremieredSelect(WORKINDEX, "#premieredSelect", {defaultText: "Premiered", counts: true});
 	document.body.style.cursor = "";
 }
 

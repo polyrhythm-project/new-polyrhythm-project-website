@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed May 15 15:06:43 PDT 2024
-// Last Modified: Wed May 15 15:06:50 PDT 2024
+// Last Modified: Mon May 27 07:23:28 PDT 2024
 // Filename:      scripts-local.html
 // vim:           ts=3:nowrap:ft=javascript
 //
@@ -17,92 +17,44 @@
 
 <script>
 
-//////////////////////////////
-//
-// buildComposerBrowseList --
-//
-
-function buildComposerBrowseList(workindex) {
-	if (!workindex) {
-		workindex = WORKINDEX;
-	}
-	let composerIndex = "Composer Name";
-	let composerSelect = document.querySelector("#composerSelect");
-	if (!composerSelect) {
-		console.error("Error: Cannot find #composerSelect");
-		return;
-	}
-	let composerList = {};
-	for (let i=0; i<worklist.length; i++) {
-		if (!worklist[i]) {
-			return;
-		}
-		let first = worklist[i][0];
-		let composer = first[composerIndex];
-		if (!composer) {
-			continue;
-		}
-		composerList[composer] = composer;
-	}
-	let keys = Object.keys(composerList).sort();
-	let output = "";
-	output += `<option selected value="">Composer</option>`;
-	for (let i=0; i<keys.length; i++) {
-		let composerLastName = GetComposerLastName(keys[i]);
-		output += `<option value="${composerLastName}">${composerLastName}</option>`;
-	}
-	composerSelect.innerHTML = output;
-}
-
 
 
 //////////////////////////////
 //
-// buildGenreBrowseList --
-//
-
-function buildGenreBrowseList(workindex) {
-	if (!workindex) {
-		workindex = WORKINDEX;
-	}
-	let genreIndex = "Genre";
-	let genreSelect = document.querySelector("#genreSelect");
-	if (!genreSelect) {
-		console.error("Error: Cannot find #genreSelect");
-		return;
-	}
-	let genreList = {};
-	for (let i=0; i<workindex.length; i++) {
-		let genre = workindex[i][genreIndex];
-		if (!genre) {
-			continue;
-		}
-		genreList[genre] = genre;
-	}
-	let keys = Object.keys(genreList).sort();
-	let output = "";
-	output += `<option selected value="">Genre</option>`;
-	for (let i=0; i<keys.length; i++) {
-		output += `<option value="${keys[i]}">${keys[i]}</option>`;
-	}
-	genreSelect.innerHTML = output;
-}
-
-
-
-//////////////////////////////
-//
-// browseComposer --
+// browseComposer -- Move to the browse page when a composer selection is made.
 //
 
 function browseComposer() {
 	let element = document.querySelector("#composerSelect");
 	if (!element) {
 		console.error("ERROR: Cannot find #composerSelect");
-		retur;
+		return;
+	}
+	if (element.selectedIndex == 0) {
+		return;
 	}
 	let value = encodeURIComponent(element.value);
-	window.location.href = `/browse/?c=$value`;
+	window.location.href = `/browse/?c=${value}`;
+}
+
+
+
+//////////////////////////////
+//
+// browseGenre -- Move to the browse page when a genre selection is made.
+//
+
+function browseGenre() {
+	let element = document.querySelector("#genreSelect");
+	if (!element) {
+		console.error("ERROR: Cannot find #genreSelect");
+		return;
+	}
+	if (element.selectedIndex == 0) {
+		return;
+	}
+	let value = encodeURIComponent(element.value);
+	window.location.href = `/browse/?g=${value}`;
 }
 
 

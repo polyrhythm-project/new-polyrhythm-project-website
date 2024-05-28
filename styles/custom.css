@@ -16,10 +16,6 @@ body {
 }
 
 
-#content {
-}
-
-
 a.person {
 	color: #8c1515;
 }
@@ -211,5 +207,10 @@ main {
 	padding-bottom: 50px;
 }
 
+
+option.genre {
+	/* Does not work in all browsers */
+	font-weight: bold;
+}
 
 

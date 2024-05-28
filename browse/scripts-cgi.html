@@ -26,6 +26,10 @@ function processCgiParameters() {
 		setComposerSelect(cgi.c);
 		found = true;
 	}
+	if (cgi.g) {
+		setGenreSelect(cgi.g);
+		found = true;
+	}
 	if (found) {
 		doSearch();
 	}
@@ -93,6 +97,64 @@ function setComposerSelect(input) {
 
 //////////////////////////////
 //
+// setGenreSelect -- given an input composer name (from CGI parameters)
+//    set to the target composer and search.
+//
+
+function setGenreSelect(input) {
+	if (!input) {
+		return;
+	}
+	let gelement = document.querySelector("select#genre");
+	if (!gelement) {
+		console.error("Error: Cannot find select#genre");
+		return;
+	}
+	let options = gelement.querySelectorAll("option");
+	let genres = [];
+	for (let i=0; i<options.length; i++) {
+		let value = options[i].value;
+		if (!value) {
+			continue;
+		}
+		genres.push(value);
+	}
+
+	// First check to see if there is an exact match:
+	let index = -1;
+	for (let i=0; i<genres.length; i++) {
+		if (input.localeCompare(genres[i], undefined, { sensitivity: 'base' }) === 0) {
+			index = i;
+			break;
+		}
+	}
+	if (index >= 0) {
+		gelement.selectedIndex = index+1;
+		return;
+	}
+
+	// No exact match, so do partial match
+	normInput = normalizeString(input);
+	for (let i=0; i<genres.length; i++) {
+		let norm = normalizeString(genres[i]);
+		if (norm.includes(normInput)) {
+			index = i;
+			break;
+		}
+		console.warn("NORMINPUT", normInput, "NORM", norm);
+	}
+	if (index >= 0) {
+		gelement.selectedIndex = index+1;
+		return;
+	}
+
+	console.log("Warning: Cannot find genre", input, "in genre selection list");
+}
+
+
+
+//////////////////////////////
+//
 // normalizeString == Remove accents and case from string.
 //
 
@@ -109,6 +171,8 @@ function normalizeString(input) {
 
 function setCgiParameters() {
 	let options = {};
+
+	// Composer: c=
 	let celement = document.querySelector("select#composer");
 	let composer = "";
 	if (celement) {
@@ -121,6 +185,20 @@ function setCgiParameters() {
 		options.c = composer;
 	}
 
+	// Genre: g=
+	let gelement = document.querySelector("select#genre");
+	let genre = "";
+	if (gelement) {
+		let text = gelement.value;
+		if (text) {
+			genre = normalizeString(text);
+		}
+	}
+	if (genre) {
+		options.g = genre;
+	}
+
+	// Build the option string:
 	let ostring = "";
 	let keys = Object.keys(options);
 	if (keys.length > 0) {
@@ -130,7 +208,9 @@ function setCgiParameters() {
 		if (i < keys.length - 1) {
 			ostring += "&";
 		}
-		ostring += `${keys[i]}=${encodeURIComponent(options[keys[i]])}`;
+		let encoded = encodeURIComponent(options[keys[i]]);
+		encoded = encoded.replace(/%2F/, "/", "g");
+		ostring += `${keys[i]}=${encoded}`;
 	}
 	if (!ostring) {
 		if (window.location.search) {

@@ -124,14 +124,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // doAction --
 //
 
-function doAction(examplelist) {
-	if (!examplelist) {
-		examplelist = EXAMPLELIST;
-	}
+function doAction() {
 
 	// Fill in select menus for browse page:
-	buildComposerSelect(WORKINDEX, "#composer");
-	buildGenreSelect(WORKINDEX, "#genre");
+	BuildComposerSelect(WORKINDEX, "#composer", {defaultText: "All composers"});
+	BuildGenreSelect(WORKINDEX, "#genre", {defaultText: "All genres"});
 	buildTimeSignatureTypeSelect(WORKINDEX, "#tsigtype");
 	buildTempoBeatSelect(WORKINDEX, "#tempobeat");
 
@@ -139,7 +136,7 @@ function doAction(examplelist) {
 	if (selement && selement.value === "work") {
 		displayList(WORKINDEX);
 	} else if (selement) {
-		displayList(examplelist);
+		displayList(EXAMPLELIST);
 	} else {
 		console.warn("Cannot find #table-scope");
 	}

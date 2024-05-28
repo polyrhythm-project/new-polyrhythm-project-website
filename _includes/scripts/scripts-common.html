@@ -2,7 +2,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Fri May 24 12:14:04 PDT 2024
-// Last Modified: Sat May 25 18:06:45 PDT 2024
+// Last Modified: Mon May 27 08:59:52 PDT 2024
 // Filename:      _includes/scripts/scripts-common.html
 // vim:           set ts=3 nowrap ft=liquid:
 //
@@ -26,6 +26,9 @@ var FILEINDEX      = {}; // List of resource files
 
 {% include scripts/spreadsheet_index_mappings.js %}
 
+{% include scripts/BuildComposerSelect.js        %}
+{% include scripts/BuildGenreSelect.js           %}
+{% include scripts/BuildPremieredSelect.js       %}
 {% include scripts/CopyToClipboard.js            %}
 {% include scripts/CreateComposerList.js         %}
 {% include scripts/CreateRecordingIndex.js       %}

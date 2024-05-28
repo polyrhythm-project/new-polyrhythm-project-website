@@ -19,37 +19,7 @@ permalink: /index.html
 			</div>
 		</div>
 		<!-- Browse by -->
-		<div class="row">
-			<div class="col-12 col-lg-6">
-				<p role="heading"><small>Browse by</small></p>
-				<!-- Composer -->
-				<div class="browse-list btn-group mb-3 mb-lg-0">
-					<select onchange="browseComposer()" id="composerSelect" class="form-select form-select--primary" aria-label="Composer">
-						<option selected>Composer</option>
-					</select>
-				</div>
-				<!-- Genre -->
-				<div class="browse-list btn-group mb-3 mb-lg-0">
-					<select id="genreSelect" class="form-select form-select--primary" aria-label="Genre">
-						<option selected>Genre</option>
-					</select>
-				</div>
-				<!-- Premiered -->
-				<div class="browse-list btn-group mb-3 mb-lg-0">
-					<select id="premieredSelect" class="form-select form-select--primary" aria-label="Premiered">
-						<option selected>Premiered</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					</select>
-				</div>
-			</div>
-			<!-- Listen -->
-			<div class="col-12 col-lg-6 float-lg-end mt-4 mt-lg-0">
-				<p class="float-lg-end" role="heading"><small>Listen</small></p>
-				<a href="listen"><img class="float-lg-end play-icon" src="assets/img/play.svg" alt="play button"></a>
-			</div>
-		</div>
+		{% include_relative browse-play.html %}
 		<!-- Image -->
 		<div class="row mt-5">
 			<div class="col-12">
