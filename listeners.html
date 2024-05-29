@@ -14,6 +14,8 @@
 
 <script>
 
+var RANDOMID = "";
+
 //////////////////////////////
 //
 // DOMContentLoaded event listener --
@@ -35,7 +37,43 @@ function doAction() {
 	BuildComposerSelect(WORKINDEX, "#composerSelect", {defaultText: "Composer"});
 	BuildGenreSelect(WORKINDEX, "#genreSelect", {defaultText: "Genre"});
 	BuildPremieredSelect(WORKINDEX, "#premieredSelect", {defaultText: "Premiered", counts: true});
+	displayRandomScore(EXAMPLELIST);
 	document.body.style.cursor = "";
+}
+
+
+
+//////////////////////////////
+//
+// event delegation for clicking on SVG image of random work
+// to take you to the example page for the random work.
+//
+
+document.addEventListener("click", function (event) {
+	let path = GetPath(event);
+	for (let i=0; i<path.length; i++) {
+		let name = path[i].tagName;
+		if (name === "TABLE") {
+			if (path[i].classList.contains("humdrum-verovio")) {
+				event.stopPropagation();
+				gotoRandomExamplePage();
+				break;
+			}
+		}
+	}
+});
+
+
+
+//////////////////////////////
+//
+// gotoRandomExamplePage --
+//
+
+function gotoRandomExamplePage() {
+	if (RANDOMID) {
+		window.location.href = `/example?${RANDOMID}`;
+	}
 }
 
 

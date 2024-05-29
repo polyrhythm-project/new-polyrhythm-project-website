@@ -1,0 +1,96 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Tue May 28 20:46:06 PDT 2024
+// Last Modified: Tue May 28 20:46:10 PDT 2024
+// Filename:      scripts-local.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Choose a random score with 4 or fewer staves.
+//
+{% endcomment %}
+
+
+<script type="text/x-humdrum" id="random-score"></script>
+
+<!-- test image:
+<img class="img-fluid mb-3" src="assets/img/sample-work.jpg" alt="sample work">
+-->
+
+
+<script>
+
+
+//////////////////////////////
+//
+// displayRandomScore --
+//
+
+function displayRandomScore(examplelist) {
+	const limit = 4;
+	let size = examplelist.length;
+	if (size < 1) {
+		console.error("ERROR: examplelist is empty for choosing random score");
+		return;
+	}
+	let rand = Math.floor(Math.random() * (size + 1));
+	let choice = null;
+	for (let i=0; i<size; i++) {
+		choice = examplelist[(rand + i) % size];
+		let staves = parseInt(choice[INDEX_Staff_Count]);
+		if (staves <= limit) {
+			break;
+		}
+	}
+	if (!choice) {
+		console.error("ERROR: could not find desired random score");
+		return;
+	}
+
+	console.log("CHOICE", choice);
+
+	let exid = choice[INDEX_Suter_Example_Number];
+	RANDOMID = exid;
+
+	let options = {
+		url: `https://data.polyrhythm.humdrum.org/${exid}.krn?a=${localStorage.access}`,
+      source: "random-score",
+		incipit: true,
+      autoResize: "true",
+		scale: 50,
+		postFunction: "revealRandomTitle"
+	};
+
+	let randomTitle = document.querySelector("#random-title");
+	if (randomTitle) {
+		let composer = choice[INDEX_Composer_Name];
+		let lastname = GetComposerLastName(composer);
+		let title = choice[INDEX_Work_Title];
+		let output = `${lastname}, ${title}`;
+		randomTitle.innerHTML = output;
+	}
+
+	console.warn("HNP OPTIONS", options);
+   displayHumdrum(options);
+
+}
+
+
+//////////////////////////////
+//
+// revealRandomTitle --
+//
+
+var revealRandomTitle = function () {
+	console.log("ENTERING REVEAL RANDOM TITLE");
+	let sampleWork = document.querySelector("#sample-work");
+	if (sampleWork) {
+		sampleWork.style.visibility = "visible";
+	}
+};
+
+
+</script>
+
+
+

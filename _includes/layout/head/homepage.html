@@ -1,3 +1,15 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Mon May 13 15:21:06 PDT 2024
+// Last Modified: Mon May 13 15:21:08 PDT 2024
+// Filename:      _includes/head/default.html
+// vim:           set ts=3 nowrap ft=liquid:
+//
+// Description:   This piece of HTML code is the <head> contents
+//                for the homepage layout (_layout/homepage.html).
+//
+{% endcomment %}
 
 
 <meta charset="utf-8">
@@ -13,5 +25,9 @@
 <link rel="stylesheet" href="/styles/bootstrap.min.css">
 <link rel="stylesheet" href="/styles/custom.css">
 
+
+{% if page.hnp %}
+	<script src="https://plugin.humdrum.org/scripts/humdrum-notation-plugin-worker.js"></script>
+{% endif %}
 
 

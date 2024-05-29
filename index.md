@@ -2,6 +2,7 @@
 title: "Search, Browse and Analyze Polyrhythm (1877 – 1969)"
 vim: ts=3:nowrap:ft=html
 layout: homepage
+hnp: true
 permalink: /index.html
 ---
 
@@ -14,7 +15,7 @@ permalink: /index.html
 		<div class="row">
 			<div class="col-12">
 				<div class="text-center">
-					<h2><span>Sample work:</span> Charles Ives, Largo for Violin Clarinet and Piano</h2>
+					<h2 id="sample-work" style="visibility:hidden; size:90% !important"><span>Sample work:</span> <span id="random-title"></span></h2>
 				</div>
 			</div>
 		</div>
@@ -24,14 +25,14 @@ permalink: /index.html
 		<div class="row mt-5">
 			<div class="col-12">
 				<div class="text-center">
-					<img class="img-fluid mb-3" src="assets/img/sample-work.jpg" alt="sample work">
+					{% include_relative random-score.html %}
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<!-- Example page -->
-				<button type="button" class="btn btn-secondary btn-secondary-dark float-md-end mb-3 mb-lg-0 ms-1">
+				<button onclick="gotoRandomExamplePage()" type="button" class="btn btn-secondary btn-secondary-dark float-md-end mb-3 mb-lg-0 ms-1">
 					Example page
 				</button>
 				<!-- Coincidence -->
