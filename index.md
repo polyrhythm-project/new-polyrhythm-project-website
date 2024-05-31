@@ -9,7 +9,7 @@ permalink: /index.html
 {% include_relative scripts-local.html %}
 {% include_relative styles-local.html %}
 
-<!-- Sample Work -->
+<!-- Example -->
 <section>
 	<div class="container px-3 my-4">
 		<div class="row">
