@@ -104,7 +104,7 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 5 -->
-			<div class="col-md-6 col-lg-4 mb-4" title="Analysis tools" data-bs-toggle="tooltip" alt="analysis tools">
+			<div class="col-md-6 col-lg-4 mb-4" title="Example from "Polyrhythm Sampler" on Verovio Humdrum Viewer with composite filter applied" data-bs-toggle="tooltip" alt="analysis tools">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3" src="/img/homepage/vhv-view-of-r588-with-colours-small.jpg" alt="tools">
 					<div class="card-body p-0">
