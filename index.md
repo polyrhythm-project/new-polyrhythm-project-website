@@ -64,7 +64,7 @@ permalink: /index.html
 		</div>
 		<div class="row g-3 g-lg-4 mt-2">
 			<!-- 1 -->
-			<div class="col-md-6 col-lg-4 mb-4" title="UPDATES" data-bs-toggle="tooltip" alt="updates">
+			<div class="col-md-6 col-lg-4 mb-4" title="Kinnear Centre for Creativity & Innovation, located at Banff Centre for Arts and Creativity; work by Mzaki, https://creativecommons.org/licenses/by/4.0/deed.en, image adapted for layout" data-bs-toggle="tooltip" alt="updates">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/banff-small.jpg" alt="updates">
 					<div class="card-body p-0">
