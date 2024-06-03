@@ -84,7 +84,7 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 3 -->
-			<div class="col-md-6 col-lg-4 mb-4" title="RESEARCH" data-bs-toggle="tooltip" alt="research">
+			<div class="col-md-6 col-lg-4 mb-4" title="Headphones (1292150) - The Noun Project.svg icon from the Noun Project" data-bs-toggle="tooltip" alt="research">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/headphones-small.png" alt="research">
 					<div class="card-body p-0">
