@@ -64,7 +64,7 @@ permalink: /index.html
 		</div>
 		<div class="row g-3 g-lg-4 mt-2">
 			<!-- 1 -->
-			<div class="col-md-6 col-lg-4 mb-4">
+			<div class="col-md-6 col-lg-4 mb-4" title="UPDATES" data-bs-toggle="tooltip" alt="updates">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/banff-small.jpg" alt="updates">
 					<div class="card-body p-0">
@@ -74,9 +74,9 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 2 -->
-			<div class="col-md-6 col-lg-4 mb-4">
+			<div class="col-md-6 col-lg-4 mb-4" title="Paul Klee, Polyphony (1932)" data-bs-toggle="tooltip" alt="about">
 				<div class="card h-100 border-0">
-					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/polyphony-small.jpg" title="Paul Klee, Polyphony (1932)" alt="about">
+					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/polyphony-small.jpg" alt="about">
 					<div class="card-body p-0">
 						<div class="category mb-2">ABOUT</div>
 						<a class="text-decoration-none link-dark stretched-link" href="overview" role="button"><h3 class="card-title mb-3">This platform presents an online edition of 750 examples of polyphonic music with information about composers and their works.  You can explore our sources, listen to the music excerpts, use the analysis tools, and participate in an experiment.</h3></a>
@@ -84,7 +84,7 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 3 -->
-			<div class="col-md-6 col-lg-4 mb-4">
+			<div class="col-md-6 col-lg-4 mb-4" title="RESEARCH" data-bs-toggle="tooltip" alt="research">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/headphones-small.png" alt="research">
 					<div class="card-body p-0">
@@ -94,7 +94,7 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 4 -->
-			<div class="col-md-6 col-lg-4 mb-4">
+			<div class="col-md-6 col-lg-4 mb-4" title="world map" data-bs-toggle="tooltip" alt="worldmap">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/7/71/WorldMap-Blank-Noborders.svg" alt="maps">
 					<div class="card-body p-0">
@@ -104,7 +104,7 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 5 -->
-			<div class="col-md-6 col-lg-4 mb-4">
+			<div class="col-md-6 col-lg-4 mb-4" title="Analysis tools" data-bs-toggle="tooltip" alt="analysis tools">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3" src="/img/homepage/vhv-view-of-r588-with-colours-small.jpg" alt="tools">
 					<div class="card-body p-0">
@@ -114,7 +114,7 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 6 -->
-			<div class="col-md-6 col-lg-4 mb-4">
+			<div class="col-md-6 col-lg-4 mb-4" title="Project resources" data-bs-toggle="tooltip" alt="resources">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-2.jpg" alt="sources">
 					<div class="card-body p-0">
