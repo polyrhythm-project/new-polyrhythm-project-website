@@ -94,7 +94,7 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 4 -->
-			<div class="col-md-6 col-lg-4 mb-4" title="world map" data-bs-toggle="tooltip" alt="worldmap">
+			<div class="col-md-6 col-lg-4 mb-4" title="Colomet1, Public domain, via Wikimedia Commons; https://creativecommons.org/licenses/by/4.0/deed.en, image adapted for layout" data-bs-toggle="tooltip" alt="worldmap">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/7/71/WorldMap-Blank-Noborders.svg" alt="maps">
 					<div class="card-body p-0">
