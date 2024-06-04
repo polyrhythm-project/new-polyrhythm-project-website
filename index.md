@@ -114,7 +114,7 @@ permalink: /index.html
 				</div>
 			</div>
 			<!-- 6 -->
-			<div class="col-md-6 col-lg-4 mb-4" title="Project resources" data-bs-toggle="tooltip" alt="resources">
+			<div class="col-md-6 col-lg-4 mb-4" title="Franz Liszt, Consolation No. 4, S. 172 (1849)" data-bs-toggle="tooltip" alt="resources">
 				<div class="card h-100 border-0">
 					<img class="card-img-top card-img-bottom mb-3" src="assets/img/project-resources-2.jpg" alt="sources">
 					<div class="card-body p-0">
