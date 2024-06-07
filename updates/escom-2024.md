@@ -2,7 +2,7 @@
 
 ## ESCOM 2024, July 3&ndash;6, York Hub, UK
 
-Dr. Ève Poudrier will be presenting a summary of three experiments that investigated perceived emotions (mood, energy, movement, dissonance, and tension) in a talk titled "The influence of sonority dissonance and rhythmic complexity on listeners' perceived emotions." This research was performed in collaboration with Bryan Jacob Bell (University of British Columbia), Jason Yin Hei (McGill University), and Craig Stuart Sapp (Stanford University/CCARH/PHI). This talk will be presented remotely and available for viewing online (details TBA).
+Dr. Ève Poudrier will be presenting a summary of three experiments that investigated perceived emotions (mood, energy, movement, dissonance, and tension) in a talk titled "The influence of sonority dissonance and rhythmic complexity on listeners' perceived emotions." This research was performed in collaboration with Bryan Jacob Bell (University of British Columbia), Jason Yin Hei Lee (McGill University), and Craig Stuart Sapp (Stanford University/CCARH/PHI). This talk will be presented remotely and available for viewing online on July 4 at 7:20 PST.
 
 ### ABSTRACT
 
