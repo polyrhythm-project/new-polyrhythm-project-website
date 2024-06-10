@@ -24,12 +24,6 @@ summary:
 
 
 
-## Other Presentations ##
-
-{% include_relative other-presentations.html %}
-
-
-
 ## Web Resources ##
 
 {% include_relative web-resources.html %}
