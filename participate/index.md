@@ -16,7 +16,7 @@ There are no experiements currently running.
 
 There are 5 experiments for which data collection has closed. You can read the results in the "Research" section of this website.
 
-If you want to learn more about how experimental design and data collection, you can still access the experiments and provide responses. Your data will be recorded anonymously, but it will not be used for analysis. All recorded data will be deleted manually from the Qualtrics platform periodically.
+If you want to learn more about how experimental design and data collection, you can still access the experiments and provide responses. Your data will be recorded anonymously, but it will not be used for analysis. All recorded data will be deleted manually from the Qualtrics platform periodically (pending).
 
 ### Perceived Musical Qualities I (2019)
 
@@ -26,7 +26,7 @@ If you want to learn more about how experimental design and data collection, you
 
 ### Listening to Musical Flow II: Ordered vs. Randomized Pitch (2023)
 
-### Listening to Musical Flow III: Dissonance (2023
+### Listening to Musical Flow III: Dissonance (2023)
 
 
 
