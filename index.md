@@ -99,7 +99,7 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3" src="https://upload.wikimedia.org/wikipedia/commons/7/71/WorldMap-Blank-Noborders.svg" alt="maps">
 					<div class="card-body p-0">
 						<div class="category mb-2">MAPS</div>
-						<a class="text-decoration-none link-dark stretched-link" href="maps" role="button"><h3 class="card-title mb-3">The Suter (1980) Corpus is represented by three interactive maps.  Maps feature composers' lifetime and places where the corpus works were first performed.</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="maps" role="button"><h3 class="card-title mb-3">The <em>Suter (1980) Corpus</em> is represented by three interactive maps.  Maps feature composers' lifetime and places where the corpus works were first performed.</h3></a>
 					</div>
 				</div>
 			</div>
