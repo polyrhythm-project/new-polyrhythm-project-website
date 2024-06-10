@@ -12,25 +12,24 @@ permalink: /index.html
 <!-- Example -->
 <section>
 	<div class="container px-3 my-4">
-		<div class="row">
-			<div class="col-12">
-				<div class="text-center">
-					<h2 id="sample-work" style="visibility:hidden; size:90% !important"><span>Sample work:</span> <span id="random-title"></span></h2>
-				</div>
-			</div>
-		</div>
+
 		<!-- Browse by -->
 		{% include_relative browse-play.html %}
-		<!-- Image -->
-		<div class="row mt-5">
+
+		<!-- Random title -->
+		{% include_relative random-title.html %}
+
+		<!-- Random score -->
+		<div style="margin-top:-40px !important;" class="row mt-5">
 			<div class="col-12">
 				<div class="text-center">
 					{% include_relative random-score.html %}
 				</div>
 			</div>
 		</div>
+
 		<div class="row">
-			<div class="col-12">
+			<div id="random-example-buttons" style="display:none" class="col-12">
 				<!-- Example page -->
 				<button onclick="gotoRandomExamplePage()" type="button" class="btn btn-secondary btn-secondary-dark float-md-end mb-3 mb-lg-0 ms-1">
 					Example page
