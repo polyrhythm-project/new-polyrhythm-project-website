@@ -62,10 +62,17 @@ input#secondsmin, input#secondsmax {
 }
 
 
-thead, thead tr, thead tr th {
+/* thead, thead tr, thead tr th { */
+thead tr th:first-child {
+	padding-left: 10px;
+}
+
+thead tr th {
 	position: sticky !important;
 	top: 78px;
 	z-index: 100;
+	background-color: var(--primary-light);
+	opacity: 1.0 !important;
 }
 
 
@@ -103,6 +110,11 @@ button#question-button {
 
 button#question-button:hover {
 	background: #efeff0 !important;
+}
+
+table th:hover {
+	background: #efeff0 !important;
+	cursor: pointer;
 }
 
 

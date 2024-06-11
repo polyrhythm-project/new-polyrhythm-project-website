@@ -57,10 +57,11 @@ function buildTimeSignatureTypeSelect(list, selector) {
 	fixed.push("unequal");
 	fixed.push("unequal duple");
 	fixed.push("unequal triple");
-	fixed.push("changing");
-	fixed.push("polydurational");
-	fixed.push("polymetric");
-	fixed.push("unmetered");
+	fixed.push("other");
+	fixed.push("other changing");
+	fixed.push("other polydurational");
+	fixed.push("other polymetric");
+	fixed.push("other unmetered");
 	fixed.push("unavailable");
 
 	let rfixed = {};
@@ -80,6 +81,8 @@ function buildTimeSignatureTypeSelect(list, selector) {
 		} else if (matches = shortname.match(/^\s*compound\s+(.+)\s*$/)) {
 			shortname = `${prefix}${matches[1]}`;
 		} else if (matches = shortname.match(/^\s*unequal\s+(.+)\s*$/)) {
+			shortname = `${prefix}${matches[1]}`;
+		} else if (matches = shortname.match(/^\s*other\s+(.+)\s*$/)) {
 			shortname = `${prefix}${matches[1]}`;
 		}
 		output += "<option value='" + fixed[i] + "'>" + shortname + "</option>\n";
@@ -101,6 +104,8 @@ function buildTimeSignatureTypeSelect(list, selector) {
 		} else if (matches = shortname.match(/^\s*compound\s+(.+)\s*$/)) {
 			shortname = `${prefix}${matches[1]}`;
 		} else if (matches = shortname.match(/^\s*unequal\s+(.+)\s*$/)) {
+			shortname = `${prefix}${matches[1]}`;
+		} else if (matches = shortname.match(/^\s*other\s+(.+)\s*$/)) {
 			shortname = `${prefix}${matches[1]}`;
 		}
 		output += "<option value='" + clist[i] + "'>" + shortname + "</option>\n";
@@ -137,13 +142,13 @@ function buildTempoBeatSelect(list, selector) {
 
 	// do a fixed list of known categories
 	let fixed = [];
+	fixed.push("sixteenth");
+	fixed.push("eighth");
+	fixed.push("dotted-eighth");
 	fixed.push("quarter");
 	fixed.push("dotted-quarter");
 	fixed.push("half");
 	fixed.push("dotted-half");
-	fixed.push("eighth");
-	fixed.push("dotted-eighth");
-	fixed.push("sixteenth");
 	fixed.push("other");
 	fixed.push("unavailable");
 
