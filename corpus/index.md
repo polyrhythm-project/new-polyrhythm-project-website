@@ -13,7 +13,7 @@ summary:
 <tbody>
 
    <tr>
-    <td class="topalign" colspan="2">This page presents different types of visualization of the corpus contents, organized by type of metadata (i.e., information about sources and materials). The table below provides a list of the types of metadata collected for composers, works, premieres (first public performance of a work), and the extracted examples. </td>
+    <td class="topalign" colspan="2">This page presents different types of visualization of the corpus metadata (i.e., information about sources and materials), such as tables, figures, graphs, and word clouds. These materials are organized by type of metadata. The table below provides a list of the types of metadata collected for composers, works, premieres (first public performance of a work), and the extracted examples. To explore the visualizations, click on the categories below the table. </td>
   </tr>
   <tr>
     <td class="topalign" colspan="2"><img width="800" src="/corpus/Metadata Table.png"></td>
