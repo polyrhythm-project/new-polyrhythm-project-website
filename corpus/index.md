@@ -11,20 +11,7 @@ summary:
 
 <table>
 <tbody>
-  <tr>
-    <td class="centeralign" colspan="2"><img width="300" src="/corpus/Suter Portrait.png"></td>
-  </tr>
-    <tr>
-    <td class="centeralign" colspan="2"><a target="_blank" href="https://www.musinfo.ch/de/personen/autoren/?pers_id=1022&abc=S">Louis-Marc Suter</a> (1928-2018)</td>
-  </tr>
-    <tr>
-    <td class="centeralign" colspan="2">Conductor, pedagogue, and musicologist</td>
-  </tr>
-  
-  <tr>
-    <td class="topalign" colspan="2">Text to be added.</td>
-  </tr>
-
+   
   <tr>
     <td class="topalign" colspan="2"><img width="800" src="/corpus/Metadata Table.png"></td>
   </tr>
