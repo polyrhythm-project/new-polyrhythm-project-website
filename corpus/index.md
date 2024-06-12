@@ -13,7 +13,7 @@ summary:
 <tbody>
 
    <tr>
-    <td class="topalign" colspan="2">This page presents different types of visualization of the corpus contents, organized by type of metadata (i.e., information about sources and materials). The table below provides a list of the types of metadata collected for composers, works, and examples. </td>
+    <td class="topalign" colspan="2">This page presents different types of visualization of the corpus contents, organized by type of metadata (i.e., information about sources and materials). The table below provides a list of the types of metadata collected for composers, works, premieres (first public performance of a work), and the extracted examples. </td>
   </tr>
   <tr>
     <td class="topalign" colspan="2"><img width="800" src="/corpus/Metadata Table.png"></td>
