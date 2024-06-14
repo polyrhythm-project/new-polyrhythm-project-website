@@ -12,26 +12,25 @@
 {% endcomment %}
 
 <script>
-// vim: ts=3
 
 // Variables for option buttons:
-let COLOR          = 0;
-let FULLCOLOR      = 0;
-let GROUP          = 0;
-let MARK           = 0;
-let EVENTCOUNTS    = 0;
-let COMPOSITE      = 0;
-let ANALYSIS       = 0;
-let COINCIDENCE    = 0;
-let FILTER         = "";
+var COLOR          = 0;
+var FULLCOLOR      = 0;
+var GROUP          = 0;
+var MARK           = 0;
+var EVENTCOUNTS    = 0;
+var COMPOSITE      = 0;
+var ANALYSIS       = 0;
+var COINCIDENCE    = 0;
+var FILTER         = "";
 
-let CGI            = {};  // CGI parameters from URL
-let SORTCOLUMN     = 0;
-let BROWSELIST     = [];   // List of works on the browse table on the main search page.
-let EXAMPLE_NAVIGATION = {};
-let CURRENTEXAMPLE = "";
-let ACCESS         = 0;
-let SUPERACCESS    = 0;
+var CGI            = {};  // CGI parameters from URL
+var SORTCOLUMN     = 0;
+var BROWSELIST     = [];   // List of works on the browse table on the main search page.
+var EXAMPLE_NAVIGATION = {};
+var CURRENTEXAMPLE = "";
+var ACCESS         = 0;
+var SUPERACCESS    = 0;
 
 
 
@@ -44,22 +43,7 @@ let SUPERACCESS    = 0;
 document.addEventListener("DOMContentLoaded", function () {
 	CGI = GetCgiParameters();
 	DownloadMetadata(doAction);
-	let url = `https://data.polyrhythm.humdrum.org/${CGI.id}.validate?a=${localStorage.access}`;
-	fetch(url)
-	.then(response => response.text())
-	.then(function(text) {
-		if (text.match("SUPERVALID")) {
-			ACCESS = 1;
-			SUPERACCESS = 1;
-		} else if (text.match("INVALID")) {
-			ACCESS = 0;
-			SUPERACCESS = 0;
-		} else if (text.match("VALID")) {
-			ACCESS = 1;
-			SUPERACCESS = 0;
-		}
-		continueListener();
-	});
+	// continueListener();
 });
 
 
@@ -75,6 +59,8 @@ function continueListener() {
 		element.addEventListener("input", function() {
 			doSearch();
 		});
+	} else {
+		console.error("Cannot find input#search");
 	}
 
 }
@@ -99,7 +85,11 @@ function doAction(examplelist) {
 	if (nextbutton) {
 		nextbutton.addEventListener("click", function() {
 			let exid = CURRENTEXAMPLE;
+console.warn("EXID", exid);
+console.warn("EXAMPLE_NAVIGATION[exit]", EXAMPLE_NAVIGATION[exid], EXAMPLE_NAVIGATION);
 			let nextid = EXAMPLE_NAVIGATION[exid]["nextExampleId"];
+			// let nextid = EXAMPLE_NAVIGATION["nextExampleId"];
+console.log("NEXT ID", nextid);
 			displayExample(nextid, EXAMPLELIST);
 		});
 	}
@@ -108,7 +98,11 @@ function doAction(examplelist) {
 	if (prevbutton) {
 		prevbutton.addEventListener("click", function() {
 			let exid = CURRENTEXAMPLE;
+console.warn("EXID", exid);
+console.warn("EXAMPLE_NAVIGATION[exit]", EXAMPLE_NAVIGATION[exid], EXAMPLE_NAVIGATION);
 			let previd = EXAMPLE_NAVIGATION[exid]["prevExampleId"];
+			// let previd = EXAMPLE_NAVIGATION["prevExampleId"];
+console.log("NEXT ID", previd);
 			displayExample(previd, EXAMPLELIST);
 		});
 	}

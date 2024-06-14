@@ -326,7 +326,7 @@ function displayExample(exid, examples) {
 		output += "</span> ";
 	}
 
-	if (ACCESS && hasGroupInfo(CURRENTEXAMPLE)) {
+	if (hasGroupInfo(CURRENTEXAMPLE)) {
 
 		output += "<span id='group'";
 		output += " onclick='toggleGroup()'";
@@ -386,14 +386,12 @@ function displayExample(exid, examples) {
 
 	}
 
-	if (ACCESS) {
-		output += "<span ";
-		output += " onclick='copyData(\"" + CURRENTEXAMPLE + "\")'";
-		output += " title='";
-		output += "Copy Humdrum data to the system clipboard";
-		output += "'";
-		output += " class='vhv-button group3'>copy</span> ";
-	}
+	output += "<span ";
+	output += " onclick='copyData(\"" + CURRENTEXAMPLE + "\")'";
+	output += " title='";
+	output += "Copy Humdrum data to the system clipboard";
+	output += "'";
+	output += " class='vhv-button group3'>copy</span> ";
 
 	output += "<span ";
 	output += " onclick='copyLink(\"" + CURRENTEXAMPLE + "\")'";
@@ -413,21 +411,13 @@ function displayExample(exid, examples) {
 
 	console.log("URI", url);
 	let dset = entry[INDEX_Example_Dataset];
-	if (ACCESS) {
-		displayHumdrum({
-			source: "example-notation",
-			postFunction: addProblemIcons,
-			url: url
-		});
-	} else {
-		// clear the old example notation
-		let container = document.querySelector("#example-notation-container");
-		if (container) {
-			let svg = container.querySelector("svg");
-			svg.outerHTML = "";
-		}
-	}
+	displayHumdrum({
+		source: "example-notation",
+		postFunction: addProblemIcons,
+		url: url
+	});
 
+/*
 	PrepareResourceFileIndex("e0", "/resources/pdf/e0/index.txt", hideUnavailableE0);
 	PrepareResourceFileIndex("e1", "/resources/pdf/e1/index.txt", hideUnavailableE1);
 	PrepareResourceFileIndex("e2", "/resources/pdf/e2/index.txt", hideUnavailableE2);
@@ -435,6 +425,7 @@ function displayExample(exid, examples) {
 	PrepareResourceFileIndex("sibpdf", "/resources/pdf/sibelius/index.txt", hideUnavailableSibPdf);
 	PrepareResourceFileIndex("acoustic", "/resources/recordings/acoustic/index.txt", hideUnavailableAcoustic);
 	PrepareResourceFileIndex("eastwest", "/resources/recordings/eastwest/index.txt", hideUnavailableEastWest);
+*/
 
 	setButtonStates();
 
@@ -1200,25 +1191,33 @@ function addProblemIcons(id) {
 //
 
 function prepareNextPreviousExampleList(examplelist) {
+console.log("PREPARE NEXT PREVIOUS EXAMPLE LIST", examplelist);
 	if (sessionStorage.BROWSELIST) {
-		BROWSELIST = JSON.parse(sessionStorage.BROWSELIST);
+		examplelist = JSON.parse(sessionStorage.BROWSELIST);
+	} else {
+		examplelist = [];
+		for (let i=0; i<EXAMPLELIST.length; i++) {
+			examplelist[i] = EXAMPLELIST[i][INDEX_Suter_Example_Number];
+		}
 	}
+console.log("STARTING example list", examplelist);
 	EXAMPLE_NAVIGATION = {};
-	for (let i=0; i<BROWSELIST.length; i++) {
+	for (let i=0; i<examplelist.length; i++) {
 		let entry = {};
-		entry.currExampleId = BROWSELIST[i];
+		entry.currExampleId = examplelist[i];
 		if (i > 0) {
-			entry.prevExampleId = BROWSELIST[i-1];
+			entry.prevExampleId = examplelist[i-1];
 		} else {
-			entry.prevExampleId = BROWSELIST[BROWSELIST.length - 1];
+			entry.prevExampleId = examplelist[examplelist.length - 1];
 		}
-		if (i < BROWSELIST.length - 1) {
-			entry.nextExampleId = BROWSELIST[i+1];
+		if (i < examplelist.length - 1) {
+			entry.nextExampleId = examplelist[i+1];
 		} else {
-			entry.nextExampleId = BROWSELIST[0];
+			entry.nextExampleId = examplelist[0];
 		}
-		EXAMPLE_NAVIGATION[BROWSELIST[i]] = entry;
+		EXAMPLE_NAVIGATION[examplelist[i]] = entry;
 	}
+	console.warn("EXAMPLE_NAVIGATION", EXAMPLE_NAVIGATION);
 }
 
 

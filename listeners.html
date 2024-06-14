@@ -71,8 +71,10 @@ document.addEventListener("click", function (event) {
 //
 
 function gotoRandomExamplePage() {
+	delete sessionStorage.BROWSELIST;
+	delete sessionStorage.NAVIGATION_EXAMPLE;
 	if (RANDOMID) {
-		window.location.href = `/example?${RANDOMID}`;
+		window.location.href = `/example?id=${RANDOMID}`;
 	}
 }
 
