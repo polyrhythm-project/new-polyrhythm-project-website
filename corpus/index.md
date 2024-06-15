@@ -1,5 +1,5 @@
 ---
-title: Corpus
+title: Corpus metadata
 author:
 keywords: corpus
 permalink: /corpus/index.html
