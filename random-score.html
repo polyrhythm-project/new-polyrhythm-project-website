@@ -52,15 +52,6 @@ function displayRandomScore(examplelist) {
 	let exid = choice[INDEX_Suter_Example_Number];
 	RANDOMID = exid;
 
-	let options = {
-		url: `https://data.polyrhythm.humdrum.org/${exid}.krn?a=${localStorage.access}`,
-      source: "random-score",
-		incipit: true,
-      autoResize: "true",
-		scale: 50,
-		postFunction: "revealRandomTitle"
-	};
-
 	let randomTitle = document.querySelector("#random-title");
 	if (randomTitle) {
 		let composer = choice[INDEX_Composer_Name];
@@ -70,8 +61,62 @@ function displayRandomScore(examplelist) {
 		randomTitle.innerHTML = output;
 	}
 
+	displayScore(exid);
+}
+
+
+//////////////////////////////
+// 
+// displayScore --
+//
+
+function displayScore(id) {
+	let optionButtons = document.querySelectorAll("[id$='-option'].active");
+	console.warn("optionButtons", optionButtons);
+	let composite = "";
+	let groupcolor = "";
+	for (let i=0; i<optionButtons.length; i++) {
+console.warn("PROCESSING OPTION", optionButtons[i]);
+		let id = optionButtons[i].id;
+		if (id === "groupcolor-option") {
+			groupcolor = "colorgroups";
+		}
+		if (id === "composite-option") {
+			composite += "-g ";
+		}
+		if (id === "coincidence-option") {
+			composite += "-c ";
+		}
+	}
+	if (composite) {
+		composite = `composite ${composite}`;
+	}
+	if (groupcolor) {
+		if (composite) {
+			composite += ` -C | ${groupcolor}`;
+		} else {
+			composite = groupcolor
+		}
+	}
+
+	let options = {
+		url: `https://data.polyrhythm.humdrum.org/${id}.krn?a=${localStorage.access}`,
+      source: "random-score",
+		incipit: true,
+      autoResize: "true",
+		scale: 50,
+		postFunction: "revealRandomTitle"
+	};
+	if (composite) {
+		options.filter = composite;
+		console.error("FILTER", composite);
+	} else {
+		options.filter = "";
+	}
+
 	console.warn("HNP OPTIONS", options);
    displayHumdrum(options);
+
 
 }
 
@@ -95,6 +140,67 @@ var revealRandomTitle = function () {
 
 };
 
+
+//////////////////////////////
+//
+// toggleGroupColorOption --
+//
+
+function toggleGroupColorOption(event) {
+	let target = event.target;
+	if (!target) {
+		return;
+	}
+	event.preventDefault();
+	if (target.classList.contains("active")) {
+		target.classList.remove("active");
+	} else {
+		target.classList.add("active");
+	}
+	displayScore(RANDOMID);
+}
+
+
+
+//////////////////////////////
+//
+// toggleCompositeOption --
+//
+
+function toggleCompositeOption(event) {
+	let target = event.target;
+	if (!target) {
+		return;
+	}
+	event.preventDefault();
+	if (target.classList.contains("active")) {
+		target.classList.remove("active");
+	} else {
+		target.classList.add("active");
+	}
+	displayScore(RANDOMID);
+}
+
+
+
+//////////////////////////////
+//
+// toggleCoincidenceOption --
+//
+
+function toggleCoincidenceOption(event) {
+	let target = event.target;
+	if (!target) {
+		return;
+	}
+	event.preventDefault();
+	if (target.classList.contains("active")) {
+		target.classList.remove("active");
+	} else {
+		target.classList.add("active");
+	}
+	displayScore(RANDOMID);
+}
 
 </script>
 

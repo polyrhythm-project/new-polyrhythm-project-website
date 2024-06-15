@@ -35,16 +35,16 @@ permalink: /index.html
 					Example page
 				</button>
 				<!-- Coincidence -->
-				<button type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
+				<button id="coincidence-option" onclick="toggleCoincidenceOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
 					Coincidence
 				</button>
 				<!-- Composite -->
-				<button type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
+				<button id="composite-option" onclick="toggleCompositeOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
 					Composite
 				</button>
 				<!-- Group color -->
-				<button type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0">
-					Group color
+				<button id="groupcolor-option" onclick="toggleGroupColorOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0">
+					Group colour
 				</button>
 			</div>
 		</div>
