@@ -8,6 +8,8 @@ layout: default
 summary:
 ---
 
+{% include_relative styles-local.html %}
+
 <p>
 This page presents different types of visualization of the corpus
 metadata (i.e., information about sources and materials), such as
