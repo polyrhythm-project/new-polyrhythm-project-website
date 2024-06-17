@@ -20,7 +20,7 @@ function BuildComposedSelect(workindex, selector, options) {
 	}
 	let defaultText = options.defaultText;
 	if (!defaultText) {
-		defaultText = "Composition date";
+		defaultText = "Composition year";
 	}
 	let composeds = {};
 	let keys = Object.keys(workindex);

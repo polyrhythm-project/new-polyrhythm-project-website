@@ -585,6 +585,165 @@ function doSearch(text) {
 		}
 	}
 
+	// Filter by composition date
+	let compdatemin = document.querySelector("#compositiondatemin").value;
+	let compdatemax = document.querySelector("#compositiondatemax").value;
+	active = false;
+	if (compdatemin.match(/^\d+/)) {
+		compdatemin = parseInt(compdatemin);
+		if (compdatemin < 1800) {
+			compdatemin = "";
+		} else {
+			active = true;
+		}
+	} else {
+		compdatemin = "";
+	}
+	if (compdatemax.match(/^\d+/)) {
+		compdatemax = parseInt(compdatemax);
+		if  (compdatemax > 2000) {
+			compdatemax = "";
+		} else {
+			active = true;
+		}
+	} else {
+		compdatemax = "";
+	}
+	if ((compdatemin !== "") && (compdatemax === "")) {
+		compdatemax = compdatemin;
+	} else if ((compdatemin === "") && (compdatemax !== "")) {
+		compdatemin = compdatemax;
+	}
+	if (active) {
+		oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			let number = oldentries[i][INDEX_Composition_Year];
+			if (number.match(/^\d+/)) {
+				number = parseInt(number);
+			} else {
+				continue;
+			}
+			if (compdatemin !== "") {
+				if (number < compdatemin) {
+					continue;
+				}
+			}
+			if (compdatemax !== "") {
+				if (number > compdatemax) {
+					continue;
+				}
+			}
+			entries.push(oldentries[i]);
+		}
+	}
+
+	// Filter by premiere date
+	let premdatemin = document.querySelector("#premieredatemin").value;
+	let premdatemax = document.querySelector("#premieredatemax").value;
+	active = false;
+	if (premdatemin.match(/^\d+/)) {
+		premdatemin = parseInt(premdatemin);
+		if (premdatemin < 1800) {
+			premdatemin = "";
+		} else {
+			active = true;
+		}
+	} else {
+		premdatemin = "";
+	}
+	if (premdatemax.match(/^\d+/)) {
+		premdatemax = parseInt(premdatemax);
+		if  (premdatemax > 2000) {
+			premdatemax = "";
+		} else {
+			active = true;
+		}
+	} else {
+		premdatemax = "";
+	}
+	if ((premdatemin !== "") && (premdatemax === "")) {
+		premdatemax = premdatemin;
+	} else if ((premdatemin === "") && (premdatemax !== "")) {
+		premdatemin = premdatemax;
+	}
+	if (active) {
+		oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			let number = oldentries[i][INDEX_Composition_Year];
+			if (number.match(/^\d+/)) {
+				number = parseInt(number);
+			} else {
+				continue;
+			}
+			if (premdatemin !== "") {
+				if (number < premdatemin) {
+					continue;
+				}
+			}
+			if (premdatemax !== "") {
+				if (number > premdatemax) {
+					continue;
+				}
+			}
+			entries.push(oldentries[i]);
+		}
+	}
+
+	// Filter by publication date
+	let publdatemin = document.querySelector("#publicationdatemin").value;
+	let publdatemax = document.querySelector("#publicationdatemax").value;
+	active = false;
+	if (publdatemin.match(/^\d+/)) {
+		publdatemin = parseInt(publdatemin);
+		if (publdatemin < 1800) {
+			publdatemin = "";
+		} else {
+			active = true;
+		}
+	} else {
+		publdatemin = "";
+	}
+	if (publdatemax.match(/^\d+/)) {
+		publdatemax = parseInt(publdatemax);
+		if  (publdatemax > 2000) {
+			publdatemax = "";
+		} else {
+			active = true;
+		}
+	} else {
+		publdatemax = "";
+	}
+	if ((publdatemin !== "") && (publdatemax === "")) {
+		publdatemax = publdatemin;
+	} else if ((publdatemin === "") && (publdatemax !== "")) {
+		publdatemin = publdatemax;
+	}
+	if (active) {
+		oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			let number = oldentries[i][INDEX_Composition_Year];
+			if (number.match(/^\d+/)) {
+				number = parseInt(number);
+			} else {
+				continue;
+			}
+			if (publdatemin !== "") {
+				if (number < publdatemin) {
+					continue;
+				}
+			}
+			if (publdatemax !== "") {
+				if (number > publdatemax) {
+					continue;
+				}
+			}
+			entries.push(oldentries[i]);
+		}
+	}
+
 	// Filter by Instrument
 	let instrument = document.querySelector("#instruments").value;
 	if (instrument != "") {
@@ -666,6 +825,7 @@ function doSearch(text) {
 	entries = searchBySecondsRange(entries);
 
 	displayList(entries, null, SORTINFO);
+	reportMatches(entries);
 	setCgiParameters();
 	setActiveSelects();
 }
@@ -994,6 +1154,7 @@ function fillInstrumentOptions() {
 }
 
 
+
 //////////////////////////////
 //
 // setActiveSelects --
@@ -1009,6 +1170,7 @@ function setActiveSelects() {
 		}
 	}
 }
+
 
 
 </script>

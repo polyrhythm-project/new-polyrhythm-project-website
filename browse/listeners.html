@@ -116,6 +116,60 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.warn("No input#secondsmax found");
 	}
 
+	element = document.querySelector("input#compositiondatemax");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.warn("No input#compositiondatemax found");
+	}
+
+	element = document.querySelector("input#compositiondatemin");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.warn("No input#compositedatemin found");
+	}
+
+	element = document.querySelector("input#premieredatemax");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.warn("No input#premieredatemax found");
+	}
+
+	element = document.querySelector("input#premierdateemin");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.warn("No input#premieredatemin found");
+	}
+
+	element = document.querySelector("input#publicationdatemax");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.warn("No input#publicationdatemax found");
+	}
+
+	element = document.querySelector("input#publicationdateemin");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.warn("No input#publicationdatemin found");
+	}
+
 });
 
 

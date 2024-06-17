@@ -58,6 +58,30 @@ function browseGenre() {
 }
 
 
+
+//////////////////////////////
+//
+// browseComposed -- Move to the browse page when a composition year  selection is made.
+//
+
+function browseComposed() {
+console.warn("GOT HERE AAA");
+	let element = document.querySelector("#composedSelect");
+	if (!element) {
+		console.error("ERROR: Cannot find #composedSelect");
+		return;
+	}
+console.warn("GOT HERE BBB");
+	if (element.selectedIndex == 0) {
+		return;
+	}
+console.warn("GOT HERE CCC");
+	let value = encodeURIComponent(element.value);
+console.warn("GOT HERE DDD", value);
+	window.location.href = `/browse/?composed=${value}`;
+}
+
+
 </script>
 
 

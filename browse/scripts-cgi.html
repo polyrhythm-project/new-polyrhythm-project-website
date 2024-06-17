@@ -30,6 +30,10 @@ function processCgiParameters() {
 		setGenreSelect(cgi.g);
 		found = true;
 	}
+	if (cgi.composed) {
+		setComposedRange(cgi.composed);
+		found = true;
+	}
 	if (found) {
 		doSearch();
 	}
@@ -149,6 +153,41 @@ function setGenreSelect(input) {
 	}
 
 	console.log("Warning: Cannot find genre", input, "in genre selection list");
+}
+
+
+
+//////////////////////////////
+//
+// setComposedRange -- given an input composition year or range
+//    to set the target composition date(s) and then search.
+//
+
+function setComposedRange(input) {
+	if (!input) {
+		return;
+	}
+
+	let cminelement = document.querySelector("input#compositiondatemin");
+	let cmaxelement = document.querySelector("input#compositiondatemax");
+	if (!cminelement) {
+		console.error("Error: Cannot find input#compositiondatemin");
+		return;
+	}
+	if (!cmaxelement) {
+		console.error("Error: Cannot find input#compositiondatemax");
+		return;
+	}
+
+	let matches = input.match(/(\d{4})-(\d{4})/);
+	if (matches) {
+		cminelement.value = matches[1];
+		cmaxelement.value = matches[2];
+	} else {
+		matches = input.match(/\b(\d{4})\b/);
+		cminelement.value = matches[1];
+	}
+
 }
 
 
