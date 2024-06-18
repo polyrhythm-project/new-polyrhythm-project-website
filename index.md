@@ -30,22 +30,27 @@ permalink: /index.html
 
 		<div class="row">
 			<div id="random-example-buttons" style="display:none" class="col-12">
+
 				<!-- Example page -->
-				<button onclick="gotoRandomExamplePage()" type="button" class="btn btn-secondary btn-secondary-dark float-md-end mb-3 mb-lg-0 ms-1">
+				<button id="example-page-button" onclick="gotoRandomExamplePage()" type="button" class="btn btn-secondary btn-secondary-dark float-md-end mb-3 mb-lg-0 ms-1">
 					Example page
 				</button>
+
 				<!-- Coincidence -->
 				<button id="coincidence-option" onclick="toggleCoincidenceOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
 					Coincidence
 				</button>
+
 				<!-- Composite -->
 				<button id="composite-option" onclick="toggleCompositeOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
 					Composite
 				</button>
+
 				<!-- Group color -->
 				<button id="groupcolor-option" onclick="toggleGroupColorOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0">
-					Group colour
+					Group colours
 				</button>
+
 			</div>
 		</div>
 	</div>
