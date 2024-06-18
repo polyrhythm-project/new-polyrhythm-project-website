@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function doAction() {
 	BuildComposerSelect(WORKINDEX, "#composerSelect", {defaultText: "Composer"});
-	BuildGenreSelect(WORKINDEX, "#genreSelect", {defaultText: "Genre", counts: true});
-	BuildComposedSelect(WORKINDEX, "#composedSelect", {defaultText: "Composed", counts: true});
+	BuildGenreSelect(WORKINDEX, "#genreSelect", {defaultText: "Genre", counts: false});
+	BuildComposedSelect(WORKINDEX, "#composedSelect", {defaultText: "Composed", counts: false});
 	displayRandomScore(EXAMPLELIST);
 	document.body.style.cursor = "";
 }

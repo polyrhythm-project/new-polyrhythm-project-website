@@ -71,6 +71,11 @@ function BuildComposedSelect(workindex, selector, options) {
 			let endyear = parseInt(plist[i]) + 9;
 			let value   = `${plist[i]}-${endyear}`;
 			output += `<option value="${value}">${text}</option>\n`;
+		} else {
+			let text    = `${plist[i]}s`;
+			let endyear = parseInt(plist[i]) + 9;
+			let value   = `${plist[i]}-${endyear}`;
+			output += `<option value="${value}">${text}</option>\n`;
 		}
 	}
 	element.innerHTML = output;
