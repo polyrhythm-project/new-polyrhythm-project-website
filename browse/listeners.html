@@ -56,122 +56,116 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
 	let element = document.querySelector("input#search");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#search found");
 	}
 
 	element = document.querySelector("input#tempomin");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#tempomin found");
 	}
 
 	element = document.querySelector("input#tempomax");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#partsmax found");
 	}
 
 	element = document.querySelector("input#partsmin");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#partsmin found");
 	}
 
 	element = document.querySelector("input#partsmax");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#partsmax found");
 	}
 
 	element = document.querySelector("input#secondsmin");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#secondsmin found");
 	}
 
 	element = document.querySelector("input#secondsmax");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#secondsmax found");
 	}
 
 	element = document.querySelector("input#compositiondatemax");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#compositiondatemax found");
 	}
 
 	element = document.querySelector("input#compositiondatemin");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#compositedatemin found");
 	}
 
 	element = document.querySelector("input#premieredatemax");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#premieredatemax found");
 	}
 
 	element = document.querySelector("input#premieredatemin");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#premieredatemin found");
 	}
 
 	element = document.querySelector("input#publicationdatemax");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#publicationdatemax found");
 	}
 
 	element = document.querySelector("input#publicationdatemin");
 	if (element) {
-		element.addEventListener("input", function() {
-			doSearch();
-		});
+		setupInputSearch(element);
 	} else {
 		console.warn("No input#publicationdatemin found");
 	}
 
 });
+
+
+
+//////////////////////////////
+//
+// setupInputSearch
+//
+
+function setupInputSearch(element) {
+	element.addEventListener("input", function () {
+		if (element.value.match(/^\s*$/)) {
+			element.classList.remove("has-content");
+			console.log(element.id, "turned off");
+		} else {
+			element.classList.add("has-content");
+			console.log(element.id, "turned on");
+		}
+		doSearch();
+	});
+}
 
 
 

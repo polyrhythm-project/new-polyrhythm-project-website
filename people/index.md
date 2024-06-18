@@ -100,6 +100,9 @@ Shanahan’s research interests include music and emotion, the diffusion of musi
 
 ![Past Contributors](/people/past-contributors.jpg)
 
+<div style="font-size:1.65rem; word-spacing:2px; letter-spacing:0.35px; margin-bottom:40px; color:var(--secondary-dark)"><i>left to right</i>: Alex Negri, Anna Wright, Kelsey Lussier, and Isaac Zee.</div>
+
+
 **Annelies Andries**, PhD (music history), research assistant (metadata), 2012–2015
 
 **Austin Culler**, BA (music scholarship), research assistant (metadata), 2017–2018

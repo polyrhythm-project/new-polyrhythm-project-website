@@ -746,6 +746,7 @@ function clearSearchFields() {
 		// console.log("SETTING VALUE FOR INPUT", inputs[i]);
 		inputs[i].value = "";
 		inputs[i].classList.remove("active");
+		inputs[i].classList.remove("has-content");
 	}
 
 	FREEZE_SEARCH = false;
@@ -1039,6 +1040,11 @@ function doCompositionYearSearch(entries) {
 		compdatemin = compdatemax;
 	}
 	if (active) {
+		if (compdatemax < compdatemin) {
+			let temp = compdatemax;
+			compdatemax = compdatemin;
+			compdatemin = temp;
+		}
 		let oldentries = entries;
 		entries = [];
 		for (let i=0; i<oldentries.length; i++) {
@@ -1102,6 +1108,11 @@ function doPremierYearSearch(entries) {
 		premdatemin = premdatemax;
 	}
 	if (active) {
+		if (premdatemax < premdatemin) {
+			let temp = premdatemax;
+			premdatemax = premdatemin;
+			premdatemin = temp;
+		}
 		let oldentries = entries;
 		entries = [];
 		for (let i=0; i<oldentries.length; i++) {
@@ -1165,6 +1176,11 @@ function doPublicationYearSearch(entries) {
 		publdatemin = publdatemax;
 	}
 	if (active) {
+		if (publdatemax < publdatemin) {
+			let temp = publdatemax;
+			publdatemax = publdatemin;
+			publdatemin = temp;
+		}
 		let oldentries = entries;
 		entries = [];
 		for (let i=0; i<oldentries.length; i++) {
