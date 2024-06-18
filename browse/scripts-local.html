@@ -165,9 +165,9 @@ function makeMetaTableRows(list, dtype) {
 			if (list[i][INDEX_Suter_Example_Number]) {
 				let number = list[i][INDEX_Suter_Example_Number];
 				if (list[i][INDEX_Example_Dataset] === "R") {
-					output += "<b>R";
-		 			output += number;
-					output += "</b>";
+					// output += "<b>";
+		 			output += "R" + number;
+					// output += "</b>";
 				} else {
 		 			output += "T" + number;
 				}
