@@ -17,6 +17,7 @@
 var INSTRUMENTS = {% include instruments/instrument-names.json %};
 var BROWSELIST = [];
 var SORTORDER = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var FREEZE_SEARCH = false;
 
 // Variables for keeping track of sorting order in the composer table:
 var SORTINFO = {};
@@ -143,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.warn("No input#premieredatemax found");
 	}
 
-	element = document.querySelector("input#premierdateemin");
+	element = document.querySelector("input#premieredatemin");
 	if (element) {
 		element.addEventListener("input", function() {
 			doSearch();
@@ -161,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.warn("No input#publicationdatemax found");
 	}
 
-	element = document.querySelector("input#publicationdateemin");
+	element = document.querySelector("input#publicationdatemin");
 	if (element) {
 		element.addEventListener("input", function() {
 			doSearch();

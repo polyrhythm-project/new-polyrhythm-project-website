@@ -22,7 +22,7 @@
 
 			<div class="col-3 col-sm-2 mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
   				  <!-- Adjusted Clear Button -->
- 				   <input onclick="clearSearchFields()" class="btn btn-secondary btn-primary-light" type="reset" value="Clear" style="flex-grow: 1;">
+ 				   <input id="clear-button" onclick="clearSearchFields()" class="btn btn-secondary btn-primary-light" type="reset" value="Clear" style="flex-grow: 1;">
 		<!-- New Question Button -->
 <button type="button" id="question-button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse';">
 		<i class="bi bi-question-lg"></i>
@@ -37,9 +37,9 @@
 
 </div>
 
-<!-- Dropdowns -->
+<!-- Dropdowns left side -->
 <div class="row">
-	<div class="col-12 col-lg-4">
+	<div class="col-12 col-lg-3">
 		<div class="btn-group mb-3">
 			<select id="table-scope" onchange="doSearch()" class="form-select form-select--secondary" aria-label="Example list">
 				<option value="example" selected>Examples</option>
@@ -54,37 +54,11 @@
 			</select>
 		</div>
 	</div>
-	<!-- Dropdowns -->
-	<div class="col-12 col-lg-8">
+	<!-- Dropdowns right side -->
+	<div class="col-12 col-lg-9">
 
-		<div class="btn-group mb-3 float-lg-end">
-			<select id="tempobeat" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All tempo beat types">
-				<option selected>All Tempo Beat Types</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
-			</select>
-		</div>
-
-		<div class="btn-group mb-3 me-1 float-lg-end">
-			<select id="tsigtype" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All time signature types">
-				<option selected>All time signature types</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
-			</select>
-		</div>
-
-		<div class="btn-group mb-3 me-1 float-lg-end">
-			<select id="genre" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All genres">
-				<option selected>All genres</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
-			</select>
-		</div>
-
-		<div class="btn-group mb-3 me-1 float-lg-end">
+		<!-- <div class="btn-group mb-3 me-1 float-lg-end"> -->
+		<div class="btn-group mb-3 me-1">
 			<select id="composer" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All composers">
 				<option selected>All composers</option>
 				<option value="1">One</option>
@@ -93,22 +67,38 @@
 			</select>
 		</div>
 
-		<div class="btn-group mb-3 me-1 float-lg-end">
-			<select id="iclasses" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All composers">
-				<option value="" selected>Class</option>
-				<option value="bras">Brass</option>
-				<option value="gen">Generic</option>
-				<option value="klav">Keyboard</option>
-				<option value="idio">Percussion</option>
-				<option value="str">Strings</option>
-				<option value="vox">Voices</option>
-				<option value="ww">Woodwinds</option>
+		<!-- <div class="btn-group mb-3 me-1 float-lg-end"> -->
+		<div class="btn-group mb-3 me-1">
+			<select id="genre" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All genres">
+				<option selected>All genres</option>
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
 			</select>
-			<input style="margin-left:5px;" type="checkbox" id="iclass-only" name="iclassOnly" onchange="doSearch()">
-			<label style="padding-left:5px; display:inline-block; margin-top:5px;" for="iclass-only">only</label>
 		</div>
 
-		<div class="btn-group mb-3 me-1 float-lg-end">
+		<!--<div class="btn-group mb-3 float-lg-end"> -->
+		<div class="btn-group mb-3">
+			<select id="tempobeat" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All tempo beat types">
+				<option selected>All Tempo Beat Types</option>
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+		</div>
+
+		<!-- <div class="btn-group mb-3 me-1 float-lg-end"> -->
+		<div class="btn-group mb-3 me-1">
+			<select id="tsigtype" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All time signature types">
+				<option selected>All time signature types</option>
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+		</div>
+
+		<!-- <div class="btn-group mb-3 me-1 float-lg-end"> -->
+		<div class="btn-group mb-3 me-1">
 			<select id="instruments" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All composers">
 				<option value="" selected>Instrument</option>
 				<option value="accor">accor</option>
@@ -226,7 +216,23 @@
 				<option value="xylo">xylo</option>
 			</select>
 			<input style="margin-left:5px;" type="checkbox" id="instrument-only" name="instrumentOnly" onchange="doSearch()">
-			<label style="padding-left:5px; display:inline-block; margin-top:5px" for="instrument-only">only</label>
+			<label style="padding-left:5px; display:inline-block; margin-top:5px" for="instrument-only">only&nbsp;&nbsp;</label>
+		</div>
+
+		<!-- <div class="btn-group mb-3 me-1 float-lg-end"> -->
+		<div class="btn-group mb-3 me-1">
+			<select id="iclasses" onchange="doSearch()" class="form-select form-select--secondary" aria-label="All composers">
+				<option value="" selected>Class</option>
+				<option value="bras">Brass</option>
+				<option value="gen">Generic</option>
+				<option value="klav">Keyboard</option>
+				<option value="idio">Percussion</option>
+				<option value="str">Strings</option>
+				<option value="vox">Voices</option>
+				<option value="ww">Woodwinds</option>
+			</select>
+			<input style="margin-left:5px;" type="checkbox" id="iclass-only" name="iclassOnly" onchange="doSearch()">
+			<label style="padding-left:5px; display:inline-block; margin-top:5px;" for="iclass-only">only</label>
 		</div>
 
 	</div>
@@ -273,11 +279,15 @@
 </div>
 
 <!-- Note -->
+<!--
 <div class="row">
 	<div class="col-12 mb-3">
 		<small>*Bold IDs indicate examples with interactive musical scores.</small>
 	</div>
 </div>
+-->
+
+<!-- Search results count -->
 <div class="row">
 	<div class="col-12 mb-4 text-center">
 		<p><strong id="search-count"></strong></p>

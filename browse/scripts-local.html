@@ -411,6 +411,9 @@ function createSingleTempoMarking(beat, value) {
 //
 
 function doSearch(text) {
+	if (FREEZE_SEARCH) {
+		return;
+	}
 
 	if (!text) {
 		let element = document.querySelector("input#search");
@@ -426,406 +429,22 @@ function doSearch(text) {
 		workQ = 1;
 	}
 
-	let oldentries;
-	let datasetelement = document.querySelector("#dataset");
-	if (datasetelement) {
-		let dataset = datasetelement.value;
-		if (dataset != "") {
-			oldentries = entries;
-			entries = [];
-			let matches = dataset.match(/^(.)/);
-			let query = matches[1];
-			for (let i=0; i<oldentries.length; i++) {
-				if (workQ) {
-					testcompW = oldentries[i][INDEX_Work_Dataset];
-					testcompE = oldentries[i][INDEX_Example_Dataset];
-					if (testcompE === query) {
-						entries.push(oldentries[i]);
-						continue;
-					} else if ((query === "B") && (testcompW === "B")) {
-						entries.push(oldentries[i]);
-						continue;
-					}
-				} else {
-					let testcomp = oldentries[i][INDEX_Example_Dataset];
-					if ((testcomp === query) || (testcomp === "B")) {
-						entries.push(oldentries[i]);
-						continue;
-					}
-				}
-			}
-		}
-	}
-
-	let celement = document.querySelector("#composer");
-	let composer = "";
-	if (celement) {
-		composer = celement.value;
-	}
-	composer = composer.replace(/\s*,.*/, "");
-
-	let gelement = document.querySelector("#genre");
-	let genre = "";
-	let subgenre = ""
-	if (gelement) {
-		let m = gelement.value.match(/(.*)\/(.*)/);
-		if (m) {
-			genre = m[1];
-			subgenre = m[2];
-		} else {
-			genre = gelement.value;
-		}
-	}
-
-	genre = genre.replace(/\s+$/, "").replace(/^\s+/, "");
-	subgenre = subgenre.replace(/\s+$/, "").replace(/^\s+/, "");
-
-	text = text.trim();
-	text = escape(text);
-	text = text.replace(/%u0([A-F0-9][A-F0-9][A-F0-9])/g, "&#x$1;");
-	text = text.replace(/%u([A-F0-9][A-F0-9][A-F0-9][A-F0-9])/g, "&#x$1;");
-	text = text.replace(/%([A-F0-9][A-F0-9])/g, "&#x$1;");
-	text = text.replace(/\&#x([0-7][0-9A-F]);/g, "%$1");
-	text = unescape(text);
-	let fields = text.split(/\s+/);
-
-	// filter by composer if needed
-	if (composer) {
-		oldentries = entries;
-		entries = [];
-		let testcomp;
-		for (let i=0; i<oldentries.length; i++) {
-			testcomp = PreparePerson(oldentries[i][INDEX_Composer_Name]);
-			if (!testcomp) {
-				continue;
-			}
-			testcomp = testcomp.replace(/\s*,.*/, "");
-			if (testcomp === composer) {
-				entries.push(oldentries[i]);
-				continue;
-			}
-		}
-	}
-
-	// filter by genre/subgenre if needed
-	if (genre) {
-		oldentries = entries;
-		entries = [];
-		let greg = new RegExp(genre, "i");
-		let sgreg = new RegExp(subgenre, "i");
-		for (let i=0; i<oldentries.length; i++) {
-			if (oldentries[i][INDEX_Genre] && oldentries[i][INDEX_Genre].match(greg) &&
-			    oldentries[i][INDEX_Sub_Genre] && oldentries[i][INDEX_Sub_Genre].match(sgreg)) {
-				entries.push(oldentries[i]);
-			}
-		}
-	}
-
-	// Filter by "Start time signature" if needed
-	let tsigtype = document.querySelector("#tsigtype").value;
-	if (tsigtype) {
-		oldentries = entries;
-		entries = [];
-		for (let i=0; i<oldentries.length; i++) {
-			if (tsigtype === "simple") {
-				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/simple/i)) {
-					entries.push(oldentries[i]);
-				}
-			} else if (tsigtype === "compound") {
-				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/compound/i)) {
-					entries.push(oldentries[i]);
-				}
-			} else if (tsigtype === "unequal") {
-				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/unequal/i)) {
-					entries.push(oldentries[i]);
-				}
-			} else if (oldentries[i][INDEX_Example_Start_Tsig_Type] === tsigtype) {
-				entries.push(oldentries[i]);
-			}
-		}
-	}
-
-	// Filter by part counts
-	let partsmin = document.querySelector("#partsmin").value;
-	let partsmax = document.querySelector("#partsmax").value;
-	let active = false;
-	if (partsmin.match(/^\d+/)) {
-		active = true;
-		partsmin = parseInt(partsmin);
-	} else {
-		partsmin = "";
-	}
-	if (partsmax.match(/^\d+/)) {
-		active = true;
-		partsmax = parseInt(partsmax);
-	} else {
-		partsmax = "";
-	}
-	if (active) {
-		oldentries = entries;
-		entries = [];
-		for (let i=0; i<oldentries.length; i++) {
-			let number = oldentries[i][INDEX_Staff_Count];
-			if (number.match(/^\d+/)) {
-				number = parseInt(number);
-			} else {
-				continue;
-			}
-			if (partsmin !== "") {
-				if (number < partsmin) {
-					continue;
-				}
-			}
-			if (partsmax !== "") {
-				if (number > partsmax) {
-					continue;
-				}
-			}
-			entries.push(oldentries[i]);
-		}
-	}
-
-	// Filter by composition date
-	let compdatemin = document.querySelector("#compositiondatemin").value;
-	let compdatemax = document.querySelector("#compositiondatemax").value;
-	active = false;
-	if (compdatemin.match(/^\d+/)) {
-		compdatemin = parseInt(compdatemin);
-		if (compdatemin < 1800) {
-			compdatemin = "";
-		} else {
-			active = true;
-		}
-	} else {
-		compdatemin = "";
-	}
-	if (compdatemax.match(/^\d+/)) {
-		compdatemax = parseInt(compdatemax);
-		if  (compdatemax > 2000) {
-			compdatemax = "";
-		} else {
-			active = true;
-		}
-	} else {
-		compdatemax = "";
-	}
-	if ((compdatemin !== "") && (compdatemax === "")) {
-		compdatemax = compdatemin;
-	} else if ((compdatemin === "") && (compdatemax !== "")) {
-		compdatemin = compdatemax;
-	}
-	if (active) {
-		oldentries = entries;
-		entries = [];
-		for (let i=0; i<oldentries.length; i++) {
-			let number = oldentries[i][INDEX_Composition_Year];
-			if (number.match(/^\d+/)) {
-				number = parseInt(number);
-			} else {
-				continue;
-			}
-			if (compdatemin !== "") {
-				if (number < compdatemin) {
-					continue;
-				}
-			}
-			if (compdatemax !== "") {
-				if (number > compdatemax) {
-					continue;
-				}
-			}
-			entries.push(oldentries[i]);
-		}
-	}
-
-	// Filter by premiere date
-	let premdatemin = document.querySelector("#premieredatemin").value;
-	let premdatemax = document.querySelector("#premieredatemax").value;
-	active = false;
-	if (premdatemin.match(/^\d+/)) {
-		premdatemin = parseInt(premdatemin);
-		if (premdatemin < 1800) {
-			premdatemin = "";
-		} else {
-			active = true;
-		}
-	} else {
-		premdatemin = "";
-	}
-	if (premdatemax.match(/^\d+/)) {
-		premdatemax = parseInt(premdatemax);
-		if  (premdatemax > 2000) {
-			premdatemax = "";
-		} else {
-			active = true;
-		}
-	} else {
-		premdatemax = "";
-	}
-	if ((premdatemin !== "") && (premdatemax === "")) {
-		premdatemax = premdatemin;
-	} else if ((premdatemin === "") && (premdatemax !== "")) {
-		premdatemin = premdatemax;
-	}
-	if (active) {
-		oldentries = entries;
-		entries = [];
-		for (let i=0; i<oldentries.length; i++) {
-			let number = oldentries[i][INDEX_Composition_Year];
-			if (number.match(/^\d+/)) {
-				number = parseInt(number);
-			} else {
-				continue;
-			}
-			if (premdatemin !== "") {
-				if (number < premdatemin) {
-					continue;
-				}
-			}
-			if (premdatemax !== "") {
-				if (number > premdatemax) {
-					continue;
-				}
-			}
-			entries.push(oldentries[i]);
-		}
-	}
-
-	// Filter by publication date
-	let publdatemin = document.querySelector("#publicationdatemin").value;
-	let publdatemax = document.querySelector("#publicationdatemax").value;
-	active = false;
-	if (publdatemin.match(/^\d+/)) {
-		publdatemin = parseInt(publdatemin);
-		if (publdatemin < 1800) {
-			publdatemin = "";
-		} else {
-			active = true;
-		}
-	} else {
-		publdatemin = "";
-	}
-	if (publdatemax.match(/^\d+/)) {
-		publdatemax = parseInt(publdatemax);
-		if  (publdatemax > 2000) {
-			publdatemax = "";
-		} else {
-			active = true;
-		}
-	} else {
-		publdatemax = "";
-	}
-	if ((publdatemin !== "") && (publdatemax === "")) {
-		publdatemax = publdatemin;
-	} else if ((publdatemin === "") && (publdatemax !== "")) {
-		publdatemin = publdatemax;
-	}
-	if (active) {
-		oldentries = entries;
-		entries = [];
-		for (let i=0; i<oldentries.length; i++) {
-			let number = oldentries[i][INDEX_Composition_Year];
-			if (number.match(/^\d+/)) {
-				number = parseInt(number);
-			} else {
-				continue;
-			}
-			if (publdatemin !== "") {
-				if (number < publdatemin) {
-					continue;
-				}
-			}
-			if (publdatemax !== "") {
-				if (number > publdatemax) {
-					continue;
-				}
-			}
-			entries.push(oldentries[i]);
-		}
-	}
-
-	// Filter by Instrument
-	let instrument = document.querySelector("#instruments").value;
-	if (instrument != "") {
-		let onlyQ = document.querySelector("#instrument-only").checked;
-		oldentries = entries;
-		entries = [];
-		let regex;
-		if (onlyQ) {
-			regex = new RegExp(`^${instrument}$`);
-		} else {
-			regex = new RegExp(`\\b${instrument}\\b`);
-		}
-		for (let i=0; i<oldentries.length; i++) {
-			let ilist = oldentries[i][INDEX_Instruments];
-			if (typeof ilist === "undefined") {
-				continue;
-			}
-			if (ilist.match(regex)) {
-				entries.push(oldentries[i]);
-			}
-		}
-	}
-
-
-	// Filter by Instrument Class
-	let iclass = document.querySelector("#iclasses").value;
-	if (iclass != "") {
-		let onlyQ = document.querySelector("#iclass-only").checked;
-		oldentries = entries;
-		entries = [];
-		let regex;
-		if (onlyQ) {
-			regex = new RegExp(`^${iclass}$`);
-		} else {
-			regex = new RegExp(`\\b${iclass}\\b`);
-		}
-		for (let i=0; i<oldentries.length; i++) {
-			let ilist = oldentries[i][INDEX_Instrument_Class];
-			if (typeof ilist === "undefined") {
-				continue;
-			}
-			if (ilist.match(regex)) {
-				entries.push(oldentries[i]);
-			}
-		}
-	}
-
-
-	for (let i=0; i<fields.length; i++) {
-		if (fields[i].match(/^\s*$/)) {
-			continue;
-		}
-		oldentries = entries;
-		entries = [];
-		let regexp = new RegExp(fields[i], "i");
-		for (let j=0; j<oldentries.length; j++) {
-			if (CGI.f) {
-				if (oldentries[j][CGI.f] && oldentries[j][CGI.f].match(regexp)) {
-					entries.push(oldentries[j]);
-					continue;
-				}
-			} else {
-				if (oldentries[j][INDEX_Work_Title] && oldentries[j][INDEX_Work_Title].match(regexp)) {
-					entries.push(oldentries[j]);
-					continue;
-				}
-				if (oldentries[j][INDEX_Filename] && oldentries[j][INDEX_Filename].match(regexp)) {
-					entries.push(oldentries[j]);
-					continue;
-				}
-
-			}
-		}
-
-	}
-
-	entries = searchByTempoBeat(entries);
-	entries = searchByTempoRange(entries);
-	entries = searchBySecondsRange(entries);
+	entries = doDatasetSearch(entries);
+	entries = doComposerSearch(entries);
+	entries = doGenreSearch(entries);
+	entries = doStartTimeSignatureSearch(entries);
+	entries = doPartCountSearch(entries);
+	entries = doCompositionYearSearch(entries);
+	entries = doPremierYearSearch(entries);
+	entries = doPublicationYearSearch(entries);
+	entries = doInstrumentSearch(entries);
+	entries = doInstrumentClassSearch(entries);
+	entries = doTempoBeatSearch(entries);
+	entries = doTempoRangeSearch(entries);
+	entries = doSecondsRangeSearch(entries);
+	entries = doTextSearch(entries, text);
 
 	displayList(entries, null, SORTINFO);
-	reportMatches(entries);
 	setCgiParameters();
 	setActiveSelects();
 }
@@ -833,10 +452,10 @@ function doSearch(text) {
 
 //////////////////////////////
 //
-// searchByTempoBeat --
+// doTempoBeatSearch --
 //
 
-function searchByTempoBeat(entries) {
+function doTempoBeatSearch(entries) {
 	let beat = document.querySelector("#tempobeat");
 	if (!beat) {
 		return entries;
@@ -875,10 +494,10 @@ function searchByTempoBeat(entries) {
 
 //////////////////////////////
 //
-// searchByTempoRange --
+// doTempoRangeSearch --
 //
 
-function searchByTempoRange(entries) {
+function doTempoRangeSearch(entries) {
 	let mine = document.querySelector("#tempomin");
 	if (!mine) {
 		return entries;
@@ -969,10 +588,10 @@ function searchByTempoRange(entries) {
 
 //////////////////////////////
 //
-// searchBySecondsRange --
+// doSecondsRangeSearch --
 //
 
-function searchBySecondsRange(entries) {
+function doSecondsRangeSearch(entries) {
 	let mine = document.querySelector("#secondsmin");
 	if (!mine) {
 		return entries;
@@ -1107,19 +726,29 @@ function reportMatches(list) {
 //
 
 function clearSearchFields() {
-	console.log("CLEARING");
+	FREEZE_SEARCH = true;
 
-	let list = document.querySelectorAll("td select");
+	let list = document.querySelectorAll("select");
 	for (let i=0; i<list.length; i++) {
-		console.log("SETTING VALUE FOR LIST", list[i]);
+		// console.log("SETTING VALUE FOR LIST", list[i]);
 		list[i].selectedIndex = 0;
+		list[i].classList.remove("active");
 	}
 
-	let inputs = document.querySelectorAll("td input");
+	let inputs = document.querySelectorAll("input");
 	for (let i=0; i<inputs.length; i++) {
-		console.log("SETTING VALUE FOR INPUT", inputs[i]);
+		if (inputs[i].id === "feedback_name") {
+			continue;
+		}
+		if (inputs[i].id === "clear-button") {
+			continue;
+		}
+		// console.log("SETTING VALUE FOR INPUT", inputs[i]);
 		inputs[i].value = "";
+		inputs[i].classList.remove("active");
 	}
+
+	FREEZE_SEARCH = false;
 
 	doSearch();
 }
@@ -1171,6 +800,506 @@ function setActiveSelects() {
 	}
 }
 
+
+
+//////////////////////////////
+//
+// doComposerSearch --
+//
+
+function doComposerSearch(entries) {
+
+	let celement = document.querySelector("#composer");
+	let composer = "";
+	if (celement) {
+		composer = celement.value;
+	}
+	composer = composer.replace(/\s*,.*/, "");
+
+	// filter by composer if needed
+	if (composer) {
+		let oldentries = entries;
+		entries = [];
+		let testcomp;
+		for (let i=0; i<oldentries.length; i++) {
+			testcomp = PreparePerson(oldentries[i][INDEX_Composer_Name]);
+			if (!testcomp) {
+				continue;
+			}
+			testcomp = testcomp.replace(/\s*,.*/, "");
+			if (testcomp === composer) {
+				entries.push(oldentries[i]);
+				continue;
+			}
+		}
+	}
+
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doGenreSearch --
+//
+
+function doGenreSearch(entries) {
+	let gelement = document.querySelector("#genre");
+	let genre = "";
+	let subgenre = ""
+	if (gelement) {
+		let m = gelement.value.match(/(.*)\/(.*)/);
+		if (m) {
+			genre = m[1];
+			subgenre = m[2];
+		} else {
+			genre = gelement.value;
+		}
+	}
+	genre = genre.replace(/\s+$/, "").replace(/^\s+/, "");
+	subgenre = subgenre.replace(/\s+$/, "").replace(/^\s+/, "");
+
+	// filter by genre/subgenre if needed
+	if (genre) {
+		let oldentries = entries;
+		entries = [];
+		let greg = new RegExp(genre, "i");
+		let sgreg = new RegExp(subgenre, "i");
+		for (let i=0; i<oldentries.length; i++) {
+			if (oldentries[i][INDEX_Genre] && oldentries[i][INDEX_Genre].match(greg) &&
+			    oldentries[i][INDEX_Sub_Genre] && oldentries[i][INDEX_Sub_Genre].match(sgreg)) {
+				entries.push(oldentries[i]);
+			}
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// do StartTimeSignatureSearch --
+//
+
+function doStartTimeSignatureSearch(entries) {
+	// Filter by "Start time signature" if needed
+	let tsigtype = document.querySelector("#tsigtype").value;
+	if (tsigtype) {
+		let oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			if (tsigtype === "simple") {
+				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/simple/i)) {
+					entries.push(oldentries[i]);
+				}
+			} else if (tsigtype === "compound") {
+				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/compound/i)) {
+					entries.push(oldentries[i]);
+				}
+			} else if (tsigtype === "unequal") {
+				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/unequal/i)) {
+					entries.push(oldentries[i]);
+				}
+			} else if (oldentries[i][INDEX_Example_Start_Tsig_Type] === tsigtype) {
+				entries.push(oldentries[i]);
+			}
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doDatasetSearch --
+//
+
+function doDatasetSearch(entries) {
+	let oldentries;
+	let datasetelement = document.querySelector("#dataset");
+	if (datasetelement) {
+		let dataset = datasetelement.value;
+		if (dataset != "") {
+			oldentries = entries;
+			entries = [];
+			let matches = dataset.match(/^(.)/);
+			let query = matches[1];
+			for (let i=0; i<oldentries.length; i++) {
+				if (workQ) {
+					testcompW = oldentries[i][INDEX_Work_Dataset];
+					testcompE = oldentries[i][INDEX_Example_Dataset];
+					if (testcompE === query) {
+						entries.push(oldentries[i]);
+						continue;
+					} else if ((query === "B") && (testcompW === "B")) {
+						entries.push(oldentries[i]);
+						continue;
+					}
+				} else {
+					let testcomp = oldentries[i][INDEX_Example_Dataset];
+					if ((testcomp === query) || (testcomp === "B")) {
+						entries.push(oldentries[i]);
+						continue;
+					}
+				}
+			}
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doPartCountSearch --
+//
+
+function doPartCountSearch(entries) {
+	// Filter by part counts
+	let partsmin = document.querySelector("#partsmin").value;
+	let partsmax = document.querySelector("#partsmax").value;
+	let active = false;
+	if (partsmin.match(/^\d+/)) {
+		active = true;
+		partsmin = parseInt(partsmin);
+	} else {
+		partsmin = "";
+	}
+	if (partsmax.match(/^\d+/)) {
+		active = true;
+		partsmax = parseInt(partsmax);
+	} else {
+		partsmax = "";
+	}
+	if (active) {
+		let oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			let number = oldentries[i][INDEX_Staff_Count];
+			if (number.match(/^\d+/)) {
+				number = parseInt(number);
+			} else {
+				continue;
+			}
+			if (partsmin !== "") {
+				if (number < partsmin) {
+					continue;
+				}
+			}
+			if (partsmax !== "") {
+				if (number > partsmax) {
+					continue;
+				}
+			}
+			entries.push(oldentries[i]);
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doCompositionYearSearch --
+//
+
+function doCompositionYearSearch(entries) {
+	// Filter by composition date
+	let compdatemin = document.querySelector("#compositiondatemin").value;
+	let compdatemax = document.querySelector("#compositiondatemax").value;
+	let active = false;
+	if (compdatemin.match(/^\d+/)) {
+		compdatemin = parseInt(compdatemin);
+		if (compdatemin < 1800) {
+			compdatemin = "";
+		} else {
+			active = true;
+		}
+	} else {
+		compdatemin = "";
+	}
+	if (compdatemax.match(/^\d+/)) {
+		compdatemax = parseInt(compdatemax);
+		if  (compdatemax > 2000) {
+			compdatemax = "";
+		} else {
+			active = true;
+		}
+	} else {
+		compdatemax = "";
+	}
+	if ((compdatemin !== "") && (compdatemax === "")) {
+		compdatemax = compdatemin;
+	} else if ((compdatemin === "") && (compdatemax !== "")) {
+		compdatemin = compdatemax;
+	}
+	if (active) {
+		let oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			let number = oldentries[i][INDEX_Composition_Year];
+			if (number.match(/^\d+/)) {
+				number = parseInt(number);
+			} else {
+				continue;
+			}
+			if (compdatemin !== "") {
+				if (number < compdatemin) {
+					continue;
+				}
+			}
+			if (compdatemax !== "") {
+				if (number > compdatemax) {
+					continue;
+				}
+			}
+			entries.push(oldentries[i]);
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doPremiereYearSearch --
+//
+
+function doPremierYearSearch(entries) {
+	// Filter by premiere date
+	let premdatemin = document.querySelector("#premieredatemin").value;
+	let premdatemax = document.querySelector("#premieredatemax").value;
+	let active = false;
+	if (premdatemin.match(/^\d+/)) {
+		premdatemin = parseInt(premdatemin);
+		if (premdatemin < 1800) {
+			premdatemin = "";
+		} else {
+			active = true;
+		}
+	} else {
+		premdatemin = "";
+	}
+	if (premdatemax.match(/^\d+/)) {
+		premdatemax = parseInt(premdatemax);
+		if  (premdatemax > 2000) {
+			premdatemax = "";
+		} else {
+			active = true;
+		}
+	} else {
+		premdatemax = "";
+	}
+	if ((premdatemin !== "") && (premdatemax === "")) {
+		premdatemax = premdatemin;
+	} else if ((premdatemin === "") && (premdatemax !== "")) {
+		premdatemin = premdatemax;
+	}
+	if (active) {
+		let oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			let number = oldentries[i][INDEX_Composition_Year];
+			if (number.match(/^\d+/)) {
+				number = parseInt(number);
+			} else {
+				continue;
+			}
+			if (premdatemin !== "") {
+				if (number < premdatemin) {
+					continue;
+				}
+			}
+			if (premdatemax !== "") {
+				if (number > premdatemax) {
+					continue;
+				}
+			}
+			entries.push(oldentries[i]);
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doPublicationYearSearch --
+//
+
+function doPublicationYearSearch(entries) {
+	// Filter by publication date
+	let publdatemin = document.querySelector("#publicationdatemin").value;
+	let publdatemax = document.querySelector("#publicationdatemax").value;
+	active = false;
+	if (publdatemin.match(/^\d+/)) {
+		publdatemin = parseInt(publdatemin);
+		if (publdatemin < 1800) {
+			publdatemin = "";
+		} else {
+			active = true;
+		}
+	} else {
+		publdatemin = "";
+	}
+	if (publdatemax.match(/^\d+/)) {
+		publdatemax = parseInt(publdatemax);
+		if  (publdatemax > 2000) {
+			publdatemax = "";
+		} else {
+			active = true;
+		}
+	} else {
+		publdatemax = "";
+	}
+	if ((publdatemin !== "") && (publdatemax === "")) {
+		publdatemax = publdatemin;
+	} else if ((publdatemin === "") && (publdatemax !== "")) {
+		publdatemin = publdatemax;
+	}
+	if (active) {
+		let oldentries = entries;
+		entries = [];
+		for (let i=0; i<oldentries.length; i++) {
+			let number = oldentries[i][INDEX_Composition_Year];
+			if (number.match(/^\d+/)) {
+				number = parseInt(number);
+			} else {
+				continue;
+			}
+			if (publdatemin !== "") {
+				if (number < publdatemin) {
+					continue;
+				}
+			}
+			if (publdatemax !== "") {
+				if (number > publdatemax) {
+					continue;
+				}
+			}
+			entries.push(oldentries[i]);
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doInstrumentSearch --
+//
+
+function doInstrumentSearch(entries) {
+	// Filter by Instrument
+	let instrument = document.querySelector("#instruments").value;
+	if (instrument != "") {
+		let onlyQ = document.querySelector("#instrument-only").checked;
+		let oldentries = entries;
+		entries = [];
+		let regex;
+		if (onlyQ) {
+			regex = new RegExp(`^${instrument}$`);
+		} else {
+			regex = new RegExp(`\\b${instrument}\\b`);
+		}
+		for (let i=0; i<oldentries.length; i++) {
+			let ilist = oldentries[i][INDEX_Instruments];
+			if (typeof ilist === "undefined") {
+				continue;
+			}
+			if (ilist.match(regex)) {
+				entries.push(oldentries[i]);
+			}
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doInstrumentClassSearch --
+//
+
+function doInstrumentClassSearch(entries) {
+	// Filter by Instrument Class
+	let iclass = document.querySelector("#iclasses").value;
+	if (iclass != "") {
+		let onlyQ = document.querySelector("#iclass-only").checked;
+		let oldentries = entries;
+		entries = [];
+		let regex;
+		if (onlyQ) {
+			regex = new RegExp(`^${iclass}$`);
+		} else {
+			regex = new RegExp(`\\b${iclass}\\b`);
+		}
+		for (let i=0; i<oldentries.length; i++) {
+			let ilist = oldentries[i][INDEX_Instrument_Class];
+			if (typeof ilist === "undefined") {
+				continue;
+			}
+			if (ilist.match(regex)) {
+				entries.push(oldentries[i]);
+			}
+		}
+	}
+	return entries;
+}
+
+
+
+//////////////////////////////
+//
+// doTextSearch --
+//
+
+function doTextSearch(entries, text) {
+	text = text.trim();
+	text = escape(text);
+	text = text.replace(/%u0([A-F0-9][A-F0-9][A-F0-9])/g, "&#x$1;");
+	text = text.replace(/%u([A-F0-9][A-F0-9][A-F0-9][A-F0-9])/g, "&#x$1;");
+	text = text.replace(/%([A-F0-9][A-F0-9])/g, "&#x$1;");
+	text = text.replace(/\&#x([0-7][0-9A-F]);/g, "%$1");
+	text = unescape(text);
+	let fields = text.split(/\s+/);
+
+	for (let i=0; i<fields.length; i++) {
+		if (fields[i].match(/^\s*$/)) {
+			continue;
+		}
+		let oldentries = entries;
+		entries = [];
+		let regexp = new RegExp(fields[i], "i");
+		for (let j=0; j<oldentries.length; j++) {
+			if (CGI.f) {
+				if (oldentries[j][CGI.f] && oldentries[j][CGI.f].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
+			} else {
+				if (oldentries[j][INDEX_Work_Title] && oldentries[j][INDEX_Work_Title].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
+				if (oldentries[j][INDEX_Filename] && oldentries[j][INDEX_Filename].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
+			}
+		}
+	}
+	return entries;
+}
 
 
 </script>
