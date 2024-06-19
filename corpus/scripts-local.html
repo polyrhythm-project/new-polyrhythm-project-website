@@ -1,0 +1,134 @@
+
+
+<script>
+// vim: ts=3:nowrap
+
+//////////////////////////////
+//
+// displayExampleStartTsigTypeRds --
+//
+
+function displayExampleStartTsigTypeRds() {
+	let selector = document.querySelector("#ExampleStartTsigTypeRds");
+	if (!selector) {
+		console.warn("Cannot find #ExampleStartTsigTypeRds");
+		return;
+	}
+	let data = {};
+	for (let i=0; i<EXAMPLELIST.length; i++) {
+		let dataset = EXAMPLELIST[i][INDEX_Example_Dataset];
+		if (!dataset.match(/^R/)) {
+			continue;
+		}
+		let value = EXAMPLELIST[i][INDEX_Example_Start_Tsig_Type];
+		if (data[value]) {
+			data[value]++;
+		} else {
+			data[value] = 1;
+		}
+	}
+	console.log("DATA", data);
+
+	let vdata = [];
+	let keys = Object.keys(data).sort();
+	for (let i=0; i<keys.length; i++) {
+		let entry = {"name": keys[i], "y": data[keys[i]]};
+		vdata.push(entry);
+	}
+
+console.log("VDATA", vdata);
+
+	Highcharts.chart('ExampleStartTsigTypeRds', {
+		chart: { type: 'pie' },
+		title: { text: null },
+		credits: { enabled: false },
+		tooltip: { pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>' },
+		accessibility: { point: { valueSuffix: '%' } },
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: true,
+					format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+					connectorColor: 'silver',
+					style: {
+						color: 'black',
+						textOutline: 'none'
+					}
+				}
+			}
+		},
+		series: [{ name: 'Share', data: vdata }]
+	});
+
+}
+
+
+
+//////////////////////////////
+//
+// displayExampleStartTsigTypeTds --
+//
+
+function displayExampleStartTsigTypeTds() {
+	let selector = document.querySelector("#ExampleStartTsigTypeTds");
+	if (!selector) {
+		console.warn("Cannot find #ExampleStartTsigTypeTds");
+		return;
+	}
+	let data = {};
+	for (let i=0; i<EXAMPLELIST.length; i++) {
+		let dataset = EXAMPLELIST[i][INDEX_Example_Dataset];
+		if (!dataset.match(/^T/)) {
+			continue;
+		}
+		let value = EXAMPLELIST[i][INDEX_Example_Start_Tsig_Type];
+		if (data[value]) {
+			data[value]++;
+		} else {
+			data[value] = 1;
+		}
+	}
+	console.log("DATA", data);
+
+	let vdata = [];
+	let keys = Object.keys(data).sort();
+	for (let i=0; i<keys.length; i++) {
+		let entry = {"name": keys[i], "y": data[keys[i]]};
+		vdata.push(entry);
+	}
+
+console.log("VDATA", vdata);
+
+	Highcharts.chart('ExampleStartTsigTypeTds', {
+		chart: { type: 'pie' },
+		title: { text: null },
+		credits: { enabled: false },
+		tooltip: { pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>' },
+		accessibility: { point: { valueSuffix: '%' } },
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: true,
+					format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+					connectorColor: 'silver',
+					style: {
+						color: 'black',
+						textOutline: 'none'
+					}
+				}
+			}
+		},
+		series: [{ name: 'Share', data: vdata }]
+	});
+
+}
+
+
+</script>
+
+
+

@@ -1,0 +1,87 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Sun May 26 19:59:22 PDT 2024
+// Last Modified: Sun May 26 19:59:25 PDT 2024
+// Filename:      example/listeners.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Setup javascript code for example webpage.  Contains
+//                global variable and listeners for the page.
+//
+{% endcomment %}
+
+<script>
+
+// Variables for option buttons:
+var COLOR          = 0;
+var FULLCOLOR      = 0;
+var GROUP          = 0;
+var MARK           = 0;
+var EVENTCOUNTS    = 0;
+var COMPOSITE      = 0;
+var ANALYSIS       = 0;
+var COINCIDENCE    = 0;
+var FILTER         = "";
+
+var CGI            = {};  // CGI parameters from URL
+var SORTCOLUMN     = 0;
+var BROWSELIST     = [];   // List of works on the browse table on the main search page.
+var EXAMPLE_NAVIGATION = {};
+var CURRENTEXAMPLE = "";
+var ACCESS         = 0;
+var SUPERACCESS    = 0;
+
+
+
+
+//////////////////////////////
+//
+// DOMContentLoaded event listener --
+//
+
+document.addEventListener("DOMContentLoaded", function () {
+	CGI = GetCgiParameters();
+	DownloadMetadata(doAction);
+	// continueListener();
+});
+
+
+
+//////////////////////////////
+//
+// continueListener --
+//
+
+function continueListener() {
+	let element = document.querySelector("input#search");
+	if (element) {
+		element.addEventListener("input", function() {
+			doSearch();
+		});
+	} else {
+		console.error("Cannot find input#search");
+	}
+
+}
+
+
+
+//////////////////////////////
+//
+// doAction -- Continue preparing data for webpage after Example list has been
+//             downloaded from Google Spreadsheets.
+//
+
+function doAction(examplelist) {
+	if (!examplelist) {
+		examplelist = EXAMPLELIST;
+	}
+	console.warn("EXAMPLELIST", examplelist);
+
+	displayExampleStartTsigTypeRds();
+	displayExampleStartTsigTypeTds();
+}
+
+</script>
+

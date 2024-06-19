@@ -2,13 +2,17 @@
 title: Corpus metadata
 author:
 keywords: corpus
+highcharts: true
 permalink: /corpus/index.html
 vim: ts=3
 layout: default
 summary:
 ---
 
-{% include_relative styles-local.html %}
+{% include_relative styles-local.html  %}
+{% include_relative listeners.html     %}
+{% include_relative scripts-local.html %}
+{% include scripts/scripts-common.html %}
 
 <p>
 This page presents different types of visualization of the corpus
@@ -23,10 +27,9 @@ table.
 
 
 {% include_relative metadata-table.html %}
-
-{% include_relative composers.html %}
-{% include_relative works.html %}
-{% include_relative premieres.html %}
-{% include_relative examples.html %}
+{% include_relative composers.html      %}
+{% include_relative works.html          %}
+{% include_relative premieres.html      %}
+{% include_relative examples.html       %}
 
 

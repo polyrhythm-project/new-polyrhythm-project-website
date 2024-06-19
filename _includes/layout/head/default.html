@@ -41,5 +41,18 @@
 	<script src="https://plugin.humdrum.org/scripts/humdrum-notation-plugin-worker.js"></script>
 {% endif %}
 
+{% if page.vegalite %}
+	<script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.7.1"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.2"></script>
+{% endif %}
+
+{% if page.highcharts %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+{% endif %}
+
 
 
