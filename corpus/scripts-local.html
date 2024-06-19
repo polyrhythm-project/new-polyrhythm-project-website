@@ -27,7 +27,6 @@ function displayExampleStartTsigTypeRds() {
 			data[value] = 1;
 		}
 	}
-	console.log("DATA", data);
 
 	let vdata = [];
 	let keys = Object.keys(data).sort();
@@ -35,8 +34,6 @@ function displayExampleStartTsigTypeRds() {
 		let entry = {"name": keys[i], "y": data[keys[i]]};
 		vdata.push(entry);
 	}
-
-console.log("VDATA", vdata);
 
 	Highcharts.chart('ExampleStartTsigTypeRds', {
 		chart: { type: 'pie' },
@@ -90,7 +87,6 @@ function displayExampleStartTsigTypeTds() {
 			data[value] = 1;
 		}
 	}
-	console.log("DATA", data);
 
 	let vdata = [];
 	let keys = Object.keys(data).sort();
@@ -98,8 +94,6 @@ function displayExampleStartTsigTypeTds() {
 		let entry = {"name": keys[i], "y": data[keys[i]]};
 		vdata.push(entry);
 	}
-
-console.log("VDATA", vdata);
 
 	Highcharts.chart('ExampleStartTsigTypeTds', {
 		chart: { type: 'pie' },
@@ -123,6 +117,64 @@ console.log("VDATA", vdata);
 			}
 		},
 		series: [{ name: 'Share', data: vdata }]
+	});
+
+}
+
+
+
+//////////////////////////////
+//
+// displayExampleByComposers --
+//
+
+function displayExampleByComposers() {
+	let data = {};
+	for (let i=0; i<EXAMPLELIST.length; i++) {
+		let composer = GetComposerLastName(EXAMPLELIST[i][INDEX_Composer_Name]);
+		if (data[composer]) {
+			data[composer]++;
+		} else {
+			data[composer] = 1;
+		}
+	}
+
+	let vdata = [];
+	let keys = Object.keys(data).sort();
+	for (let i=0; i<keys.length; i++) {
+		let entry = [ keys[i], data[keys[i]] ];
+		vdata.push(entry);
+	}
+
+console.log("VDATA", vdata);
+
+	var colors = [
+		'#FF4500', '#FF6347', '#FF8C00', '#FF4500', '#CD5C5C', // Reds and Oranges
+		'#8B0000', '#B22222', '#228B22', '#32CD32', '#008000', // Greens
+		'#006400', '#ADFF2F', '#00FF7F', '#2E8B57', '#3CB371', // More Greens
+		'#0000CD', '#00008B', '#4169E1', '#4682B4', '#5F9EA0', // Blues
+		'#6495ED', '#6A5ACD', '#7B68EE', '#8A2BE2', '#4B0082', // More Blues
+		'#9932CC', '#8B008B', '#800080', '#9370DB', '#9400D3', // Purples
+		'#BA55D3', '#DA70D6', '#EE82EE', '#DDA0DD', '#FF00FF', // More Purples
+	];
+
+	let id = "ExamplesByComposers";
+	WordCloud(document.getElementById(id), {
+		list: vdata,
+		gridSize: Math.round(16 * document.getElementById(id).offsetWidth / 1024),
+		weightFactor: function (size) {
+			return size * (document.getElementById(id).offsetWidth / 1024);
+		},
+		fontFamily: 'Helvetica, Arial, sans-serif',
+		color: function (word, weight, fontSize, distance, theta) {
+			return colors[Math.floor(Math.random() * colors.length)];
+		},
+		rotateRatio: 0.8, // Higher ratio for more rotated words
+		rotationSteps: 12, // More rotation steps for varied angles
+		backgroundColor: '#fff',
+		drawOutOfBound: false,
+		shuffle: true,
+		shape: 'circle'
 	});
 
 }

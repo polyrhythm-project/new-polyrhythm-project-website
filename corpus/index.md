@@ -3,6 +3,7 @@ title: Corpus metadata
 author:
 keywords: corpus
 highcharts: true
+wordcloud2: true
 permalink: /corpus/index.html
 vim: ts=3
 layout: default
