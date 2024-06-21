@@ -18,6 +18,7 @@ td {
 
 td.nameline {
 	padding-top: 50px;
+	color: var(--secondary-dark);
 }
 
 
