@@ -8,7 +8,7 @@
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Timeline of Composers by Birth Year</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">Description goes here.  Point out that the stars indicate the earlies born and the latest died composers.  Also explain the purpose of the orange arrowed line.</p>
 			</div>
 		</div>
 		<div class="col-md-12">
