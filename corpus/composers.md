@@ -3,9 +3,6 @@
 // vim: ts=3:nowrap
 </script>
 
-<details>
-<summary style="display:list-item !important" class="custom-cursor-on-hover"><b>Composers</b></summary>
-
 <div class="card mb-3">
 	<div class="row g-0">
 		<div class="col-md-8">
@@ -48,5 +45,5 @@
 	</div>
 </div>
 
-</details>
+
 

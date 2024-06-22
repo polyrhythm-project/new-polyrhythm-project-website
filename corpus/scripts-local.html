@@ -125,6 +125,212 @@ function displayExampleStartTsigTypeTds() {
 
 //////////////////////////////
 //
+// displayPolymetricCategories --
+//
+
+function displayPolymetricCategories() {
+	let selector = document.querySelector("#PolymetricCategories");
+	if (!selector) {
+		console.warn("Cannot find #PolymetricCategories");
+		return;
+	}
+	let data = {};
+	for (let i=0; i<EXAMPLELIST.length; i++) {
+		let tsigType = EXAMPLELIST[i][INDEX_Example_Start_Tsig_Type];
+		if (!tsigType) {
+			continue;
+		}
+		if (!tsigType.match(/poly/, "i")) {
+			continue;
+		}
+		let poly = EXAMPLELIST[i][INDEX_Example_Start_Tsig];
+		if (!poly.match(/[=;]/)) {
+			console.log("REJECTING", poly);
+			continue;
+		}
+		if (poly.match(/[+]/)) {
+			console.log("REJECTING", poly);
+			continue;
+		}
+		let matches = poly.match(/(.*\d)\(\d+\/\d+\)(;.*)/);
+		if (matches) {
+			poly = `${matches[1]}${matches[2]}`;
+		}
+		poly = poly.replace(/[(){}]/g, "");
+		poly = poly.replace(/'\d+\/\d+\s*($|;)/g, ";");
+		poly = poly.replace(/\s*;\s*/g, ";");
+		poly = poly.replace(/\s*;$/, "");
+		let pieces = poly.split(/;/);
+		if (pieces.length == 2) {
+			// Flip order to merge similar polymeters:
+			if (pieces.length == 2) {
+				matches = pieces[0].match(/^(\d+)\/(\d+)$/);
+				if (matches) {
+					let top1 = matches[1];
+					let bot1 = matches[2];
+					matches = pieces[1].match(/^(\d+)\/(\d+)$/);
+					if (matches) {
+						let top2 = matches[1];
+						let bot2 = matches[2];
+						if (top2 < top1) {
+							poly = `${top2}/${bot2};${top1}/${bot1}`;
+						}
+					}
+				}
+			}
+		}
+	
+		if (data[poly]) {
+			data[poly]++;
+		} else {
+			data[poly] = 1;
+		}
+	}
+
+	let vdata = [];
+	let keys = Object.keys(data).sort();
+	for (let i=0; i<keys.length; i++) {
+		let entry = {"name": keys[i], "y": data[keys[i]]};
+		vdata.push(entry);
+	}
+
+	Highcharts.chart('PolymetricCategories', {
+		chart: { type: 'pie' },
+		title: { text: null },
+		credits: { enabled: false },
+		tooltip: { pointFormat: '{series.name}: <b>{point.y}</b>' },
+		accessibility: { point: { valueSuffix: '' } },
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: true,
+					format: '<b>{point.name}</b>: {point.y}',
+					connectorColor: 'silver',
+					style: {
+						color: 'black',
+						textOutline: 'none'
+					}
+				}
+			}
+		},
+		series: [{ name: 'Count', data: vdata }]
+	});
+}
+
+
+
+//////////////////////////////
+//
+// displayCountryCityTable --
+//
+
+function displayContryCityTable() {
+	let element = document.querySelector("#country-city-table");
+	if (!element) {
+		console.warn("Cannot find #country-city-table");
+	}
+	let cities = [];
+	let countries = [];
+	let keys = Object.keys(WORKINDEX);
+	for (let i=0; i<keys.length; i++) {
+		let city = WORKINDEX[keys[i]][0][INDEX_Premiere_Location];
+		city = city.replace(/,\s*/g, ", ");
+		cities.push(city);
+		let matches = city.match(/,\s*([^,]*)\s*$/);
+		if (matches) {
+			let country = matches[1];
+			countries.push(country);
+		}
+	}
+
+	let rcities = {};
+	for (let i=0; i<cities.length; i++) {
+		if (rcities[cities[i]]) {
+			rcities[cities[i]]++;
+		} else {
+			rcities[cities[i]] = 1;
+		}
+	}
+
+	let rcountries = {};
+	for (let i=0; i<countries.length; i++) {
+		if (rcountries[countries[i]]) {
+			rcountries[countries[i]]++;
+		} else {
+			rcountries[countries[i]] = 1;
+		}
+	}
+
+	let entries = Object.entries(rcities);
+	entries.sort(([, value1], [, value2]) => value2 - value1);
+	entries.sort(([key1, value1], [key2, value2]) => {
+		if (value2 !== value1) {
+			return value2 - value1;
+		} else {
+			return key1.localeCompare(key2);
+		}
+	});
+	rcities = Object.fromEntries(entries);
+
+	entries = Object.entries(rcountries);
+	entries.sort(([key1, value1], [key2, value2]) => {
+		if (value2 !== value1) {
+			return value2 - value1;
+		} else {
+			return key1.localeCompare(key2);
+		}
+	});
+	rcountries = Object.fromEntries(entries);
+
+	console.warn("RCITIES", rcities);
+	console.warn("RCOUNTRIES", rcountries);
+
+	let output = "";
+	output += `<table class="dual">`;
+	output += "<tr><td>";
+
+
+	keys = Object.keys(rcountries);
+	output += `<div class="counting">${keys.length} countries:</div>`;
+	output += `<table class="country">`;
+	output += "<tr><th>Count</th><th>Country</th></tr>";
+	for (let i=0; i<keys.length; i++) {
+		output += "<tr>";
+		output += `<td>${rcountries[keys[i]]}</td>`;
+		output += `<td>${keys[i]}</td>`;
+		output += "</tr>";
+	}
+	output += "</table>";
+
+
+	output += "</td><td>";
+
+	keys = Object.keys(rcities);
+	output += `<div class="counting">${keys.length} cities:</div>`;
+	output += `<table class="city">`;
+	output += "<tr><th>Count</th><th>City</th></tr>";
+	for (let i=0; i<keys.length; i++) {
+		output += "<tr>";
+		output += `<td>${rcities[keys[i]]}</td>`;
+		output += `<td>${keys[i]}</td>`;
+		output += "</tr>";
+	}
+	output += "</table>";
+
+
+	output += "</td></tr>";
+	output += "<table>";
+
+	element.innerHTML = output;
+
+}
+
+
+
+//////////////////////////////
+//
 // displayExampleByComposers --
 //
 

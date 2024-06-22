@@ -9,6 +9,26 @@ permalink: /doc/index.html
 
 {% include_relative styles-local.html %}
 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script>
+  let initialLoad = true;
+  document.addEventListener('shown.bs.collapse', function (event) {
+    if (initialLoad) {
+      initialLoad = false;
+      return;
+    }
+    const offset = 150; // Height of the fixed header
+    const elementTop = event.target.getBoundingClientRect().top;
+    const offsetPosition = elementTop + window.pageYOffset - offset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
 <section>
 	<div class="container">
 		<div class="row">
@@ -20,8 +40,8 @@ permalink: /doc/index.html
 					<div class="accordion accordion-flush mb-5" id="accordionExample">
 
 <div class="accordion-item">
-<p class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Composers</button></p>
-<div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+<p class="accordion-header" id="headingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Composers</button></p>
+<div class="accordion-collapse collapse" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-composers.md %}
 </div>

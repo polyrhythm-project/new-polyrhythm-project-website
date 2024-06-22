@@ -3,9 +3,6 @@
 // vim: ts=3:nowrap
 </script>
 
-<details markdown="1">
-<summary style="display:list-item !important"><b>Examples</b></summary>
-
 <div class="card mb-3">
 	<div class="row g-0">
 		<div class="col-md-8">
@@ -15,8 +12,8 @@
 			</div>
 		</div>
 		<div class="col-md-8">
-			<div id="ExamplesByComposers"></div>
-			<!-- img src="Examples_by_Composers_cloud.png" class="img-fluid rounded-start" alt="Examples by Composers" -->
+			<!-- <div id="ExamplesByComposers"></div> -->
+			<img src="Examples_by_Composers_cloud.png" class="img-fluid rounded-start" alt="Examples by Composers">
 		</div>
 	</div>
 </div>
@@ -81,7 +78,7 @@
 	<div class="row g-0">
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="category mb-2 card-title">Time Signatures Categories (RDS)</h5>
+				<h5 class="category mb-2 card-title">Time Signature Categories (RDS)</h5>
 				<p class="card-text">Description goes here.</p>
 			</div>
 		</div>
@@ -97,7 +94,7 @@
 	<div class="row g-0">
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="category mb-2 card-title">Time Signatures Categories (TDS)</h5>
+				<h5 class="category mb-2 card-title">Time Signature Categories (TDS)</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
 		</div>
@@ -107,6 +104,22 @@
 		</div>
 	</div>
 </div>
+
+<div class="card mb-3">
+	<div class="row g-0">
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="category mb-2 card-title">Polymetric/Polemeter Categories (FDS)</h5>
+				<p class="card-text">Description goes here</p>
+			</div>
+		</div>
+		<div style="width:100%;" class="col-md-8">
+			<div id="PolymetricCategories"></div>
+		</div>
+	</div>
+</div>
+
+<!-- Old visualizations of polymeter/polyduration:
 
 <div class="card mb-3">
 	<div class="row g-0">
@@ -136,7 +149,6 @@
 	</div>
 </div>
 
-</details>
-
+-->
 
 

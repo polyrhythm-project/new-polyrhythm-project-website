@@ -3,9 +3,6 @@
 // vim: ts=3:nowrap
 </script>
 
-<details markdown="1">
-<summary style="display:list-item !important"><b>Works</b></summary>
-
 <div class="card mb-3">
 	<div class="row g-0">
 		<div class="col-md-4">
@@ -75,8 +72,6 @@
 		</div>
 	</div>
 </div>
-
-</details>
 
 
 
