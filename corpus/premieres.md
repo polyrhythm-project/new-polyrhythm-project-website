@@ -12,7 +12,7 @@
 		</div>
 		<div class="col-md-10">
 			<div id="country-city-table"></div>
-			<img src="Premieres_Location_list.png" class="img-fluid rounded-start" alt="Premieres Location">
+			<!-- img src="Premieres_Location_list.png" class="img-fluid rounded-start" alt="Premieres Location" -->
 		</div>
 	</div>
 </div>
