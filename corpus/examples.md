@@ -27,7 +27,7 @@
 		<div class="col-md-4">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Length of Examples by Composer</h5>
-				<p class="card-text">Description goes here.  Boxes give 2nd and 3rd quartiles of example durations (in seconds).  Red number above each plot gives the mean example duration for each composer. </p>
+				<p class="card-text">Description goes here.  Boxes give 2nd and 3rd quartiles of example durations (in seconds).  Red number above each plot gives the mean example duration for each composer. Number in parentheses after composer name is the number of examples for that composer.</p>
 			</div>
 		</div>
 	</div>
