@@ -5,13 +5,13 @@
 
 <div class="card mb-3">
 	<div class="row g-0">
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Examples by Composers</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<!-- <div id="ExamplesByComposers"></div> -->
 			<img src="Examples_by_Composers_cloud.png" class="img-fluid rounded-start" alt="Examples by Composers">
 		</div>
@@ -35,24 +35,24 @@
 
 <div class="card mb-3">
 	<div class="row g-0">
-		<div class="col-md-4">
-			<img src="Full_Unit_Start_Tempo_cloud.png" class="img-fluid rounded-start" alt="Full Unit Start Tempo">
-		</div>
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Full Unit Start Tempo</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
+		</div>
+		<div class="col-md-6">
+			<img src="Full_Unit_Start_Tempo_cloud.png" class="img-fluid rounded-start" alt="Full Unit Start Tempo">
 		</div>
 	</div>
 </div>
 
 <div class="card mb-3">
 	<div class="row g-0">
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<img src="Example_Start_Tempo_cloud.png" class="img-fluid rounded-start" alt="Example Start Tempo">
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Example Start Tempo</h5>
 				<p class="card-text">Description goes here</p>
@@ -63,14 +63,14 @@
 
 <div class="card mb-3">
 	<div class="row g-0">
-		<div class="col-md-4">
-			<img src="Start_Time_Signatures_by_Type_graph.png" class="img-fluid rounded-start" alt="Start Time Signatures by Type">
-		</div>
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Start Time Signatures by Type</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
+		</div>
+		<div class="col-md-6">
+			<img src="Start_Time_Signatures_by_Type_graph.png" class="img-fluid rounded-start" alt="Start Time Signatures by Type">
 		</div>
 	</div>
 </div>
@@ -110,7 +110,7 @@
 	<div class="row g-0">
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="category mb-2 card-title">Polymetric/Polemeter Categories (FDS)</h5>
+				<h5 class="category mb-2 card-title">Polymetric/Polymeter Categories (FDS)</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
 		</div>
