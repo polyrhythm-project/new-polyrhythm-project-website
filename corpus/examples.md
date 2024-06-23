@@ -20,13 +20,14 @@
 
 <div class="card mb-3">
 	<div class="row g-0">
-		<div class="col-md-4">
-			<img src="Length_of_Examples_by_Composer_graph.png" class="img-fluid rounded-start" alt="Length of Examples by Composer">
-		</div>
 		<div class="col-md-8">
+			<!-- img src="Length_of_Examples_by_Composer_graph.png" class="img-fluid rounded-start" alt="Length of Examples by Composer" -->
+			<div id="LengthOfExamplesByComposer"></div>
+		</div>
+		<div class="col-md-4">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Length of Examples by Composer</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">Description goes here.  Boxes give 2nd and 3rd quartiles of example durations (in seconds).  Red number above each plot gives the mean example duration for each composer. </p>
 			</div>
 		</div>
 	</div>
