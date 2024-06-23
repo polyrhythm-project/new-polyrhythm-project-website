@@ -87,5 +87,25 @@ function doAction(examplelist) {
    displayLengthOfExamplesByComposer();
 }
 
+
+//////////////////////////////
+//
+// DOMContentLoaded listener -- open accordion based on # name;
+//
+
+document.addEventListener("DOMContentLoaded", function () {
+	let list = document.querySelectorAll("#accordionExample div.accordion-item button[type='button']");
+	let hash = window.location.hash.substr(1);
+	for (let i=0; i<list.length; i++) {
+		if (list[i].innerHTML.includes(hash)) {
+			list[i].click();
+			break;
+		}
+	}
+});
+
+
 </script>
+
+
 
