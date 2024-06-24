@@ -19,10 +19,10 @@
 
 <div class="card mb-3">
 	<div class="row g-0">
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<img src="Birth_Region_or_Country.png" class="img-fluid rounded-start" alt="Birth Region or Country">
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Birth Region or Country</h5>
 				<p class="card-text">Description goes here</p>
@@ -33,14 +33,14 @@
 
 <div class="card mb-3">
 	<div class="row g-0">
-		<div class="col-md-4">
-			<img src="Death_Region_or_Country.png" class="img-fluid rounded-start" alt="Death Region or Country">
-		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Death Region or Country</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
+		</div>
+		<div class="col-md-6">
+			<img src="Death_Region_or_Country.png" class="img-fluid rounded-start" alt="Death Region or Country">
 		</div>
 	</div>
 </div>

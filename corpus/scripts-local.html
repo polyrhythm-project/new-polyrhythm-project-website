@@ -145,11 +145,11 @@ function displayPolymetricCategories() {
 		}
 		let poly = EXAMPLELIST[i][INDEX_Example_Start_Tsig];
 		if (!poly.match(/[=;]/)) {
-			console.log("REJECTING", poly);
+			// console.log("REJECTING", poly);
 			continue;
 		}
 		if (poly.match(/[+]/)) {
-			console.log("REJECTING", poly);
+			// console.log("REJECTING", poly);
 			continue;
 		}
 		let matches = poly.match(/(.*\d)\(\d+\/\d+\)(;.*)/);
@@ -287,8 +287,8 @@ function displayContryCityTable() {
 	});
 	rcountries = Object.fromEntries(entries);
 
-	console.warn("RCITIES", rcities);
-	console.warn("RCOUNTRIES", rcountries);
+	// console.warn("RCITIES", rcities);
+	// console.warn("RCOUNTRIES", rcountries);
 
 	let output = "";
 	output += `<table class="dual">`;
@@ -405,7 +405,7 @@ function displayLengthOfExamplesByComposer() {
 		let entry = {};
 		let duration = EXAMPLELIST[i][INDEX_Example_Timestamp_Duration];
 		if (!duration.match(/^\d+$/)) {
-			console.warn("Strange duration:", duration, "FOR", EXAMPLELIST[i]);
+			// console.warn("Strange duration:", duration, "FOR", EXAMPLELIST[i]);
 			continue;
 		}
 		entry.value = duration;
@@ -448,9 +448,9 @@ function displayLengthOfExamplesByComposer() {
 		medians[keys[i]] = median;
 	}
 
-	console.log("DATA", data);
-	console.log("VALUES", values);
-	console.log("MEDIANS", medians);
+	// console.log("DATA", data);
+	// console.log("VALUES", values);
+	// console.log("MEDIANS", medians);
 
     var spec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -871,6 +871,137 @@ function displaySubgenrePercentageDistribution() {
 	});
 
 }
+
+
+
+//////////////////////////////
+//
+// displayCompositionYearByDecade --
+//
+
+function displayCompositionYearByDecade() {
+	let tableElement = document.querySelector("#CompositionYearByDecadeTable");
+	if (!tableElement) {
+		console.log("Warning: Cannot find #CompositionYearByDecadeTable");
+		return;
+	}
+	let graphElement = document.querySelector("#CompositionYearByDecadeGraph");
+	if (!graphElement) {
+		console.log("Warning: Cannot find #CompositionYearByDecadeGraph");
+		return;
+	}
+
+	let decades = {};
+	let keys = Object.keys(WORKINDEX);
+	for (let i=0; i<keys.length; i++) {
+		let value = WORKINDEX[keys[i]][0][INDEX_Composition_Year];
+		if (!value) {
+			continue;
+		}
+		if (!value.match(/^(\d{4})/)) {
+			continue;
+		}
+		value = parseInt(value);
+		let decade = parseInt(value/10) * 10;
+		let label;
+		if (decade < 1900) {
+			label = "Pre-1900";
+		} else if (decade >= 1950) {
+			label = "1950 and later";
+		} else {
+			label = `${decade}s`;
+		}
+		if (decades[label]) {
+			decades[label]++;
+		} else {
+			decades[label] = 1;
+		}
+	}
+	console.log("DECADES", decades);
+
+	let table  = `<table class="compyear">`;
+	table     += "<tr><th>Composition&nbsp;Year</th><th>Count</th></tr>";
+	let label  = "Pre-1900";
+	table     += `<tr><td>${label}</td><td>${decades[label]}</td></tr>`;
+	label      = "1900s";
+	table     += `<tr><td>${label}</td><td>${decades[label]}</td></tr>`;
+	label      = "1910s";
+	table     += `<tr><td>${label}</td><td>${decades[label]}</td></tr>`;
+	label      = "1920s";
+	table     += `<tr><td>${label}</td><td>${decades[label]}</td></tr>`;
+	label      = "1930s";
+	table     += `<tr><td>${label}</td><td>${decades[label]}</td></tr>`;
+	label      = "1940s";
+	table     += `<tr><td>${label}</td><td>${decades[label]}</td></tr>`;
+	label      = "1950 and later";
+	table     += `<tr><td>${label}</td><td>${decades[label]}</td></tr>`;
+	table     += "</table>";
+
+	tableElement.innerHTML = table;
+
+	let gdata = [];
+	gdata[0] = {category: "<1900", value: decades["Pre-1900"]};
+	gdata[1] = {category: "1900s", value: decades["1900s"]};
+	gdata[2] = {category: "1910s", value: decades["1910s"]};
+	gdata[3] = {category: "1920s", value: decades["1920s"]};
+	gdata[4] = {category: "1930s", value: decades["1930s"]};
+	gdata[5] = {category: "1940s", value: decades["1940s"]};
+	gdata[6] = {category: ">=1950", value: decades["1950 and later"]};
+
+	console.warn("GDATA", gdata);
+
+	let spec = 
+
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar chart showing values by category with preserved order and increased font size.",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "values": [
+      {"category": "<1900", "value": 16},
+      {"category": "1900s", "value": 39},
+      {"category": "1910s", "value": 71},
+      {"category": "1920s", "value": 108},
+      {"category": "1930s", "value": 87},
+      {"category": "1940s", "value": 75},
+      {"category": ">=1950", "value": 54}
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "color": "#4682b4"
+  },
+  "encoding": {
+    "x": {
+      "field": "category",
+      "type": "ordinal",
+      "axis": {
+        "labelAngle": 0,
+        "title": "Decade",
+        "labelFontSize": 12 * 1.2 // Increase font size by 20%
+      },
+      "sort": ["<1900", "1900s", "1910s", "1920s", "1930s", "1940s", ">=1950"]
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"title": "Count"}
+    }
+  }
+}
+
+
+
+;
+
+    vegaEmbed('#CompositionYearByDecadeGraph', spec);
+
+
+
+}
+
 
 
 </script>

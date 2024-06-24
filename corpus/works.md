@@ -40,7 +40,13 @@
 			</div>
 		</div>
 		<div class="col-md-10">
-			<img src="Composition_Year_by_Decade_table_graph.png" class="img-fluid rounded-start" alt="Composition Year by Decade">
+			<table>
+				<tr>
+					<td style="padding-left: 20px; vertical-align:top"><div id="CompositionYearByDecadeTable"></div></td>
+					<td style="padding-left:100px; vertical-align:top"><div id="CompositionYearByDecadeGraph"></div></td>
+				</tr>
+			</table>
+			<!-- img src="Composition_Year_by_Decade_table_graph.png" class="img-fluid rounded-start" alt="Composition Year by Decade" -->
 		</div>
 	</div>
 </div>
