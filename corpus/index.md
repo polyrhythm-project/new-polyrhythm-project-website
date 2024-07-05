@@ -23,7 +23,7 @@ tables, figures, graphs, and word clouds. These materials are
 organized by type of metadata. The table below provides a list of
 the types of metadata collected for composers, works, premieres
 (first public performance of a work), and the extracted examples.
-To explore the visualizations, click on the categories below the
+To explore visualizations, click on the categories below the
 table.
 </p>
 
