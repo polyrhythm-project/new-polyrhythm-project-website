@@ -83,7 +83,7 @@ Shanahan’s research interests include music and emotion, the diffusion of musi
     <td class="topalign">Bryan is a PhD student in music theory at the University of British Columbia. His research interests are in the perception and cognition of rhythm and meter, as well as digital, mathematical, and empirical approaches to music research. Bryan's research is motivated by the conception of music as one domain through which we can understand a broader array of human experiences, including emotion, creativity, memory, and the mind. He is originally from the United States, obtaining a bachelor’s degree in piano performance (with a minor in English) and a master’s degree in music theory. For my master’s thesis, he encoded the solo piano music of Alexander Scriabin and investigated his use of meter using a computational model.</td>
   </tr>
   <tr>
-    <td class="nameline" valign="top" colspan="2"><b>Jason Yin Hei Lee</b></td>
+    <td class="nameline" valign="top" colspan="2"><b>Jason Yin Hei Lee (McGill University)</b></td>
   </tr>
   <tr>
     <td valign="top" colspan="2"><i>Co-investigator</i></td>
