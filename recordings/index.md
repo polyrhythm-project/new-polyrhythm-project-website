@@ -15,6 +15,8 @@ This page lists the source recordings for audio examples used in
 the Polyrhythm project, with links to the corresponding album on
 the <a href="https://www.naxosmusiclibrary.com/login" target="_blank">
 Naxos Music Library</a> (subscription required).
+
+Recordings can be sorted by Work ID, Example ID, Composition Date, and Publication Date. You can click on the Example ID to access the Example Page.
 </p>
 
 <p style="margin-bottom:50px">
