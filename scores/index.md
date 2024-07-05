@@ -18,6 +18,8 @@ source edition used for encoding the examples, with a link to an
 online score, when available. In some cases, more than one published
 score was referenced.
 
+Scores can be sorted by Work ID, Example ID, Composition Date, and Publication Date.
+
 <p>
 Sort scores by: 
 <select id="sort-method" onchange="displayScoreIndex()">
