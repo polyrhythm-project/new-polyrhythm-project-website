@@ -42,7 +42,7 @@ td:hover {
   </tr>
   <tr>
     <td valign="top"><img src="/people/EvePoudrier.jpg"></td>
-    <td class="topalign">Ève is an Assistant Professor in music theory at the School of Music of the University of British Columbia, teaching courses on compositional practice in Europe in the 18th and 19th centuries, techniques of graphic linear analysis, and music psychology. My research has been presented at interdisciplinary conferences in North America, Europe, and the Middle East, and published in Music Perception and Empirical Musicology Review. My current projects focus on empirical aesthetics, specifically the experience of listening to rhythmic polyphony and the aesthetics of complexity, combining methods of close study, computer-aided musicology, and behavioural experimentation.</td>
+    <td class="topalign">Ève is Assistant Professor of music theory at the School of Music of the University of British Columbia, where she teaches courses on compositional practice in Europe in the 18th and 19th centuries, techniques of graphic linear analysis, and music psychology. My research has been presented at interdisciplinary conferences in North America, Europe, and the Middle East, and published in Music Perception and Empirical Musicology Review. My current projects focus on empirical aesthetics, specifically the experience of listening to rhythmic polyphony and the aesthetics of complexity, combining methods of close study, computer-aided musicology, and behavioural experimentation.</td>
   </tr>
   <tr>
      <td class="nameline" valign="top" colspan="2"><b>Craig Stuart Sapp</b></td>
@@ -68,7 +68,7 @@ and
   <tr>
     <td valign="top"><img width="300" src="/people/DanShanahan.jpg"></td>
     <td class="topalign">
-Daniel is currently an associate professor of music theory and cognition at Northwestern University. Previously, he served as director of the Cognitive and Systematic Musicology Lab at Ohio State University, and the Music Cognition and Computation Lab at Louisiana State University.
+Daniel is Associate Professor of music theory and cognition at Northwestern University. Previously, he served as director of the Cognitive and Systematic Musicology Lab at Ohio State University, and the Music Cognition and Computation Lab at Louisiana State University.
 Shanahan’s research interests include music and emotion, the diffusion of musical style, corpus studies, and the computational analysis of jazz and folk music. He has published articles or reviews in journals such as <i>Music Perception, The Journal of Jazz Studies, Memory and Cognition, Music Analysis, Music Theory Spectrum, Music Theory Online</i>, and <i>Musicae Scientiae</i>, among others, and has contributed chapters to the <i>Routledge Companion to Music Cognition, The Routledge Companion to Music Theory Pedagogy</i>, and <i>Over and Over Again: Exploring Repetition in Popular Music</i>.
 </td>
   </tr>
