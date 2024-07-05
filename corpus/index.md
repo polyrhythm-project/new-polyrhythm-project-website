@@ -51,7 +51,6 @@ table.
 <div class="container">
 <div class="row">
 <div class="col-12">
-<h2 class="mb-6">Metadata</h2>
 <p>
 {% include_relative metadata-table.md %}
 </p>

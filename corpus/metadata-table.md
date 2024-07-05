@@ -16,7 +16,7 @@ table.metadata td:first-child {
 
 <table class="metadata">
 <tr>
-<td> Composers </td>
+<td> <h2 class="mb-6">Composers</h2> </td>
 <td>
 <ul>
 <li> Birth/death place (city, country) </li>
@@ -26,7 +26,7 @@ table.metadata td:first-child {
 </td>
 </tr>
 <tr>
-<td> Works </td>
+<td> <h2 class="mb-6">Works</h2> </td>
 <td>
 <ul>
 <li> Genre (orchestral, instrumental, vocal, stage) </li>
@@ -37,7 +37,7 @@ table.metadata td:first-child {
 </td>
 </tr>
 <tr>
-<td> Premieres </td>
+<td> <h2 class="mb-6">Premieres</h2> </td>
 <td>
 <ul>
 <li> First public performance year </li>
@@ -47,7 +47,7 @@ table.metadata td:first-child {
 </td>
 </tr>
 <tr>
-<td> Examples </td>
+<td> <h2 class="mb-6">Examples</h2> </td>
 <td>
 <ul>
 <li> Source work full unit </li>
