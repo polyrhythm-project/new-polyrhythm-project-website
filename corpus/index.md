@@ -22,8 +22,6 @@ summary:
 				<h2 class="mb-6">Metadata</h2>
 					<p markdown="1">
 
-
-<p>
 This page presents different types of visualization of the corpus
 metadata (i.e., information about sources and materials), such as
 tables, figures, graphs, and word clouds. These materials are
