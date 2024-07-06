@@ -1,5 +1,5 @@
 ---
-title: Corpus metadata
+title: Corpus
 author:
 keywords: corpus
 highcharts: true
