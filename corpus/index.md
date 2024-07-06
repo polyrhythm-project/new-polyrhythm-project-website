@@ -20,9 +20,9 @@ summary:
 This page presents different types of visualization of the corpus
 metadata (i.e., information about sources and materials), such as
 tables, figures, graphs, and word clouds. These materials are
-organized by type of metadata. The table below provides a list of
+organized by type of metadata. The bulleted list below provides
 the types of metadata collected for composers, works, premieres
-(first public performance of a work), and the extracted examples.
+(first public performance of a work), and extracted examples.
 To explore visualizations, click on the categories below the
 table.
 </p>
