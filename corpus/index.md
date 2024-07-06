@@ -10,11 +10,18 @@ vim: ts=3
 layout: default
 summary:
 ---
-
 {% include_relative styles-local.html  %}
 {% include_relative listeners.html     %}
 {% include_relative scripts-local.html %}
 {% include scripts/scripts-common.html %}
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="mb-6">Metadata</h2>
+					<p markdown="1">
+
 
 <p>
 This page presents different types of visualization of the corpus
