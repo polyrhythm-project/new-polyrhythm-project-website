@@ -6,7 +6,7 @@ permalink: /howtouse/index.html
 
 ## Browse
 
-The Browse page can be used to explore the corpus and access specific examples, including a range of examples that features selected characteristics. There are many different options for sorting and selecting examples, including a general search box, feature buttons, and range boxes. For each search action, the total number of examples that match the search criteria is shown above the table. To reset the table, click on the "Clear" button on the top right. To acess the How to use page again, click on the question mark button ("?") next to the "Clear" button. Clicking on a specific example will bring you to that specific example page. If you selected a range of examples, you can browse from one example to the next or previous example by using the back and forward arrows on the example page.
+The Browse page can be used to explore the corpus and access specific examples, including a range of examples that features selected characteristics. There are many different options for sorting and selecting examples, including the table headings, search box, features buttons, ranges boxes, and delimiting checkboxes. For each search action, the total number of examples that match the search criteria is shown above the table. To reset the table, click on the "Clear" button on the top right. To acess the "How to use" page again, click on the question mark button ("?") on the right of the "Clear" button. Clicking on a specific example in the table will bring you to that specific example page. If you selected a range of examples, you can browse from one to the next or previous example page by using the back and forward arrows on that example page.
 
 # Basic Options
 
@@ -18,7 +18,7 @@ Search box: Search for examples using keywords.
 
 # Features
 
-The feature buttons are set to "all" by default. Click on the down arrow for sorting options.
+The features buttons are set to "all" by default. Click on the down arrow for sorting options.
 
 Examples: This is the only current option to access the music data. Visit the website again for the "Works" option.
 
@@ -38,6 +38,9 @@ Class: Instruments are organized in classes [link to documentation]. Selecting a
 
 # Ranges
 
+You can sort example by range based on a number of characteristics, including tempo, duration, staff count, composition year, premiere year, and publication year. Each characteristic includes two text boxes (minimum and maximum) that require a number entry. You can set only a minimum, only a maximum, or a minimum and maximum. The number of examples that matech you selection criteria will appear above the examples table.
+
+If you experience an problem with the Borwse page, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
 
 <div style="height:300px"></div>
 
