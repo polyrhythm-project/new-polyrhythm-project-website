@@ -8,7 +8,7 @@ layout: default
 summary: List of maps for displaying Polyrhythm Project examples by composer, premiere, and composition date.
 ---
 
-The Suter (1980) Corpus is represented by three interactive maps:
+The <i>Suter (1980) Corpus</i> is represented by three interactive maps:
 
 1. <a target="_blank" href="https://maps.polyrhythm.humdrum.org/composers/#4/49.43/10.40">Composers</a> &mdash; The locations of birth and death for the twenty composers surveyed in this study 
 
