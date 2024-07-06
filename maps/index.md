@@ -20,16 +20,15 @@ The Suter (1980) Corpus is represented by three interactive maps:
 ## How to use the maps ##
 
 There are many ways to interact with the maps. You can zoom in and
-out to regions of interest or use the search box on the lower
-left-hand side to instantly zoom to a location. You can then click
+out to regions of interest by clicking on the "+" and "-" icons on the top left corner of the map. You can then click
 on points the map to reveal more information. For example, clicking
-on a point on the "Composers" map will show you the composer,
+on a point on the "Composers" map will show you the composer's name,
 country, city, and date of birth or death associated with the
-location. Clicking on a point on the "Corpus" or "Timeline" will
+location. Clicking on a point on the "Corpus" or "Timeline" map will
 bring up information about the work, from year of composition to
 who was the conductor at the premiere, and the venue where it
 was premiered. You can then look for the score and recording (if
-available) of the examples using "Sources" in the top menu.
+available) of the examples using "Sources" in the top menu of the website or locate the example(s) extracted from the work using "Browse".
 
 On the right-hand side of each map, you will find filters to control
 what is displayed on the map. For example, on the "Composers" map,
