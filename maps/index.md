@@ -38,6 +38,8 @@ you can choose to show specific composers. The slider on the
 premiered works. The diagram above the slider gives an overview of
 premiered works by decade.
 
+For more specific information on each map and how to navigate, click on the "i" icon in the top left corner of the map.
+
 
 <div style="height:100px"></div>
 
