@@ -12,7 +12,7 @@ summary:
 {% include_relative styles-local.html %}
 {% include_relative scripts-local.html %}
 
-Twenty composers are represented in the Suter (1980) corpus.  Click
+Twenty composers are represented in the <i>Suter (1980) Corpus</i>.  Click
 on a table heading to sort the table by that column (click
 twice to reverse the sort order), or click on an entry to browse
 works/examples for that composer.  Mouse-over the birth and death dates
