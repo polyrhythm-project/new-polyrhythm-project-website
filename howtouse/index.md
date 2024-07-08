@@ -44,7 +44,7 @@ If you experience an problem with the Borwse page, don't hesitate to let us know
 
 <div style="height:300px"></div>
 
-## Polyrhythm Example Page
+## Example Page
 
 Each example page present basic metadata about the example, including example and work identifiers ("Example ID" and "Work ID"), source work title ("Work title"), measures numbers for the extracted example ("Starting measure" and "Ending measure"), genre and sub-genre to which the source work belongs ("Genre"), composer's full name ("Composer"), date at which the work was completed ("Composition date") and first published ("Publication date"), date of first public performance ("Premiere date"), and extent information about the first public performance's venue ("Premiere location").
 
