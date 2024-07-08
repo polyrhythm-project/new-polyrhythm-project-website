@@ -1,5 +1,5 @@
 ---
-title: Polyrhythm Example
+title: Example Page
 author: Craig Stuart Sapp
 keywords: polyrhythm example
 permalink: /example/index.html
