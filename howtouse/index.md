@@ -52,7 +52,7 @@ Each example page present basic metadata about the example, including example an
 
 The corpus examples have been encoded with the texture divided into two contrasting rhythmic groups (Group A and Group B, with Group A assigned to the group that includes the lowest staff by default). Users can interact with the examples using the buttons above on each example page. If you want to browse through a range of examples using the same settings, select the range of example on the <a href="https://maps.polyrhythm.humdrum.org/browse">Browse</a> page and simply navigate to the next or previous example using the left and right arrows at the top. Once a combination of options have been selected, you can browse through the selected range of examples without having to re-select the same options. 
 
-The options described below can be uses in a variety of combinations and afford a wide range of purposes.
+The options described below can be used in a variety of combinations and afford a wide range of purposes.
 
 <ul><li><b>group:</b>Click on this button to visualize the composite rhythms for Group A and Group B below the score; click again to undo.</li>
 
