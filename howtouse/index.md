@@ -68,8 +68,18 @@ The options described below can be used in a variety of combinations and afford 
 
 <li><b>event counts:</b> Clicking on this button will render the composite rhythm and the number of events it comprises on the left below the rhythm label. If you want to see the number of events in one or more of the other composite rhythms, click on the desired option first, and then click on "event counts". To undo, click a second time.</li>
 
-<li><b>only analysis:</b> First select the composite rhythm(s) you want to, then click on this button to view the composite rhythms without the score.</li>
+<li><b>only analysis:</b> First select the composite rhythm(s) you want to, then click on this button to view the composite rhythms without the score.</li></ul>
 
+# Other Options
+
+There are a few additional options to navigate between the example pages and other resources:
+
+<ul><li><b>copy:</b> Click on this button to copy the music data to your clipboard.</li>
+
+<li><b>link:</b>Click on this button tio copy thew URL of the example page to your clipboard.</li>
+
+<li><b>VHV:</b>Click on this button to access the example on <a href="https:verovio.humdrum.org">Verovio Humdrum Viewer</a>.</li></ul>
+ 
 For examples of how the tool is applied to examples from the corpus and used to derive computational measures, explore the <a href="https://polyrhythm.humdrum.org/research">Research</a> section.
 
 If you experience any problem with the example pages, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
