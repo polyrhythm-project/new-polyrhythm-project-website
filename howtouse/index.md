@@ -54,22 +54,22 @@ The corpus examples have been encoded with the texture divided into two contrast
 
 The options described below can be used in a variety of combinations and afford a wide range of purposes.
 
-<ul><li><b>group:</b>Click on this button to visualize the composite rhythms for Group A and Group B below the score; click again to undo.</li>
+<ul><li><b>group:</b> Click on this button to visualize the composite rhythms for Group A and Group B below the score; click again to undo.</li>
 
-<li><b>group color:</b>Clicking on this button will color the nites in the score that belong to Group A (in red) and Group B (in blue); click again to undo.</li>
+<li><b>group color:</b> Click on this button to color the notes in the score that belong to Group A (in red) and Group B (in blue); click again to undo.</li>
   
-<li><b>composite:</b>Click on this button to obtain a composite rhythm of the full texture below the score; click again to undo.</li>
+<li><b>composite:</b> Click on this button to obtain a composite rhythm of the full texture below the score; click again to undo.</li>
 
-<li><b>comp. color:</b>Clicking on this button will color the events of the composite rhythm (Group A events in red, Group B event in blue, and coincdence events in green); click again to undo.</li>
+<li><b>comp. color:</b> Click on this button to color the events in the composite rhythm (Group A events in red, Group B event in blue, and Coincdence events in green); click again to undo.</li>
 
-<li><b>coincidence:</b>This option randers thew composite rhythm of the coincidince events across parts below the score; click again to undo.</li>
+<li><b>coincidence:</b> This option randers the composite rhythm of the coinciding events across parts below the score; click again to undo.</li>
 
-<li><b>mark:</b>Click on this button to visualize the coincidence events on the score (in green); click again to undo.</li>
+<li><b>mark:</b> Click on this button to visualize the coincidence events on the score (in green); click again to undo.</li>
 
-<li><b>event counts: Clicking on this button will render the composite rhythm and the number of events it comprises on the left below the rhythm label. If you want to see the number of events in one or more of the other composite rhythms, click on the desired option first, and then click on "event counts". To undo, click a second time.</b></li>
+<li><b>event counts:</b> Clicking on this button will render the composite rhythm and the number of events it comprises on the left below the rhythm label. If you want to see the number of events in one or more of the other composite rhythms, click on the desired option first, and then click on "event counts". To undo, click a second time.</li>
 
-<li><b>only analysis:</b>First select the composite rhythm(s) you want to, then click on this button to view the composite rhythms without the score.</li>
+<li><b>only analysis:</b> First select the composite rhythm(s) you want to, then click on this button to view the composite rhythms without the score.</li>
 
-For examples of how the tool is applied to examples from the corpus, explore the <a href="https://polyrhythm.humdrum.org/research">Research</a> section.
+For examples of how the tool is applied to examples from the corpus and used to derive computational measures, explore the <a href="https://polyrhythm.humdrum.org/research">Research</a> section.
 
 
