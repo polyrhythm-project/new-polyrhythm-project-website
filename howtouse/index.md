@@ -20,7 +20,7 @@ There are two basic options for sorting the table.
 
 The features buttons are set to "all" by default. Click on the down arrow for sorting options.
 
-Examples: This is the only current option to access the music data. Visit the website again for the "Works" option.
+<ul><li><b>Examples:</b> This is the only current option to access the music data. Visit the website again for the "Works" option.</li>
 
 Datasets: The corpus is organized in two datasets. The "Reserve" dataset is comprised of stratified random sample of 80 examples (4 examples for each of the 20 composers) that was used for the first series experiments. The "Testing" dataset is comprised of the remainder examples.
 
