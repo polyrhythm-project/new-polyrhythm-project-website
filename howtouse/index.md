@@ -4,7 +4,7 @@ layout: default
 permalink: /howtouse/index.html
 ---
 
-## Browse
+## Browse Page
 
 This page can be used to explore the corpus and access specific examples, including a range of examples that features selected characteristics. There are many different options for sorting and selecting examples, including the table headings, search box, features buttons, ranges boxes, and delimiting checkboxes. For each search action, the total number of examples that match the search criteria is shown above the table. To reset the table, click on the "Clear" button on the top right. To acess the "How to use" page again, click on the question mark button ("?") on the right of the "Clear" button. Clicking on a specific example in the table will bring you to that specific example page. If you selected a range of examples, you can browse from one to the next or previous example page by using the back and forward arrows on that example page.
 
@@ -43,5 +43,11 @@ You can sort example by range based on a number of characteristics, including te
 If you experience an problem with the Borwse page, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
 
 <div style="height:300px"></div>
+
+## Polyrhythm Example Page
+
+The corpus examples have been encoded with the texture divided into two contrasting rhythmic groups, and users can interact with the examples using a set of options available on each example page accessed through the <a href="https://polyrhythm.humdrum.org/browse/">Browse</a> page. Composite rhythms can be obtained for the full texture ("composite" option), coinciding events across parts ("coincidence" option), or for a combination of parts ("group" option renders Group A and Group B composite rhythms). Coincidence rhythm can ve viewed below the score or without the score ("analysis only" option). Groups can be colored on the score ("group color" option for Group A and Group B events, and "mark" option for coincidence events) and in the composite rhythm ("comp. color" option). Coincidence events are colored in green, Group A events are colored in red, and Group B events are colored in blue. The number of events in each composite rhythm can be viewed on the left side of the composite rhythm with the "event counts" option. 
+
+For examples of how the tool is applied to examples from the corpus, see: Poudrier, È. & Sapp, C. S. (2022). Polyrhythm analysis using the <i>composite</i> tool. In <i>International Conference on Digital Libraries for Musicology,July 28, 2022, Prague, Czech Republic</i>. ACM, New York, NY, USA (available on the <a href="https://polyrhythm.humdrum.org/publications">Publications</a> page).
 
 
