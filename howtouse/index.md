@@ -40,7 +40,7 @@ The features buttons are set to "all" by default. Click on the down arrow for so
 
 You can sort example by range based on a number of characteristics, including tempo, duration, staff count, composition year, premiere year, and publication year. Each characteristic includes two text boxes (minimum and maximum) that require a number entry. You can set only a minimum, only a maximum, or a minimum and maximum. The number of examples that matech you selection criteria will appear above the examples table.
 
-If you experience an problem with the Borwse page, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
+If you experience any problem with the Browse page, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
 
 <div style="height:300px"></div>
 
@@ -71,5 +71,7 @@ The options described below can be used in a variety of combinations and afford 
 <li><b>only analysis:</b> First select the composite rhythm(s) you want to, then click on this button to view the composite rhythms without the score.</li>
 
 For examples of how the tool is applied to examples from the corpus and used to derive computational measures, explore the <a href="https://polyrhythm.humdrum.org/research">Research</a> section.
+
+If you experience any problem with the Example pages, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
 
 
