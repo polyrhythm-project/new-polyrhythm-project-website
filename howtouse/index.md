@@ -40,7 +40,7 @@ The features buttons are set to "all" by default. Click on the down arrow for so
 
 You can sort example by range based on a number of characteristics, including tempo, duration, staff count, composition year, premiere year, and publication year. Each characteristic includes two text boxes (minimum and maximum) that require a number entry. You can set only a minimum, only a maximum, or a minimum and maximum. The number of examples that matech you selection criteria will appear above the examples table.
 
-If you experience any problem with the Browse page, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
+If you experience any problem with the <a href="https://polyrhythm.humdrum.org/browse">Browse </a> page, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
 
 <div style="height:300px"></div>
 
@@ -50,7 +50,7 @@ Each example page present basic metadata about the example, including example an
 
 # Visualization Options
 
-The corpus examples have been encoded with the texture divided into two contrasting rhythmic groups (Group A and Group B, with Group A assigned to the group that includes the lowest staff by default). Users can interact with the examples using the buttons above on each example page. If you want to browse through a range of examples using the same settings, select the range of example on the <a href="https://maps.polyrhythm.humdrum.org/browse">Browse</a> page and simply navigate to the next or previous example using the left and right arrows at the top. Once a combination of options have been selected, you can browse through the selected range of examples without having to re-select the same options. 
+The corpus examples have been encoded with the texture divided into two contrasting rhythmic groups (Group A and Group B, with Group A assigned to the group that includes the lowest staff by default). Users can interact with the examples using the buttons above on each example page. If you want to browse through a range of examples using the same settings, select the range of example on the <a href="https://polyrhythm.humdrum.org/browse">Browse</a> page and simply navigate to the next or previous example using the left and right arrows at the top. Once a combination of options have been selected, you can browse through the selected range of examples without having to re-select the same options. 
 
 The options described below can be used in a variety of combinations and afford a wide range of purposes.
 
@@ -72,6 +72,6 @@ The options described below can be used in a variety of combinations and afford 
 
 For examples of how the tool is applied to examples from the corpus and used to derive computational measures, explore the <a href="https://polyrhythm.humdrum.org/research">Research</a> section.
 
-If you experience any problem with the Example pages, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
+If you experience any problem with the example pages, don't hesitate to let us know by using the "Feedback" option on the right side of the page!
 
 
