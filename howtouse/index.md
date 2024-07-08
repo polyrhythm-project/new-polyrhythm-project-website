@@ -8,7 +8,7 @@ permalink: /howtouse/index.html
 
 This page can be used to explore the corpus and access specific examples, including a range of examples that features selected characteristics. There are many different options for sorting and selecting examples, including the table headings, search box, features buttons, ranges boxes, and delimiting checkboxes. For each search action, the total number of examples that match the search criteria is shown above the table. To reset the table, click on the "Clear" button on the top right. To acess the "How to use" page again, click on the question mark button ("?") on the right of the "Clear" button. Clicking on a specific example in the table will bring you to that specific example page. If you selected a range of examples, you can browse from one to the next or previous example page by using the back and forward arrows on that example page.
 
-# Basic Options
+# Basic options
 
 There are two basic options for sorting the table.
 
@@ -48,7 +48,7 @@ If you experience any problem with the <a href="https://polyrhythm.humdrum.org/b
 
 Each example page present basic metadata about the example, including example and work identifiers ("Example ID" and "Work ID"), source work title ("Work title"), measures numbers for the extracted example ("Starting measure" and "Ending measure"), genre and sub-genre to which the source work belongs ("Genre"), composer's full name ("Composer"), date at which the work was completed ("Composition date") and first published ("Publication date"), date of first public performance ("Premiere date"), and extent information about the first public performance's venue ("Premiere location").
 
-# Visualization Options
+# Visualization options
 
 The corpus examples have been encoded with the texture divided into two contrasting rhythmic groups (Group A and Group B, with Group A assigned to the group that includes the lowest staff by default). Users can interact with the examples using the buttons above on each example page. If you want to browse through a range of examples using the same settings, select the range of example on the <a href="https://polyrhythm.humdrum.org/browse">Browse</a> page and simply navigate to the next or previous example using the left and right arrows at the top. Once a combination of options have been selected, you can browse through the selected range of examples without having to re-select the same options. 
 
@@ -70,7 +70,7 @@ The options described below can be used in a variety of combinations and afford 
 
 <li><b>only analysis:</b> First select the composite rhythm(s) you want to, then click on this button to view the composite rhythms without the score.</li></ul>
 
-# Other Options
+# Other
 
 There are a few additional options to navigate between the example pages and other resources:
 
