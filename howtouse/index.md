@@ -76,9 +76,9 @@ There are a few additional options to navigate between the example pages and oth
 
 <ul><li><b>copy:</b> Click on this button to copy the music data to your clipboard.</li>
 
-<li><b>link:</b>Click on this button tio copy thew URL of the example page to your clipboard.</li>
+<li><b>link:</b> Click on this button tio copy thew URL of the example page to your clipboard.</li>
 
-<li><b>VHV:</b>Click on this button to access the example on <a href="https:verovio.humdrum.org">Verovio Humdrum Viewer</a>.</li></ul>
+<li><b>VHV:</b> Click on this button to access the example on <a href="https://verovio.humdrum.org">Verovio Humdrum Viewer</a>.</li></ul>
  
 For examples of how the tool is applied to examples from the corpus and used to derive computational measures, explore the <a href="https://polyrhythm.humdrum.org/research">Research</a> section.
 
