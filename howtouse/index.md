@@ -4,7 +4,7 @@ layout: default
 permalink: /howtouse/index.html
 ---
 
-## Browse Page
+## Browse page
 
 This page can be used to explore the corpus and access specific examples, including a range of examples that features selected characteristics. There are many different options for sorting and selecting examples, including the table headings, search box, features buttons, ranges boxes, and delimiting checkboxes. For each search action, the total number of examples that match the search criteria is shown above the table. To reset the table, click on the "Clear" button on the top right. To acess the "How to use" page again, click on the question mark button ("?") on the right of the "Clear" button. Clicking on a specific example in the table will bring you to that specific example page. If you selected a range of examples, you can browse from one to the next or previous example page by using the back and forward arrows on that example page.
 
@@ -44,7 +44,7 @@ If you experience any problem with the <a href="https://polyrhythm.humdrum.org/b
 
 <div style="height:300px"></div>
 
-## Example Page
+## Example pages
 
 Each example page present basic metadata about the example, including example and work identifiers ("Example ID" and "Work ID"), source work title ("Work title"), measures numbers for the extracted example ("Starting measure" and "Ending measure"), genre and sub-genre to which the source work belongs ("Genre"), composer's full name ("Composer"), date at which the work was completed ("Composition date") and first published ("Publication date"), date of first public performance ("Premiere date"), and extent information about the first public performance's venue ("Premiere location").
 
