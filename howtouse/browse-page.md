@@ -7,13 +7,13 @@ characteristics. There are many different options for sorting and
 selecting examples, including the table headings, search box,
 features buttons, ranges boxes, and delimiting checkboxes. For each
 search action, the total number of examples that match the search
-criteria is shown above the table. To reset the table, click on the
-"Clear" button on the top right. To acess the "How to use" page
-again, click on the question mark button ("?") on the right of the
-"Clear" button. Clicking on a specific example in the table will
+criteria is shown above the table. Clicking on a specific example in the table will
 bring you to that specific example page. If you selected a range
 of examples, you can browse from one to the next or previous example
-page by using the back and forward arrows on that example page.
+page by using the back and forward arrows on that example page. 
+
+To reset the table, click on the "Clear" button on the top right. To access the "How to use" page
+again, click on the question mark button ("?") on the right of the "Clear" button. 
 
 # Basic options
 
