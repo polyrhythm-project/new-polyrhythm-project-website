@@ -328,61 +328,61 @@ function displayExample(exid, examples) {
 
 	if (hasGroupInfo(CURRENTEXAMPLE)) {
 
-		output += "<span id='group'";
-		output += " onclick='toggleGroup()'";
-		output += " title='";
-		output += "Toogle composite analysis by group";
-		output += "'";
-		output += " class='vhv-button group2'>group</span> ";
+		output += `<button type="button" id="group"`;
+		output += ` onclick="toggleGroup()"`;
+		output += ` title="`;
+		output += `Toogle composite analysis by group`;
+		output += `"`;
+		output += ` class="btn btn-secondary group2">group</button> `;
 
 		output += "<span id='color'";
 		output += " onclick='toggleColor()'";
 		output += " title='";
 		output += "Toogle group colorg";
 		output += "'";
-		output += " class='vhv-button group2'>group&nbsp;color</span> ";
+		output += " class='btn btn-secondary group2'>group&nbsp;color</span> ";
 
 		output += "<span id='composite'";
 		output += " onclick='toggleComposite()'";
 		output += " title='";
 		output += "Toogle composite analysis";
 		output += "'";
-		output += " class='vhv-button group2'>composite</span> ";
+		output += " class='btn btn-secondary group2'>composite</span> ";
 
 		output += "<span id='colorFullComposite'";
 		output += " onclick='toggleColorFullComposite()'";
 		output += " title='";
 		output += "Toogle full-composite coloring";
 		output += "'";
-		output += " class='vhv-button group2'>comp.&nbsp;color</span> ";
+		output += " class='btn btn-secondary group2'>comp.&nbsp;color</span> ";
 
 		output += "<span id='coincidence'";
 		output += " onclick='toggleCoincidence()'";
 		output += " title='";
 		output += "Toogle coincidence analysis by group";
 		output += "'";
-		output += " class='vhv-button group2'>coincidence</span> ";
+		output += " class='btn btn-secondary group2'>coincidence</span> ";
 
 		output += "<span id='mark'";
 		output += " onclick='toggleMark()'";
 		output += " title='";
 		output += "Toogle coincidence marks";
 		output += "'";
-		output += " class='vhv-button group2'>mark</span> ";
+		output += " class='btn btn-secondary group2'>mark</span> ";
 
 		output += "<span id='event-counts'";
 		output += " onclick='toggleEventCounts()'";
 		output += " title='";
 		output += "Show/Hide composite event counts";
 		output += "'";
-		output += " class='vhv-button group2'>event&nbsp;counts</span> ";
+		output += " class='btn btn-secondary group2'>event&nbsp;counts</span> ";
 
 		output += "<span id='analysis-only'";
 		output += " onclick='toggleAnalysisOnly()'";
 		output += " title='";
 		output += "Show analysis without original score";
 		output += "'";
-		output += " class='vhv-button group2'>only&nbsp;analysis</span> ";
+		output += " class='btn btn-secondary group2'>only&nbsp;analysis</span> ";
 
 	}
 
@@ -391,14 +391,16 @@ function displayExample(exid, examples) {
 	output += " title='";
 	output += "Copy Humdrum data to the system clipboard";
 	output += "'";
-	output += " class='vhv-button group3'>copy</span> ";
+	output += " class='btn btn-secondary group3'>copy</span> ";
 
 	output += "<span ";
 	output += " onclick='copyLink(\"" + CURRENTEXAMPLE + "\")'";
 	output += " title='";
 	output += "Copy page link";
 	output += "'";
-	output += " class='vhv-button group3'>link</span> ";
+	output += " class='btn btn-secondary group3'>link</span> ";
+
+	output += `<button type="button" id="question-button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse#Example%20pages';"><i class="bi bi-question-lg"></i></button>`;
 
 	output += "</div>";
 	output += "<!- ================================== ->\n";

@@ -1,0 +1,37 @@
+{% comment %}
+//
+// Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+// Creation Date: Wed Jul 10 20:57:51 CEST 2024
+// Last Modified: Wed Jul 10 20:57:54 CEST 2024
+// Filename:      example/listeners.html
+// vim:           ts=3:nowrap:ft=javascript
+//
+// Description:   Setup javascript code for example webpage.  Contains
+//                global variable and listeners for the page.
+//
+{% endcomment %}
+
+<script>
+
+
+//////////////////////////////
+//
+// DOMContentLoaded listener -- open accordion based on # name;
+//
+
+document.addEventListener("DOMContentLoaded", function () {
+	let list = document.querySelectorAll("#accordionExample div.accordion-item button[type='button']");
+	let hash = decodeURIComponent(window.location.hash.substr(1));
+	for (let i=0; i<list.length; i++) {
+		if (list[i].innerHTML.includes(hash)) {
+			list[i].click();
+			break;
+		}
+	}
+});
+
+
+</script>
+
+
+
