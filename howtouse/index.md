@@ -14,7 +14,7 @@ There are two basic options for sorting the table.
 
 <ul><li><b>Table headings:</b> The table is organized by example identification tag ("ID"), composer's name ("Composer"), source work title ("Title), type of work ("Genre"), composition year ("Composed"), year of first public performance ("Premiered"), year of first publication ("Published"), notated beat and beat value ("Tempo"), time signature notated on the score at the start of the example ("Start time signature"), and duration in seconds of the example bases on a human performance from a commercial recording of the source work selected randonly from available recordings on the Naxos Music Library [link to website] ("Example duration"). You can click a column heading once to sort in default order; click again to sort in reverse order.</li>
 
-<li><b>Search box:</b> Search for examples using keywords.</li></ul>
+<li><b>Search box:</b> Search for examples using keywords from ID, Composer, Title, and Genre.</li></ul>
 
 # Features
 
