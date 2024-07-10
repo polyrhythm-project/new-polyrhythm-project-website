@@ -13,6 +13,8 @@
 
 <script>
 
+let CGI = {};
+
 //////////////////////////////
 //
 // processCgiParameters -- Extract CGI parameters from URL and then
@@ -21,6 +23,7 @@
 
 function processCgiParameters() {
 	let cgi = GetCgiParameters();
+	CGI = cgi;
 	let found = false;
 	if (cgi.c) {
 		setComposerSelect(cgi.c);

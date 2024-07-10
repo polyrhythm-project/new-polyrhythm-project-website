@@ -1307,10 +1307,27 @@ function doTextSearch(entries, text) {
 					entries.push(oldentries[j]);
 					continue;
 				}
+				if (oldentries[j][INDEX_Composer_Name] && oldentries[j][INDEX_Composer_Name].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
+				if (oldentries[j][INDEX_Genre] && oldentries[j][INDEX_Genre].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
+				if (oldentries[j][INDEX_Sub_Genre] && oldentries[j][INDEX_Sub_Genre].match(regexp)) {
+					entries.push(oldentries[j]);
+					continue;
+				}
 				if (oldentries[j][INDEX_Filename] && oldentries[j][INDEX_Filename].match(regexp)) {
 					entries.push(oldentries[j]);
 					continue;
 				}
+				// for (let key in oldentries[j]) {
+				//    if (oldentries[j][key] && oldentries[j][key].match(regexp)) {
+				//       entries.push(oldentries[j]);
+				//    }
+				// }
 			}
 		}
 	}
