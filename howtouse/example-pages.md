@@ -11,7 +11,13 @@ date") and first published ("Publication date"), date of first
 public performance ("Premiere date"), and extent information about
 the first public performance's venue ("Premiere location").
 
-# Visualization
+# Reference scores
+
+Each example is associated with one or more graphic representation. E0 referes to the example as presented in Suter's (1980) dissertation. Other scores (E1 through E4) are the published score excerpt that were used as reference for encoding. 
+
+The encoding of the examples followed the diplomatic process, i.e., encoding was based on the E0 representation. Information obtained through consultation of otger published sources is also shown on the transcription in square brackets. Tempo information calculated based on the randomly selected recording of the source work is shown in squigly brackets.
+
+# Analysis options
 
 The corpus examples have been encoded with the texture divided into
 two contrasting rhythmic groups (Group A and Group B, with Group A
