@@ -75,13 +75,17 @@ pages and other resources:
 <ul><li><b>VHV:</b> Click on this button to access the example on <a
 href="https://verovio.humdrum.org">Verovio Humdrum Viewer</a>.</li>
 
-<li><b>GitHub:</b> Click on this button to access the music data on <a href="https://github.com">GitHub</a>a>.</li>
+<li><b>GitHub:</b> Click on this button to access the music data on <a href="https://github.com">GitHub</a>.</li>
 
 <li><b>copy:</b> Click on this button to copy the music data
 to your clipboard.</li>
 
 <li><b>link:</b> Click on this button tio copy thew URL of the
 example page to your clipboard.</li></ul>
+
+# Listen
+
+Click on the right arrow button to listen to a high-quality audio synthetis of the example. The examples were synthesized manually using thr EastWest sound library.
 
 For examples of how the tool is applied to examples from the corpus
 and used to derive computational measures, explore the <a
