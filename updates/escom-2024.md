@@ -4,6 +4,8 @@
 
 Dr. Ève Poudrier will be presenting a summary of three experiments that investigated perceived emotions (mood, energy, movement, dissonance, and tension) in a talk titled "The influence of sonority dissonance and rhythmic complexity on listeners' perceived emotions." This research was performed in collaboration with Bryan Jacob Bell (University of British Columbia), Jason Yin Hei Lee (McGill University), and Craig Stuart Sapp (Stanford University/CCARH/PHI). This talk will be presented remotely and available for viewing online on July 4 at 7:20 PST.
 
+You can now watch the video <a href="https://www.youtube.com/watch?v=-tBTnOfVBf0">here</a>.
+
 ### ABSTRACT
 
 Research on perceived emotion faces a methodological problem of whether to use “real music”
