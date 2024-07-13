@@ -12,7 +12,6 @@ summary:
 
 {% include_relative styles-local.html %}
 {% include_relative scripts-local.html %}
-{% include_relative scripts-audio.html %}
 
 <div style="font-size:2rem; position:sticky !important; position: -webkit-sticky; margin-left:-50px; top:200px !important;" title="Click to go to previous example" id="previous-example">
 	<i class="navigate bi bi-caret-left-fill"></i>

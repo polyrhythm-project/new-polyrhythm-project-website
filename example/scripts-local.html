@@ -1,10 +1,11 @@
 
-
 {% include_relative listeners.html %}
 {% include scripts/scripts-common.html %}
 
 <script>
 // vim: ts=3:nowrap:ft=javascript
+
+var data_server  = "https://data.polyrhythm.humdrum.org";
 
 
 //////////////////////////////
@@ -277,57 +278,54 @@ function displayExample(exid, examples) {
 		}
 	}
 
-	output += "</table>";
+	// PDF buttons
 
-	output += "<!- ================================== ->\n";
-	output += "<div class='buttons'>";
+	output += "<tr>";
+	output += "<td>";
+	output += "Reference&nbsp;scores:";
+	output += "</td>";
+	output += "<td>";
 
-	if (SUPERACCESS) {
-		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 acoustic-region'>";
-		output += "<a target='_audio' href='/resources/recordings/acoustic/" + CURRENTEXAMPLE + ".m4a'>recording</a>";
-		output += "</span> ";
-	}
-
-	output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 eastwest-region hidden'>";
-	output += "<a target='_audio' href='/resources/recordings/eastwest/" + CURRENTEXAMPLE + ".m4a'>eastwest</a>";
-	output += "</span> ";
-
-	output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 sibelius-region hidden'>";
-	output += "<a target='_audio' href='/resources/recordings/sibelius/" + CURRENTEXAMPLE + ".m4a'>sibaudio</a>";
-	output += "</span> ";
 
 	if (SUPERACCESS) {
-		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 e0-region'>";
-		output += "<a target='_e0' href='/resources/pdf/e0/" + CURRENTEXAMPLE + "-e0.pdf'>suter</a>";
-		output += "</span> ";
-	}
-
-	if (SUPERACCESS) {
-		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 e1-region'>";
-		output += "<a target='_e1' href='/resources/pdf/e1/" + CURRENTEXAMPLE + "-e1.pdf'>E1</a>";
-		output += "</span> ";
-	}
-
-	if (SUPERACCESS) {
-		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 e2-region'>";
-		output += "<a target='_e2' href='/resources/pdf/e2/" + CURRENTEXAMPLE + "-e2.pdf'>E2</a>";
-		output += "</span> ";
-	}
-
-	if (SUPERACCESS) {
-		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 e3-region'>";
-		output += "<a target='_e3' href='/resources/pdf/e3/" + CURRENTEXAMPLE + "-e3.pdf'>E3</a>";
-		output += "</span> ";
-	}
-
-	if (SUPERACCESS) {
-		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 pdf-region'>";
+		output += "<span data-id='" + CURRENTEXAMPLE + "' class='btn btn-secondary group1 pdf-region'>";
 		output += "<a target='_pdf' href='/resources/pdf/sibelius/" + CURRENTEXAMPLE + "-sib.pdf'>sibpdf</a>";
 		output += "</span> ";
 	}
 
-	if (hasGroupInfo(CURRENTEXAMPLE)) {
+	output += `<span id="e0-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e0-region" title="E0 PDF">`;
+	output += `<a target="_e0" href="${data_server}/${CURRENTEXAMPLE}-e0.pdf">E0</a>`;
+	output += "</span> ";
 
+	output += `<span id="e1-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e1-region" title="E1 PDF">`;
+	output += `<a target="_e1" href="${data_server}/${CURRENTEXAMPLE}-e1.pdf">E1</a>`;
+	output += "</span> ";
+
+	output += `<span id="e2-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e2-region" title="E2 PDF">`;
+	output += `<a target="_e2" href="${data_server}/${CURRENTEXAMPLE}-e2.pdf">E2</a>`;
+	output += "</span> ";
+
+	output += `<span id="e3-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e3-region" title="E3 PDF">`;
+	output += `<a target="_e3" href="${data_server}/${CURRENTEXAMPLE}-e3.pdf">E3</a>`;
+	output += "</span> ";
+
+	output += `<span id="e4-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e4-region" title="E4 PDF">`;
+	output += `<a target="_e4" href="${data_server}/${CURRENTEXAMPLE}-e4.pdf">E4</a>`;
+	output += "</span> ";
+
+	output += "</td>";
+	output += "</tr>";
+
+	// Analysis options:
+
+	output += "<tr>";
+	output += "<td>";
+	output += "Analysis&nbsp;options:";
+	output += "</td>";
+	output += `<td style="line-height:40px;">`;
+
+
+	if (hasGroupInfo(CURRENTEXAMPLE)) {
 		output += `<button type="button" id="group"`;
 		output += ` onclick="toggleGroup()"`;
 		output += ` title="`;
@@ -386,27 +384,66 @@ function displayExample(exid, examples) {
 
 	}
 
-	output += "<span ";
-	output += " onclick='copyData(\"" + CURRENTEXAMPLE + "\")'";
-	output += " title='";
-	output += "Copy Humdrum data to the system clipboard";
-	output += "'";
-	output += " class='btn btn-secondary group3'>copy</span> ";
+	output += "</td>";
+	output += "</tr>";
 
-	output += "<span ";
-	output += " onclick='copyLink(\"" + CURRENTEXAMPLE + "\")'";
-	output += " title='";
-	output += "Copy page link";
-	output += "'";
-	output += " class='btn btn-secondary group3'>link</span> ";
+	// Other options:
 
-	output += `<button type="button" id="question-button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse#Example%20pages';"><i class="bi bi-question-lg"></i></button>`;
+	output += "<tr>";
+	output += "<td>";
+	output += "Other&nbsp;options:";
+	output += "</td>";
+	output += "<td>";
+
+
+	output += `<span onclick="displayInVhv('${CURRENTEXAMPLE}')" title="Edit Humdrum score on VHV" class="btn btn-secondary group3">VHV</span>`;
+	output += "&nbsp;";
+	output += `<span onclick="displayOnGithub('${CURRENTEXAMPLE}')" title="Display Humdrum score on Github" class="btn btn-secondary group3">GitHub</span>`;
+	output += "&nbsp;";
+	output += `<span onclick="copyData('${CURRENTEXAMPLE}')" title="Copy Humdrum score to the system clipboard" class="btn btn-secondary group3">copy</span>`;
+	output += "&nbsp;";
+	output += `<span onclick="copyLink('${CURRENTEXAMPLE}')" title="Copy URL for example" class="btn btn-secondary group3">link</span>`;
+
+
+	output += "</td>";
+	output += "</tr>";
+
+
+	// Listen:
+
+	output += "<tr>";
+	output += "<td>";
+	output += "Listen:";
+	output += "</td>";
+	output += "<td>";
+
+	output += `<img style="cursor:pointer" onclick="playaudio()" class="play-icon" src="/assets/img/play.svg" alt="play button">`;
+	output += `<audio id="myAudio" src="${data_server}/${CURRENTEXAMPLE}-eastwest.m4a"></audio>`;
+
+	output += `<button style="float:right" type="button" id="question-button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse#Example%20pages';"><i class="bi bi-question-lg"></i></button>`;
+
+	// Sibelius sounds bad:
+	// output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 sibelius-region hidden'>";
+	// output += "<a target='_audio' href='/resources/recordings/sibelius/" + CURRENTEXAMPLE + ".m4a'>sibaudio</a>";
+	// output += "</span> ";
+
+	output += "</td>";
+	output += "</tr>";
+
+	output += "</table>";
+
+
+	output += "<div class='buttons'>";
+
+	if (SUPERACCESS) {
+		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 acoustic-region'>";
+		output += "<a target='_audio' href='/resources/recordings/acoustic/" + CURRENTEXAMPLE + ".m4a'>recording</a>";
+		output += "</span> ";
+	}
 
 	output += "</div>";
-	output += "<!- ================================== ->\n";
 
 	element.innerHTML = output;
-	showCurrentAudio();
 	// let fname = entry[INDEX_Filename];
 	let fname = entry[INDEX_Suter_Example_Number];
 	let url = `https://data.polyrhythm.humdrum.org/${fname}.krn?a=${localStorage.access}`;
@@ -1221,6 +1258,85 @@ console.log("STARTING example list", examplelist);
 	}
 	console.warn("EXAMPLE_NAVIGATION", EXAMPLE_NAVIGATION);
 }
+
+
+
+//////////////////////////////
+//
+// displayInVhv --
+//
+
+function displayInVhv(id) {
+	let entry = FindExampleById(id, EXAMPLELIST);
+	if (!entry) {
+		console.warn("Warning: Cannot find example", id);
+		return;
+	}
+	
+	let filename = entry[INDEX_Filename];
+	console.log("FILENAME", filename);
+
+	if (!filename) {
+		console.warn("Warning: Cannot find filename for id", id);
+		return;
+	}
+
+	let url = "";
+	if (filename.match(/^R/)) {
+			url = `https://github.com/polyrhythm-project/rds-scores/blob/master/kern/${filename}.krn`;
+	} else if (filename.match(/^T/)) {
+			url = `https://github.com/polyrhythm-project/tds-scores/blob/master/kern/${filename}.krn`;
+	}
+	if (!url) {
+		console.warn("Warning: cannot find URL for filename", filename);
+		return;
+	}
+	url = `https://verovio.humdrum.org/?file=${url}`;
+	
+	let newWindow = window.open(url, '_blank');
+	if (newWindow) {
+		newWindow.focus();
+	}
+}
+
+
+//////////////////////////////
+//
+// displayOnGithub --
+//
+
+function displayOnGithub(id) {
+	let entry = FindExampleById(id, EXAMPLELIST);
+	if (!entry) {
+		console.warn("Warning: Cannot find example", id);
+		return;
+	}
+	
+	let filename = entry[INDEX_Filename];
+	console.log("FILENAME", filename);
+
+	if (!filename) {
+		console.warn("Warning: Cannot find filename for id", id);
+		return;
+	}
+
+	let url = "";
+	if (filename.match(/^R/)) {
+			url = `https://github.com/polyrhythm-project/rds-scores/blob/master/kern/${filename}.krn`;
+	} else if (filename.match(/^T/)) {
+			url = `https://github.com/polyrhythm-project/tds-scores/blob/master/kern/${filename}.krn`;
+	}
+	if (!url) {
+		console.warn("Warning: cannot find URL for filename", filename);
+		return;
+	}
+	
+	let newWindow = window.open(url, '_blank');
+	if (newWindow) {
+		newWindow.focus();
+	}
+}
+
 
 
 </script>

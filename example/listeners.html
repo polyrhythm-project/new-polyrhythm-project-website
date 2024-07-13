@@ -85,11 +85,8 @@ function doAction(examplelist) {
 	if (nextbutton) {
 		nextbutton.addEventListener("click", function() {
 			let exid = CURRENTEXAMPLE;
-console.warn("EXID", exid);
-console.warn("EXAMPLE_NAVIGATION[exit]", EXAMPLE_NAVIGATION[exid], EXAMPLE_NAVIGATION);
 			let nextid = EXAMPLE_NAVIGATION[exid]["nextExampleId"];
 			// let nextid = EXAMPLE_NAVIGATION["nextExampleId"];
-console.log("NEXT ID", nextid);
 			displayExample(nextid, EXAMPLELIST);
 		});
 	}
@@ -98,11 +95,8 @@ console.log("NEXT ID", nextid);
 	if (prevbutton) {
 		prevbutton.addEventListener("click", function() {
 			let exid = CURRENTEXAMPLE;
-console.warn("EXID", exid);
-console.warn("EXAMPLE_NAVIGATION[exit]", EXAMPLE_NAVIGATION[exid], EXAMPLE_NAVIGATION);
 			let previd = EXAMPLE_NAVIGATION[exid]["prevExampleId"];
 			// let previd = EXAMPLE_NAVIGATION["prevExampleId"];
-console.log("NEXT ID", previd);
 			displayExample(previd, EXAMPLELIST);
 		});
 	}
