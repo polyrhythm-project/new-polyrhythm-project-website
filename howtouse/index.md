@@ -27,7 +27,7 @@ permalink: /howtouse/index.html
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingTwo">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Example pages</button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Example page</button>
 </p>
 <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 <div class="accordion-body" markdown="1">
