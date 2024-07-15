@@ -20,13 +20,13 @@
 <div class="card mb-3">
 	<div class="row g-0">
 		<div class="col-md-6">
-			<img src="Ensembles_cloud.png" class="img-fluid rounded-start" alt="Ensembles">
-		</div>
-		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Ensembles</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
+		</div>
+		<div class="col-md-6">
+			<img src="Ensembles_cloud.png" class="img-fluid rounded-start" alt="Ensembles">
 		</div>
 	</div>
 </div>
@@ -48,13 +48,13 @@
 <div class="card mb-3">
 	<div class="row g-0">
 		<div class="col-md-6">
-			<img src="Soloists_cloud.png" class="img-fluid rounded-start" alt="Soloists">
-		</div>
-		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Soloists</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
+		</div>
+		<div class="col-md-6">
+			<img src="Soloists_cloud.png" class="img-fluid rounded-start" alt="Soloists">
 		</div>
 	</div>
 </div>

@@ -50,13 +50,13 @@
 <div class="card mb-3">
 	<div class="row g-0">
 		<div class="col-md-6">
-			<img src="Example_Start_Tempo_cloud.png" class="img-fluid rounded-start" alt="Example Start Tempo">
-		</div>
-		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Example Start Tempo</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
+		</div>
+		<div class="col-md-6">
+			<img src="Example_Start_Tempo_cloud.png" class="img-fluid rounded-start" alt="Example Start Tempo">
 		</div>
 	</div>
 </div>
