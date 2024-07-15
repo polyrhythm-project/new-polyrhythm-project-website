@@ -417,7 +417,8 @@ function displayExample(exid, examples) {
 	output += "</td>";
 	output += "<td>";
 
-	output += `<img style="cursor:pointer" onclick="playaudio()" class="play-icon" src="/assets/img/play.svg" alt="play button">`;
+	output += `<img style="cursor:pointer" onclick="playAudio()" class="play-icon" src="/assets/img/play.svg" alt="play button">`;
+	output += `<img style="cursor:pointer; visibility:hidden" onclick="stopAudio()" class="play-icon" src="/assets/img/stop.svg" alt="stop button">`;
 	output += `<audio id="myAudio" src="${data_server}/${CURRENTEXAMPLE}-eastwest.m4a"></audio>`;
 
 	output += `<button style="float:right" type="button" id="question-button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse#Example%20pages';"><i class="bi bi-question-lg"></i></button>`;
@@ -1338,6 +1339,16 @@ function displayOnGithub(id) {
 }
 
 
+//////////////////////////////
+//
+// playAudio --
+//
+
+function playAudio() {
+	let audio = document.querySelector("audio")
+;
+
+}
 
 </script>
 
