@@ -295,27 +295,25 @@ function displayExample(exid, examples) {
 		output += "</span> ";
 	}
 
-	output += `<span id="e0-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e0-region" title="E0 PDF">`;
+	output += `<span style="display:none;" id="e0-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e0-region" title="E0 PDF">`;
 	output += `<a target="_e0" href="${data_server}/${CURRENTEXAMPLE}-e0.pdf">E0</a>`;
 	output += "</span> ";
 
-	output += `<span id="e1-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e1-region" title="E1 PDF">`;
+	output += `<span style="display:none;" id="e1-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e1-region" title="E1 PDF">`;
 	output += `<a target="_e1" href="${data_server}/${CURRENTEXAMPLE}-e1.pdf">E1</a>`;
 	output += "</span> ";
 
-/*
-	output += `<span id="e2-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e2-region" title="E2 PDF">`;
+	output += `<span style="display:none;" id="e2-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e2-region" title="E2 PDF">`;
 	output += `<a target="_e2" href="${data_server}/${CURRENTEXAMPLE}-e2.pdf">E2</a>`;
 	output += "</span> ";
 
-	output += `<span id="e3-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e3-region" title="E3 PDF">`;
+	output += `<span style="display:none;" id="e3-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e3-region" title="E3 PDF">`;
 	output += `<a target="_e3" href="${data_server}/${CURRENTEXAMPLE}-e3.pdf">E3</a>`;
 	output += "</span> ";
 
-	output += `<span id="e4-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e4-region" title="E4 PDF">`;
+	output += `<span style="display:none;" id="e4-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e4-region" title="E4 PDF">`;
 	output += `<a target="_e4" href="${data_server}/${CURRENTEXAMPLE}-e4.pdf">E4</a>`;
 	output += "</span> ";
-*/
 
 	output += "</td>";
 	output += "</tr>";
@@ -408,7 +406,6 @@ function displayExample(exid, examples) {
 	output += "&nbsp;";
 	output += `<span onclick="copyLink('${CURRENTEXAMPLE}')" title="Copy URL for example" class="btn btn-secondary group3" style="height:38px; width:38px;"> <i style="margin-left:-12px; margin-top:-5px; position:absolute; font-size:1.5rem" class="bi bi-link"></i></span>`;
 
-
 	output += "</td>";
 	output += "</tr>";
 
@@ -451,6 +448,10 @@ function displayExample(exid, examples) {
 	output += "</div>";
 
 	element.innerHTML = output;
+
+	showValidPdfButtons();
+
+
 	// let fname = entry[INDEX_Filename];
 	let fname = entry[INDEX_Suter_Example_Number];
 	let url = `https://data.polyrhythm.humdrum.org/${fname}.krn?a=${localStorage.access}`;
@@ -1426,6 +1427,122 @@ function updateCgiParameters() {
 	let updatedURL = newURL.toString();
 	window.history.replaceState({}, '', updatedURL);
 }
+
+
+
+//////////////////////////////
+//
+// showValidPdfButtons --
+//
+
+function showValidPdfButtons() {
+
+	let e4button = document.querySelector("#e4-button");
+	if (e4button) {
+		console.error("BUTTON E4 FOUND");
+		let url = `https://data.polyrhythm.humdrum.org/${CURRENTEXAMPLE}-e4.exists`;
+		async function fetchStatus() {
+  			try {
+    			let response = await fetch(url);
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				let status = await response.json();
+				if (status) {
+					e4button.style.display = "inline-block";
+				}
+			} catch (error) {
+				console.error('There was a problem with the fetch operation:', error);
+			}
+		}
+		fetchStatus();
+	}
+
+	let e3button = document.querySelector("#e3-button");
+	if (e3button) {
+		let url = `https://data.polyrhythm.humdrum.org/${CURRENTEXAMPLE}-e3.exists`;
+		async function fetchStatus() {
+  			try {
+    			let response = await fetch(url);
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				let status = await response.json();
+				if (status) {
+					e3button.style.display = "inline-block";
+				}
+			} catch (error) {
+				console.error('There was a problem with the fetch operation:', error);
+			}
+		}
+		fetchStatus();
+	}
+
+	let e2button = document.querySelector("#e2-button");
+	if (e2button) {
+		let url = `https://data.polyrhythm.humdrum.org/${CURRENTEXAMPLE}-e2.exists`;
+		async function fetchStatus() {
+  			try {
+    			let response = await fetch(url);
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				let status = await response.json();
+				if (status) {
+					e2button.style.display = "inline-block";
+				}
+			} catch (error) {
+				console.error('There was a problem with the fetch operation:', error);
+			}
+		}
+		fetchStatus();
+	}
+
+	let e1button = document.querySelector("#e1-button");
+	if (e1button) {
+		let url = `https://data.polyrhythm.humdrum.org/${CURRENTEXAMPLE}-e1.exists`;
+		async function fetchStatus() {
+  			try {
+    			let response = await fetch(url);
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				let status = await response.json();
+				if (status) {
+					e1button.style.display = "inline-block";
+				}
+			} catch (error) {
+				console.error('There was a problem with the fetch operation:', error);
+			}
+		}
+		fetchStatus();
+	}
+
+	let e0button = document.querySelector("#e0-button");
+	if (e0button) {
+		let url = `https://data.polyrhythm.humdrum.org/${CURRENTEXAMPLE}-e0.exists`;
+		async function fetchStatus() {
+  			try {
+    			let response = await fetch(url);
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				let status = await response.json();
+				if (status) {
+					e0button.style.display = "inline-block";
+				}
+			} catch (error) {
+				console.error('There was a problem with the fetch operation:', error);
+			}
+		}
+		fetchStatus();
+	}
+
+}
+
+
+
+
 
 
 </script>
