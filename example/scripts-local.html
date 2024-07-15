@@ -461,6 +461,9 @@ function displayExample(exid, examples) {
 		source: "example-notation",
 		postFunction: addProblemIcons,
 		autoResize: true,
+		filter: [
+			'shed -ke "s/^LO.*problem.*$//L'  // hide problem markers
+		],
 		url: url
 	});
 
