@@ -41,11 +41,15 @@
     </div>
   </div>
 
-  <!-- Listen -->
-  <div class="col-12 col-lg-auto">
-    <p class="float-lg-end" role="heading"><small>Listen</small></p>
-    <a href="listen"><img class="float-lg-end play-icon" src="assets/img/play.svg" alt="play button"></a>
-  </div>
+	<!-- Listen -->
+	<div class="col-12 col-lg-auto">
+		<p class="float-lg-end" role="heading"><small>Listen</small></p>
+		<div>
+		<img id="play-button" style="width:40px;cursor:pointer" onclick="playAudio()" class="play-icon" src="/assets/img/play.svg" alt="play button">
+		<img id="stop-button" style="width:40px;cursor:pointer; display:none;" onclick="stopAudio()" class="play-icon" src="/assets/img/stop.svg" alt="stop button">
+		<audio preload="metadata" id="myAudio" onended="stopAudio()"></audio>
+		</div>
+	</div>
 </div>
 
 

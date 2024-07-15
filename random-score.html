@@ -71,12 +71,18 @@ function displayRandomScore(examplelist) {
 //
 
 function displayScore(id) {
+	let audio = document.querySelector("audio");
+	if (audio) {
+		let url = `https://data.polyrhythm.humdrum.org/${id}-eastwest.m4a`;
+      audio.src = url;
+      audio.load();
+	}
+
 	let optionButtons = document.querySelectorAll("[id$='-option'].active");
 	console.warn("optionButtons", optionButtons);
 	let composite = "";
 	let groupcolor = "";
 	for (let i=0; i<optionButtons.length; i++) {
-console.warn("PROCESSING OPTION", optionButtons[i]);
 		let id = optionButtons[i].id;
 		if (id === "groupcolor-option") {
 			groupcolor = "colorgroups";

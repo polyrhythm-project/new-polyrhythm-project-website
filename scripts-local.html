@@ -65,20 +65,80 @@ function browseGenre() {
 //
 
 function browseComposed() {
-console.warn("GOT HERE AAA");
 	let element = document.querySelector("#composedSelect");
 	if (!element) {
 		console.error("ERROR: Cannot find #composedSelect");
 		return;
 	}
-console.warn("GOT HERE BBB");
 	if (element.selectedIndex == 0) {
 		return;
 	}
-console.warn("GOT HERE CCC");
 	let value = encodeURIComponent(element.value);
-console.warn("GOT HERE DDD", value);
 	window.location.href = `/browse/?composed=${value}`;
+}
+
+
+
+//////////////////////////////
+//
+// playAudio --
+//
+
+function playAudio() {
+	let audio = document.querySelector("audio");
+	if (audio) {
+		audio.currentTime = 0;
+		showControls();
+	}
+	let stopButton = document.querySelector("#stop-button");
+	let playButton = document.querySelector("#play-button");
+	if (stopButton) {
+		stopButton.style.display = "inline-block";
+	}
+	if (playButton) {
+		playButton.style.display = "none";
+	}
+}
+
+
+
+//////////////////////////////
+//
+// stopAudio --
+//
+
+function stopAudio() {
+	let audio = document.querySelector("audio");
+	if (audio) {
+		audio.pause();
+		audio.currentTime = 0;
+		audio.removeAttribute('controls');
+	}
+
+	let stopButton = document.querySelector("#stop-button");
+	let playButton = document.querySelector("#play-button");
+	if (stopButton) {
+		stopButton.style.display = "none";
+	}
+	if (playButton) {
+		playButton.style.display = "inline-block";
+	}
+}
+
+
+
+//////////////////////////////
+//
+// showControls --
+//
+
+function showControls() {
+	let audio = document.querySelector("audio");
+	if (audio) {
+		audio.setAttribute('controls', 'controls');
+		audio.currentTime = 0;
+		audio.play();
+	}
 }
 
 

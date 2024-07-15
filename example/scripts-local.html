@@ -8,6 +8,7 @@
 var data_server  = "https://data.polyrhythm.humdrum.org";
 
 
+
 //////////////////////////////
 //
 // displayExample --
@@ -32,6 +33,7 @@ function displayExample(exid, examples) {
 		exid = "129"
 	}
 	CURRENTEXAMPLE = exid;
+	updateCgiParameters();
 
 	let entry = FindExampleById(exid, examples);
 
@@ -301,6 +303,7 @@ function displayExample(exid, examples) {
 	output += `<a target="_e1" href="${data_server}/${CURRENTEXAMPLE}-e1.pdf">E1</a>`;
 	output += "</span> ";
 
+/*
 	output += `<span id="e2-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e2-region" title="E2 PDF">`;
 	output += `<a target="_e2" href="${data_server}/${CURRENTEXAMPLE}-e2.pdf">E2</a>`;
 	output += "</span> ";
@@ -312,6 +315,7 @@ function displayExample(exid, examples) {
 	output += `<span id="e4-button" data-id="${CURRENTEXAMPLE}" class="btn btn-secondary group1 e4-region" title="E4 PDF">`;
 	output += `<a target="_e4" href="${data_server}/${CURRENTEXAMPLE}-e4.pdf">E4</a>`;
 	output += "</span> ";
+*/
 
 	output += "</td>";
 	output += "</tr>";
@@ -402,7 +406,7 @@ function displayExample(exid, examples) {
 	output += "&nbsp;";
 	output += `<span onclick="copyData('${CURRENTEXAMPLE}')" title="Copy Humdrum score to the system clipboard" class="btn btn-secondary group3">copy</span>`;
 	output += "&nbsp;";
-	output += `<span onclick="copyLink('${CURRENTEXAMPLE}')" title="Copy URL for example" class="btn btn-secondary group3">link</span>`;
+	output += `<span onclick="copyLink('${CURRENTEXAMPLE}')" title="Copy URL for example" class="btn btn-secondary group3" style="height:38px; width:38px;"> <i style="margin-left:-12px; margin-top:-5px; position:absolute; font-size:1.5rem" class="bi bi-link"></i></span>`;
 
 
 	output += "</td>";
@@ -417,9 +421,11 @@ function displayExample(exid, examples) {
 	output += "</td>";
 	output += "<td>";
 
-	output += `<img style="cursor:pointer" onclick="playAudio()" class="play-icon" src="/assets/img/play.svg" alt="play button">`;
-	output += `<img style="cursor:pointer; visibility:hidden" onclick="stopAudio()" class="play-icon" src="/assets/img/stop.svg" alt="stop button">`;
-	output += `<audio id="myAudio" src="${data_server}/${CURRENTEXAMPLE}-eastwest.m4a"></audio>`;
+	output += `<img id="play-button" style="width:40px;cursor:pointer" onclick="playAudio()" class="play-icon" src="/assets/img/play.svg" alt="play button">`;
+	output += `<img id="stop-button" style="width:40px;cursor:pointer; display:none;" onclick="stopAudio()" class="play-icon" src="/assets/img/stop.svg" alt="stop button">`;
+	output += `<audio preload="metadata" id="myAudio" onended="stopAudio()">`;
+	output += `<source src="${data_server}/${CURRENTEXAMPLE}-eastwest.m4a">`;
+	output += `</audio>`;
 
 	output += `<button style="float:right" type="button" id="question-button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse#Example%20pages';"><i class="bi bi-question-lg"></i></button>`;
 
@@ -454,6 +460,7 @@ function displayExample(exid, examples) {
 	displayHumdrum({
 		source: "example-notation",
 		postFunction: addProblemIcons,
+		autoResize: true,
 		url: url
 	});
 
@@ -1339,16 +1346,84 @@ function displayOnGithub(id) {
 }
 
 
+
 //////////////////////////////
 //
 // playAudio --
 //
 
 function playAudio() {
-	let audio = document.querySelector("audio")
-;
-
+	let audio = document.querySelector("audio");
+	if (audio) {
+		audio.currentTime = 0;
+		showControls();
+	}
+	let stopButton = document.querySelector("#stop-button");
+	let playButton = document.querySelector("#play-button");
+	if (stopButton) {
+		stopButton.style.display = "inline-block";
+	}
+	if (playButton) {
+		playButton.style.display = "none";
+	}
 }
+
+
+
+//////////////////////////////
+//
+// stopAudio --
+//
+
+function stopAudio() {
+	let audio = document.querySelector("audio");
+	if (audio) {
+		audio.pause();
+		audio.currentTime = 0;
+		audio.removeAttribute('controls');
+	}
+
+	let stopButton = document.querySelector("#stop-button");
+	let playButton = document.querySelector("#play-button");
+	if (stopButton) {
+		stopButton.style.display = "none";
+	}
+	if (playButton) {
+		playButton.style.display = "inline-block";
+	}
+}
+
+
+
+//////////////////////////////
+//
+// showControls --
+//
+
+function showControls() {
+	let audio = document.querySelector("audio");
+	if (audio) {
+		audio.setAttribute('controls', 'controls');
+		audio.currentTime = 0;
+		audio.play();
+	}
+}
+
+
+//////////////////////////////
+//
+// updateCgiParameters -- Show the current example ID in URL.
+//
+
+function updateCgiParameters() {
+	let url = window.location.href;
+	let newURL = new URL(url);
+	let params = newURL.searchParams;
+	params.set("id", CURRENTEXAMPLE);
+	let updatedURL = newURL.toString();
+	window.history.replaceState({}, '', updatedURL);
+}
+
 
 </script>
 

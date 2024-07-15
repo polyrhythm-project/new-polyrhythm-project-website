@@ -32,7 +32,7 @@ permalink: /index.html
 			<div id="random-example-buttons" style="display:none" class="col-12">
 
 				<!-- Example page -->
-				<button id="example-page-button" onclick="gotoRandomExamplePage()" type="button" class="btn btn-secondary btn-secondary-dark float-md-end mb-3 mb-lg-0 ms-1">
+				<button id="example-page-button" onclick="gotoRandomExamplePage()" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
 					Example page
 				</button>
 
