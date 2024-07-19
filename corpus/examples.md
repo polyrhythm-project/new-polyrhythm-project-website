@@ -8,7 +8,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Examples by Composers</h5>
-				<p class="card-text">The distribution of corpus examples by composer is similar to the distribution of sampled works, although there are some differences. One prominent differenece is the number of examples by the French composer Olivier Messian (68 examples extracted from 21 works), which is in part due to the large sample extracted from <i>Turangalîla,</i> (Mes-22; 20 examples). Other composers that come to the fore in comparison with works distribution are Charles Ives (47 examples extracted from 23 works) and Arnold Schoenberg (45 examples extracted from 25 works).</p>
+				<p class="card-text">The distribution of corpus examples by composer is similar to the distribution of sampled works, although there are some differences. One prominent differenece is the number of examples by the French composer Olivier Messian (68 examples extracted from 21 works), which is in part due to the large sample extracted from <i>Turangalîla</i> (Mes-22; 20 examples). Other composers that come to the fore in comparison with works distribution are Charles Ives (47 examples extracted from 23 works) and Arnold Schoenberg (45 examples extracted from 25 works).</p>
 			</div>
 		</div>
 		<div class="col-md-6">
