@@ -25,6 +25,7 @@ function DownloadMetadata(callback) {
 	} else {
 		var mid = "{{site.metadata_mid}}";
 		let url = `https://script.google.com/macros/s/${mid}/exec`;
+		console.log("URL for METADATA", url);
 		console.warn("DOWNLOADING METADATA FROM URL", url);
 		let request = new XMLHttpRequest();
 		request.addEventListener("load", function () {

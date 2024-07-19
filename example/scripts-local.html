@@ -425,6 +425,7 @@ function displayExample(exid, examples) {
 	output += `</audio>`;
 
 	output += `<button style="float:right" type="button" id="question-button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse#Example%20page';"><i class="bi bi-question-lg"></i></button>`;
+	output += `<input style="float:right;" id="clear-button" onclick="clearAnalysisFields()" class="btn btn-secondary btn-primary-light" type="reset" value="Clear" style="flex-grow: 1;">`;
 
 	// Sibelius sounds bad:
 	// output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 sibelius-region hidden'>";
@@ -458,15 +459,17 @@ function displayExample(exid, examples) {
 
 	console.log("URI", url);
 	let dset = entry[INDEX_Example_Dataset];
-	displayHumdrum({
-		source: "example-notation",
-		postFunction: addProblemIcons,
-		autoResize: true,
-		filter: [
-			'shed -ke "s/^LO.*problem.*$//L'  // hide problem markers
-		],
-		url: url
-	});
+
+	let options = {};
+	let id = "example-notation";
+	options.source = id;
+	// options.postFunction = addProblemIcons;
+	// options.filter	 = [ 'shed -ke "s/^LO.*problem.*$//L'  // hide problem markers ],
+	options.autoResize = true;
+	options.url = url;
+	options.filter = prepareFilter();
+
+	displayHumdrum(options);
 
 /*
 	PrepareResourceFileIndex("e0", "/resources/pdf/e0/index.txt", hideUnavailableE0);
@@ -1242,7 +1245,6 @@ function addProblemIcons(id) {
 //
 
 function prepareNextPreviousExampleList(examplelist) {
-console.log("PREPARE NEXT PREVIOUS EXAMPLE LIST", examplelist);
 	if (sessionStorage.BROWSELIST) {
 		examplelist = JSON.parse(sessionStorage.BROWSELIST);
 	} else {
@@ -1251,7 +1253,6 @@ console.log("PREPARE NEXT PREVIOUS EXAMPLE LIST", examplelist);
 			examplelist[i] = EXAMPLELIST[i][INDEX_Suter_Example_Number];
 		}
 	}
-console.log("STARTING example list", examplelist);
 	EXAMPLE_NAVIGATION = {};
 	for (let i=0; i<examplelist.length; i++) {
 		let entry = {};
@@ -1538,6 +1539,34 @@ function showValidPdfButtons() {
 		fetchStatus();
 	}
 
+}
+
+
+//////////////////////////////
+//
+// clearAnalysisFields --
+//
+
+function clearAnalysisFields() {
+	let list = document.querySelectorAll(".highlight-button");
+	for (let i=0; i<list.length; i++) {
+		list[i].classList.remove("highlight-button");
+	}
+	GROUP          = 0;
+	COLOR          = 0;
+	FULLCOLOR      = 0;
+	COMPOSITE      = 0;
+	COINCIDENCE    = 0;
+	MARK           = 0;
+	EVENTCOUNTS    = 0;
+	ANALYSIS       = 0;
+	FILTER         = "";
+
+	let options = {};
+	let id = "example-notation";
+	options.source = id;
+	options.filter = prepareFilter();
+	displayHumdrum(options);
 }
 
 
