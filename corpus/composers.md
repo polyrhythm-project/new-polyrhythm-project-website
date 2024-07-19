@@ -22,7 +22,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Birth Region or Country</h5>
-				<p class="card-text">The cloud representation shows the corpus examples from the point of composers' birth country, with France as the most represented country.</p>
+				<p class="card-text">The cloud representation shows the corpus examples from the perspective of composers' birth country, with France as the most represented country.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
