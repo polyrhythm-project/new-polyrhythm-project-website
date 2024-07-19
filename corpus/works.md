@@ -22,11 +22,11 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Works & Examples</h5>
-				<p class="card-text">This graph provides a percentage comparison of works surveyed against works sampled and extracted examples. The percentages are based on the total number of works and examples in the corpus. As in the works by composers word cloud, Martinů and Hindemith have the highest percentages in all categories, although the percentage of extracted examples for Martinů is lower than the number of works surveyed and sampled. The graph also shows that the percentage of extracted examples is much higher than the surveyed and sampled works for the French composer Olivier Messiaen. This is the result of the large number of examples (20) extracted from <i>Turangalîla</i>, a Symphony for Solo Piano, Ondes Martenot and Orchestra (Mes-22). A similar pattern can be observed for the extracted examples from the German composer Alban Berg and the American composer Charles Ives. These differences may be related to those composers' more frequent use of polyrhythmic structures as a compositional technique.</p>
+				<p class="card-text">This graph provides a percentage comparison of works surveyed against works sampled and extracted examples. The percentages are based on the total number of works and examples in the corpus. As in the works by composers word cloud, Martinů and Hindemith have the highest percentages in all categories, although the percentage of extracted examples for Martinů is lower than the number of works surveyed and sampled. The graph also shows that the percentage of extracted examples is much higher than the surveyed and sampled works for the French composer Olivier Messiaen. This is the result of the relatively large number of examples (20) extracted from <i>Turangalîla</i>, a Symphony for Solo Piano, Ondes Martenot and Orchestra (Mes-22). A similar pattern can be observed for extracted examples from works by the German composer Alban Berg and the American composer Charles Ives. These differences may be related to those composers' more frequent use of polyrhythm as a compositional technique as compared to the other composers represented in the corpus.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
-			<img src="Works_Examples_graph.png" class="img-fluid rounded-start" alt="Works & Examples">
+			<img src="Works_Examples_graph.png" class="img-fluid rounded-start" alt="Works vs. Examples">
 		</div>
 	</div>
 </div>
@@ -36,7 +36,7 @@
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Composition Year by Decade</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">The graoh and accompahying table presents the corpus works by year of composition. The graph shows a slightly left-skewed distribution of works, with a peak in the 1920s (108 works) and a larger number of works in the decades after (216 works as compared with 126 works before 1920).</p>
 			</div>
 		</div>
 		<div class="col-md-10">
@@ -56,7 +56,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Genre Percentage Distribution</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">This pie chart presents the proportions of genres represented by the source works. The most represented categories are orchestral and instrumental works, each of which represent about a third of the corpus. The last third is shared between vocal (12.8%) and stage (13.1%) works.  </p>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -70,7 +70,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Sub-genre Percentage Distribution</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">This pie chart shows how each genre is subdivided into sub-genres in the corpus. For example, programmatic works represent a smaller proportion within orchestral works (7%) than symphonic (16.4%) and concerto (14.6%) works. While vocal and stage works are more evenly partitioned, instrumental works are represented by more chamber (24.3%) than keyboard (11.7%) works, whith chamber works representing the largest sub-genre represented by source works featured in the corpus.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
