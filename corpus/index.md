@@ -37,6 +37,14 @@ table.
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 <script>
   let initialLoad = true;
+  let hash = window.location.hash;
+  if (!hash) {
+     initialLoad = false;
+  }
+  if (hash === "#") {
+     initialLoad = false;
+  }
+  
   document.addEventListener('shown.bs.collapse', function (event) {
     if (initialLoad) {
       initialLoad = false;
