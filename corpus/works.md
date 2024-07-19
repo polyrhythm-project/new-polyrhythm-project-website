@@ -22,7 +22,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Works & Examples</h5>
-				<p class="card-text">This graph provides a percentage comparison of works surveyed against works sampled and extracted examples. The percentages are based on the total number of works and examples in the corpus. As in the works by composers word cloud, Martinů and Hindemith have the highest percentages in all categories, although the percentage of extracted examples for Martinů is lower than the number of works surveyed and sampled. The graph also shows that the percentage of extracted examples is much higher than the surveyed and sampled works for the French composer Olivier Messiaen. This is the result of the relatively large number of examples (20) extracted from <i>Turangalîla</i>, a Symphony for Solo Piano, Ondes Martenot and Orchestra (Mes-22). A similar pattern can be observed for extracted examples from works by the German composer Alban Berg and the American composer Charles Ives. These differences may be related to those composers' more frequent use of polyrhythm as a compositional technique as compared to the other composers represented in the corpus.</p>
+				<p class="card-text">This graph provides a percentage comparison of works surveyed against works sampled and extracted examples. The percentages are based on the total number of works and examples in the corpus. As in the works by composers word cloud, Martinů and Hindemith have the highest percentages in all categories, although the percentage of extracted examples for Martinů is lower than the number of works surveyed and sampled. The graph also shows that the percentage of extracted examples is much higher than the surveyed and sampled works for the French composer Olivier Messiaen. This is the result of the relatively large number of examples (20) extracted from <i>Turangalîla</i>, a Symphony for Solo Piano, Ondes Martenot and Orchestra (Mes-22). A similar pattern can be observed for extracted examples from works by the German composer Alban Berg and the American composer Charles Ives. These differences may also be related to those composers' more frequent use of polyrhythm as a compositional technique as compared to the other composers represented in the corpus.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -70,7 +70,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Sub-genre Percentage Distribution</h5>
-				<p class="card-text">This pie chart shows how each genre is subdivided into sub-genres in the corpus. For example, programmatic works represent a smaller proportion within orchestral works (7%) than symphonic (16.4%) and concerto (14.6%) works. While vocal and stage works are more evenly partitioned, instrumental works are represented by more chamber (24.3%) than keyboard (11.7%) works, whith chamber works representing the largest sub-genre represented by source works featured in the corpus.</p>
+				<p class="card-text">This pie chart shows how each genre is subdivided into sub-genres in the corpus. For example, programmatic works represent a smaller proportion within orchestral works (7%) than symphonic (16.4%) and concerto (14.6%) works. While vocal and stage works are more evenly partitioned, instrumental works are represented by more chamber (24.3%) than keyboard (11.7%) works, whith chamber works representing the largest sub-genre featured in the corpus.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
