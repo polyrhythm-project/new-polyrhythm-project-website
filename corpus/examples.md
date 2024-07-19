@@ -8,7 +8,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Examples by Composers</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">The distribution of corpus examples by composer is similar to the distribution of sampled works, although there are some differences. One prominent differenece is the number of exanples b y the French composer Olivier Messian, which is a result of the large sample extracted from <i>Turangalîla,</i> (Mes-22). </p>
 			</div>
 		</div>
 		<div class="col-md-6">
