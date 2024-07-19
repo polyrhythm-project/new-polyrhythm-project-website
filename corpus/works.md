@@ -36,7 +36,7 @@
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Composition Year by Decade</h5>
-				<p class="card-text">The graoh and accompahying table presents the corpus works by year of composition. The graph shows a slightly left-skewed distribution of works, with a peak in the 1920s (108 works) and a larger number of works in the decades after (216 works as compared with 126 works before 1920).</p>
+				<p class="card-text">The graph and accompanying table present the corpus works by year of composition. The graph shows a slightly left-skewed distribution of works, with a peak in the 1920s (108 works) and a larger number of works in the decades after (216 works as compared with 126 works before 1920).</p>
 			</div>
 		</div>
 		<div class="col-md-10">
