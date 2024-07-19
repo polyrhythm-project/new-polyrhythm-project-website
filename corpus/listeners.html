@@ -99,6 +99,12 @@ function doAction(examplelist) {
 document.addEventListener("DOMContentLoaded", function () {
 	let list = document.querySelectorAll("#accordionExample div.accordion-item button[type='button']");
 	let hash = window.location.hash.substr(1);
+	if (!hash) {
+		return;
+	}
+	if (hash === "#") {
+		return;
+	}
 	for (let i=0; i<list.length; i++) {
 		if (list[i].innerHTML.includes(hash)) {
 			list[i].click();
