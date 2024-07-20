@@ -38,7 +38,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Full Unit Start Tempo</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">The word cloud reveals that the start tempo expressions of the source work full units (i.e., in multimovement works or collections, the specific movement or piece from which the examples was extracted) mostly fall into a few common categories, i.e., Allegro, Moderato, Andante, Poco allegro, and Lebhaft (Lively) or are specific to a given work. There are a few tempo expressions that appear more than once, such as Molto moderato et Lento Although most of the tempo expressions are in Italian, there are several in German and French (e.g., "Modéré" vs. "Moderato" and "Lent" vs. "Lento), which tend to be preferred by composers of those nationalities.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -52,7 +52,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Example Start Tempo</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">The tempo expressions found at the beginning of the examples also fall into a few categories that are shared with those of full units, i.e. Allegro, Moderato, Allegro moderato, and Poco allegro, but wihtout other tempo expressions coming to the fore.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -66,7 +66,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Start Time Signatures by Type</h5>
-				<p class="card-text">Description goes here</p>
+				<p class="card-text">For the purpose of this study, time signatures were categorized into types. The bar graph uses the traditional categories of general compound and odd types that do not differentiate between duple or triple subdivision of the measures at the notated beat level (e.g., 6/8 vs. 9/8 and 5/4 vs. 7/4), and  more specific simple meters (duple, triple, and quadruple). Two more categories are used here, i.e., polymetric and missing, the latter combining unmeatered examples and examples where a time signture has not been identifioed due to unavailable sources. For this graph, it appears that simple meters are more common than compound, odd, or polymetric time signatures, with simple quadruple being most represented at the beginnng of full units and simple triple most represented at the beginning of polyrhythmic examples.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -80,7 +80,7 @@
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Time Signature Categories (RDS)</h5>
-				<p class="card-text">Description goes here.</p>
+				<p class="card-text">Because the traditional categories show a strong bias toward simple meters, we opted for a more fine-grained and less biased categorization, which is represented in the two pie charts. The first pie chart provides the start time signature types of the reserve dataset examples, a stratified sample of 80 examples (4 examples for each of the 20 composers in the corpus) used for the first two experiments on listeners' perceived emotions. The second pie chart presents the start time signature types for the testing dataset examples, i.e., the remaining examples in the corpus. It can be observed that RDS's time signature types are generally representative of the time signature types features in TDS. Another general observation is that changing time signatures represent a larger proportion of examples (14.1% anf 15.3%) than polymetric and polydurational combined (6% and 6.7%), which is unexpected. Thus, it seems that time signatures are not the principal means by which composers achieve polyrhythmic structures in the surveyed historical period.</p>
 			</div>
 		</div>
 		<div style="width:100%;" class="col-md-8">
@@ -96,7 +96,6 @@
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Time Signature Categories (TDS)</h5>
-				<p class="card-text">Description goes here</p>
 			</div>
 		</div>
 		<div style="width:100%;" class="col-md-8">
@@ -143,7 +142,7 @@
 		</div>
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="category mb-2 card-title">Polymetric Time Signatures (TDS)</h5>
+				<h5 class="category mb-2 card-title">Polymetric Time Signatures (FDS)</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
 		</div>
