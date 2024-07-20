@@ -22,7 +22,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Birth Region or Country</h5>
-				<p class="card-text">The cloud representation shows the corpus from the perspective of composers' birth country, with France as the most represented country.</p>
+				<p class="card-text">The word cloud represents the corpus from the perspective of composers' birth country, with France the most represented country.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -36,7 +36,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Death Region or Country</h5>
-				<p class="card-text">When considering the corpus by composers' death country, we see a clear shift to the United States. This shift is related to the exile of many composers due to World War II.</p>
+				<p class="card-text">When considering the corpus by composers' death country, we see a clear shift to the United States. This shift is related to the exile of many composers as a result of World War II.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
