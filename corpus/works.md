@@ -36,7 +36,7 @@
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Composition Year by Decade</h5>
-				<p class="card-text">The graph and accompanying table present the corpus works by year of composition. The graph shows a slightly left-skewed distribution of works, with a peak in the 1920s (108 works) and a larger number of works in the decades after (216 works as compared with 126 works before 1920).</p>
+				<p class="card-text">The graph and accompanying table present the corpus works by year of composition. The graph shows a slightly left-skewed distribution of works, with a peak in the 1920s (108 works) and a larger number of works in the decades after (216 works as compared with 126 works before 1920). To sort works by year of composition, visit the <a href="https://polyrhythm.humdrum.org/browse">Browse</a> page.</p></p>
 			</div>
 		</div>
 		<div class="col-md-10">
@@ -70,7 +70,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Sub-genre Percentage Distribution</h5>
-				<p class="card-text">This pie chart shows how each genre is subdivided into sub-genres in the corpus. For example, programmatic works represent a smaller proportion within orchestral works (7%) than symphonic (16.4%) and concerto (14.6%) works. While vocal and stage works are more evenly partitioned, instrumental works are represented by more chamber (24.3%) than keyboard (11.7%) works, whith chamber works representing the largest sub-genre featured in the corpus.</p>
+				<p class="card-text">This pie chart shows how each genre is subdivided into sub-genres in the corpus. For example, programmatic works represent a smaller proportion within orchestral works (7%) than symphonic (16.4%) and concerto (14.6%) works. While vocal and stage works are more evenly partitioned, instrumental works are represented by more chamber (24.3%) than keyboard (11.7%) works, whith chamber works representing the largest sub-genre featured in the corpus.To identify examples by sub-genre, visit the <a href="https://polyrhythm.humdrum.org/browse">Browse</a> page.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
