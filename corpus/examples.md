@@ -8,7 +8,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Examples by Composers</h5>
-				<p class="card-text">The distribution of corpus examples by composer is similar to the distribution of sampled works, although there are some differences. One prominent differenece is the number of examples by the French composer Olivier Messian (68 examples extracted from 21 works), which is in part due to the large sample extracted from <i>Turangalîla</i> (Mes-22; 20 examples). Other composers that come to the fore in comparison with works distribution are Charles Ives (47 examples extracted from 23 works) and Arnold Schoenberg (45 examples extracted from 25 works).</p>
+				<p class="card-text">The distribution of corpus examples by composer is similar to the distribution of source works by composer, although there are some differences. One prominent differenece is the number of examples by the French composer Olivier Messian (68 examples extracted from 21 works), which is in part due to the large sample extracted from <i>Turangalîla</i> (Mes-22; 20 examples). Other composers that come to the fore in comparison with works distribution are Charles Ives (47 examples extracted from 23 works) and Arnold Schoenberg (45 examples extracted from 25 works).</p>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -27,7 +27,7 @@
 		<div class="col-md-4">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Length of Examples by Composer</h5>
-				<p class="card-text">Examples in the corpus differ in terms of length measured in seconds, from 1 to 69 seconds. In this representation, boxes give 2nd and 3rd quartiles of example durations.  The red number above each plot gives the mean example duration for each composer, and the number in parentheses after the composer name is the number of examples for that composer.</p>
+				<p class="card-text">Examples in the corpus differ in terms of length measured in seconds, from 1 to 122 seconds. In this representation, boxes represent the 2nd and 3rd quartiles of example durations.  The red number above each plot gives the mean example duration for each composer, and the number in parentheses after the composer name is the number of examples for that composer. Examples by Maurice Ravel (1875-1937) and Olivier Messiaen (1908-1992) are more varied in length, while those by Edgard Varèse (1883-1965) and George Ghershwin (1898-1937) are the least varied, with median lengths of 12 and 7 seconds, the latter representing the shortest median duration. There are also a few variants, the longest being an example extracted from Paul Hindemith's Sonata for Four Horns (Hin-97, T673) and another extracted from Olivier Messiaen's <i>Les Corps glorieux</i> (Glorious Bodies) for Organ (Mes-16, T732), both of a duration of 122 seconds.</p>
 			</div>
 		</div>
 	</div>
