@@ -56,7 +56,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Genre Percentage Distribution</h5>
-				<p class="card-text">This pie chart presents the proportions of genres represented by the source works. The most represented categories are orchestral and instrumental works, each of which represent about a third of the corpus. The last third is shared between vocal (12.8%) and stage (13.1%) works.  </p>
+				<p class="card-text">This pie chart presents the proportional representation by source works genres. The most represented categories are orchestral and instrumental works, each of which represent about a third of the corpus. The last third is shared between vocal (12.8%) and stage (13.1%) works. To identify examples by genre, visit the <a href="https://polyrhythm.humdrum.org/browse">Browse</a> page.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
