@@ -109,8 +109,9 @@
 	<div class="row g-0">
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="category mb-2 card-title">Polymetric/Polymeter Categories (FDS)</h5>
-				<p class="card-text">Description goes here</p>
+				<h5 class="category mb-2 card-title">Polymetric Categories (FDS)</h5>
+				
+				<p class="card-text">This pie chart presents all the combinations of time signatures used for polymetrioc and polydurational examples in the full dataset (FDS) of this corpus. Overall, composers show much creativity in their use of combined time signatures. Nevertheless, two combinations emerge as preferred polymeters, i.e., 3/4 against 9/8 (9 examples) and 2/4 against 6/8 (8 examples), together representing 41% of polymeters. Interestingly, these two combinations present 3:2 at different levels. The first consists of a 3:2 relationship at the subdivision level, while the second consists of a 3:2 relationship at the beat level, although these represent theretical possibilities rather than actualizations, which can only be ascertain by close study of the examples.</p>
 			</div>
 		</div>
 		<div style="width:100%;" class="col-md-8">
@@ -118,6 +119,9 @@
 		</div>
 	</div>
 </div>
+
+
+
 
 <!-- Old visualizations of polymeter/polyduration:
 
@@ -142,7 +146,7 @@
 		</div>
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="category mb-2 card-title">Polymetric Time Signatures (FDS)</h5>
+				<h5 class="category mb-2 card-title">Polymetric Time Signatures (TDS)</h5>
 				<p class="card-text">Description goes here</p>
 			</div>
 		</div>
