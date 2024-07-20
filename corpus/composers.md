@@ -22,7 +22,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Birth Region or Country</h5>
-				<p class="card-text">The word cloud represents the corpus from the perspective of composers' birth country, with France the most represented country.</p>
+				<p class="card-text">The word cloud represents the corpus from the perspective of composers' birth countries. France is the most common birth country, which is shared four of the twenty composers (Claude Debussy, Maurice Ravel, Edgard Varèse, and Olivier Messiaen).</p>
 			</div>
 		</div>
 		<div class="col-md-6">
