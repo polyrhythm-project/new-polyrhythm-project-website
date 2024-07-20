@@ -36,7 +36,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Death Region or Country</h5>
-				<p class="card-text">When considering the corpus by composers' death countries, we see a clear shift to the United States as the most common death country. This shift is in part related to the exile of many composers during World War II, and includes European-born composers Béla Bartók, Arnold Schoenberg, Igor Stravinsky, and Edgard Varèse. When considering the American-born composers Aaron Copland, Charles Ives, and George Gershwin, this corresponds to seven out of 20 composers (35%) with the United States as death country.</p>
+				<p class="card-text">When considering the corpus by composers' death countries, we see a clear shift to the United States as the most shared country. This shift is in part related to the exile of many composers during World War II, and includes European-born composers Béla Bartók, Arnold Schoenberg, Igor Stravinsky, and Edgard Varèse. When considering the American-born composers Aaron Copland, Charles Ives, and George Gershwin, this corresponds to seven out of 20 composers (35%) with the United States as death country. The <a hrep="https://maps.polyrhythm.humdrum.org/composers/#3/51.90/-9.77">composers map</a> provides another visual representation of this shift as well as other intercontinental movements. </p>
 			</div>
 		</div>
 		<div class="col-md-6">
