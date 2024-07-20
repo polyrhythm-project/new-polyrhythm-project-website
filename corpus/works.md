@@ -8,7 +8,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Works by Composer</h5>
-				<p class="card-text">The word cloud presents corpus source works by composers. We can observe that the corpus is most strongly represented by the works of the Czech composer Bohuslav Martinů and the German composer Paul Hindemith, and more weakly represented by the works of the American composer George Gershwin. While this may be related to some bias on the part of Suter (1980), it is also related to his sampling method, which involved taking into account the compositional output of each composer in terms of time period and productivity. Thus, more works were sampled for composers with a larger body of works than for composer with a smaller one. For a list of the number of source works by composers, visit the <a hrep="https://polyrhythm.humdrum.org/composers">Composers</a> page.</p>
+				<p class="card-text">The word cloud presents corpus source works by composers. We can observe that the corpus is most strongly represented by the works of the Czech composer Bohuslav Martinů and the German composer Paul Hindemith, and more weakly represented by the works of the American composer George Gershwin. While this may be related to some bias on the part of Suter (1980), it is also related to his sampling method, which involved taking into account the compositional output of each composer in terms of time period and productivity. Thus, more works were sampled for composers with a larger body of works than for composer with a smaller one. For a list of the number of source works by composers, visit the <a href="https://polyrhythm.humdrum.org/composers">Composers</a> page.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
