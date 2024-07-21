@@ -29,7 +29,7 @@ organized by type of metadata. The bulleted list below provides
 the types of metadata collected for composers, works, premieres
 (first public performance of a work), and extracted examples.
 To explore visualizations, click on the categories below the
-table.
+table. The hamburger menu on the top right of pie charts provide different options, including viewing the associated data table.
 </p>
 
 
