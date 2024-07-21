@@ -50,7 +50,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Soloists</h5>
-				<p class="card-text">This word cloud presents soloists involved in the premiere of corpus source works. Of note is the premiere of works by composers, including Paul Hindemith, Olivier Messiaen, and Béla Bartók. Also prominent is the role of Yvonne Loriod (1924-2010), a French pianist, teacher and composer, as well as Messiaen's second wife, who premiered eight of Messiaen's piano works featured in the corpus. Other soloists featured are Peter Pears (1910-1986), an English tenor who premiered several worpus works by Benjamin Britten, and Maurits Frank (1982-1959), a leading cellist in his time, who was featured in several of Hindemith's chamber works as well as Anton Webern's Sechs Bagatellen (Six Bagatellen) for String Quartet, op. 9 (Web-12).</p>
+				<p class="card-text">This word cloud presents soloists involved in the premiere of corpus source works. Of note is the premiere of works by composers, including Paul Hindemith, Olivier Messiaen, and Béla Bartók. Also prominent is the role of Yvonne Loriod (1924-2010), a French pianist, teacher and composer, as well as Messiaen's second wife, who premiered eight of Messiaen's piano works featured in the corpus. Other soloists featured are Peter Pears (1910-1986), an English tenor who premiered several corpus works by Benjamin Britten, and Maurits Frank (1982-1959), a leading cellist of his time, who was featured in several of Hindemith's chamber works as well as Anton Webern's <i>Sechs Bagatellen</i> (Six Bagatellen) for String Quartet, op. 9 (Web-12).</p>
 			</div>
 		</div>
 		<div class="col-md-6">
