@@ -22,7 +22,7 @@
 		<div class="col-md-6">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Ensembles</h5>
-				<p class="card-text">This word clound presents the ensembles that were identified for the corpus source works' premieres. Two ensembles are featured prominently, i.e., the Boston Symphony and the Basel Orchestra, which can be explained in part by the fact that both of these organizations were important for the commission of new works in the surveyed period. Also prominently represented are the New York Philarmonic Orchestra and the Philadelphia Orchestra.</p>
+				<p class="card-text">This word cloud presents the ensembles that were identified for the corpus source works' premieres. Two ensembles are featured prominently, i.e., the Boston Symphony and the Basel Orchestra, which can be explained in part by the fact that both of these organizations were important for the commission of new works in the surveyed period. Also prominently represented are the New York Philarmonic Orchestra and the Philadelphia Orchestra.</p>
 			</div>
 		</div>
 		<div class="col-md-6">
