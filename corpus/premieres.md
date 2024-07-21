@@ -7,7 +7,7 @@
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Premiere Locations</h5>
-				<p class="card-text">The location of the first public performance for each source work in the corpus was investigated. Out of 447 venues identified, only 266 still exist. From this research, several countries and cities emerge as centers for new music. At the top, we see United States and France as major centers, with Paris and New York being the premieres cities for a combined total of 140 of the 450 works sampled. Also prominent are Basel, Geneva, and Lausanne counting 29 of the 45 works premiered in Swtzerland. Other important countries include Germany, Czechnia, and Austria, with Vienna, Prague, and Brno being among the leading cities where sampled works were premiered.</p>
+				<p class="card-text">The location of the first public performance for each source work in the corpus was investigated. Out of 447 venues identified, only 266 still exist. From this research, several countries and cities emerge as centers for new music. At the top, we see United States and France as major centers, with Paris and New York being the premieres cities for a combined total of 140 of the 450 works sampled. Also prominent are Basel, Geneva, and Lausanne counting 29 of the 45 works premiered in Switzerland. Other important countries include Germany, Czechnia, and Austria, with Vienna, Prague, and Brno being among the leading cities where sampled works were premiered.</p>
 			</div>
 		</div>
 		<div class="col-md-10">
