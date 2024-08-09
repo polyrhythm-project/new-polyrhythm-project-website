@@ -304,6 +304,15 @@ function createTempoMarking(beat, value) {
 	if (beatpieces.length != valuepieces.length) {
 		return "ERROR";
 	}
+
+	let newbeatpieces = [beatpieces[0]];
+	for (let i=1; i<beatpieces.length; i++) {
+		if (beatpieces[i] !== beatpieces[i-1]) {
+			newbeatpieces.push(beatpieces[i]);
+		}
+	}
+	beatpieces = newbeatpieces;
+
 	let output = "";
 	for (let i=0; i<beatpieces.length; i++) {
 		output += "<nobr>";
