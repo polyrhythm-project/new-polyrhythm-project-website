@@ -120,6 +120,16 @@ function displayScore(id) {
 		options.filter = "";
 	}
 
+	if (options.filter) {
+		if (typeof options.filter === "string") {
+			options.filter += " | shed -e 's/LO:TX:.*problem.*$//L'";
+		} else {
+			options.filter.push("shed -e 's/LO:TX:.*problem.*$//L'");
+		}
+	} else {
+		options.filter += "shed -e 's/LO:TX:.*problem.*$//L'";
+	}
+
 	console.warn("HNP OPTIONS", options);
    displayHumdrum(options);
 
