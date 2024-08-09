@@ -16,9 +16,9 @@ Twenty composers are represented in the <i>Suter (1980) Corpus</i>.  Click
 on a table heading to sort the table by that column (click
 twice to reverse the sort order), or click on an entry to browse
 works/examples for that composer.  Mouse-over the birth and death dates
-to see birth and death places. Also see the <a
+to see birth and death places. Click on the copy icon to export the table. The <a
 href="https://maps.polyrhythm.humdrum.org/composers/">composers
-map</a>, which displays birth, death and intermediate locations
+map</a> displays birth, death, and intermediate locations
 in the life of each composer.
 
 
