@@ -465,6 +465,7 @@ function displayExample(exid, examples) {
 	options.source = id;
 	// options.postFunction = addProblemIcons;
 	// options.filter	 = [ 'shed -ke "s/^LO.*problem.*$//L'  // hide problem markers ],
+
 	options.autoResize = true;
 	options.url = url;
 	options.filter = prepareFilter();
@@ -663,7 +664,7 @@ function toggleCoincidence() {
 function prepareFilter() {
 
 	if (!FULLCOLOR && !COLOR && !COMPOSITE && !GROUP && !COINCIDENCE && !MARK && !EVENTCOUNTS) {
-		return "";
+		return "shed -e 's/^LO:TX:.*problem.*$//gL'"
 	}
 
 	FILTER = "composite -u";
@@ -712,8 +713,15 @@ function prepareFilter() {
 			FILTER = "";
 		}
 		FILTER += "shed -e 's/grp:A/color:crimson/I; s/grp:B/color:dodgerblue/I'";
-	
 	}
+
+	if (FILTER) {
+		FILTER += "| shed -e 's/^LO:TX:.*problem.*$//gL'"
+	} else {
+		FILTER = "shed -e 's/^LO:TX:.*problem.*$//gL'"
+	}
+
+	console.log("FILTER = ", FILTER);
 
 	return FILTER;
 }
