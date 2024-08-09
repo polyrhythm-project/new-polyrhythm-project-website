@@ -441,7 +441,7 @@ function doSearch(text) {
 		workQ = 1;
 	}
 
-	entries = doDatasetSearch(entries);
+	entries = doDatasetSearch(entries, workQ);
 	entries = doComposerSearch(entries);
 	entries = doGenreSearch(entries);
 	entries = doStartTimeSignatureSearch(entries);
@@ -934,7 +934,7 @@ function doStartTimeSignatureSearch(entries) {
 // doDatasetSearch --
 //
 
-function doDatasetSearch(entries) {
+function doDatasetSearch(entries, workQ) {
 	let oldentries;
 	let datasetelement = document.querySelector("#dataset");
 	if (datasetelement) {
