@@ -306,9 +306,12 @@ function createTempoMarking(beat, value) {
 	}
 	let output = "";
 	for (let i=0; i<beatpieces.length; i++) {
+		output += "<nobr>";
 		output += createSingleTempoMarking(beatpieces[i], valuepieces[i]);
 		if (i < beatpieces.length - 1) {
-			output += "; ";
+			output += ";</nobr> ";
+		} else {
+			output += "</nobr>";
 		}
 	}
 	return output;
