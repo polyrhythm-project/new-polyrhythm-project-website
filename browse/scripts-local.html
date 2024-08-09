@@ -915,6 +915,10 @@ function doStartTimeSignatureSearch(entries) {
 				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/unequal/i)) {
 					entries.push(oldentries[i]);
 				}
+			} else if (tsigtype === "other") {
+				if (oldentries[i][INDEX_Example_Start_Tsig_Type].match(/other/i)) {
+					entries.push(oldentries[i]);
+				}
 			} else if (oldentries[i][INDEX_Example_Start_Tsig_Type] === tsigtype) {
 				entries.push(oldentries[i]);
 			}
