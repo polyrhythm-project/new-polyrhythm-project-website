@@ -8,7 +8,7 @@ layout: default
 summary: Updates for the Polyrhythm Project
 ---
 
-# Previous Updates
+<h1 style="font-size:1.75rem;"> Previous Updates </h1>
 
 {% include_relative escom-2024.md %}
 
