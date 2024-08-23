@@ -453,16 +453,16 @@ function displayExample(exid, examples) {
 	showValidPdfButtons();
 
 
-	// let fname = entry[INDEX_Filename];
-	let fname = entry[INDEX_Suter_Example_Number];
-	let url = `https://data.polyrhythm.humdrum.org/${fname}.krn?a=${localStorage.access}`;
+	let id = entry[INDEX_Suter_Example_Number];
+	// let url = `https://data.polyrhythm.humdrum.org/${id}.krn?a=${localStorage.access}`;
+	let url = getUrlForId(id);
 
 	console.log("URI", url);
 	let dset = entry[INDEX_Example_Dataset];
 
 	let options = {};
-	let id = "example-notation";
-	options.source = id;
+	let sourceId = "example-notation";
+	options.source = sourceId;
 	// options.postFunction = addProblemIcons;
 	// options.filter	 = [ 'shed -ke "s/^LO.*problem.*$//L'  // hide problem markers ],
 
@@ -503,6 +503,41 @@ function displayExample(exid, examples) {
 		}
 	}
 	*/
+}
+
+
+
+//////////////////////////////
+//
+// getUrlForId --
+//     Data server version: `https://data.polyrhythm.humdrum.org/${id}-eastwest.m4a`;
+//     But now getting directly from Github (so always more recent version).
+//
+
+function getUrlForId(id) {
+	let list = EXAMPLELIST;
+	for (let i=0; i<list.length; i++) {
+		let filename = list[i].Filename;
+		if (!filename) {
+			console.warn("ENTRY", list[i], "DOES NOT HAVE A FILENAME PARAMETER");
+			continue;
+		}
+		if (!filename.match(/\.krn$/)) {
+			filename += ".krn";
+		}
+		let regex = new RegExp(`^([TR])${id}_`);
+		let matches = filename.match(regex);
+		if (matches) {
+			let prefix = matches[1];
+			// https://raw.githubusercontent.com/polyrhythm-project/tds-scores/master/kern/T189_Sch-w3p32m14-15.krn
+			if (prefix == "R") {
+				return `https://raw.githubusercontent.com/polyrhythm-project/rds-scores/master/kern/${filename}`;
+			} else if (prefix == "T") {
+				return `https://raw.githubusercontent.com/polyrhythm-project/tds-scores/master/kern/${filename}`;
+			}
+		}
+	}
+	return "";
 }
 
 
