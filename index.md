@@ -73,7 +73,7 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/banff-small.jpg" alt="updates">
 					<div class="card-body p-0">
 						<div class="category mb-2">UPDATES</div>
-						<a class="text-decoration-none link-dark stretched-link" href="updates" role="button"><h3 class="card-title mb-3">Upcoming conference presentations at ESCOM, July 3–6, and SMPC, July 25-28, 2024.</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="updates" role="button"><h3 class="card-title mb-3">System under maintenance. Some data resources are currently unavailable.</h3></a>
 					</div>
 				</div>
 			</div>
