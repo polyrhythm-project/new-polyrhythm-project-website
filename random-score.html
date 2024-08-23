@@ -65,6 +65,43 @@ function displayRandomScore(examplelist) {
 }
 
 
+
+//////////////////////////////
+//
+// getUrlForId --
+//     Data server version: `https://data.polyrhythm.humdrum.org/${id}-eastwest.m4a`;
+//     But now getting directly from Github (so always more recent version).
+//
+
+function getUrlForId(id) {
+	let list = EXAMPLELIST;
+	for (let i=0; i<list.length; i++) {
+		let filename = list[i].Filename;
+		if (!filename) {
+			console.warn("ENTRY", list[i], "DOES NOT HAVE A FILENAME PARAMETER");
+			continue;
+		}
+		if (!filename.match(/\.krn$/)) {
+			filename += ".krn";
+		}
+		let regex = new RegExp(`^([TR])${id}_`);
+		let matches = filename.match(regex);
+		if (matches) {
+			let prefix = matches[1];
+			// https://raw.githubusercontent.com/polyrhythm-project/tds-scores/master/kern/T189_Sch-w3p32m14-15.krn
+			if (prefix == "R") {
+				return `https://raw.githubusercontent.com/polyrhythm-project/rds-scores/master/kern/${filename}`;
+			} else if (prefix == "T") {
+				return `https://raw.githubusercontent.com/polyrhythm-project/tds-scores/master/kern/${filename}`;
+			}
+		}
+	}
+
+	return "";
+}
+
+
+
 //////////////////////////////
 // 
 // displayScore --
@@ -73,7 +110,7 @@ function displayRandomScore(examplelist) {
 function displayScore(id) {
 	let audio = document.querySelector("audio");
 	if (audio) {
-		let url = `https://data.polyrhythm.humdrum.org/${id}-eastwest.m4a`;
+		let url = getUrlForId(id);
       audio.src = url;
       audio.load();
 	}
@@ -106,7 +143,7 @@ function displayScore(id) {
 	}
 
 	let options = {
-		url: `https://data.polyrhythm.humdrum.org/${id}.krn?a=${localStorage.access}`,
+		url: getUrlForId(id),
       source: "random-score",
 		incipit: true,
       autoResize: "true",
