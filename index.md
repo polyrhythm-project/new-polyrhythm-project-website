@@ -40,6 +40,7 @@ permalink: /index.html
 				<button id="coincidence-option" onclick="toggleCoincidenceOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
 					Coincidence
 				</button>
+    				<div class="col-md-6 col-lg-4 mb-4" title="Resultant rhythm of coinciding events" data-bs-toggle="tooltip" alt="about">
 
 				<!-- Composite -->
 				<button id="composite-option" onclick="toggleCompositeOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
