@@ -37,17 +37,17 @@ permalink: /index.html
 				</button>
 
 				<!-- Coincidence -->
-				<button id="coincidence-option" onclick="toggleCoincidenceOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
+				<button id="coincidence-option" title="Rhythmic sequence of coinciding events across staves" onclick="toggleCoincidenceOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
 					Coincidence
 				</button>
     				
 				<!-- Composite -->
-				<button id="composite-option" onclick="toggleCompositeOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
+				<button id="composite-option" title="Rhythmic sequence of all events across staves" onclick="toggleCompositeOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0 ms-1">
 					Composite
 				</button>
 
 				<!-- Group color -->
-				<button id="groupcolor-option" onclick="toggleGroupColorOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0">
+				<button id="groupcolor-option" title="Colored rhythmic sequences for two groups (A = red, B = blue)" onclick="toggleGroupColorOption(event)" type="button" class="btn btn-secondary float-md-end mb-3 mb-lg-0">
 					Group colours
 				</button>
 
