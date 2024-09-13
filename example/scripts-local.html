@@ -421,16 +421,12 @@ function displayExample(exid, examples) {
 	output += `<img id="play-button" style="width:40px;cursor:pointer" onclick="playAudio()" class="play-icon" src="/assets/img/play.svg" alt="play button">`;
 	output += `<img id="stop-button" style="width:40px;cursor:pointer; display:none;" onclick="stopAudio()" class="play-icon" src="/assets/img/stop.svg" alt="stop button">`;
 	output += `<audio preload="metadata" id="myAudio" onended="stopAudio()">`;
-	output += `<source src="${data_server}/${CURRENTEXAMPLE}-eastwest.m4a">`;
+	// output += `<source src="${data_server}/${CURRENTEXAMPLE}-eastwest.m4a">`;
+	output += `<source src="${data_server}/m4a/eastwest/${CURRENTEXAMPLE}.m4a">`;
 	output += `</audio>`;
 
 	output += `<button style="float:right" type="button" id="question-button" class="btn btn-secondary rounded-circle ms-2 question-button" aria-label="Help" onclick="location.href='/howtouse#Example%20page';"><i class="bi bi-question-lg"></i></button>`;
 	output += `<input style="float:right;" id="clear-button" onclick="clearAnalysisFields()" class="btn btn-secondary btn-primary-light" type="reset" value="Clear" style="flex-grow: 1;">`;
-
-	// Sibelius sounds bad:
-	// output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 sibelius-region hidden'>";
-	// output += "<a target='_audio' href='/resources/recordings/sibelius/" + CURRENTEXAMPLE + ".m4a'>sibaudio</a>";
-	// output += "</span> ";
 
 	output += "</td>";
 	output += "</tr>";
@@ -440,11 +436,11 @@ function displayExample(exid, examples) {
 
 	output += "<div class='buttons'>";
 
-	if (SUPERACCESS) {
-		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 acoustic-region'>";
-		output += "<a target='_audio' href='/resources/recordings/acoustic/" + CURRENTEXAMPLE + ".m4a'>recording</a>";
-		output += "</span> ";
-	}
+//	if (SUPERACCESS) {
+//		output += "<span data-id='" + CURRENTEXAMPLE + "' class='vhv-button group1 acoustic-region'>";
+//		output += "<a target='_audio' href='/resources/recordings/acoustic/" + CURRENTEXAMPLE + ".m4a'>recording</a>";
+//		output += "</span> ";
+//	}
 
 	output += "</div>";
 

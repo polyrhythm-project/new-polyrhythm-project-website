@@ -102,6 +102,23 @@ function getUrlForId(id) {
 
 
 //////////////////////////////
+//
+// getM4aUrlForId --
+//     Data server version: `https://data.polyrhythm.humdrum.org/${id}-eastwest.m4a`;
+//     Data server version: `https://data.polyrhythm.humdrum.org/m4a/eastwest/${id}.m4a`;
+//     But now getting directly from Github (so always more recent version).
+//
+
+function getM4aUrlForId(id) {
+	id.replace(/^[TR]/, "");
+	id.replace(/_,*/, "");
+	let url = `https://data.polyrhythm.humdrum.org/m4a/eastwest/${id}.m4a`;
+	return url;
+}
+
+
+
+//////////////////////////////
 // 
 // displayScore --
 //
@@ -109,7 +126,7 @@ function getUrlForId(id) {
 function displayScore(id) {
 	let audio = document.querySelector("audio");
 	if (audio) {
-		let url = getUrlForId(id);
+		let url = getM4aUrlForId(id);
       audio.src = url;
       audio.load();
 	}
