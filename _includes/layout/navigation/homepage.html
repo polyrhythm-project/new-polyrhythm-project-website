@@ -12,44 +12,54 @@
 //
 {% endcomment %}
 
+<nav class="navbar navbar-expand-xl navbar-dark sticky-top flex-column">
+    <div class="container-fluid px-sm-4 px-lg-5">
+        <!-- First row: Brand and Toggler -->
+        <div class="d-flex w-100 justify-content-between align-items-center">
+            <a class="navbar-brand" href="index.html">POLYRHYTHM<span>PROJECT</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
-<nav class="navbar navbar-expand-xl navbar-dark sticky-top">
-	<div class="container-fluid px-sm-4 px-lg-5">
-		<a class="navbar-brand" href="index.html">POLYRHYTHM<span>PROJECT</span></a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-				<!--
-				<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-				-->
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbarDropdownAbout" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">About</a>
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAbout">
-						<li><a class="dropdown-item" href="/overview">Overview</a></li>
-						<li><a class="dropdown-item" href="/people">People</a></li>
-						<li><a class="dropdown-item" href="/doc">Documentation</a></li>
-						<li><a class="dropdown-item" href="/corpus">Corpus</a></li>
-					</ul>
-				</li>
-				<li class="nav-item"><a class="nav-link" target="_blank" href="/browse" role="button">Browse</a></li>
-				<li class="nav-item"><a class="nav-link" href="/composers" role="button">Composers</a></li>
-				<li class="nav-item"><a class="nav-link" href="/maps" role="button">Maps</a></li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbarDropdownResearch" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Research</a>
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownResearch">
-						<li><a class="dropdown-item" href="publications">Publications</a></li>
-						<li><a class="dropdown-item" href="presentations">Presentations</a></li>
-					</ul>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbarDropdownSources" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Sources</a>
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownSources">
-						<li><a class="dropdown-item" href="scores">Scores</a></li>
-						<li><a class="dropdown-item" href="recordings">Recordings</a></li>
-					</ul>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="/participate">Participate</a></li>
-			</ul>
-		</div>
-	</div>
+        <!-- Second row: Navigation menu -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownAbout" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/overview">Overview</a></li>
+                        <li><a class="dropdown-item" href="/people">People</a></li>
+                        <li><a class="dropdown-item" href="/doc">Documentation</a></li>
+                        <li><a class="dropdown-item" href="/corpus">Corpus</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/browse" target="_blank">Browse</a></li>
+                <li class="nav-item"><a class="nav-link" href="/composers">Composers</a></li>
+                <li class="nav-item"><a class="nav-link" href="/maps">Maps</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownResearch" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Research</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="publications">Publications</a></li>
+                        <li><a class="dropdown-item" href="presentations">Presentations</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownSources" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sources</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="scores">Scores</a></li>
+                        <li><a class="dropdown-item" href="recordings">Recordings</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/participate">Participate</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- NEW DIV to force credits to be separate from navbar -->
+    <div class="container-fluid credits-container">
+        <div class="credits text-center">Ève Poudrier, director<div>Craig Stuart Sapp, technical director</div></div>
+    </div>
 </nav>
+

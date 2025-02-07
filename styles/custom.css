@@ -301,6 +301,10 @@ h3, .h3 {
 	font-weight: 500;
 }
 
+a h3 {
+	font-size: 1.25rem !important;
+}
+
 .display-6 {
 	background: var(--secondary-lighter);
 	border-radius: 0.3rem;
@@ -333,18 +337,47 @@ h3, .h3 {
 .navbar {
 	--bs-navbar-padding-y: 0.5rem 0.5rem 0.2rem;
 	background-color: var(--primary);
+
+	display: flex;
+	flex-direction: column; /* Force navbar to be stacked */
+	align-items: flex-end; /* Push items to the bottom */
+}
+
+#navbarSupportedContent {
+    align-self: flex-end; /* Align navigation to the bottom */
 }
 
 .navbar-brand {
 	font-family: 'Montserrat', sans-serif;
 	font-size:1rem;
+	letter-spacing: 2px;
 }
 
 .navbar-brand span {
-	margin-left: 80px;
+	margin-left: 91px;
 	display: block;
 	line-height: 1;
 }
+
+
+.credits-container {
+    display: block;
+    width: 100%;
+}
+
+.credits {
+    display: flex;               /* Use flexbox for alignment */
+    flex-direction: column;      /* Stack lines vertically */
+    align-items: flex-start;     /* Align all text to the left */
+    color: #ddd;
+    letter-spacing: 0.5px;
+    text-align: left;  
+    white-space: normal;         /* Allow wrapping naturally */
+    margin: 0;
+    padding-left: 38px;          /* Align with navbar */
+}
+
+
 
 .navbar-dark .navbar-nav .nav-link {
 	color: #FFFFFF;
