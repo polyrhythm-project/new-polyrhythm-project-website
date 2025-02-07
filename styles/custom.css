@@ -369,7 +369,7 @@ a h3 {
     display: flex;               /* Use flexbox for alignment */
     flex-direction: column;      /* Stack lines vertically */
     align-items: flex-start;     /* Align all text to the left */
-    color: #ddd;
+    color: #ddd !important;
     letter-spacing: 0.5px;
     text-align: left;  
     white-space: normal;         /* Allow wrapping naturally */
