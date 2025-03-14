@@ -780,7 +780,7 @@ function fillInstrumentOptions() {
 		return;
 	}
 
-	let list = Object.entries(INSTRUMENTS).
+	let list = Object.entries(INSTRUMENTS)
 		.sort((a, b) => a[1].localeCompare(b[1], undefined, { sensitivity: 'base' }))
 		.map(([value, text]) => `<option value="${value}">${text}</option>`)
 		.join('\n');
