@@ -779,20 +779,13 @@ function fillInstrumentOptions() {
 		console.error("Cannot find instrument select");
 		return;
 	}
-	let options = select.querySelectorAll("option");
-	for (let i=0; i<options.length; i++) {
-		let value = options[i].value;
-		if (!value) {
-			continue;
-		}
-		let newvalue = INSTRUMENTS[value];
-		if (newvalue) {
-			options[i].innerHTML = newvalue;
-		} else {
-			let old = options[i].innerHTML;
-			options[i].innerHTML = old + " XXX";
-		}
-	}
+
+	let list = Object.entries(INSTRUMENTS).
+		.sort((a, b) => a[1].localeCompare(b[1], undefined, { sensitivity: 'base' }))
+		.map(([value, text]) => `<option value="${value}">${text}</option>`)
+		.join('\n');
+	list = `<option value="">Instrument</option>` + list;
+	select.innerHTML = list;
 }
 
 
