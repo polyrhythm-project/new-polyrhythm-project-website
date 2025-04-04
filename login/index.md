@@ -15,3 +15,6 @@ summary:
 <input type="password" id="password" placeholder="password">
 
 
+<div>
+	<a href="/">Go to the homepage</a>
+</div>
