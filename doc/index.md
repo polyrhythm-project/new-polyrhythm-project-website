@@ -30,12 +30,39 @@ permalink: /doc/index.html
 </script>
 
 <section>
+ <div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="mb-6">Data</h2>
+					<p markdown="1">
+						{% include_relative doc-intro-data.md %}
+					</p>
+					<div class="accordion accordion-flush mb-5" id="accordionExample">
+
+<div class="accordion-item">
+<p class="accordion-header" id="headingA"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="false" aria-controls="collapseA">GitHub</button></p>
+<div class="accordion-collapse collapse" id="collapseA" aria-labelledby="headingA" data-bs-parent="#accordionExample">
+<div class="accordion-body" markdown="1">
+{% include_relative doc-github.md %}
+</div>
+</div>
+</div>
+
+					</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ------------------------------------------------------------------ -->
+
+<section>
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="mb-6">Metadata</h2>
 					<p markdown="1">
-						{% include_relative doc-intro.md %}
+						{% include_relative doc-intro-metadata.md %}
 					</p>
 					<div class="accordion accordion-flush mb-5" id="accordionExample">
 
