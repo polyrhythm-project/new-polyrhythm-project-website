@@ -40,10 +40,19 @@ permalink: /doc/index.html
 					<div class="accordion accordion-flush mb-5" id="accordionExample">
 
 <div class="accordion-item">
-<p class="accordion-header" id="headingA"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="false" aria-controls="collapseA">GitHub</button></p>
+<p class="accordion-header" id="headingA"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="false" aria-controls="collapseA">Digital scores</button></p>
 <div class="accordion-collapse collapse" id="collapseA" aria-labelledby="headingA" data-bs-parent="#accordionExample">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-github.md %}
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<p class="accordion-header" id="headingB"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB">Audio files</button></p>
+<div class="accordion-collapse collapse" id="collapseB" aria-labelledby="headingB" data-bs-parent="#accordionExample">
+<div class="accordion-body" markdown="1">
+{% include_relative doc-audio.md %}
 </div>
 </div>
 </div>
