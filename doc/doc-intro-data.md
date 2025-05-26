@@ -1,3 +1,2 @@
 
-Introdution to the data section goes here.
-
+The examples of the corpus are available through digital scores and audio files. Digital scores include kern, musicxml, and sibelius. Audio files are available as synthetic audio in two formats: sibelius and EastWest. Data files are organized in two folders: reserve data set (RDS), which comprises 84 examples used for exploratory analysis, and testing data set (TDS), which comprises the remaining 641 examples to be used for hypothesis testing in future experiments. RDS examples used for past experiments are also available in the sub-folder "experiments."
