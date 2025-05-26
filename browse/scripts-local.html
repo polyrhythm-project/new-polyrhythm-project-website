@@ -66,8 +66,8 @@ function displayList(entries, query, sortinfo) {
 		// browse by work
 		output += `<thead>`;
 		output += `<tr>`;
-		output += `<th scope="col" class="fw-bold" title="Sort by composer" onclick="SortByWorkId(0, '#metadata-list', SORTINFO)">ID</th>`;
-		output += `<th scope="col" class="fw-bold" title="Sort by composer" onclick="SortByNumber(1, '#metadata-list', SORTINFO)">Examples&nbsp;&nbsp;</th>`;
+		output += `<th scope="col" class="fw-bold" title="Sort by ID" onclick="SortByWorkId(0, '#metadata-list', SORTINFO)">ID</th>`;
+		output += `<th scope="col" class="fw-bold" title="Sort by example" onclick="SortByNumber(1, '#metadata-list', SORTINFO)">Examples&nbsp;&nbsp;</th>`;
 		output += `<th scope="col" class="fw-bold" title="Sort by composer" onclick="SortByText(2, '#metadata-list', SORINFO)">Composer</th>`;
 		output += `<th scope="col" class="fw-bold" title="Sort by title" onclick="SortByText(3, '#metadata-list', SORINFO)">Title</th>`;
 		output += `<th scope="col" class="fw-bold" title="Sort by genre" onclick="SortByText(4, '#metadata-list', SORINFO)">Genre</th>`;
@@ -820,7 +820,7 @@ function doComposerSearch(entries) {
 	if (celement) {
 		composer = celement.value;
 	}
-	composer = composer.replace(/\s*,.*/, "");
+	composer = composer.replace(/\s*,.*/, "").replace(/\s+$/, "");
 
 	// filter by composer if needed
 	if (composer) {
