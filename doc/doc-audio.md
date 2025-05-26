@@ -2,10 +2,10 @@ Audio files were created for the purpose of analysis and experimentation. Metada
 
 Examples that feature voice were transcribed using wind instruments that most closely matched the vocal timbre of the randomly selected commercial recording, whenever possible.
 
-*[RDS Sibelius Audio Files](https://evepoudrier.box.com/s/bzgge6rj1lqp76njlcso9ppil0b2nm13)
+* [RDS Sibelius Audio Files](https://evepoudrier.box.com/s/bzgge6rj1lqp76njlcso9ppil0b2nm13)
 
-*[TDS Sibelius Audio Files](https://evepoudrier.box.com/s/z7ksummjzcamhxrjjfkmrspgvcrk716x)
+* [TDS Sibelius Audio Files](https://evepoudrier.box.com/s/z7ksummjzcamhxrjjfkmrspgvcrk716x)
 
-*[RDS EastWest Audio Files](https://evepoudrier.box.com/s/j8z5mdolwcvfjtf5nrib7fr3nhsmtjpc)
+* [RDS EastWest Audio Files](https://evepoudrier.box.com/s/j8z5mdolwcvfjtf5nrib7fr3nhsmtjpc)
 
-*[TDS EastWest Audio Files](https://evepoudrier.box.com/s/uoxxxwkxakfozuiaakk6edgemkvrrt2a)
+* [TDS EastWest Audio Files](https://evepoudrier.box.com/s/uoxxxwkxakfozuiaakk6edgemkvrrt2a)
