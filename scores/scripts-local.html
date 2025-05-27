@@ -72,7 +72,6 @@ function displayScoreIndex(scoreindex) {
 		});
 
 	} else if (sortType === "cyear") {
-
 		let keys = Object.getOwnPropertyNames(scoreindex);
 		keys.sort(function (a, b) {
 			let matchesA;
@@ -125,7 +124,6 @@ function displayScoreIndex(scoreindex) {
 		}
 
 	} else if (sortType === "pyear") {
-
 		let keys = Object.getOwnPropertyNames(scoreindex);
 		keys.sort(function (a, b) {
 			let matchesA;
@@ -195,8 +193,37 @@ function displayScoreIndex(scoreindex) {
 	output += "</table>";
 	container.innerHTML = output;
 
+	processCgiInfo();
 }
 
+
+
+//////////////////////////////
+//
+// processCgiInfo --
+//
+
+function processCgiInfo() {
+	let cgi = GetCgiParameters();
+	let id = cgi.id;
+	console.log("ID", id);
+	let list = document.querySelectorAll("tr td .workid");
+	for (let i=0; i<list.length; i++) {
+		let info = list[i].dataset["workid"];
+		if (id == info) {
+			console.log("INFO FOUND", info);
+			let navbar = document.querySelector("nav.sticky-top");
+			console.log("NAVBAR", navbar);
+			let headerHeight = navbar?.offsetHeight + 10 || 100;
+			let y = list[i].getBoundingClientRect().top + window.pageYOffset - headerHeight;
+			window.scrollTo({ top: y, behavior: 'smooth' });
+			list[i].style["font-weight"] = "bold";
+			list[i].style["color"] = "crimson";
+			break;
+		}
+	}
+
+}
 
 
 //////////////////////////////
@@ -319,7 +346,7 @@ function generateWorkEntry(entry) {
 	output += "<tr>";
 
 	output += "<td>";
-	output += `<span class="workid" title="${composer}">${workid}`;
+	output += `<span class="workid" data-workid="${workid}" title="${composer}">${workid}`;
 	output += `</span>`;
 	output += "</td>";
 
