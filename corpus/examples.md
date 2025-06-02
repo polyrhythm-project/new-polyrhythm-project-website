@@ -79,7 +79,7 @@
 	<div class="row g-0">
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="category mb-2 card-title">Time Signature Categories (RDS)</h5>
+				<h5 class="category mb-2 card-title">Time Signature Categories (Reserve Dataset)</h5>
 				<p class="card-text">Because the traditional categories show a strong bias toward simple meters, we opted for a more fine-grained and less biased categorization, which is represented in the two pie charts. The first pie chart provides the start time signature types of the reserve dataset examples, a stratified sample of 80 examples (4 examples for each of the 20 composers in the corpus) used for the first two experiments on listeners' perceived emotions. The second pie chart presents the start time signature types for the testing dataset examples, i.e., the remaining examples in the corpus. It can be observed that RDS's time signature types are generally representative of the time signature types features in TDS. Another general observation is that changing time signatures represent a larger proportion of examples (14.1% anf 15.3%) than polymetric and polydurational combined (6% and 6.7%), which is unexpected. Thus, it would appear that time signatures are not the principal means by which composers achieve polyrhythmic structures in the surveyed historical period. This categorization also affords comparison within the traditional categories. For example, in TDS, compound duple, which is featured in 50 examples, is much more common than compound triple (8 examples) or compound quadruple (4 examples). Similarly, it would appear that uneven duple meters (13 examples in RDS and TDS combined) are more common than uneven triple meters (7 examples). In contrast, the TDS examples that feature simple meters are more evenly distributed (duple = 20%, triple = 22%, and quadruple = 17%).</p>
 			</div>
 		</div>
@@ -95,12 +95,25 @@
 	<div class="row g-0">
 		<div class="col-md-8">
 			<div class="card-body">
-				<h5 class="category mb-2 card-title">Time Signature Categories (TDS)</h5>
+				<h5 class="category mb-2 card-title">Time Signature Categories (Test Dataset)</h5>
 			</div>
 		</div>
 		<div style="width:100%;" class="col-md-8">
 			<!-- img src="Time_Signatures_Frequency_graph_TDS.png" class="img-fluid rounded-start" alt="Time Signatures Frequency (TDS)" -->
 			<div id="ExampleStartTsigTypeTds"></div>
+		</div>
+	</div>
+</div>
+
+<div class="card mb-3">
+	<div class="row g-0">
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="category mb-2 card-title">Time Signature Categories (Full Dataset)</h5>
+			</div>
+		</div>
+		<div style="width:100%;" class="col-md-8">
+			<div id="ExampleStartTsigTypeFds"></div>
 		</div>
 	</div>
 </div>

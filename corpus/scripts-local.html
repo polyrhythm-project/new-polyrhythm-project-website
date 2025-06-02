@@ -125,6 +125,63 @@ function displayExampleStartTsigTypeTds() {
 
 //////////////////////////////
 //
+// displayExampleStartTsigTypeFds --
+//
+
+function displayExampleStartTsigTypeFds() {
+	let selector = document.querySelector("#ExampleStartTsigTypeFds");
+	if (!selector) {
+		console.warn("Cannot find #ExampleStartTsigTypeFds");
+		return;
+	}
+	let data = {};
+	for (let i=0; i<EXAMPLELIST.length; i++) {
+		let dataset = EXAMPLELIST[i][INDEX_Example_Dataset];
+		let value = EXAMPLELIST[i][INDEX_Example_Start_Tsig_Type];
+		if (data[value]) {
+			data[value]++;
+		} else {
+			data[value] = 1;
+		}
+	}
+
+	let vdata = [];
+	let keys = Object.keys(data).sort();
+	for (let i=0; i<keys.length; i++) {
+		let entry = {"name": keys[i], "y": data[keys[i]]};
+		vdata.push(entry);
+	}
+
+	Highcharts.chart('ExampleStartTsigTypeFds', {
+		chart: { type: 'pie' },
+		title: { text: null },
+		credits: { enabled: false },
+		tooltip: { pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>' },
+		accessibility: { point: { valueSuffix: '%' } },
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: true,
+					format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+					connectorColor: 'silver',
+					style: {
+						color: 'black',
+						textOutline: 'none'
+					}
+				}
+			}
+		},
+		series: [{ name: 'Share', data: vdata }]
+	});
+
+}
+
+
+
+//////////////////////////////
+//
 // displayPolymetricCategories --
 //
 

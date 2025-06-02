@@ -6,7 +6,7 @@ highcharts: true
 wordcloud2: true
 vegalite: true
 permalink: /corpus/index.html
-vim: ts=3
+vim: ts=3:nowrap
 layout: default
 summary:
 ---
