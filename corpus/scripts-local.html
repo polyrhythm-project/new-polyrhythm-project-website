@@ -614,277 +614,277 @@ function displayLengthOfExamplesByComposer() {
 	// console.log("VALUES", values);
 	// console.log("MEDIANS", medians);
 
-    var spec = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "description": "A bar and whisker plot example categorized by a specific category with x-axis labels angled by 45 degrees.",
-      "width": 600,
-      "height": 600,
-      "data": {
-        "values": data
-      },
-      "transform": [
-        {
-          "aggregate": [
-            {"op": "count", "as": "count"},
-            {"op": "max", "field": "value", "as": "max_value"}
-          ],
-          "groupby": ["category", "value"]
-        },
-        {
-          "window": [{"op": "rank", "as": "rank"}],
-          "groupby": ["category", "value"]
-        },
-        {
-          "calculate": "(datum.rank - 1 - (datum.count - 1) / 2) * 0.2",
-          "as": "jitter"
-        },
-        {
-          "joinaggregate": [
-            {"op": "median", "field": "value", "as": "median_value_per_category"},
-            {"op": "max", "field": "value", "as": "max_value_per_category"}
-          ],
-          "groupby": ["category"]
-        }
-      ],
-      "layer": [
-        {
-          "mark": "bar",
-          "encoding": {
-            "x": {
-              "field": "category",
-              "type": "nominal",
-              "axis": {
-                "title": "Composer",
-                "labelAngle": 45
-              }
-            },
-            "y": {
-              "field": "value",
-              "type": "quantitative",
-              "aggregate": "q1",
-              "axis": {"title": "Duration [seconds]"}
-            },
-            "y2": {
-              "field": "value",
-              "type": "quantitative",
-              "aggregate": "q3"
-            }
-          }
-        },
-        {
-          "mark": "rule",
-          "encoding": {
-            "x": {"field": "category", "type": "nominal"},
-            "y": {"field": "value", "type": "quantitative", "aggregate": "min"},
-            "y2": {"field": "value", "type": "quantitative", "aggregate": "max"}
-          }
-        },
-        {
-          "mark": {
-            "type": "tick",
-            "color": "black",
-            "thickness": 2
-          },
-          "encoding": {
-            "x": {"field": "category", "type": "nominal"},
-            "y": {"field": "value", "type": "quantitative", "aggregate": "min"}
-          }
-        },
-        {
-          "mark": {
-            "type": "tick",
-            "color": "black",
-            "thickness": 2
-          },
-          "encoding": {
-            "x": {"field": "category", "type": "nominal"},
-            "y": {"field": "value", "type": "quantitative", "aggregate": "max"}
-          }
-        },
-        {
-          "mark": {
-            "type": "point",
-            "color": "black",
-            "size": 25,
-            "filled": true
-          },
-          "encoding": {
-            "x": {
-              "field": "category",
-              "type": "nominal",
-              "axis": {"title": "Composer"},
-              "offset": {"field": "jitter"}
-            },
-            "y": {"field": "value", "type": "quantitative"}
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "align": "center",
-            "baseline": "bottom",
-            "dy": -5,
-            "fontSize": 10,
-            "fontWeight": "bold",
-            "color": "red"
-          },
-          "transform": [
-            {
-              "filter": "datum.value == datum.max_value_per_category"
-            }
-          ],
-          "encoding": {
-            "x": {"field": "category", "type": "nominal"},
-            "y": {
-              "field": "max_value_per_category",
-              "type": "quantitative",
-              "offset": 10
-            },
-            "text": {
-              "field": "median_value_per_category",
-              "type": "quantitative",
-              "format": ".1f"
-            }
-          }
-        }
-      ]
-    };    var spec = {
-      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "description": "A bar and whisker plot example categorized by a specific category with x-axis labels angled by 45 degrees.",
-      "width": 600,
-      "height": 600,
-      "data": {
-        "values": data
-      },
-      "transform": [
-        {
-          "aggregate": [
-            {"op": "count", "as": "count"},
-            {"op": "max", "field": "value", "as": "max_value"}
-          ],
-          "groupby": ["category", "value"]
-        },
-        {
-          "window": [{"op": "rank", "as": "rank"}],
-          "groupby": ["category", "value"]
-        },
-        {
-          "calculate": "(datum.rank - 1 - (datum.count - 1) / 2) * 0.2",
-          "as": "jitter"
-        },
-        {
-          "joinaggregate": [
-            {"op": "median", "field": "value", "as": "median_value_per_category"},
-            {"op": "max", "field": "value", "as": "max_value_per_category"}
-          ],
-          "groupby": ["category"]
-        }
-      ],
-      "layer": [
-        {
-          "mark": "bar",
-          "encoding": {
-            "x": {
-              "field": "category",
-              "type": "nominal",
-              "axis": {
-                "title": "Composer",
-                "labelAngle": 45
-              }
-            },
-            "y": {
-              "field": "value",
-              "type": "quantitative",
-              "aggregate": "q1",
-              "axis": {"title": "Duration[second]"}
-            },
-            "y2": {
-              "field": "value",
-              "type": "quantitative",
-              "aggregate": "q3"
-            }
-          }
-        },
-        {
-          "mark": "rule",
-          "encoding": {
-            "x": {"field": "category", "type": "nominal"},
-            "y": {"field": "value", "type": "quantitative", "aggregate": "min"},
-            "y2": {"field": "value", "type": "quantitative", "aggregate": "max"}
-          }
-        },
-        {
-          "mark": {
-            "type": "tick",
-            "color": "black",
-            "thickness": 2
-          },
-          "encoding": {
-            "x": {"field": "category", "type": "nominal"},
-            "y": {"field": "value", "type": "quantitative", "aggregate": "min"}
-          }
-        },
-        {
-          "mark": {
-            "type": "tick",
-            "color": "black",
-            "thickness": 2
-          },
-          "encoding": {
-            "x": {"field": "category", "type": "nominal"},
-            "y": {"field": "value", "type": "quantitative", "aggregate": "max"}
-          }
-        },
-        {
-          "mark": {
-            "type": "point",
-            "color": "black",
-            "size": 25,
-            "filled": true
-          },
-          "encoding": {
-            "x": {
-              "field": "category",
-              "type": "nominal",
-              "axis": {"title": "Composer"},
-              "offset": {"field": "jitter"}
-            },
-            "y": {"field": "value", "type": "quantitative"}
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "align": "center",
-            "baseline": "bottom",
-            "dy": -5,
-            "fontSize": 10,
-            "fontWeight": "bold",
-            "color": "red"
-          },
-          "transform": [
-            {
-              "filter": "datum.value == datum.max_value_per_category"
-            }
-          ],
-          "encoding": {
-            "x": {"field": "category", "type": "nominal"},
-            "y": {
-              "field": "max_value_per_category",
-              "type": "quantitative",
-              "offset": 10
-            },
-            "text": {
-              "field": "median_value_per_category",
-              "type": "quantitative",
-              "format": ".1f"
-            }
-          }
-        }
-      ]
-    };
+	 var spec = {
+		"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+		"description": "A bar and whisker plot example categorized by a specific category with x-axis labels angled by 45 degrees.",
+		"width": 600,
+		"height": 600,
+		"data": {
+		  "values": data
+		},
+		"transform": [
+		  {
+			 "aggregate": [
+				{"op": "count", "as": "count"},
+				{"op": "max", "field": "value", "as": "max_value"}
+			 ],
+			 "groupby": ["category", "value"]
+		  },
+		  {
+			 "window": [{"op": "rank", "as": "rank"}],
+			 "groupby": ["category", "value"]
+		  },
+		  {
+			 "calculate": "(datum.rank - 1 - (datum.count - 1) / 2) * 0.2",
+			 "as": "jitter"
+		  },
+		  {
+			 "joinaggregate": [
+				{"op": "median", "field": "value", "as": "median_value_per_category"},
+				{"op": "max", "field": "value", "as": "max_value_per_category"}
+			 ],
+			 "groupby": ["category"]
+		  }
+		],
+		"layer": [
+		  {
+			 "mark": "bar",
+			 "encoding": {
+				"x": {
+				  "field": "category",
+				  "type": "nominal",
+				  "axis": {
+					 "title": "Composer",
+					 "labelAngle": 45
+				  }
+				},
+				"y": {
+				  "field": "value",
+				  "type": "quantitative",
+				  "aggregate": "q1",
+				  "axis": {"title": "Duration [seconds]"}
+				},
+				"y2": {
+				  "field": "value",
+				  "type": "quantitative",
+				  "aggregate": "q3"
+				}
+			 }
+		  },
+		  {
+			 "mark": "rule",
+			 "encoding": {
+				"x": {"field": "category", "type": "nominal"},
+				"y": {"field": "value", "type": "quantitative", "aggregate": "min"},
+				"y2": {"field": "value", "type": "quantitative", "aggregate": "max"}
+			 }
+		  },
+		  {
+			 "mark": {
+				"type": "tick",
+				"color": "black",
+				"thickness": 2
+			 },
+			 "encoding": {
+				"x": {"field": "category", "type": "nominal"},
+				"y": {"field": "value", "type": "quantitative", "aggregate": "min"}
+			 }
+		  },
+		  {
+			 "mark": {
+				"type": "tick",
+				"color": "black",
+				"thickness": 2
+			 },
+			 "encoding": {
+				"x": {"field": "category", "type": "nominal"},
+				"y": {"field": "value", "type": "quantitative", "aggregate": "max"}
+			 }
+		  },
+		  {
+			 "mark": {
+				"type": "point",
+				"color": "black",
+				"size": 25,
+				"filled": true
+			 },
+			 "encoding": {
+				"x": {
+				  "field": "category",
+				  "type": "nominal",
+				  "axis": {"title": "Composer"},
+				  "offset": {"field": "jitter"}
+				},
+				"y": {"field": "value", "type": "quantitative"}
+			 }
+		  },
+		  {
+			 "mark": {
+				"type": "text",
+				"align": "center",
+				"baseline": "bottom",
+				"dy": -5,
+				"fontSize": 10,
+				"fontWeight": "bold",
+				"color": "red"
+			 },
+			 "transform": [
+				{
+				  "filter": "datum.value == datum.max_value_per_category"
+				}
+			 ],
+			 "encoding": {
+				"x": {"field": "category", "type": "nominal"},
+				"y": {
+				  "field": "max_value_per_category",
+				  "type": "quantitative",
+				  "offset": 10
+				},
+				"text": {
+				  "field": "median_value_per_category",
+				  "type": "quantitative",
+				  "format": ".1f"
+				}
+			 }
+		  }
+		]
+	 };    var spec = {
+		"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+		"description": "A bar and whisker plot example categorized by a specific category with x-axis labels angled by 45 degrees.",
+		"width": 600,
+		"height": 600,
+		"data": {
+		  "values": data
+		},
+		"transform": [
+		  {
+			 "aggregate": [
+				{"op": "count", "as": "count"},
+				{"op": "max", "field": "value", "as": "max_value"}
+			 ],
+			 "groupby": ["category", "value"]
+		  },
+		  {
+			 "window": [{"op": "rank", "as": "rank"}],
+			 "groupby": ["category", "value"]
+		  },
+		  {
+			 "calculate": "(datum.rank - 1 - (datum.count - 1) / 2) * 0.2",
+			 "as": "jitter"
+		  },
+		  {
+			 "joinaggregate": [
+				{"op": "median", "field": "value", "as": "median_value_per_category"},
+				{"op": "max", "field": "value", "as": "max_value_per_category"}
+			 ],
+			 "groupby": ["category"]
+		  }
+		],
+		"layer": [
+		  {
+			 "mark": "bar",
+			 "encoding": {
+				"x": {
+				  "field": "category",
+				  "type": "nominal",
+				  "axis": {
+					 "title": "Composer",
+					 "labelAngle": 45
+				  }
+				},
+				"y": {
+				  "field": "value",
+				  "type": "quantitative",
+				  "aggregate": "q1",
+				  "axis": {"title": "Duration[second]"}
+				},
+				"y2": {
+				  "field": "value",
+				  "type": "quantitative",
+				  "aggregate": "q3"
+				}
+			 }
+		  },
+		  {
+			 "mark": "rule",
+			 "encoding": {
+				"x": {"field": "category", "type": "nominal"},
+				"y": {"field": "value", "type": "quantitative", "aggregate": "min"},
+				"y2": {"field": "value", "type": "quantitative", "aggregate": "max"}
+			 }
+		  },
+		  {
+			 "mark": {
+				"type": "tick",
+				"color": "black",
+				"thickness": 2
+			 },
+			 "encoding": {
+				"x": {"field": "category", "type": "nominal"},
+				"y": {"field": "value", "type": "quantitative", "aggregate": "min"}
+			 }
+		  },
+		  {
+			 "mark": {
+				"type": "tick",
+				"color": "black",
+				"thickness": 2
+			 },
+			 "encoding": {
+				"x": {"field": "category", "type": "nominal"},
+				"y": {"field": "value", "type": "quantitative", "aggregate": "max"}
+			 }
+		  },
+		  {
+			 "mark": {
+				"type": "point",
+				"color": "black",
+				"size": 25,
+				"filled": true
+			 },
+			 "encoding": {
+				"x": {
+				  "field": "category",
+				  "type": "nominal",
+				  "axis": {"title": "Composer"},
+				  "offset": {"field": "jitter"}
+				},
+				"y": {"field": "value", "type": "quantitative"}
+			 }
+		  },
+		  {
+			 "mark": {
+				"type": "text",
+				"align": "center",
+				"baseline": "bottom",
+				"dy": -5,
+				"fontSize": 10,
+				"fontWeight": "bold",
+				"color": "red"
+			 },
+			 "transform": [
+				{
+				  "filter": "datum.value == datum.max_value_per_category"
+				}
+			 ],
+			 "encoding": {
+				"x": {"field": "category", "type": "nominal"},
+				"y": {
+				  "field": "max_value_per_category",
+				  "type": "quantitative",
+				  "offset": 10
+				},
+				"text": {
+				  "field": "median_value_per_category",
+				  "type": "quantitative",
+				  "format": ".1f"
+				}
+			 }
+		  }
+		]
+	 };
 
-    vegaEmbed('#LengthOfExamplesByComposer', spec);
+	 vegaEmbed('#LengthOfExamplesByComposer', spec);
 
 }
 
@@ -1114,43 +1114,42 @@ function displayCompositionYearByDecade() {
 
 	let spec = 
 
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A bar chart showing values by category with preserved order and increased font size.",
   "width": 500,
   "height": 300,
   "data": {
-    "values": [
-      {"category": "<1900", "value": 16},
-      {"category": "1900s", "value": 39},
-      {"category": "1910s", "value": 71},
-      {"category": "1920s", "value": 108},
-      {"category": "1930s", "value": 87},
-      {"category": "1940s", "value": 75},
-      {"category": ">=1950", "value": 54}
-    ]
+	 "values": [
+		{"category": "<1900", "value": 16},
+		{"category": "1900s", "value": 39},
+		{"category": "1910s", "value": 71},
+		{"category": "1920s", "value": 108},
+		{"category": "1930s", "value": 87},
+		{"category": "1940s", "value": 75},
+		{"category": ">=1950", "value": 54}
+	 ]
   },
   "mark": {
-    "type": "bar",
-    "color": "#4682b4"
+	 "type": "bar",
+	 "color": "#4682b4"
   },
   "encoding": {
-    "x": {
-      "field": "category",
-      "type": "ordinal",
-      "axis": {
-        "labelAngle": 0,
-        "title": "Decade",
-        "labelFontSize": 12 * 1.2 // Increase font size by 20%
-      },
-      "sort": ["<1900", "1900s", "1910s", "1920s", "1930s", "1940s", ">=1950"]
-    },
-    "y": {
-      "field": "value",
-      "type": "quantitative",
-      "axis": {"title": "Count"}
-    }
+	 "x": {
+		"field": "category",
+		"type": "ordinal",
+		"axis": {
+		  "labelAngle": 0,
+		  "title": "Decade",
+		  "labelFontSize": 12 * 1.2 // Increase font size by 20%
+		},
+		"sort": ["<1900", "1900s", "1910s", "1920s", "1930s", "1940s", ">=1950"]
+	 },
+	 "y": {
+		"field": "value",
+		"type": "quantitative",
+		"axis": {"title": "Count"}
+	 }
   }
 }
 
@@ -1158,12 +1157,160 @@ function displayCompositionYearByDecade() {
 
 ;
 
-    vegaEmbed('#CompositionYearByDecadeGraph', spec);
-
-
-
+	 vegaEmbed('#CompositionYearByDecadeGraph', spec);
 }
 
+
+
+//////////////////////////////
+//
+// displayWorksVsExamples --
+//    data example:
+//       {composer: "Bach", percentage: 75, type: "works"},
+//     	{composer: "Bach", percentage: 45, type: "examples"},
+//
+
+function displayWorksVsExamples() {
+	let id = "worksVsExamples";
+
+	let composerWorks = {};
+	let composerExamples = {};
+	let workCount = 0;
+	let exampleCount = 0;
+
+	for (let i=0; i<EXAMPLELIST.length; i++) {
+		let composer = EXAMPLELIST[i][INDEX_Composer_Name];
+		composer = composer.replace(/\s*,.*/, "");
+		composer = composer.replace(/\s*\[.*/, "");
+		composer = composer.replace(/\s*\(.*/, "");
+
+		if (!composerWorks.hasOwnProperty(composer)) {
+			composerWorks[composer] = {};
+		}
+		let workid = EXAMPLELIST[i][INDEX_Suter_Work_ID];
+		if (!composerWorks[composer].hasOwnProperty(workid)) {
+			composerWorks[composer][workid] = 0;
+			workCount++;
+		}
+		composerWorks[composer][workid]++;
+		composerExamples[composer] = (composerExamples[composer] ?? 0) + 1;
+		exampleCount++;
+	}
+
+	let composers = Object.keys(composerWorks).sort((a, b) => a.localeCompare(b));
+	let composerCount = composers.length;
+	let data = [];
+
+	for (let i=0; i<composers.length; i++) {
+		let obj = {};
+		obj.composer = composers[i];
+		obj.type = "works";
+		obj.percentage = Object.keys(composerWorks[obj.composer]).length / workCount * 100.0;
+		data.push(obj);
+	}
+
+	for (let i=0; i<composers.length; i++) {
+		let obj = {};
+		obj.composer = composers[i];
+		obj.type = "examples";
+		obj.percentage = composerExamples[obj.composer] / exampleCount * 100.0;
+		data.push(obj);
+	}
+
+	const spec = {
+		"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+		"description": "Percentage of works and examples by composer",
+		"data": { "values": data },
+		"mark": {
+			"type": "line",
+			"point": {
+				"filled": true,
+				"size": 100 
+			}
+		},
+		"width": 850,
+		"height": 350,
+
+		"config": {
+			"style": {
+				"guide-label": {
+					"fontSize": 40
+				}
+			},
+			"axis": {
+				"labelFontSize": 18,
+				"titleFontSize": 16
+			},
+			"legend": {
+				"labelFontSize": 18,
+				"titleFontSize": 18
+			},
+			"header": {
+				"labelFontSize": 20,
+				"titleFontSize": 20
+			},
+			"title": {
+				"fontSize": 20
+			}
+		},
+		"encoding": {
+			"x": {
+					"field": "composer",
+					"type": "ordinal",
+					"axis": {
+					"title": null,
+					"labelAngle": 45
+					// "grid": true
+				}
+			},
+			"y": {
+					"field": "percentage",
+					"type": "quantitative",
+					"title": "Percentage of full data set",
+			},
+			"color": {
+					"scale": {
+						"domain": ["works", "examples"],
+						"range": ["steelblue", "orange"]
+					},
+					"field": "type",
+					"type": "nominal",
+					"title": false,
+					"legend": {
+						"labelExpr": `datum.label === 'works' ? 'works (${workCount})' : datum.label === 'examples' ? 'examples (${exampleCount})' : datum.label`,
+						"direction": "horizontal",
+						"orient": "top-left",
+						// "orient": "bottom",
+						"offset": 8,           // pull it inside
+						"padding": 0,
+						"cornerRadius": 5
+					}
+			},
+			"strokeDash": {
+					"field": "type",
+					"type": "nominal",
+					"scale": {
+						"domain": ["works", "examples"],
+						"range": [[], [4, 4]]
+					},
+				"legend": null
+			},
+			"order": {
+				"field": "type",
+				"type": "nominal",
+				"sort": ["works", "examples"]  // ensures "examples" drawn above "works"
+			},
+			"tooltip": {
+				"field": "percentage",
+				"type": "quantitative",
+				"title": "Percentage",
+				"format": ".1f"
+			}
+		}
+	};
+
+	vegaEmbed('#worksVsExamples', spec);
+}
 
 
 </script>
