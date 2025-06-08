@@ -37,7 +37,7 @@
 		<div class="col-md-8">
 			<div class="card-body">
 				<h5 class="category mb-2 card-title">Composition Year by Decade</h5>
-				<p class="card-text">The graph and accompanying table present the corpus works by year of composition. The graph shows a slightly left-skewed distribution of works, with a peak in the 1920s (108 works) and a larger number of works in the decades after (216 works as compared with 126 works before 1920). To sort or select works by year of composition, visit the <a href="https://polyrhythm.humdrum.org/browse">Browse</a> page. You can also do a quick search by decade on the <a href="https://polyrhythm.humdrum.org/index.html">Home</a> page.</p>
+				<p class="card-text">The graph and accompanying table present the corpus works by year of composition. The graph shows a slightly left-skewed distribution of works or movements, with a peak in the 1920s (108 works) and a larger number of works in the decades after (216 works as compared with 126 works before 1920). To sort or select examples by year of composition, visit the <a href="https://polyrhythm.humdrum.org/browse">Browse</a> page. You can also do a quick search by decade on the <a href="https://polyrhythm.humdrum.org/index.html">Home</a> page.</p>
 			</div>
 		</div>
 		<div class="col-md-10">
