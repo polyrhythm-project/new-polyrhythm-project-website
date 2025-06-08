@@ -1125,9 +1125,10 @@ function doPremierYearSearch(entries) {
 		let oldentries = entries;
 		entries = [];
 		for (let i=0; i<oldentries.length; i++) {
-			let number = oldentries[i][INDEX_Composition_Year];
-			if (number.match(/^\d+/)) {
-				number = parseInt(number);
+			let number = oldentries[i][INDEX_First_Public_Performance_Year];
+			let matches = number.match(/(\d{4})/);
+			if (matches) {
+				number = parseInt(matches[1]);
 			} else {
 				continue;
 			}
@@ -1193,8 +1194,8 @@ function doPublicationYearSearch(entries) {
 		let oldentries = entries;
 		entries = [];
 		for (let i=0; i<oldentries.length; i++) {
-			let number = oldentries[i][INDEX_Composition_Year];
-			if (number.match(/^\d+/)) {
+			let number = oldentries[i][INDEX_First_Publication_Year];
+			if (number.match(/\d{4}/)) {
 				number = parseInt(number);
 			} else {
 				continue;
