@@ -17,6 +17,9 @@ function displayExampleStartTsigTypeRds() {
 	let data = {};
 	for (let i=0; i<EXAMPLELIST.length; i++) {
 		let dataset = EXAMPLELIST[i][INDEX_Example_Dataset];
+		if (!dataset) {
+			continue;
+		}
 		if (!dataset.match(/^R/)) {
 			continue;
 		}
@@ -112,6 +115,9 @@ function displayExampleStartTsigTypeTds() {
 	let data = {};
 	for (let i=0; i<EXAMPLELIST.length; i++) {
 		let dataset = EXAMPLELIST[i][INDEX_Example_Dataset];
+		if (!dataset) {
+			continue;
+		}
 		if (!dataset.match(/^T/)) {
 			continue;
 		}
@@ -398,6 +404,9 @@ function displayContryCityTable() {
 	let keys = Object.keys(WORKINDEX);
 	for (let i=0; i<keys.length; i++) {
 		let city = WORKINDEX[keys[i]][0][INDEX_Premiere_Location];
+		if (!city) {
+			continue;
+		}
 		city = city.replace(/,\s*/g, ", ");
 		let cc = city.split(/\s*;\s*/);
 		for (let j=0; j<cc.length; j++) {
@@ -566,6 +575,9 @@ function displayLengthOfExamplesByComposer() {
 	for (let i=0; i<EXAMPLELIST.length; i++) {
 		let entry = {};
 		let duration = EXAMPLELIST[i][INDEX_Example_Timestamp_Duration];
+		if (!duration) {
+			continue;
+		}
 		if (!duration.match(/^\d+$/)) {
 			// console.warn("Strange duration:", duration, "FOR", EXAMPLELIST[i]);
 			continue;
@@ -1180,6 +1192,9 @@ function displayWorksVsExamples() {
 
 	for (let i=0; i<EXAMPLELIST.length; i++) {
 		let composer = EXAMPLELIST[i][INDEX_Composer_Name];
+		if (!composer) {
+			continue;
+		}
 		composer = composer.replace(/\s*,.*/, "");
 		composer = composer.replace(/\s*\[.*/, "");
 		composer = composer.replace(/\s*\(.*/, "");
@@ -1188,6 +1203,13 @@ function displayWorksVsExamples() {
 			composerWorks[composer] = {};
 		}
 		let workid = EXAMPLELIST[i][INDEX_Suter_Work_ID];
+		if (!workid) {
+			continue;
+		}
+		if (workid.match(/x$/)) {
+			continue;
+		}
+
 		if (!composerWorks[composer].hasOwnProperty(workid)) {
 			composerWorks[composer][workid] = 0;
 			workCount++;
