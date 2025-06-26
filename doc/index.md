@@ -37,11 +37,11 @@ permalink: /doc/index.html
 					<p markdown="1">
 						{% include_relative doc-intro-data.md %}
 					</p>
-					<div class="accordion accordion-flush mb-5" id="accordionExample">
+					<div class="accordion accordion-flush mb-5" id="accordionExampleData">
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingA"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="false" aria-controls="collapseA">Digital scores</button></p>
-<div class="accordion-collapse collapse" id="collapseA" aria-labelledby="headingA" data-bs-parent="#accordionExample">
+<div class="accordion-collapse collapse" id="collapseA" aria-labelledby="headingA" data-bs-parent="#accordionExampleData">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-github.md %}
 </div>
@@ -50,7 +50,7 @@ permalink: /doc/index.html
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingB"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB">Audio files</button></p>
-<div class="accordion-collapse collapse" id="collapseB" aria-labelledby="headingB" data-bs-parent="#accordionExample">
+<div class="accordion-collapse collapse" id="collapseB" aria-labelledby="headingB" data-bs-parent="#accordionExampleData">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-audio.md %}
 </div>
@@ -73,11 +73,11 @@ permalink: /doc/index.html
 					<p markdown="1">
 						{% include_relative doc-intro-metadata.md %}
 					</p>
-					<div class="accordion accordion-flush mb-5" id="accordionExample">
+					<div class="accordion accordion-flush mb-5" id="accordionExampleMetadata">
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Composers</button></p>
-<div class="accordion-collapse collapse" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+<div class="accordion-collapse collapse" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExampleMetadata">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-composers.md %}
 </div>
@@ -86,7 +86,7 @@ permalink: /doc/index.html
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Source Works</button></p>
-<div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+<div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExampleMetadata">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-source-works.md %}
 </div>
@@ -95,7 +95,7 @@ permalink: /doc/index.html
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Premieres</button></p>
-<div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+<div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExampleMetadata">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-premieres.md %}
 </div>
@@ -104,7 +104,7 @@ permalink: /doc/index.html
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingFour"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Source Work Full Unit</button></p>
-<div class="accordion-collapse collapse" id="collapseFour" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+<div class="accordion-collapse collapse" id="collapseFour" aria-labelledby="headingFour" data-bs-parent="#accordionExampleMetadata">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-source-work-full-unit.md %}
 </div>
@@ -113,7 +113,7 @@ permalink: /doc/index.html
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingFive"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Examples</button></p>
-<div class="accordion-collapse collapse" id="collapseFive" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+<div class="accordion-collapse collapse" id="collapseFive" aria-labelledby="headingFive" data-bs-parent="#accordionExampleMetadata">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-examples.md %}
 </div>
@@ -122,9 +122,45 @@ permalink: /doc/index.html
 
 <div class="accordion-item">
 <p class="accordion-header" id="headingSix"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Source Recordings</button></p>
-<div class="accordion-collapse collapse" id="collapseSix" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+<div class="accordion-collapse collapse" id="collapseSix" aria-labelledby="headingSix" data-bs-parent="#accordionExampleMetadata">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-source-recordings.md %}
+</div>
+</div>
+</div>
+
+						</div>
+					</div>
+				</div>
+		</div>
+</section>
+
+<!-- ------------------------------------------------------------------ -->
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="mb-6">Resources</h2>
+					<p markdown="1">
+						{% include_relative doc-intro-resources.md %}
+					</p>
+					<div class="accordion accordion-flush mb-5" id="accordionExampleResources">
+
+<div class="accordion-item">
+<p class="accordion-header" id="headingOneResources"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneResources" aria-expanded="false" aria-controls="collapseOneResources">Metadata proofreading</button></p>
+<div class="accordion-collapse collapse" id="collapseOneResources" aria-labelledby="headingOneResources" data-bs-parent="#accordionExampleResources">
+<div class="accordion-body" markdown="1">
+{% include_relative doc-resources-metadata.md %}
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<p class="accordion-header" id="headingTwoResources"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoResources" aria-expanded="false" aria-controls="collapseTwoResources">Second entry</button></p>
+<div class="accordion-collapse collapse" id="collapseTwoResources" aria-labelledby="headingTwo" data-bs-parent="#accordionExampleResources">
+<div class="accordion-body" markdown="1">
+{% include_relative doc-resources-metadata2.md %}
 </div>
 </div>
 </div>
