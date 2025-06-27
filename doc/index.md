@@ -151,7 +151,7 @@ permalink: /doc/index.html
 <p class="accordion-header" id="headingOneResources"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneResources" aria-expanded="false" aria-controls="collapseOneResources">Metadata proofreading</button></p>
 <div class="accordion-collapse collapse" id="collapseOneResources" aria-labelledby="headingOneResources" data-bs-parent="#accordionExampleResources">
 <div class="accordion-body" markdown="1">
-{% include_relative doc-resources-metadata.md %}
+{% include_relative doc-resources-guides.md %}
 </div>
 </div>
 </div>
@@ -160,7 +160,7 @@ permalink: /doc/index.html
 <p class="accordion-header" id="headingTwoResources"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoResources" aria-expanded="false" aria-controls="collapseTwoResources">Second entry</button></p>
 <div class="accordion-collapse collapse" id="collapseTwoResources" aria-labelledby="headingTwo" data-bs-parent="#accordionExampleResources">
 <div class="accordion-body" markdown="1">
-{% include_relative doc-resources-metadata2.md %}
+{% include_relative doc-resources-protocols.md %}
 </div>
 </div>
 </div>
