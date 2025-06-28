@@ -157,7 +157,7 @@ permalink: /doc/index.html
 </div>
 
 <div class="accordion-item">
-<p class="accordion-header" id="headingTwoResources"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoResources" aria-expanded="false" aria-controls="collapseTwoResources">Second entry</button></p>
+<p class="accordion-header" id="headingTwoResources"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoResources" aria-expanded="false" aria-controls="collapseTwoResources">Protocols</button></p>
 <div class="accordion-collapse collapse" id="collapseTwoResources" aria-labelledby="headingTwo" data-bs-parent="#accordionExampleResources">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-resources-protocols.md %}
