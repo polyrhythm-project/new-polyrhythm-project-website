@@ -148,7 +148,7 @@ permalink: /doc/index.html
 					<div class="accordion accordion-flush mb-5" id="accordionExampleResources">
 
 <div class="accordion-item">
-<p class="accordion-header" id="headingOneResources"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneResources" aria-expanded="false" aria-controls="collapseOneResources">Metadata proofreading</button></p>
+<p class="accordion-header" id="headingOneResources"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneResources" aria-expanded="false" aria-controls="collapseOneResources">Guides</button></p>
 <div class="accordion-collapse collapse" id="collapseOneResources" aria-labelledby="headingOneResources" data-bs-parent="#accordionExampleResources">
 <div class="accordion-body" markdown="1">
 {% include_relative doc-resources-guides.md %}
