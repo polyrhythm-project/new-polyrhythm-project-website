@@ -1,5 +1,5 @@
 
-These guides provide procedure for identifying and encoding Suter (1980) examples, and accessing reference scores.
+These guides provide procedures for identifying Suter's (1980) examples, accessing reference scores, and transposing instruments.
 
 * [Decoding Suter's Example IDs](https://polyrhythm.humdrum.org/resources/Decoding_Suters_Example_IDs.pdf)
 
