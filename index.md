@@ -83,7 +83,7 @@ permalink: /index.html
 					<img class="card-img-top card-img-bottom mb-3 img-fluid" src="/img/homepage/polyphony-small.jpg" alt="about">
 					<div class="card-body p-0">
 						<div class="category mb-2">ABOUT</div>
-						<a class="text-decoration-none link-dark stretched-link" href="overview" role="button"><h3 class="card-title mb-3">This platform presents an online edition of 750 examples of polyphonic music with information about composers and their works.  You can explore our sources, listen to the music excerpts, use the analysis tools, and participate in an experiment.</h3></a>
+						<a class="text-decoration-none link-dark stretched-link" href="overview" role="button"><h3 class="card-title mb-3">This platform presents an online edition of 725 examples of polyphonic music with information about composers and their works.  You can explore our sources, listen to the music excerpts, use the analysis tools, and participate in an experiment.</h3></a>
 					</div>
 				</div>
 			</div>
