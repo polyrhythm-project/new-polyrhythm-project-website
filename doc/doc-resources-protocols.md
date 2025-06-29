@@ -1,12 +1,12 @@
-These protocols provide detailed step-by-step procedure for research
-assistants for gathering metadata, proofreading, editing, and
-encoding examples as well as for audio preparation. Note that links
+These protocols provide detailed step-by-step procedures for research
+assistants to gather metadata, proofread, edit, and
+encode examples as well as for synthesize audio. Note that links
 on each document may not provide access to working documents that
-have been archived after completing corpus encoding.
+have been archived after corpus encoding was completed.
 
 TDS refers to the testing data set; E0 scans refer to the original
 examples from Suter (1980); E1, E2, and E3 refer to addtional scores
-usee in the encoding and data validation.
+used in the encoding and data validation stages.
 
 * [PHASE 2 Proofreading and Editing Protocol](https://polyrhythm.humdrum.org/resources/PHASE_2_Proofreading_and_Editing_Protocol.pdf)
 
